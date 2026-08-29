@@ -69,7 +69,7 @@ class HistoryStore:
         for _key, snap in by_key.items():
             target = self.dir / f"{snap['date']}.json"
             if not target.exists():
-                target.write_text(json.dumps(snap, ensure_ascii=False), encoding="utf-8")
+                target.write_text(json.dumps(snap, ensure_ascii=False), encoding="utf-8", newline="\n")
         return removed
 
     def rank_changes(self, today: date) -> dict[str, dict[str, dict]]:

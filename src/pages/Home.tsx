@@ -24,6 +24,7 @@ export function HomePage() {
   const { data: home } = useJson<Homepage>('/data/homepage.json');
   const { data: index } = useJson<ModelsIndex>('/data/models/index.json');
   const [presetId, setPresetId] = useState('general');
+  const [boardMode, setBoardMode] = useState<'strict' | 'reference'>('reference');
 
   if (error && !rawMeta) {
     return <NoDataState detail={`meta.json 加载失败：${error}`} />;
@@ -35,7 +36,12 @@ export function HomePage() {
   // 综合榜只收录通过服务端准入门槛（≥4 能力 / ≥5 基准 / ≥2 来源）的模型，
   // 即 models/index.json 中 overall_index 非空的模型；权重预设切换仍在浏览器本地重算。
   const gatedModels = (index?.models ?? []).filter((m) => m.overall_index !== null);
-  const overallRows = preset ? recomputeOverall(gatedModels, preset.weights).slice(0, 10) : [];
+  const referenceModels = (index?.models ?? []).filter(
+    (m) => Object.keys(m.capability_indices).length > 0,
+  );
+  const strictRows = preset ? recomputeOverall(gatedModels, preset.weights).slice(0, 10) : [];
+  const referenceRows = preset ? recomputeOverall(referenceModels, preset.weights).slice(0, 12) : [];
+  const overallRows = boardMode === 'strict' ? strictRows : referenceRows;
   const ranks = assignRanksLocal(overallRows.map((r) => r.index));
 
   return (
@@ -76,52 +82,6 @@ export function HomePage() {
           </dl>
         </section>
 
-        {/* 综合榜 + 权重预设 */}
-        <section className="panel px-5 py-6 sm:px-7">
-          <div className="flex flex-wrap items-center gap-3">
-            <h2 className="text-lg font-bold text-slate-100">综合指数榜</h2>
-            <span className="badge border-violet-400/40 bg-violet-400/10 text-violet-200">本站计算 · 非官方榜单</span>
-            <div className="ml-auto flex flex-wrap gap-1.5">
-              {presets.map((p) => (
-                <button
-                  key={p.preset_id}
-                  onClick={() => setPresetId(p.preset_id)}
-                  className={`rounded-lg px-2.5 py-1 text-xs ${
-                    p.preset_id === presetId
-                      ? 'bg-cyan-400/15 text-cyan-300'
-                      : 'border border-slate-500/30 text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  {p.name}
-                </button>
-              ))}
-            </div>
-          </div>
-          <p className="mt-1.5 text-xs text-slate-500">
-            加权平均各能力指数（0~100）。切换预设即在浏览器本地重算，权重公式见方法论页。
-            综合榜仅收录覆盖 ≥4 能力、≥5 基准、≥2 数据来源的模型；Agent 系统成绩不参与。
-          </p>
-          {overallRows.length === 0 ? (
-            <div className="mt-4"><EmptyState title="暂无满足多源覆盖要求的模型" hint="综合榜要求模型在多个独立数据来源都有成绩；请先查看单项能力榜单。" /></div>
-          ) : (
-            <ol className="mt-4 divide-y divide-slate-500/10">
-              {overallRows.map((row, i) => (
-                <li key={row.model.model_id} className="flex items-center gap-3 py-2.5">
-                  <span className={`num w-8 text-center text-sm font-bold ${ranks[i] === 1 ? 'rank-medal-1' : ranks[i] === 2 ? 'rank-medal-2' : ranks[i] === 3 ? 'rank-medal-3' : 'text-slate-400'}`}>
-                    {ranks[i]}
-                  </span>
-                  <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: providerColor(row.model.provider) }} aria-hidden />
-                  <Link to={`/model/${row.model.model_id}`} className="min-w-0 flex-1 truncate text-sm font-medium text-slate-100 hover:text-cyan-300">
-                    {row.model.display_name}
-                  </Link>
-                  <span className="hidden text-xs text-slate-500 sm:inline">{row.model.provider ?? '未知厂商'}</span>
-                  <span className="num w-14 text-right text-sm font-semibold text-cyan-300">{row.index.toFixed(1)}</span>
-                </li>
-              ))}
-            </ol>
-          )}
-        </section>
-
         {/* 各能力前三 */}
         <section>
           <h2 className="mb-3 text-lg font-bold text-slate-100">单项能力 · 前三名</h2>
@@ -153,6 +113,89 @@ export function HomePage() {
             })}
           </div>
         </section>
+
+        {/* 综合榜（严格 / 参考 双模式）+ 权重预设 */}
+        <section className="panel px-5 py-6 sm:px-7">
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="text-lg font-bold text-slate-100">
+              {boardMode === 'strict' ? '多源验证综合榜' : '单源参考综合榜'}
+              {boardMode === 'strict' && <span className="ml-1.5 text-xs font-normal text-amber-300">Beta</span>}
+            </h2>
+            <span className="badge border-violet-400/40 bg-violet-400/10 text-violet-200">本站计算 · 非官方榜单</span>
+            <div className="ml-auto flex flex-wrap items-center gap-1.5">
+              <div className="mr-2 flex rounded-lg border border-slate-500/25 p-0.5" role="tablist" aria-label="综合榜模式">
+                <button
+                  role="tab"
+                  aria-selected={boardMode === 'reference'}
+                  onClick={() => setBoardMode('reference')}
+                  className={`rounded-md px-2.5 py-1 text-xs ${boardMode === 'reference' ? 'bg-violet-400/15 text-violet-300' : 'text-slate-400'}`}
+                >
+                  单源参考榜
+                </button>
+                <button
+                  role="tab"
+                  aria-selected={boardMode === 'strict'}
+                  onClick={() => setBoardMode('strict')}
+                  className={`rounded-md px-2.5 py-1 text-xs ${boardMode === 'strict' ? 'bg-emerald-400/15 text-emerald-300' : 'text-slate-400'}`}
+                >
+                  多源严格榜 Beta
+                </button>
+              </div>
+              {presets.map((p) => (
+                <button
+                  key={p.preset_id}
+                  onClick={() => setPresetId(p.preset_id)}
+                  className={`rounded-lg px-2.5 py-1 text-xs ${
+                    p.preset_id === presetId
+                      ? 'bg-cyan-400/15 text-cyan-300'
+                      : 'border border-slate-500/30 text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  {p.name}
+                </button>
+              ))}
+            </div>
+          </div>
+          {boardMode === 'strict' ? (
+            <p className="mt-1.5 text-xs text-slate-500">
+              严格榜：仅收录覆盖 ≥4 能力、≥5 基准、≥2 独立数据来源且全部为非 Agent 成绩的模型，
+              可视为跨来源共识；当前满足条件的模型较少，属于规则的诚实结果而非数据缺失。
+              切换预设即在浏览器本地重算，公式见方法论页。
+            </p>
+          ) : (
+            <p className="mt-1.5 text-xs text-slate-500">
+              参考榜：收录有任意能力数据的全部模型，便于浏览对比。<span className="text-amber-300/90">行内标注"单源"的模型
+              成绩仅来自一个数据来源，不可视为多源共识</span>；请结合来源数与覆盖率阅读。
+            </p>
+          )}
+          {overallRows.length === 0 ? (
+            <div className="mt-4"><EmptyState title="暂无满足条件的模型" hint={boardMode === 'strict' ? '严格榜要求多源覆盖；请先查看单项能力榜单。' : '数据尚未生成。'} /></div>
+          ) : (
+            <ol className="mt-4 divide-y divide-slate-500/10">
+              {overallRows.map((row, i) => {
+                const single = (row.model.overall_source_count ?? row.model.source_count ?? 1) < 2;
+                return (
+                  <li key={row.model.model_id} className="flex items-center gap-3 py-2.5">
+                    <span className={`num w-8 text-center text-sm font-bold ${ranks[i] === 1 ? 'rank-medal-1' : ranks[i] === 2 ? 'rank-medal-2' : ranks[i] === 3 ? 'rank-medal-3' : 'text-slate-400'}`}>
+                      {ranks[i]}
+                    </span>
+                    <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: providerColor(row.model.provider) }} aria-hidden />
+                    <Link to={`/model/${row.model.model_id}`} className="min-w-0 flex-1 truncate text-sm font-medium text-slate-100 hover:text-cyan-300">
+                      {row.model.display_name}
+                    </Link>
+                    <span className="hidden text-xs text-slate-500 sm:inline">{row.model.provider ?? '未知厂商'}</span>
+                    <span className="badge hidden md:inline-flex">{row.capabilityCount} 项能力</span>
+                    {single && (
+                      <span className="badge border-amber-400/40 bg-amber-400/10 text-amber-300" title="该模型成绩仅来自一个数据来源，不可视为多源共识">单源</span>
+                    )}
+                    <span className="num w-14 text-right text-sm font-semibold text-cyan-300">{row.index.toFixed(1)}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          )}
+        </section>
+
 
         {/* 7 天上升最快 */}
         {home && home.movers_7d.length > 0 && (

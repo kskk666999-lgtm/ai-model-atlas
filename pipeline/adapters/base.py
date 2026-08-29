@@ -83,7 +83,7 @@ class BaseAdapter(ABC):
                  "records": [r.model_dump() for r in ordered]},
                 ensure_ascii=False, indent=1, sort_keys=True,
             ),
-            encoding="utf-8",
+            encoding="utf-8", newline="\n",
         )
 
     def run(self) -> AdapterResult:

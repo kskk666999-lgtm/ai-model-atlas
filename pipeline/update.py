@@ -57,7 +57,7 @@ def load_source_state() -> dict:
 
 def save_source_state(state: dict) -> None:
     SOURCE_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    SOURCE_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+    SOURCE_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
 
 
 def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
@@ -278,7 +278,7 @@ def _write_reports(results, n_records, unmapped, overall, stats) -> None:
         lines += ["", "## 待人工映射的模型名（Top 20）", ""]
         for u in unmapped[:20]:
             lines.append(f"- `{u.raw_name}`（来自 {u.source_id}，出现 {u.occurrences} 次）")
-    LATEST_UPDATE_MD.write_text("\n".join(lines), encoding="utf-8")
+    LATEST_UPDATE_MD.write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
 def main() -> None:
