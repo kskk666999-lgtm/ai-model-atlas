@@ -2663,7 +2663,7 @@
       "temp_id": "unmapped--swebench--q"
     },
     {
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250901_entroPO_R2E_QwenCoder30BA3B",
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250901_entroPO_R2E_QwenCoder30BA3B_tts",
       "occurrences": 2,
       "raw_name": "Qwen3-Coder-30B-A3B-Instruct",
       "source_id": "swebench",
