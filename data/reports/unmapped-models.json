@@ -2702,7 +2702,7 @@
       "raw_name": "https://huggingface.co/agentica-org/DeepSWE-Preview",
       "temp_id": "unmapped--swebench--https-huggingface.co-agentica-org-deepswe-preview",
       "occurrences": 2,
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250629_deepswerl_r2eagent_tts"
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250629_deepswerl_r2eagent"
     },
     {
       "source_id": "bigcodebench",
