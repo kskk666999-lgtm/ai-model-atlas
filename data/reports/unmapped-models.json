@@ -2656,14 +2656,14 @@
       "temp_id": "unmapped--swebench--nv-embedcode"
     },
     {
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250616_Skywork-SWE-32B+TTS_Bo8",
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250616_Skywork-SWE-32B",
       "occurrences": 2,
       "raw_name": "Q",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--q"
     },
     {
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250901_entroPO_R2E_QwenCoder30BA3B_tts",
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250901_entroPO_R2E_QwenCoder30BA3B",
       "occurrences": 2,
       "raw_name": "Qwen3-Coder-30B-A3B-Instruct",
       "source_id": "swebench",

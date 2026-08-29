@@ -58,6 +58,9 @@ class ModelNormalizer:
         if existing:
             existing.occurrences += 1
             existing.last_seen = now
+            # example_url 取字典序最小，消除并发抓取"先见到哪个"的随机性
+            if example_url and (existing.example_url is None or example_url < existing.example_url):
+                existing.example_url = example_url
         else:
             self._unmapped[k] = UnmappedModel(
                 source_id=source_id, raw_name=raw_name, temp_id=temp_id,
