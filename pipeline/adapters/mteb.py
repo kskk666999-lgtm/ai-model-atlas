@@ -38,6 +38,14 @@ TASK_FILES = {
     "mteb-scidoCSrr": "SciDocsRR",
 }
 
+class _TaskFetchError(Exception):
+    """单任务抓取失败（网络/限流），由调用方用 LKG 回补。"""
+
+    def __init__(self, task: tuple) -> None:
+        super().__init__(f"task fetch failed: {task}")
+        self.task = task
+
+
 SPLIT_ORDER = ["test", "dev", "validation"]
 REVISION_RE = re.compile(r"^[0-9a-f]{40}$")
 
@@ -68,20 +76,35 @@ class MTEBAdapter(BaseAdapter):
             for benchmark_id, task_file in TASK_FILES.items():
                 tasks.append((canonical_id, model_dir, revision, benchmark_id, task_file))
 
+        failed: list[tuple] = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-            futures = [pool.submit(self._fetch_task, *t) for t in tasks]
+            futures = {pool.submit(self._fetch_task, *t): t for t in tasks}
             for fut in concurrent.futures.as_completed(futures):
-                rec = fut.result()
+                try:
+                    rec = fut.result()
+                except _TaskFetchError as e:
+                    # 抓取失败（限流/超时）≠ 任务消失，用 LKG 回补保证输出稳定
+                    failed.append(e.task)
+                    continue
                 if rec is not None:
                     records.append(rec)
+
+        if failed:
+            lkg_by_url = {r.source_url: r for r in self._load_lkg()}
+            for _cid, model_dir, revision, _bid, task_file in failed:
+                url = RAW_BASE.format(model_dir=model_dir, revision=revision, task=task_file)
+                lkg_rec = lkg_by_url.get(url)
+                if lkg_rec is not None:
+                    records.append(lkg_rec)
         return records
 
     def _fetch_task(self, canonical_id: str, model_dir: str, revision: str, benchmark_id: str, task_file: str):
         url = RAW_BASE.format(model_dir=model_dir, revision=revision, task=task_file)
         try:
             payload = self.http.get_json(url)
-        except Exception:
-            return None  # 单个任务缺失跳过
+        except Exception as e:
+            raise _TaskFetchError(
+                (canonical_id, model_dir, revision, benchmark_id, task_file)) from e
         scores = payload.get("scores") or {}
         main_score = None
         for split in SPLIT_ORDER:

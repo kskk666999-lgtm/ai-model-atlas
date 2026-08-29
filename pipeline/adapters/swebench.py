@@ -37,6 +37,14 @@ RUN_DATE_RE = re.compile(r"^(\d{8})_")
 VERIFIED_TOTAL = 500
 
 
+class _RunFetchError(Exception):
+    """单条运行的抓取失败（网络/限流），由调用方用 LKG 回补。"""
+
+    def __init__(self, path: str) -> None:
+        super().__init__(f"run fetch failed: {path}")
+        self.path = path
+
+
 class SWEBenchAdapter(BaseAdapter):
     source_id = "swebench"
 
@@ -58,12 +66,29 @@ class SWEBenchAdapter(BaseAdapter):
             raise AdapterError("SWE-bench experiments 未发现运行记录")
 
         records: list = []
+        failed_paths: list[str] = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-            futures = [pool.submit(self._fetch_run, *r) for r in runs]
+            futures = {pool.submit(self._fetch_run, *r): r for r in runs}
             for fut in concurrent.futures.as_completed(futures):
-                rec = fut.result()
+                try:
+                    rec = fut.result()
+                except _RunFetchError as e:
+                    # 抓取失败（限流/超时）≠ 官方删除。记录路径，稍后用 LKG 回补，
+                    # 保证记录集合跨运行确定、输出逐字节稳定。
+                    failed_paths.append(e.path)
+                    continue
                 if rec is not None:
                     records.append(rec)
+
+        if failed_paths:
+            lkg_by_url = {r.source_url: r for r in self._load_lkg()}
+            for path in failed_paths:
+                page_url = "https://github.com/SWE-bench/experiments/tree/main/" + path[
+                    : -len("/metadata.yaml")
+                ]
+                lkg_rec = lkg_by_url.get(page_url)
+                if lkg_rec is not None:
+                    records.append(lkg_rec)
 
         # 同一 (benchmark, model, agent_scaffold) 保留最近一次运行；
         # 日期并列时按 run_id 字典序决胜（run_id 以日期开头，字典序即时间序），
@@ -83,16 +108,22 @@ class SWEBenchAdapter(BaseAdapter):
 
     def _fetch_run(self, split: str, run_id: str, path: str):
         try:
-            meta = pyyaml.safe_load(
-                self.http.get(RAW_BASE + path).decode("utf-8")) or {}
+            body = self.http.get(RAW_BASE + path)
+        except Exception as e:
+            raise _RunFetchError(path) from e
+        try:
+            meta = pyyaml.safe_load(body.decode("utf-8")) or {}
         except Exception:
-            return None
+            return None  # 内容损坏视为该运行无效
 
         info = meta.get("info") or {}
         tags = meta.get("tags") or {}
 
         if split == "verified":
-            score = self._verified_score(run_id, path)
+            try:
+                score = self._verified_score(run_id, path)
+            except Exception as e:
+                raise _RunFetchError(path) from e
             verified_flag = meta.get("verified")
         else:
             resolved = info.get("resolved")
