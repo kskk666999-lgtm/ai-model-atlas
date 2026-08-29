@@ -101,6 +101,19 @@ npm run build         # 生产构建（DEMO_MODE=true 会被拒绝）
 npm run verify-no-llm # 无 LLM 运行时校验
 ```
 
+独立验收工具（第二阶段审计产物，报告在 data/reports/）：
+
+```powershell
+.\.venv\Scripts\python.exe scripts/provenance_audit.py   # 溯源抽查：抽样成绩对照官方源
+.\.venv\Scripts\python.exe scripts/alias_audit.py        # 别名审计：冲突/变体拆分/未映射
+.\.venv\Scripts\python.exe scripts/lkg_chaos_drill.py    # LKG 故障演练（沙箱隔离）
+.\.venv\Scripts\python.exe scripts/security_audit.py     # 安全审计（含 git 历史）
+```
+
+综合榜分两级：「单源参考综合榜」（默认，带单源警告）与「多源验证综合榜 Beta」
+（≥4 能力 / ≥5 基准 / ≥2 来源才收录）。区别详见方法论页与 VERIFICATION.md。
+部署：完成一次 `gh auth login` 后运行 `scripts\deploy.ps1` 一键上线（见 DEPLOYMENT_RESULT.md）。
+
 ## 部署
 
 见 [DEPLOYMENT_CN.md](DEPLOYMENT_CN.md)：从创建 GitHub 仓库到上线只需 9 步，全部在浏览器和 PowerShell 里完成，无需服务器。
