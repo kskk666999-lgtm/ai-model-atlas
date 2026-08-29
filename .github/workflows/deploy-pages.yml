@@ -1,14 +1,12 @@
 name: deploy-pages
 
-# 部署 GitHub Pages：纯静态构建，base 路径自动适配项目页。
+# 部署 GitHub Pages：main 分支 push（含数据自动提交）时构建部署。
+# 不用 workflow_run 触发——push 事件已经覆盖数据提交，避免双重部署。
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: [update-data]
-    types: [completed]
 
 permissions:
   contents: read
@@ -22,6 +20,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -43,6 +42,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

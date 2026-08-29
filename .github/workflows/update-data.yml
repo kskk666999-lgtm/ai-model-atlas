@@ -2,6 +2,8 @@ name: update-data
 
 # 每 12 小时自动更新一次数据；也支持在 Actions 页面手动触发。
 # 全流程为普通 Python 抓取 + 确定性计算，不调用任何大模型 API。
+# 注意：不要添加 workflow_run 触发器——数据提交通过 push 事件自然触发
+# ci 与 deploy-pages，额外触发会造成重复运行。
 
 on:
   schedule:
@@ -12,9 +14,6 @@ on:
         description: "仅更新指定来源（逗号分隔，留空为全部）"
         required: false
         default: ""
-  workflow_run:
-    workflows: ["ci"]
-    types: [completed]
 
 permissions:
   contents: write
@@ -25,7 +24,6 @@ concurrency:
 
 jobs:
   update:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -71,7 +69,7 @@ jobs:
           git add public/data data/reports data/cache/records data/history
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "数据无变化，跳过提交"
+            echo "数据无变化，跳过提交（幂等输出保证）"
           else
             git commit -m "chore(data): 自动更新榜单数据 $(date -u +%FT%TZ)"
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -80,3 +78,13 @@ jobs:
       - name: 推送
         if: steps.commit.outputs.changed == 'true'
         run: git push
+
+      - name: 失败时上传诊断日志
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-data-logs
+          path: |
+            data/reports/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,13 +1,29 @@
 name: ci
 
+# push 到 main 或 PR 时运行；数据自动提交（public/data、data/**）不需要完整 CI，
+# 通过 paths-ignore 跳过，避免每个数据提交都跑一遍全套检查。
+
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "public/data/**"
+      - "data/**"
+      - "**.md"
   pull_request:
+    paths-ignore:
+      - "public/data/**"
+      - "data/**"
+      - "**.md"
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   python:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,6 +38,7 @@ jobs:
 
   frontend:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
