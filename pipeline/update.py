@@ -99,6 +99,23 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     http.close()
 
     all_records = [r for res in results for r in res.records]
+
+    # 部分更新（--sources）时，未选中来源的数据用其 LKG 合并，
+    # 绝不允许部分运行把其他来源的数据从 public/data 里抹掉。
+    if source_filter:
+        from .paths import RECORDS_LKG_DIR
+
+        for s in sources_registry:
+            if s.source_id in source_filter or s.status != "active":
+                continue
+            lkg_file = RECORDS_LKG_DIR / f"{s.source_id}.json"
+            if lkg_file.exists():
+                import json as _json
+
+                lkg = _json.loads(lkg_file.read_text(encoding="utf-8"))
+                merged = lkg.get("records") or []
+                all_records.extend(merged)
+                print(f"    - {s.source_id}: 部分更新模式，合并 LKG {len(merged)} 条")
     print(f"[3/8] 共获得 {len(all_records)} 条原始记录")
 
     print("[4/8] 校验与去重 ...")

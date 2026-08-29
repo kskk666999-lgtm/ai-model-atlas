@@ -261,6 +261,8 @@ def generate_site_data(
     # ---------- benchmarks/<id>.json ----------
     bench_dir = PUBLIC_DATA_DIR / "benchmarks"
     for bid, rows in official_rankings.items():
+        if not rows:
+            continue  # 无成绩的基准不产出空文件（如未配置 Key 的可选来源）
         payload = {
             "benchmark_id": bid,
             "benchmark_name": benchmarks_registry[bid]["benchmark_name"],
