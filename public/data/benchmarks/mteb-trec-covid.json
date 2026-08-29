@@ -1,1 +1,1 @@
-{"benchmark_id":"mteb-trec-covid","benchmark_name":"MTEB TREC-COVID（检索）","source_id":"mteb","higher_is_better":true,"score_unit":"ndcg_0_1","generated_at":"2026-08-29T18:44:15Z","rows":[]}
+{"benchmark_id":"mteb-trec-covid","benchmark_name":"MTEB TREC-COVID（检索）","source_id":"mteb","higher_is_better":true,"score_unit":"ndcg_0_1","generated_at":"2026-08-29T18:43:55Z","rows":[]}
