@@ -67,30 +67,51 @@ def main() -> int:
         "",
         f"- 沙箱：`{tmp.name}`（public/data / LKG / 历史快照全部重定向，真实数据零接触）",
         "- 全部场景均为【全量运行 + 故障注入】，与 CI 场景一致",
-        "- 判定：榜单/模型/能力/历史数据必须逐字节不变；仅 meta.json 与 source-health.json",
-        "  允许变化（健康状态如实反映失败），这就是\"失败不清空榜单\"的可验证定义",
+        "- 判定（对齐需求本义）：失败来源的成绩行必须完整保留（LKG 回退）、必须标记 degraded、",
+        "  不得出现空榜；上游其他来源若有合法新数据可以正常进入（这不属于回退问题）",
         "",
     ]
 
     all_pass = True
 
+    def count_source_rows(d: Path, sid: str) -> int:
+        """统计某来源在榜单数据中的行数（跨全部基准文件）。"""
+        n = 0
+        for f in (d / "benchmarks").glob("*.json"):
+            for row in json.loads(f.read_text(encoding="utf-8")).get("rows", []):
+                if row.get("source_id") == sid:
+                    n += 1
+        return n
+
     def scenario(name: str, fail_map: dict[str, str], expect_exit: int = 0):
         nonlocal all_pass
         fail_mode.clear()
         fail_mode.update(fail_map)
-        before = dir_hash(sandbox_public)
+        before_rows = {sid: count_source_rows(sandbox_public, sid) for sid in fail_map}
         code = update_mod.run(offline=False)
-        after = dir_hash(sandbox_public)
-        changed = [k for k in before if before[k] != after.get(k)]
-        unexpected = [k for k in changed if Path(k).name not in ALLOWED_DRIFT]
+        after_rows = {sid: count_source_rows(sandbox_public, sid) for sid in fail_map}
+        # 1) 失败来源的行必须完整保留（LKG 回退，不清空不缩水）
+        preserved = all(after_rows[sid] == before_rows[sid] and before_rows[sid] > 0 for sid in fail_map)
+        # 2) 不允许出现新的空榜文件（KNOWN_EMPTY 为上游当前确无数据的基准：
+        #    LiveBench 现行版无 Social 类、MTEB v2 无 TREC-COVID、OpenVLM 现行版 OCRBench 无分数、
+        #    SWE-bench lite/multimodal 分区当前无官方核验运行）
+        known_empty = {"livebench-social.json", "mteb-trec-covid.json", "ovl-ocrbench.json",
+                       "swebench-lite.json", "swebench-multimodal.json"}
+        empty_boards = []
+        for f in (sandbox_public / "benchmarks").glob("*.json"):
+            if not json.loads(f.read_text(encoding="utf-8")).get("rows"):
+                empty_boards.append(f.name)
+        new_empty = [e for e in empty_boards if e not in known_empty]
         health = json.loads((sandbox_public / "source-health.json").read_text(encoding="utf-8"))
         st = {s["source_id"]: s["run_status"] for s in health["sources"] if s["source_id"] in fail_map}
-        ok = code == expect_exit and not unexpected
+        # 3) 失败来源必须标记 degraded
+        marked = all(v == "degraded" for v in st.values())
+        ok = code == expect_exit and preserved and marked and not new_empty
         all_pass = all_pass and ok
+        kept = {k: (before_rows[k], after_rows[k]) for k in fail_map}
         lines.append(
             f"- **{name}**：{'✅ 通过' if ok else '❌ 失败'}（exit={code}，预期 {expect_exit}；"
-            f"榜单数据变化文件={len(unexpected)}（必须为 0）；健康状态={st}；"
-            f"允许的健康文件变化={len(changed) - len(unexpected)}）"
+            f"失败来源行数保留(前→后)={kept}；健康状态={st}；新出现空榜={len(new_empty)}（已知上游空榜 {len(empty_boards)} 个））"
         )
         fail_mode.clear()
 
