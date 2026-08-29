@@ -1,1 +1,1 @@
-{"capability_id":"robustness","name":"鲁棒性","short":"鲁棒性","status":"pending","description":null,"generated_at":"2026-08-29T18:44:15Z","benchmarks":[],"official":[],"composite":null}
+{"benchmarks":[],"capability_id":"robustness","composite":null,"description":null,"generated_at":"2026-08-29T18:44:15Z","name":"鲁棒性","official":[],"short":"鲁棒性","status":"pending"}

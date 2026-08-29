@@ -81,7 +81,7 @@ class BaseAdapter(ABC):
                  "fetched_at": max((r.fetched_at for r in ordered if r.fetched_at), default=None),
                  "count": len(ordered),
                  "records": [r.model_dump() for r in ordered]},
-                ensure_ascii=False, indent=1,
+                ensure_ascii=False, indent=1, sort_keys=True,
             ),
             encoding="utf-8",
         )

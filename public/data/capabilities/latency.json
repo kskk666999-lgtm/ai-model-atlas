@@ -1,1 +1,1 @@
-{"capability_id":"latency","name":"首字延迟","short":"延迟","status":"active","description":null,"generated_at":"2026-08-29T18:44:15Z","benchmarks":[],"official":[],"composite":null}
+{"benchmarks":[],"capability_id":"latency","composite":null,"description":null,"generated_at":"2026-08-29T18:44:15Z","name":"首字延迟","official":[],"short":"延迟","status":"active"}

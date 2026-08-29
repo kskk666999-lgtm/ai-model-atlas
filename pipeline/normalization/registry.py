@@ -82,7 +82,7 @@ class ModelNormalizer:
         import json
 
         UNMAPPED_FILE.write_text(
-            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+            json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8"
         )
         return items
 

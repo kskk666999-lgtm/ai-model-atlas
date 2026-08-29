@@ -1,1 +1,1 @@
-{"capability_id":"agentic_general","name":"Agent 自主执行","short":"Agent","status":"pending","description":null,"generated_at":"2026-08-29T18:44:15Z","benchmarks":[],"official":[],"composite":null}
+{"benchmarks":[],"capability_id":"agentic_general","composite":null,"description":null,"generated_at":"2026-08-29T18:44:15Z","name":"Agent 自主执行","official":[],"short":"Agent","status":"pending"}

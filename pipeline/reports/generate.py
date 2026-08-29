@@ -21,8 +21,12 @@ def _atomic_write(path: Path, text: str) -> None:
 
 
 def write_json(path: Path, payload) -> bool:
-    """写入 JSON；与现有内容一致时跳过。返回是否实际写入。"""
-    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    """写入 JSON；与现有内容一致时跳过。返回是否实际写入。
+
+    sort_keys=True：键序规范化。任何构造顺序差异（如 set 推导的跨进程
+    迭代顺序随机）都不再影响输出字节，这是幂等提交的关键保证之一。
+    """
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
     if path.exists() and path.read_text(encoding="utf-8") == text:
         return False
     _atomic_write(path, text)
