@@ -1,0 +1,2796 @@
+# 模型注册表 —— 唯一权威的模型档案。
+# 字段取不到真实值时必须写 null，禁止编造。
+# canonical_id 使用数据源中最常见的规范写法；变体（thinking/effort/日期/参数量）一律独立条目，禁止错误合并。
+# 需要人工映射的新名称会出现在 data/reports/unmapped-models.json。
+models:
+- canonical_id: gpt-4o-2024-11-20
+  display_name: GPT-4o (2024-11-20)
+  provider: OpenAI
+  family: gpt-4o
+  variant: null
+  aliases:
+  - gpt-4o-2024-11-20
+  - gpt-4o
+  - GPT-4o (0513
+  - detail-high)
+  release_date: '2024-11-20'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  context_window: 128000
+  official_model_page: https://openai.com/index/gpt-4o/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4o-mini
+  display_name: GPT-4o mini
+  provider: OpenAI
+  family: gpt-4o
+  variant: mini
+  aliases:
+  - gpt-4o-mini
+  - gpt-4o-mini-2024-07-18
+  release_date: '2024-07-18'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 128000
+  official_model_page: https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4.1
+  display_name: GPT-4.1
+  provider: OpenAI
+  family: gpt-4.1
+  variant: null
+  aliases:
+  - gpt-4.1
+  - gpt-4.1-2025-04-14
+  release_date: '2025-04-14'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 1047576
+  official_model_page: https://openai.com/index/gpt-4-1/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4.1-mini
+  display_name: GPT-4.1 mini
+  provider: OpenAI
+  family: gpt-4.1
+  variant: mini
+  aliases:
+  - gpt-4.1-mini
+  - gpt-4.1-mini-2025-04-14
+  release_date: '2025-04-14'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 1047576
+  official_model_page: https://openai.com/index/gpt-4-1/
+  deprecated: false
+  superseded_by: null
+- canonical_id: o3
+  display_name: o3
+  provider: OpenAI
+  family: o-series
+  variant: null
+  aliases:
+  - o3
+  - o3-2025-04-16
+  release_date: '2025-04-16'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://openai.com/index/introducing-o3-and-o4-mini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: o3-mini
+  display_name: o3-mini
+  provider: OpenAI
+  family: o-series
+  variant: mini
+  aliases:
+  - o3-mini
+  - o3-mini-2025-01-31
+  release_date: '2025-01-31'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: 200000
+  official_model_page: https://openai.com/index/o3-mini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: o4-mini
+  display_name: o4-mini
+  provider: OpenAI
+  family: o-series
+  variant: mini
+  aliases:
+  - o4-mini
+  - o4-mini-2025-04-16
+  release_date: '2025-04-16'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://openai.com/index/introducing-o3-and-o4-mini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5
+  display_name: GPT-5
+  provider: OpenAI
+  family: gpt-5
+  variant: null
+  aliases:
+  - gpt-5
+  - gpt-5-2025-08-07
+  - gpt-5.1
+  - gpt-5.2
+  release_date: '2025-08-07'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 400000
+  official_model_page: https://openai.com/index/introducing-gpt-5/
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-3-5-sonnet-20241022
+  display_name: Claude 3.5 Sonnet (Oct)
+  provider: Anthropic
+  family: claude-3.5
+  variant: sonnet
+  aliases:
+  - claude-3-5-sonnet-20241022
+  - claude-3-5-sonnet-latest
+  - Claude3-5V_Sonnet_20241022
+  release_date: '2024-10-22'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://www.anthropic.com/claude/sonnet
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-3-7-sonnet-20250219
+  display_name: Claude 3.7 Sonnet
+  provider: Anthropic
+  family: claude-3.7
+  variant: sonnet
+  aliases:
+  - claude-3-7-sonnet-20250219
+  - claude-3-7-sonnet-latest
+  - claude-3-7-sonnet
+  - Claude3-7V_Sonnet
+  - claude-3-7-sonnet-thinking
+  release_date: '2025-02-24'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://www.anthropic.com/claude/sonnet
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-20250514
+  display_name: Claude Opus 4
+  provider: Anthropic
+  family: claude-4
+  variant: opus
+  aliases:
+  - claude-opus-4-20250514
+  - claude-opus-4
+  - claude-4-opus-20250514
+  - Claude-Opus-4
+  release_date: '2025-05-22'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://www.anthropic.com/claude/opus
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-sonnet-4-20250514
+  display_name: Claude Sonnet 4
+  provider: Anthropic
+  family: claude-4
+  variant: sonnet
+  aliases:
+  - claude-sonnet-4-20250514
+  - claude-sonnet-4
+  - Claude-Sonnet-4
+  - Claude3-7V_Sonnet-think
+  release_date: '2025-05-22'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://www.anthropic.com/claude/sonnet
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-1-20250805
+  display_name: Claude Opus 4.1
+  provider: Anthropic
+  family: claude-4
+  variant: opus
+  aliases:
+  - claude-opus-4-1-20250805
+  - claude-opus-4-1
+  - claude-4-1-opus-20250805
+  - claude-4-6-opus
+  release_date: '2025-08-05'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 200000
+  official_model_page: https://www.anthropic.com/claude/opus
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-1.5-pro
+  display_name: Gemini 1.5 Pro
+  provider: Google
+  family: gemini-1.5
+  variant: pro
+  aliases:
+  - gemini-1.5-pro
+  - Gemini-1.5-Pro
+  release_date: '2024-05-15'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  - video
+  context_window: 2000000
+  official_model_page: https://deepmind.google/technologies/gemini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-2.0-flash
+  display_name: Gemini 2.0 Flash
+  provider: Google
+  family: gemini-2.0
+  variant: flash
+  aliases:
+  - gemini-2.0-flash
+  - Gemini-2.0-Flash
+  release_date: '2025-02-05'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  - video
+  context_window: 1048576
+  official_model_page: https://deepmind.google/technologies/gemini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-2.5-pro
+  display_name: Gemini 2.5 Pro
+  provider: Google
+  family: gemini-2.5
+  variant: pro
+  aliases:
+  - gemini-2.5-pro
+  - Gemini-2.5-Pro
+  - gemini-2.5-pro-06-17
+  - Gemini-2.5-Pro-06-17
+  release_date: '2025-03-25'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  - video
+  context_window: 1048576
+  official_model_page: https://deepmind.google/technologies/gemini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-2.5-flash
+  display_name: Gemini 2.5 Flash
+  provider: Google
+  family: gemini-2.5
+  variant: flash
+  aliases:
+  - gemini-2.5-flash
+  - Gemini-2.5-Flash
+  release_date: '2025-04-17'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  - video
+  context_window: 1048576
+  official_model_page: https://deepmind.google/technologies/gemini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-2.5-flash-lite
+  display_name: Gemini 2.5 Flash-Lite
+  provider: Google
+  family: gemini-2.5
+  variant: flash-lite
+  aliases:
+  - gemini-2.5-flash-lite
+  - Gemini-2.5-Flash-Lite
+  release_date: '2025-06-17'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - audio
+  - video
+  context_window: 1048576
+  official_model_page: https://deepmind.google/technologies/gemini/
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v3
+  display_name: DeepSeek-V3
+  provider: DeepSeek
+  family: deepseek-v3
+  variant: null
+  aliases:
+  - deepseek-v3
+  - deepseek-chat
+  - DeepSeek-V3
+  - deepseek_v3
+  release_date: '2024-12-26'
+  status: active
+  region: cn
+  open_weights: true
+  license: deepseek-license (open weights)
+  modalities:
+  - text
+  context_window: 64000
+  official_model_page: https://api-docs.deepseek.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-r1
+  display_name: DeepSeek-R1
+  provider: DeepSeek
+  family: deepseek-r1
+  variant: null
+  aliases:
+  - deepseek-r1
+  - deepseek-reasoner
+  - DeepSeek-R1
+  release_date: '2025-01-20'
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT (open weights)
+  modalities:
+  - text
+  context_window: 128000
+  official_model_page: https://api-docs.deepseek.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v3.1
+  display_name: DeepSeek-V3.1
+  provider: DeepSeek
+  family: deepseek-v3
+  variant: '3.1'
+  aliases:
+  - deepseek-v3.1
+  - DeepSeek-V3.1
+  release_date: '2025-08-19'
+  status: active
+  region: cn
+  open_weights: true
+  license: deepseek-license (open weights)
+  modalities:
+  - text
+  context_window: 128000
+  official_model_page: https://api-docs.deepseek.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen2.5-72b-instruct
+  display_name: Qwen2.5-72B-Instruct
+  provider: Alibaba
+  family: qwen2.5
+  variant: 72b
+  aliases:
+  - qwen2.5-72b-instruct
+  - Qwen2.5-72B-Instruct
+  - qwen-2.5-72b-instruct
+  release_date: '2024-09-19'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0 / qwen-license
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://huggingface.co/Qwen
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3-235b-a22b
+  display_name: Qwen3-235B-A22B
+  provider: Alibaba
+  family: qwen3
+  variant: 235b-a22b
+  aliases:
+  - qwen3-235b-a22b
+  - Qwen3-235B-A22B
+  release_date: '2025-04-28'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: 262144
+  official_model_page: https://huggingface.co/Qwen
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3-coder-480b-a35b-instruct
+  display_name: Qwen3-Coder-480B-A35B
+  provider: Alibaba
+  family: qwen3-coder
+  variant: 480b-a35b
+  aliases:
+  - qwen3-coder-480b-a35b-instruct
+  - Qwen3-Coder-480B-A35B-Instruct
+  release_date: '2025-07-22'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: 262144
+  official_model_page: https://huggingface.co/Qwen
+  deprecated: false
+  superseded_by: null
+- canonical_id: qvq-72b-preview
+  display_name: QVQ-72B-Preview
+  provider: Alibaba
+  family: qvq
+  variant: 72b-preview
+  aliases:
+  - qvq-72b-preview
+  - QVQ-72B-Preview
+  release_date: '2024-12-25'
+  status: active
+  region: cn
+  open_weights: true
+  license: qwen-license
+  modalities:
+  - text
+  - image
+  context_window: 32768
+  official_model_page: https://huggingface.co/Qwen
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen2.5-vl-7b-instruct
+  display_name: Qwen2.5-VL-7B
+  provider: Alibaba
+  family: qwen2.5-vl
+  variant: 7b
+  aliases:
+  - qwen2.5-vl-7b-instruct
+  - Qwen2.5-VL-7B-Instruct
+  release_date: '2025-01-28'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  - image
+  - video
+  context_window: 128000
+  official_model_page: https://huggingface.co/Qwen
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-4-plus
+  display_name: GLM-4-Plus
+  provider: Zhipu AI
+  family: glm-4
+  variant: plus
+  aliases:
+  - glm-4-plus
+  - GLM-4-Plus
+  release_date: '2024-08-29'
+  status: active
+  region: cn
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: 128000
+  official_model_page: https://open.bigmodel.cn/
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-4.5
+  display_name: GLM-4.5
+  provider: Zhipu AI
+  family: glm-4.5
+  variant: null
+  aliases:
+  - glm-4.5
+  - GLM-4.5
+  - GLM-4.5-Air
+  - glm-4.5-air
+  - GLM-4.5V
+  - glm-4.5v
+  - GLM-4.5-Plus
+  release_date: '2025-07-28'
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT (open weights)
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://open.bigmodel.cn/
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2
+  display_name: Kimi K2
+  provider: Moonshot AI
+  family: kimi-k2
+  variant: null
+  aliases:
+  - kimi-k2
+  - Kimi-K2
+  - Kimi-K2-Instruct
+  - kimi-k2-instruct
+  release_date: '2025-07-11'
+  status: active
+  region: cn
+  open_weights: true
+  license: modified-MIT (open weights)
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://huggingface.co/moonshotai
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-3
+  display_name: Grok 3
+  provider: xAI
+  family: grok-3
+  variant: null
+  aliases:
+  - grok-3
+  - Grok-3
+  - grok-3-beta
+  release_date: '2025-02-17'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://x.ai/grok
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-4
+  display_name: Grok 4
+  provider: xAI
+  family: grok-4
+  variant: null
+  aliases:
+  - grok-4
+  - Grok-4
+  - grok-4-0709
+  release_date: '2025-07-09'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  context_window: 256000
+  official_model_page: https://x.ai/grok
+  deprecated: false
+  superseded_by: null
+- canonical_id: llama-4-maverick-17b-128e-instruct
+  display_name: Llama 4 Maverick
+  provider: Meta
+  family: llama-4
+  variant: maverick
+  aliases:
+  - llama-4-maverick
+  - Llama-4-Maverick-17B-Instruct
+  - Llama-4-Maverick-17B-128E-Instruct
+  - meta-llama/Llama-4-Maverick-17B-128E-Instruct
+  release_date: '2025-04-05'
+  status: active
+  region: us
+  open_weights: true
+  license: llama-community-license
+  modalities:
+  - text
+  - image
+  context_window: 1048576
+  official_model_page: https://www.llama.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: llama-4-scout-17b-16e-instruct
+  display_name: Llama 4 Scout
+  provider: Meta
+  family: llama-4
+  variant: scout
+  aliases:
+  - llama-4-scout
+  - Llama-4-Scout-17B-Instruct
+  - Llama-4-Scout-17B-16E-Instruct
+  - meta-llama/Llama-4-Scout-17B-16E-Instruct
+  release_date: '2025-04-05'
+  status: active
+  region: us
+  open_weights: true
+  license: llama-community-license
+  modalities:
+  - text
+  - image
+  context_window: 1048576
+  official_model_page: https://www.llama.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: llama-3.3-70b-instruct
+  display_name: Llama 3.3 70B
+  provider: Meta
+  family: llama-3.3
+  variant: 70b
+  aliases:
+  - llama-3.3-70b-instruct
+  - Llama-3.3-70B-Instruct
+  - meta-llama/Llama-3.3-70B-Instruct
+  release_date: '2024-12-06'
+  status: active
+  region: us
+  open_weights: true
+  license: llama-community-license
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://www.llama.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: mistral-large-2411
+  display_name: Mistral Large 2
+  provider: Mistral AI
+  family: mistral-large
+  variant: '2411'
+  aliases:
+  - mistral-large-2411
+  - mistral-large-latest
+  - Mistral-Large-Instruct-2407
+  release_date: '2024-11-18'
+  status: active
+  region: us
+  open_weights: true
+  license: mistral-research-license (open weights)
+  modalities:
+  - text
+  context_window: 131072
+  official_model_page: https://mistral.ai/technology/#models
+  deprecated: false
+  superseded_by: null
+- canonical_id: codestral-2501
+  display_name: Codestral 25.01
+  provider: Mistral AI
+  family: codestral
+  variant: '2501'
+  aliases:
+  - codestral-2501
+  - codestral-latest
+  release_date: '2025-01-13'
+  status: active
+  region: us
+  open_weights: false
+  license: mistral-commercial-license
+  modalities:
+  - text
+  context_window: 262144
+  official_model_page: https://mistral.ai/technology/#models
+  deprecated: false
+  superseded_by: null
+- canonical_id: nova-pro-v1
+  display_name: Amazon Nova Pro
+  provider: Amazon
+  family: nova
+  variant: pro
+  aliases:
+  - nova-pro-v1
+  - amazon-nova-pro-v1:0
+  release_date: '2024-12-03'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  - image
+  - video
+  context_window: 300000
+  official_model_page: https://aws.amazon.com/cn/ai/generative-ai/nova/
+  deprecated: false
+  superseded_by: null
+- canonical_id: command-a-03-2025
+  display_name: Command A
+  provider: Cohere
+  family: command-a
+  variant: null
+  aliases:
+  - command-a-03-2025
+  - Command-A
+  release_date: '2025-03-13'
+  status: active
+  region: us
+  open_weights: true
+  license: cc-by-nc (open weights)
+  modalities:
+  - text
+  context_window: 256000
+  official_model_page: https://cohere.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: internvl3-78b
+  display_name: InternVL3-78B
+  provider: Shanghai AI Lab
+  family: internvl
+  variant: 78b
+  aliases:
+  - InternVL3-78B
+  release_date: '2025-04-11'
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT (open weights)
+  modalities:
+  - text
+  - image
+  - video
+  context_window: 32768
+  official_model_page: https://huggingface.co/OpenGVLab
+  deprecated: false
+  superseded_by: null
+- canonical_id: step-2-16k
+  display_name: Step-2 16K
+  provider: StepFun
+  family: step-2
+  variant: 16k
+  aliases:
+  - step-2-16k
+  - Step-2-16K
+  - step-2-mini
+  - Step-2-mini
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: null
+  official_model_page: https://www.stepfun.com/
+  deprecated: false
+  superseded_by: null
+- canonical_id: doubao-1.5-pro
+  display_name: Doubao-1.5-pro
+  provider: ByteDance
+  family: doubao
+  variant: 1.5-pro
+  aliases:
+  - doubao-1.5-pro
+  - Doubao-1.5-pro
+  - doubao-1-5-pro-32k
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: null
+  official_model_page: https://www.volcengine.com/product/doubao
+  deprecated: false
+  superseded_by: null
+- canonical_id: bge-m3
+  display_name: BGE-M3
+  provider: BAAI
+  family: bge
+  variant: m3
+  aliases:
+  - BAAI__bge-m3
+  - bge-m3
+  - BAAI/bge-m3
+  release_date: '2024-01-30'
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: 8192
+  official_model_page: https://huggingface.co/BAAI/bge-m3
+  deprecated: false
+  superseded_by: null
+- canonical_id: multilingual-e5-large-instruct
+  display_name: multilingual-e5-large-instruct
+  provider: intfloat
+  family: e5
+  variant: multilingual-large-instruct
+  aliases:
+  - intfloat__multilingual-e5-large-instruct
+  - multilingual-e5-large-instruct
+  - intfloat/multilingual-e5-large-instruct
+  release_date: '2024-03-11'
+  status: active
+  region: us
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: 512
+  official_model_page: https://huggingface.co/intfloat/multilingual-e5-large-instruct
+  deprecated: false
+  superseded_by: null
+- canonical_id: gte-qwen2-7b-instruct
+  display_name: gte-Qwen2-7B-instruct
+  provider: Alibaba-NLP
+  family: gte
+  variant: qwen2-7b
+  aliases:
+  - Alibaba-NLP__gte-Qwen2-7B-instruct
+  - gte-Qwen2-7B-instruct
+  - Alibaba-NLP/gte-Qwen2-7B-instruct
+  release_date: '2024-06-15'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: 32768
+  official_model_page: https://huggingface.co/Alibaba-NLP/gte-Qwen2-7B-instruct
+  deprecated: false
+  superseded_by: null
+- canonical_id: text-embedding-3-large
+  display_name: text-embedding-3-large
+  provider: OpenAI
+  family: text-embedding-3
+  variant: large
+  aliases:
+  - openai__text-embedding-3-large
+  - text-embedding-3-large
+  - openai/text-embedding-3-large
+  release_date: '2024-01-25'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: 8191
+  official_model_page: https://platform.openai.com/docs/guides/embeddings
+  deprecated: false
+  superseded_by: null
+- canonical_id: voyage-3-large
+  display_name: voyage-3-large
+  provider: Voyage AI
+  family: voyage-3
+  variant: large
+  aliases:
+  - voyageai__voyage-3-large
+  - voyage-3-large
+  - voyageai/voyage-3-large
+  release_date: '2025-01-08'
+  status: active
+  region: us
+  open_weights: false
+  license: proprietary
+  modalities:
+  - text
+  context_window: 32000
+  official_model_page: https://docs.voyageai.com/docs/introduction-to-embeddings
+  deprecated: false
+  superseded_by: null
+- canonical_id: jina-embeddings-v3
+  display_name: jina-embeddings-v3
+  provider: Jina AI
+  family: jina-embeddings
+  variant: v3
+  aliases:
+  - jinaai__jina-embeddings-v3
+  - jina-embeddings-v3
+  - jinaai/jina-embeddings-v3
+  release_date: '2024-09-19'
+  status: active
+  region: us
+  open_weights: true
+  license: cc-by-nc-4.0 (open weights)
+  modalities:
+  - text
+  context_window: 8192
+  official_model_page: https://huggingface.co/jinaai/jina-embeddings-v3
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3-embedding-8b
+  display_name: Qwen3-Embedding-8B
+  provider: Alibaba
+  family: qwen3-embedding
+  variant: 8b
+  aliases:
+  - Qwen__Qwen3-Embedding-8B
+  - Qwen3-Embedding-8B
+  - Qwen/Qwen3-Embedding-8B
+  release_date: '2025-06-05'
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: 32768
+  official_model_page: https://huggingface.co/Qwen/Qwen3-Embedding-8B
+  deprecated: false
+  superseded_by: null
+- canonical_id: nomic-embed-text-v1.5
+  display_name: nomic-embed-text-v1.5
+  provider: Nomic AI
+  family: nomic-embed
+  variant: v1.5
+  aliases:
+  - nomic-ai__nomic-embed-text-v1.5
+  - nomic-embed-text-v1.5
+  - nomic-ai/nomic-embed-text-v1.5
+  release_date: '2024-02-10'
+  status: active
+  region: us
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: 8192
+  official_model_page: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-5-20251101-thinking-64k-high-effort
+  display_name: claude-opus-4-5-20251101-thinking-64k-high-effort
+  provider: Anthropic
+  family: claude-opus-4-5-20251101-thinking-64k-high-effort
+  variant: null
+  aliases:
+  - claude-opus-4-5-20251101-thinking-64k-high-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-6-thinking-auto-high-effort
+  display_name: claude-opus-4-6-thinking-auto-high-effort
+  provider: Anthropic
+  family: claude-opus-4-6-thinking-auto-high-effort
+  variant: null
+  aliases:
+  - claude-opus-4-6-thinking-auto-high-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-7-xhigh-effort
+  display_name: claude-opus-4-7-xhigh-effort
+  provider: Anthropic
+  family: claude-opus-4-7-xhigh-effort
+  variant: null
+  aliases:
+  - claude-opus-4-7-xhigh-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-sonnet-4-6-thinking-auto-medium-effort
+  display_name: claude-sonnet-4-6-thinking-auto-medium-effort
+  provider: Anthropic
+  family: claude-sonnet-4-6-thinking-auto-medium-effort
+  variant: null
+  aliases:
+  - claude-sonnet-4-6-thinking-auto-medium-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-sonnet-5-xhigh-effort
+  display_name: claude-sonnet-5-xhigh-effort
+  provider: Anthropic
+  family: claude-sonnet-5-xhigh-effort
+  variant: null
+  aliases:
+  - claude-sonnet-5-xhigh-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v4-flash
+  display_name: deepseek-v4-flash
+  provider: DeepSeek
+  family: deepseek-v4-flash
+  variant: null
+  aliases:
+  - deepseek-v4-flash
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v4-pro
+  display_name: deepseek-v4-pro
+  provider: DeepSeek
+  family: deepseek-v4-pro
+  variant: null
+  aliases:
+  - deepseek-v4-pro
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.1-pro-preview-high
+  display_name: gemini-3.1-pro-preview-high
+  provider: Google
+  family: gemini-3.1-pro-preview-high
+  variant: null
+  aliases:
+  - gemini-3.1-pro-preview-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.5-flash-high
+  display_name: gemini-3.5-flash-high
+  provider: Google
+  family: gemini-3.5-flash-high
+  variant: null
+  aliases:
+  - gemini-3.5-flash-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5.2
+  display_name: glm-5.2
+  provider: Zhipu AI
+  family: glm-5.2
+  variant: null
+  aliases:
+  - glm-5.2
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.2-2025-12-11-high
+  display_name: gpt-5.2-2025-12-11-high
+  provider: OpenAI
+  family: gpt-5.2-2025-12-11-high
+  variant: null
+  aliases:
+  - gpt-5.2-2025-12-11-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.2-codex
+  display_name: gpt-5.2-codex
+  provider: OpenAI
+  family: gpt-5.2-codex
+  variant: null
+  aliases:
+  - gpt-5.2-codex
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.4-mini-xhigh
+  display_name: gpt-5.4-mini-xhigh
+  provider: OpenAI
+  family: gpt-5.4-mini-xhigh
+  variant: null
+  aliases:
+  - gpt-5.4-mini-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.4-nano-xhigh
+  display_name: gpt-5.4-nano-xhigh
+  provider: OpenAI
+  family: gpt-5.4-nano-xhigh
+  variant: null
+  aliases:
+  - gpt-5.4-nano-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.4-xhigh
+  display_name: gpt-5.4-xhigh
+  provider: OpenAI
+  family: gpt-5.4-xhigh
+  variant: null
+  aliases:
+  - gpt-5.4-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.5-xhigh
+  display_name: gpt-5.5-xhigh
+  provider: OpenAI
+  family: gpt-5.5-xhigh
+  variant: null
+  aliases:
+  - gpt-5.5-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-4.3
+  display_name: grok-4.3
+  provider: xAI
+  family: grok-4.3
+  variant: null
+  aliases:
+  - grok-4.3
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-4.5
+  display_name: grok-4.5
+  provider: xAI
+  family: grok-4.5
+  variant: null
+  aliases:
+  - grok-4.5
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-build-0.1
+  display_name: grok-build-0.1
+  provider: xAI
+  family: grok-build-0.1
+  variant: null
+  aliases:
+  - grok-build-0.1
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2.6-thinking
+  display_name: kimi-k2.6-thinking
+  provider: Moonshot AI
+  family: kimi-k2.6-thinking
+  variant: null
+  aliases:
+  - kimi-k2.6-thinking
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2.7-code
+  display_name: kimi-k2.7-code
+  provider: Moonshot AI
+  family: kimi-k2.7-code
+  variant: null
+  aliases:
+  - kimi-k2.7-code
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: minimax-m3
+  display_name: minimax-m3
+  provider: MiniMax
+  family: minimax-m3
+  variant: null
+  aliases:
+  - minimax-m3
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.6-27b
+  display_name: qwen3.6-27b
+  provider: Alibaba
+  family: qwen3.6-27b
+  variant: null
+  aliases:
+  - qwen3.6-27b
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.6-plus
+  display_name: qwen3.6-plus
+  provider: Alibaba
+  family: qwen3.6-plus
+  variant: null
+  aliases:
+  - qwen3.6-plus
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.7-max
+  display_name: qwen3.7-max
+  provider: Alibaba
+  family: qwen3.7-max
+  variant: null
+  aliases:
+  - qwen3.7-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.6-sol-max
+  display_name: gpt-5.6-sol-max
+  provider: OpenAI
+  family: gpt-5.6-sol-max
+  variant: null
+  aliases:
+  - gpt-5.6-sol-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.6-terra-max
+  display_name: gpt-5.6-terra-max
+  provider: OpenAI
+  family: gpt-5.6-terra-max
+  variant: null
+  aliases:
+  - gpt-5.6-terra-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.6-luna-max
+  display_name: gpt-5.6-luna-max
+  provider: OpenAI
+  family: gpt-5.6-luna-max
+  variant: null
+  aliases:
+  - gpt-5.6-luna-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-fable-5-max-effort
+  display_name: claude-fable-5-max-effort
+  provider: Anthropic
+  family: claude-fable-5-max-effort
+  variant: null
+  aliases:
+  - claude-fable-5-max-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: muse-spark-1.1-xhigh
+  display_name: muse-spark-1.1-xhigh
+  provider: null
+  family: muse-spark-1.1-xhigh
+  variant: null
+  aliases:
+  - muse-spark-1.1-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k3
+  display_name: kimi-k3
+  provider: Moonshot AI
+  family: kimi-k3
+  variant: null
+  aliases:
+  - kimi-k3
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: inkling-xhigh
+  display_name: inkling-xhigh
+  provider: null
+  family: inkling-xhigh
+  variant: null
+  aliases:
+  - inkling-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.5-flash-lite-high
+  display_name: gemini-3.5-flash-lite-high
+  provider: Google
+  family: gemini-3.5-flash-lite-high
+  variant: null
+  aliases:
+  - gemini-3.5-flash-lite-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.6-flash-high
+  display_name: gemini-3.6-flash-high
+  provider: Google
+  family: gemini-3.6-flash-high
+  variant: null
+  aliases:
+  - gemini-3.6-flash-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-5-max-effort
+  display_name: claude-opus-5-max-effort
+  provider: Anthropic
+  family: claude-opus-5-max-effort
+  variant: null
+  aliases:
+  - claude-opus-5-max-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-8-max-effort
+  display_name: claude-opus-4-8-max-effort
+  provider: Anthropic
+  family: claude-opus-4-8-max-effort
+  variant: null
+  aliases:
+  - claude-opus-4-8-max-effort
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v4-flash-0731
+  display_name: deepseek-v4-flash-0731
+  provider: DeepSeek
+  family: deepseek-v4-flash-0731
+  variant: null
+  aliases:
+  - deepseek-v4-flash-0731
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.8-max
+  display_name: qwen3.8-max
+  provider: Alibaba
+  family: qwen3.8-max
+  variant: null
+  aliases:
+  - qwen3.8-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: muse-spark-1.2-xhigh
+  display_name: muse-spark-1.2-xhigh
+  provider: null
+  family: muse-spark-1.2-xhigh
+  variant: null
+  aliases:
+  - muse-spark-1.2-xhigh
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: smaug-agentic
+  display_name: smaug-agentic
+  provider: null
+  family: smaug-agentic
+  variant: null
+  aliases:
+  - smaug-agentic
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v4-pro-0813
+  display_name: deepseek-v4-pro-0813
+  provider: DeepSeek
+  family: deepseek-v4-pro-0813
+  variant: null
+  aliases:
+  - deepseek-v4-pro-0813
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: grok-4.6
+  display_name: grok-4.6
+  provider: xAI
+  family: grok-4.6
+  variant: null
+  aliases:
+  - grok-4.6
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.7-flash-high
+  display_name: gemini-3.7-flash-high
+  provider: Google
+  family: gemini-3.7-flash-high
+  variant: null
+  aliases:
+  - gemini-3.7-flash-high
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.8-27b
+  display_name: qwen3.8-27b
+  provider: Alibaba
+  family: qwen3.8-27b
+  variant: null
+  aliases:
+  - qwen3.8-27b
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: ox-alpha-max
+  display_name: ox-alpha-max
+  provider: null
+  family: ox-alpha-max
+  variant: null
+  aliases:
+  - ox-alpha-max
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v4-flash-vision-exp
+  display_name: deepseek-v4-flash-vision-exp
+  provider: DeepSeek
+  family: deepseek-v4-flash-vision-exp
+  variant: null
+  aliases:
+  - deepseek-v4-flash-vision-exp
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5.3
+  display_name: glm-5.3
+  provider: Zhipu AI
+  family: glm-5.3
+  variant: null
+  aliases:
+  - glm-5.3
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5.3-flash
+  display_name: glm-5.3-flash
+  provider: Zhipu AI
+  family: glm-5.3-flash
+  variant: null
+  aliases:
+  - glm-5.3-flash
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.8-flash-next
+  display_name: qwen3.8-flash-next
+  provider: Alibaba
+  family: qwen3.8-flash-next
+  variant: null
+  aliases:
+  - qwen3.8-flash-next
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-haiku-4-5-20251001
+  display_name: claude-haiku-4-5-20251001
+  provider: Anthropic
+  family: claude-haiku-4-5-20251001
+  variant: null
+  aliases:
+  - claude-haiku-4-5-20251001
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-sonnet-4-5-20250929
+  display_name: claude-sonnet-4-5-20250929
+  provider: Anthropic
+  family: claude-sonnet-4-5-20250929
+  variant: null
+  aliases:
+  - claude-sonnet-4-5-20250929
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-opus-4-5-20251101
+  display_name: claude-opus-4-5-20251101
+  provider: Anthropic
+  family: claude-opus-4-5-20251101
+  variant: null
+  aliases:
+  - claude-opus-4-5-20251101
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.2-2025-12-11
+  display_name: gpt-5.2-2025-12-11
+  provider: OpenAI
+  family: gpt-5.2-2025-12-11
+  variant: null
+  aliases:
+  - gpt-5.2-2025-12-11
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5-mini-2025-08-07
+  display_name: gpt-5-mini-2025-08-07
+  provider: OpenAI
+  family: gpt-5-mini-2025-08-07
+  variant: null
+  aliases:
+  - gpt-5-mini-2025-08-07
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-oss-120b
+  display_name: gpt-oss-120b
+  provider: OpenAI
+  family: gpt-oss-120b
+  variant: null
+  aliases:
+  - gpt-oss-120b
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-oss-20b
+  display_name: gpt-oss-20b
+  provider: OpenAI
+  family: gpt-oss-20b
+  variant: null
+  aliases:
+  - gpt-oss-20b
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3-pro-preview
+  display_name: gemini-3-pro-preview
+  provider: Google
+  family: gemini-3-pro-preview
+  variant: null
+  aliases:
+  - gemini-3-pro-preview
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2-thinking
+  display_name: kimi-k2-thinking
+  provider: Moonshot AI
+  family: kimi-k2-thinking
+  variant: null
+  aliases:
+  - kimi-k2-thinking
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3-coder-next-80b-a3b-instruct
+  display_name: qwen3-coder-next-80b-a3b-instruct
+  provider: Alibaba
+  family: qwen3-coder-next-80b-a3b-instruct
+  variant: null
+  aliases:
+  - qwen3-coder-next-80b-a3b-instruct
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: droid
+  display_name: droid
+  provider: null
+  family: droid
+  variant: null
+  aliases:
+  - droid
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: granite-4-0-small-hbr
+  display_name: granite-4-0-small-hbr
+  provider: null
+  family: granite-4-0-small-hbr
+  variant: null
+  aliases:
+  - granite-4-0-small-hbr
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: devstral-small-2507
+  display_name: devstral-small-2507
+  provider: null
+  family: devstral-small-2507
+  variant: null
+  aliases:
+  - devstral-small-2507
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: riff-1.5-coder
+  display_name: riff-1.5-coder
+  provider: null
+  family: riff-1.5-coder
+  variant: null
+  aliases:
+  - riff-1.5-coder
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: internvl2.5-78b
+  display_name: InternVL2.5-78B
+  provider: Shanghai AI Lab
+  family: internvl
+  variant: null
+  aliases:
+  - InternVL2.5-78B
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: internvl2-76b
+  display_name: InternVL2-76B
+  provider: Shanghai AI Lab
+  family: internvl
+  variant: null
+  aliases:
+  - InternVL2-76B
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: internvl3-38b
+  display_name: InternVL3-38B
+  provider: Shanghai AI Lab
+  family: internvl
+  variant: null
+  aliases:
+  - InternVL3-38B
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: internvl3-9b
+  display_name: InternVL3-9B
+  provider: Shanghai AI Lab
+  family: internvl
+  variant: null
+  aliases:
+  - InternVL3-9B
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen2.5-vl-72b
+  display_name: Qwen2.5-VL-72B
+  provider: Alibaba
+  family: qwen2.5-vl
+  variant: 72b
+  aliases:
+  - Qwen2.5-VL-72B
+  - Qwen2.5-VL-72B-Instruct
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  - image
+  - video
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3-235b-a22b-instruct-2507
+  display_name: Qwen3-235B-A22B-Instruct-2507
+  provider: Alibaba
+  family: qwen3
+  variant: null
+  aliases:
+  - Qwen3-235B-A22B-Instruct-2507
+  - qwen3-235b-a22b-instruct-2507
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-r1-0528
+  display_name: DeepSeek-R1-0528
+  provider: DeepSeek
+  family: deepseek-r1
+  variant: null
+  aliases:
+  - DeepSeek-R1-0528
+  - deepseek-r1-0528
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: MIT
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v3-0324
+  display_name: DeepSeek-V3-0324
+  provider: DeepSeek
+  family: deepseek-v3
+  variant: null
+  aliases:
+  - DeepSeek-V3-0324
+  - deepseek-v3-0324
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: deepseek-license
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2-0905
+  display_name: Kimi-K2-0905
+  provider: Moonshot AI
+  family: kimi-k2
+  variant: null
+  aliases:
+  - Kimi-K2-0905
+  - kimi-k2-0905
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4o-2024-05-13
+  display_name: GPT-4o (2024-05-13)
+  provider: OpenAI
+  family: gpt-4o
+  variant: null
+  aliases:
+  - gpt-4o-2024-05-13
+  - GPT-4o (0513, detail-high)
+  - GPT-4o (0513, detail-low)
+  release_date: '2024-05-13'
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: 128000
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4o-2024-08-06
+  display_name: GPT-4o (2024-08-06)
+  provider: OpenAI
+  family: gpt-4o
+  variant: null
+  aliases:
+  - gpt-4o-2024-08-06
+  - GPT-4o (0806, detail-high)
+  - GPT-4o (0806, detail-low)
+  release_date: '2024-08-06'
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: 128000
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4v-0409
+  display_name: GPT-4V (2024-04-09)
+  provider: OpenAI
+  family: gpt-4v
+  variant: null
+  aliases:
+  - GPT-4v (0409, detail-low)
+  - GPT-4v (0409, detail-high)
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-4v-1106
+  display_name: GPT-4V (2023-11)
+  provider: OpenAI
+  family: gpt-4v
+  variant: null
+  aliases:
+  - GPT-4v (1106, detail-high)
+  - GPT-4v (1106, detail-low)
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5-nano-2025-08-07
+  display_name: GPT-5 nano
+  provider: OpenAI
+  family: gpt-5
+  variant: null
+  aliases:
+  - gpt-5-nano-2025-08-07
+  - GPT 5 nano
+  release_date: '2025-08-07'
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3-flash-preview
+  display_name: Gemini 3 Flash (Preview)
+  provider: Google
+  family: gemini-3
+  variant: null
+  aliases:
+  - gemini-3-flash-preview
+  - gemini-3-flash
+  - Gemini 3 Flash
+  - Gemini-3-Flash
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v3.2
+  display_name: DeepSeek-V3.2
+  provider: DeepSeek
+  family: deepseek-v3
+  variant: null
+  aliases:
+  - deepseek-v3.2
+  - DeepSeek V3.2
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-v3.2-reasoner
+  display_name: DeepSeek-V3.2 (Reasoner)
+  provider: DeepSeek
+  family: deepseek-v3
+  variant: null
+  aliases:
+  - deepseek-v3.2-reasoner
+  - DeepSeek V3.2 Reasoner
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-4.6
+  display_name: GLM-4.6
+  provider: Zhipu AI
+  family: glm-4.6
+  variant: null
+  aliases:
+  - glm-4.6
+  - GLM 4.6
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5
+  display_name: GLM-5
+  provider: Zhipu AI
+  family: glm-5
+  variant: null
+  aliases:
+  - glm-5
+  - GLM 5
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2.5
+  display_name: Kimi K2.5
+  provider: Moonshot AI
+  family: kimi-k2
+  variant: null
+  aliases:
+  - kimi-k2.5
+  - Kimi K2.5
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: minimax-m2
+  display_name: MiniMax-M2
+  provider: MiniMax
+  family: minimax-m
+  variant: null
+  aliases:
+  - minimax-m2
+  - MiniMax M2
+  - MiniMax-M2
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: minimax-m2.5
+  display_name: MiniMax-M2.5
+  provider: MiniMax
+  family: minimax-m
+  variant: null
+  aliases:
+  - minimax-m2.5
+  - MiniMax M2.5
+  - MiniMax-M2.5
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: devstral-2512
+  display_name: Devstral (2512)
+  provider: Mistral AI
+  family: devstral
+  variant: null
+  aliases:
+  - devstral-2512
+  - Devstral (2512)
+  release_date: null
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: devstral-small-2512
+  display_name: Devstral Small (2512)
+  provider: Mistral AI
+  family: devstral
+  variant: null
+  aliases:
+  - devstral-small-2512
+  - Devstral Small (2512)
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen2.5-coder-32b-instruct
+  display_name: Qwen2.5-Coder-32B-Instruct
+  provider: Alibaba
+  family: qwen2.5-coder
+  variant: null
+  aliases:
+  - qwen2.5-coder-32b-instruct
+  - Qwen2.5-Coder-32B-Instruct
+  - Qwen2.5-Coder 32B Instruct
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: apache-2.0
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: molmo-72b
+  display_name: Molmo-72B
+  provider: Allen AI
+  family: molmo
+  variant: null
+  aliases:
+  - Molmo-72B
+  - molmo-72b
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: deepseek-vl2
+  display_name: DeepSeek-VL2
+  provider: DeepSeek
+  family: deepseek-vl
+  variant: null
+  aliases:
+  - DeepSeek-VL2
+  - deepseek-vl2
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: llava-onevision-72b
+  display_name: LLaVA-OneVision-72B
+  provider: LLaVA
+  family: llava-onevision
+  variant: null
+  aliases:
+  - LLaVA-OneVision-72B
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: step-1.5v
+  display_name: Step-1.5V
+  provider: StepFun
+  family: step
+  variant: null
+  aliases:
+  - Step-1.5V
+  - step-1.5v
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-4v-plus
+  display_name: GLM-4V-Plus
+  provider: Zhipu AI
+  family: glm-4v
+  variant: null
+  aliases:
+  - GLM-4v-Plus
+  - glm-4v-plus
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: ovis2-34b
+  display_name: Ovis2-34B
+  provider: Ovis
+  family: ovis
+  variant: null
+  aliases:
+  - Ovis2-34B
+  release_date: null
+  status: active
+  region: null
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen-vl-max-0809
+  display_name: Qwen-VL-Max (0809)
+  provider: Alibaba
+  family: qwen-vl
+  variant: null
+  aliases:
+  - Qwen-VL-Max-0809
+  - qwen-vl-max-0809
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: claude-3-5-haiku-20241022
+  display_name: Claude 3.5 Haiku
+  provider: Anthropic
+  family: claude-3.5
+  variant: haiku
+  aliases:
+  - claude-3-5-haiku-20241022
+  - claude-3-5-haiku-latest
+  - Claude 3.5 Haiku
+  release_date: '2024-11-04'
+  status: active
+  region: null
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: 200000
+  official_model_page: null
+  deprecated: false
+  superseded_by: null

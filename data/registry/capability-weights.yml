@@ -1,0 +1,165 @@
+# 能力定义与权重预设。
+# status: active = 有真实数据接入；pending = 暂无可信数据源，前台显示"数据接入中"。
+capabilities:
+  - capability_id: overall
+    name: 综合能力
+    short: 综合
+    status: active
+    description: 多基准加权综合指数（本站计算，非官方榜单）。
+  - capability_id: reasoning
+    name: 逻辑推理
+    short: 推理
+    status: active
+  - capability_id: math
+    name: 数学能力
+    short: 数学
+    status: active
+  - capability_id: coding
+    name: 编程能力
+    short: 编程
+    status: active
+  - capability_id: swe
+    name: 软件工程 / Issue 修复
+    short: 软件工程
+    status: active
+  - capability_id: data_analysis
+    name: 数据分析
+    short: 数据分析
+    status: active
+  - capability_id: instruction_following
+    name: 指令遵循
+    short: 指令遵循
+    status: active
+  - capability_id: language
+    name: 英文语言能力
+    short: 语言
+    status: active
+  - capability_id: creative_writing
+    name: 创意写作
+    short: 创意写作
+    status: active
+  - capability_id: multimodal
+    name: 多模态视觉理解
+    short: 多模态
+    status: active
+  - capability_id: chart
+    name: 图表与视觉数学理解
+    short: 图表理解
+    status: active
+  - capability_id: ocr
+    name: OCR 与文档识别
+    short: OCR
+    status: active
+  - capability_id: chinese
+    name: 中文能力（多模态中文基准）
+    short: 中文
+    status: active
+  - capability_id: retrieval
+    name: 信息检索（Embedding）
+    short: 检索
+    status: active
+  - capability_id: sts
+    name: 语义相似度（Embedding）
+    short: 语义相似度
+    status: active
+  - capability_id: reranker
+    name: Reranker 重排序
+    short: 重排序
+    status: active
+  - capability_id: price
+    name: 价格（输入/输出）
+    short: 价格
+    status: active
+  - capability_id: speed
+    name: 输出速度
+    short: 速度
+    status: active
+  - capability_id: latency
+    name: 首字延迟
+    short: 延迟
+    status: active
+  # ---- 以下能力暂无可信公开数据源，前台显示"数据接入中" ----
+  - capability_id: chat_preference
+    name: 人类偏好与聊天体验
+    short: 人类偏好
+    status: pending
+    planned_source: LMArena（待其提供稳定合法数据接口）
+  - capability_id: long_context
+    name: 长上下文
+    short: 长上下文
+    status: pending
+    planned_source: RULER / LongBench（待官方结构化结果）
+  - capability_id: agentic_general
+    name: Agent 自主执行
+    short: Agent
+    status: pending
+    planned_source: GAIA / OSWorld / Terminal-Bench（待官方结构化结果）
+  - capability_id: tool_calling
+    name: 工具调用
+    short: 工具调用
+    status: pending
+    planned_source: BFCL 等官方结构化结果
+  - capability_id: search_research
+    name: 搜索与深度研究
+    short: 深度研究
+    status: pending
+    planned_source: SimpleQA / BrowseComp 官方结果
+  - capability_id: image_gen
+    name: 图像生成
+    short: 图像生成
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: video_gen
+    name: 视频生成
+    short: 视频生成
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: speech
+    name: 语音识别 / 合成
+    short: 语音
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: safety
+    name: 安全性
+    short: 安全
+    status: pending
+    planned_source: HarmBench / HELM Safety
+  - capability_id: robustness
+    name: 鲁棒性
+    short: 鲁棒性
+    status: pending
+    planned_source: 官方可复现评测
+
+# 综合能力（overall）计算时各能力类别的默认权重
+default_capability_weights:
+  reasoning: 0.20
+  math: 0.12
+  coding: 0.16
+  swe: 0.14
+  data_analysis: 0.06
+  instruction_following: 0.08
+  language: 0.06
+  creative_writing: 0.04
+  multimodal: 0.08
+  chinese: 0.06
+
+# 前端可切换的权重预设（浏览器本地重算，不调用服务器）
+weight_presets:
+  - preset_id: general
+    name: 通用助手
+    weights: {reasoning: 0.2, math: 0.12, coding: 0.16, swe: 0.14, data_analysis: 0.06, instruction_following: 0.08, language: 0.06, creative_writing: 0.04, multimodal: 0.08, chinese: 0.06}
+  - preset_id: developer
+    name: 编程开发
+    weights: {reasoning: 0.1, math: 0.08, coding: 0.3, swe: 0.35, data_analysis: 0.05, instruction_following: 0.07, language: 0.02, creative_writing: 0, multimodal: 0.02, chinese: 0.01}
+  - preset_id: math_reasoning
+    name: 数学推理
+    weights: {reasoning: 0.35, math: 0.4, coding: 0.08, swe: 0.05, data_analysis: 0.06, instruction_following: 0.03, language: 0.02, creative_writing: 0, multimodal: 0.01, chinese: 0}
+  - preset_id: chinese_office
+    name: 中文办公
+    weights: {reasoning: 0.12, math: 0.06, coding: 0.08, swe: 0.04, data_analysis: 0.12, instruction_following: 0.18, language: 0.05, creative_writing: 0.1, multimodal: 0.05, chinese: 0.2}
+  - preset_id: agent
+    name: Agent 自动化
+    weights: {reasoning: 0.25, math: 0.1, coding: 0.25, swe: 0.25, data_analysis: 0.05, instruction_following: 0.1, language: 0, creative_writing: 0, multimodal: 0, chinese: 0}
+  - preset_id: multimodal_creator
+    name: 多模态创作
+    weights: {reasoning: 0.08, math: 0.05, coding: 0.05, swe: 0, data_analysis: 0.05, instruction_following: 0.12, language: 0.1, creative_writing: 0.15, multimodal: 0.3, chinese: 0.1}

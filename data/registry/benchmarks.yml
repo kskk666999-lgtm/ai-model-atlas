@@ -1,0 +1,302 @@
+# 基准测试注册表：capability 映射 + 分数方向 + 单位。
+# benchmark_id 必须与适配器产出的 benchmark_id 一致。
+benchmarks:
+  # ===== LiveBench =====
+  - benchmark_id: livebench-agentic-coding
+    benchmark_name: LiveBench Agentic Coding
+    source_id: livebench
+    capability: coding
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-coding
+    benchmark_name: LiveBench 编程
+    source_id: livebench
+    capability: coding
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-reasoning
+    benchmark_name: LiveBench 逻辑推理
+    source_id: livebench
+    capability: reasoning
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-mathematics
+    benchmark_name: LiveBench 数学
+    source_id: livebench
+    capability: math
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-data-analysis
+    benchmark_name: LiveBench 数据分析
+    source_id: livebench
+    capability: data_analysis
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-language
+    benchmark_name: LiveBench 语言
+    source_id: livebench
+    capability: language
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-instruction-following
+    benchmark_name: LiveBench 指令遵循
+    source_id: livebench
+    capability: instruction_following
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-social
+    benchmark_name: LiveBench 社交（含创造性写作）
+    source_id: livebench
+    capability: creative_writing
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: livebench-price-input
+    benchmark_name: 输入价格（LiveBench 官方统计）
+    source_id: livebench
+    capability: price
+    higher_is_better: false
+    score_unit: usd_per_mtok
+  - benchmark_id: livebench-price-output
+    benchmark_name: 输出价格（LiveBench 官方统计）
+    source_id: livebench
+    capability: price
+    higher_is_better: false
+    score_unit: usd_per_mtok
+
+  # ===== SWE-bench =====
+  - benchmark_id: swebench-verified
+    benchmark_name: SWE-bench Verified
+    source_id: swebench
+    capability: swe
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: swebench-lite
+    benchmark_name: SWE-bench Lite
+    source_id: swebench
+    capability: swe
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: swebench-bash-only
+    benchmark_name: SWE-bench Bash-Only
+    source_id: swebench
+    capability: swe
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: swebench-multilingual
+    benchmark_name: SWE-bench Multilingual
+    source_id: swebench
+    capability: swe
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: swebench-multimodal
+    benchmark_name: SWE-bench Multimodal
+    source_id: swebench
+    capability: swe
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== BigCodeBench =====
+  - benchmark_id: bigcodebench-complete
+    benchmark_name: BigCodeBench Complete
+    source_id: bigcodebench
+    capability: coding
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: bigcodebench-instruct
+    benchmark_name: BigCodeBench Instruct
+    source_id: bigcodebench
+    capability: instruction_following
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== VLMEvalKit / OpenVLM =====
+  - benchmark_id: ovl-mmbench-test-cn-v11
+    benchmark_name: MMBench v1.1 中文
+    source_id: vlmevalkit
+    capability: chinese
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-mmbench-test-en-v11
+    benchmark_name: MMBench v1.1 英文
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-mmmu-val
+    benchmark_name: MMMU (Val)
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-mathvista
+    benchmark_name: MathVista（视觉数学与图表）
+    source_id: vlmevalkit
+    capability: chart
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-ocrbench
+    benchmark_name: OCRBench
+    source_id: vlmevalkit
+    capability: ocr
+    higher_is_better: true
+    score_unit: absolute_0_1000
+  - benchmark_id: ovl-mme
+    benchmark_name: MME
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: absolute_0_2800
+  - benchmark_id: ovl-mmvet
+    benchmark_name: MMVet
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-seedbench-img
+    benchmark_name: SEEDBench_IMG
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-ccbench
+    benchmark_name: CCBench（中国传统文化）
+    source_id: vlmevalkit
+    capability: chinese
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-mmstar
+    benchmark_name: MMStar
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-realworldqa
+    benchmark_name: RealWorldQA
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-ai2d
+    benchmark_name: AI2D
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-scienceqa-test
+    benchmark_name: ScienceQA (Test)
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-hallusionbench
+    benchmark_name: HallusionBench
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-mmt-bench-val
+    benchmark_name: MMT-Bench (Val)
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-blink
+    benchmark_name: BLINK
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-qbench
+    benchmark_name: QBench
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: ovl-abench
+    benchmark_name: ABench
+    source_id: vlmevalkit
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== MTEB（Embedding / 检索 / 重排 / 语义相似度）=====
+  - benchmark_id: mteb-nfcorpus
+    benchmark_name: MTEB NFCorpus（检索）
+    source_id: mteb
+    capability: retrieval
+    higher_is_better: true
+    score_unit: ndcg_0_1
+  - benchmark_id: mteb-scifact
+    benchmark_name: MTEB SciFact（检索）
+    source_id: mteb
+    capability: retrieval
+    higher_is_better: true
+    score_unit: ndcg_0_1
+  - benchmark_id: mteb-arguana
+    benchmark_name: MTEB ArguAna（检索）
+    source_id: mteb
+    capability: retrieval
+    higher_is_better: true
+    score_unit: ndcg_0_1
+  - benchmark_id: mteb-trec-covid
+    benchmark_name: MTEB TREC-COVID（检索）
+    source_id: mteb
+    capability: retrieval
+    higher_is_better: true
+    score_unit: ndcg_0_1
+  - benchmark_id: mteb-sts17
+    benchmark_name: MTEB STS17（语义相似度）
+    source_id: mteb
+    capability: sts
+    higher_is_better: true
+    score_unit: spearman_0_1
+  - benchmark_id: mteb-stsbenchmark
+    benchmark_name: MTEB STSBenchmark（语义相似度）
+    source_id: mteb
+    capability: sts
+    higher_is_better: true
+    score_unit: spearman_0_1
+  - benchmark_id: mteb-askubuntudupquestions
+    benchmark_name: MTEB AskUbuntuDupQuestions（重排）
+    source_id: mteb
+    capability: reranker
+    higher_is_better: true
+    score_unit: map_0_1
+  - benchmark_id: mteb-scidoCSrr
+    benchmark_name: MTEB SciDocsRR（重排）
+    source_id: mteb
+    capability: reranker
+    higher_is_better: true
+    score_unit: ndcg_0_1
+
+  # ===== Artificial Analysis（可选来源）=====
+  - benchmark_id: aa-intelligence-index
+    benchmark_name: Artificial Analysis 智能指数
+    source_id: artificialanalysis
+    capability: overall
+    higher_is_better: true
+    score_unit: index_0_100
+  - benchmark_id: aa-price-input
+    benchmark_name: 输入价格（每百万 Token）
+    source_id: artificialanalysis
+    capability: price
+    higher_is_better: false
+    score_unit: usd_per_mtok
+  - benchmark_id: aa-price-output
+    benchmark_name: 输出价格（每百万 Token）
+    source_id: artificialanalysis
+    capability: price
+    higher_is_better: false
+    score_unit: usd_per_mtok
+  - benchmark_id: aa-output-speed
+    benchmark_name: 输出速度
+    source_id: artificialanalysis
+    capability: speed
+    higher_is_better: true
+    score_unit: tokens_per_second
+  - benchmark_id: aa-latency
+    benchmark_name: 首字延迟
+    source_id: artificialanalysis
+    capability: latency
+    higher_is_better: false
+    score_unit: seconds

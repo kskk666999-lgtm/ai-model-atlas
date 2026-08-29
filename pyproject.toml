@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "BLE"]
+ignore = [
+    # 数据流水线的错误隔离设计要求在适配器边界捕获宽泛异常，
+    # 失败信息会写入 source-health / 更新报告，不会静默吞掉。
+    "BLE001",
+    "E501",  # 中文注释/长 URL
+    "E402",  # conftest 需要先插入 sys.path 再 import pipeline
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "E501", "B007", "F841"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

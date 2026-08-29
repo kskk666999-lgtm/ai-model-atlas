@@ -1,0 +1,140 @@
+# 数据来源注册表。
+# level: A=官方结构化结果/官方仓库  B=官方榜单页/官方导出  C=有公开方法论的第三方  D=厂商自报（不进综合榜）
+# status: active | disabled | optional
+sources:
+  - source_id: livebench
+    source_name: LiveBench（官方）
+    source_level: B
+    homepage_url: https://livebench.ai
+    method: official_export
+    description: >
+      LiveBench 官方排行榜导出（table_<release>.csv / categories_<release>.json /
+      cost_<release>.csv，release 为官方版本日期）。按官方类别对任务分数取平均，
+      并包含官方统计的输入/输出 API 价格。
+    license: Apache-2.0（代码）；数据遵循 LiveBench 官方发布条款
+    attribution: "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等"
+    requires_api_key: false
+    included_in_composite: true
+    status: active
+    docs_url: https://github.com/LiveBench/LiveBench
+
+  - source_id: swebench
+    source_name: SWE-bench（官方实验仓库）
+    source_level: A
+    homepage_url: https://www.swebench.com
+    method: github_repo
+    description: >
+      SWE-bench 官方 experiments 仓库（github.com/SWE-bench/experiments）公开的
+      每次评测运行的 metadata.yaml，含 resolved%、成本、Agent 框架与模型标签。
+    license: MIT（代码）；结果数据遵循仓库发布条款
+    attribution: "数据来源：SWE-bench Official Experiments (swebench.com)"
+    requires_api_key: false
+    included_in_composite: true
+    status: active
+    docs_url: https://github.com/SWE-bench/experiments
+
+  - source_id: bigcodebench
+    source_name: BigCodeBench（官方）
+    source_level: A
+    homepage_url: https://bigcode-bench.github.io
+    method: official_dataset
+    description: >
+      BigCodeBench 官方评测结果数据集（HF: bigcode/bigcodebench-results），
+      包含 complete / instruct 两种模式下每个模型的通过率。
+    license: Apache-2.0
+    attribution: "数据来源：BigCodeBench (The official BigCodeBench leaderboard)"
+    requires_api_key: false
+    included_in_composite: true
+    status: active
+    docs_url: https://github.com/bigcode-project/bigcodebench
+
+  - source_id: vlmevalkit
+    source_name: VLMEvalKit / OpenVLM 官方结果（OpenCompass）
+    source_level: A
+    homepage_url: https://github.com/open-compass/VLMEvalKit
+    method: official_json_asset
+    description: >
+      VLMEvalKit 官方维护的 OpenVLM 汇总结果（opencompass.openxlab.space/assets/OpenVLM.json），
+      覆盖 MMBench、MME、MMMU、OCRBench、MathVista 等多模态基准的官方复现分数。
+    license: Apache-2.0（代码）
+    attribution: "数据来源：OpenCompass OpenVLM Leaderboard（VLMEvalKit 官方复现结果）"
+    requires_api_key: false
+    included_in_composite: true
+    status: active
+    docs_url: https://github.com/open-compass/OpenCompass
+
+  - source_id: mteb
+    source_name: MTEB（官方结果仓库）
+    source_level: A
+    homepage_url: https://mteb.dev
+    method: github_repo
+    description: >
+      embeddings-benchmark/results 官方结果仓库中按模型按任务保存的 JSON 结果，
+      覆盖 Embedding、检索、重排、语义相似度等任务。
+    license: Apache-2.0
+    attribution: "数据来源：MTEB (Massive Text Embedding Benchmark) 官方结果仓库"
+    requires_api_key: false
+    included_in_composite: true
+    status: active
+    docs_url: https://github.com/embeddings-benchmark/results
+
+  - source_id: artificialanalysis
+    source_name: Artificial Analysis（免费数据 API）
+    source_level: C
+    homepage_url: https://artificialanalysis.ai
+    method: rest_api
+    description: >
+      Artificial Analysis 免费数据 API，提供价格、输出速度、首字延迟与智能指数。
+      需要 API Key（仅保存在 GitHub Actions Secrets），每天限额 1000 次，
+      页面按要求注明来源。未配置 Key 时其余榜单不受影响。
+    license: 遵循 Artificial Analysis 服务条款
+    attribution: "数据来源：Artificial Analysis（artificialanalysis.ai）"
+    requires_api_key: true
+    included_in_composite: false
+    status: optional
+    docs_url: https://docs.artificialanalysis.ai
+
+  - source_id: livecodebench
+    source_name: LiveCodeBench（官方）
+    source_level: A
+    homepage_url: https://livecodebench.github.io
+    method: none
+    description: >
+      暂未启用：LiveCodeBench 官方榜单为编译后的 JS 包，未提供稳定可自动读取的
+      结构化结果文件；官方仓库两个分支均无结果 JSON。为避免脆弱的逆向解析，
+      该适配器保持 disabled，待官方提供结构化导出后接入。
+    license: null
+    attribution: null
+    requires_api_key: false
+    included_in_composite: false
+    status: disabled
+
+  - source_id: opencompass_text
+    source_name: OpenCompass（中文学术评测）
+    source_level: A
+    homepage_url: https://rank.opencompass.org.cn
+    method: none
+    description: >
+      暂未启用：OpenCompass 官方排行榜为动态渲染页面，无稳定公开的结构化数据
+      接口；其中文多模态结果已通过 vlmevalkit 来源（MMBench_TEST_CN 等）部分覆盖。
+      待官方提供数据导出后接入。
+    license: null
+    attribution: null
+    requires_api_key: false
+    included_in_composite: false
+    status: disabled
+
+  - source_id: arena
+    source_name: LMArena（人类偏好）
+    source_level: C
+    homepage_url: https://lmarena.ai
+    method: none
+    description: >
+      暂未启用：LMArena 榜单无稳定、公开、允许自动读取的数据接口
+      （页面受动态渲染与访问限制保护）。按要求不绕过任何防护，
+      待存在合法稳定的数据形式后接入。
+    license: null
+    attribution: null
+    requires_api_key: false
+    included_in_composite: false
+    status: disabled
