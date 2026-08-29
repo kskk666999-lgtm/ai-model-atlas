@@ -32,7 +32,9 @@ jobs:
       - run: npm ci
 
       - name: 构建静态站点（自动适配 Pages 子路径）
-        run: npm run build -- --base=/${{ github.event.repository.name }}
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}
+        run: npm run build
 
       - name: 上传 Pages 产物
         uses: actions/upload-pages-artifact@v3
