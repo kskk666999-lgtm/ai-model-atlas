@@ -63,7 +63,8 @@ class MTEBAdapter(BaseAdapter):
             ]
             if not revisions:
                 continue
-            revision = revisions[-1]
+            # 显式排序后取最大，消除 GitHub API 返回顺序的不确定性
+            revision = sorted(revisions)[-1]
             for benchmark_id, task_file in TASK_FILES.items():
                 tasks.append((canonical_id, model_dir, revision, benchmark_id, task_file))
 
