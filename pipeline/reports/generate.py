@@ -311,7 +311,15 @@ def generate_site_data(
             continue
         recs = by_model_records.get(mid, [])
         rows = []
-        for rec in sorted(recs, key=lambda r: (r.capability, -r.score if r.higher_is_better else r.score)):
+        for rec in sorted(
+            recs,
+            key=lambda r: (
+                r.capability,
+                -r.score if r.higher_is_better else r.score,
+                r.benchmark_id,
+                r.agent_scaffold or "",
+            ),
+        ):
             row = _record_row(rec)
             bench_rank_rows = official_rankings.get(rec.benchmark_id, [])
             rank_row = next((x for x in bench_rank_rows if x["record"] is rec), None)
@@ -361,7 +369,7 @@ def generate_site_data(
                     "capability": cap,
                     "delta": ch["d7"],
                 })
-    movers.sort(key=lambda x: -x["delta"])
+    movers.sort(key=lambda x: (-x["delta"], x["model_id"], x["capability"]))
     homepage = {
         "generated_at": now,
         "stats": meta["counts"],

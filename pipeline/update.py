@@ -104,6 +104,7 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     # 绝不允许部分运行把其他来源的数据从 public/data 里抹掉。
     if source_filter:
         from .paths import RECORDS_LKG_DIR
+        from .schemas.records import BenchmarkRecord
 
         for s in sources_registry:
             if s.source_id in source_filter or s.status != "active":
@@ -113,7 +114,7 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
                 import json as _json
 
                 lkg = _json.loads(lkg_file.read_text(encoding="utf-8"))
-                merged = lkg.get("records") or []
+                merged = [BenchmarkRecord.model_validate(r) for r in (lkg.get("records") or [])]
                 all_records.extend(merged)
                 print(f"    - {s.source_id}: 部分更新模式，合并 LKG {len(merged)} 条")
     print(f"[3/8] 共获得 {len(all_records)} 条原始记录")

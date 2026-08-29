@@ -1,0 +1,59 @@
+=== 干净环境验收 2026-08-29T22:09:21Z ===
+克隆自本地 Git 仓库（无 node_modules/.venv/dist/缓存）
+
+--- [1/11] npm ci ---
+  npm audit fix --force
+
+Run `npm audit` for details.
+exit=0
+
+--- [2/11] py -m venv .venv ---
+venv OK
+
+--- [3/11] pip install ---
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: C:\Users\wjr15\.zcode\workspace\verification\ai-model-atlas-clean\.venv\Scripts\python.exe -m pip install --upgrade pip
+pip OK
+
+--- [4/11] pytest ---
+........................                                                 [100%]
+24 passed in 3.85s
+
+--- [5/11] ruff ---
+All checks passed!
+ruff OK
+
+--- [6/11] npm run lint ---
+> eslint src
+
+
+--- [7/11] npm run typecheck ---
+
+> ai-model-atlas@0.1.0 typecheck
+> tsc --noEmit
+
+typecheck OK
+
+--- [8/11] npm run test ---
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+
+--- [9/11] npm run build ---
+[2mdist/[22m[36massets/react-DMjYPNDJ.js    [39m[1m[2m  181.85 kB[22m[1m[22m[2m │ gzip:  59.95 kB[22m
+[2mdist/[22m[36massets/index-fyRxQt0A.js    [39m[1m[2m  203.97 kB[22m[1m[22m[2m │ gzip:  56.71 kB[22m
+[2mdist/[22m[36massets/echarts-CUDi0Acm.js  [39m[1m[2m1,036.33 kB[22m[1m[22m[2m │ gzip: 343.42 kB[22m
+[32m✓ built in 12.54s[39m
+
+--- [10/11] verify-no-llm ---
+OK：未发现任何大模型运行时依赖。网站运行与数据更新均为纯确定性程序。
+
+--- [11/11] 真实数据更新（联网）---
+    未映射模型名 405 个（详见 data/reports/unmapped-models.json）
+[5/8] 排名计算 ...
+    能力指数 14 个；综合榜收录 2 个模型
+[6/8] 历史快照 ...
+[7/8] 生成静态 JSON ...
+[8/8] 完成：写入 34 个数据文件
+
+=== 干净环境验收完成 2026-08-29T22:13:08Z ===

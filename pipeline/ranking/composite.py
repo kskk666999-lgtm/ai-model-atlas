@@ -26,7 +26,13 @@ def benchmark_ranking(records: list[BenchmarkRecord]) -> list[dict]:
     if not records:
         return []
     hib = records[0].higher_is_better
-    ordered = sorted(records, key=lambda r: r.score, reverse=hib)
+    # 并列分数用模型标识做确定性决胜（适配器并发完成顺序不得影响输出行序）
+    def _sort_key(r: BenchmarkRecord):
+        prim = r.score if not hib else -r.score
+        return (prim, r.model_id, r.raw_model_name or "", r.agent_scaffold or "",
+                r.benchmark_version or "")
+
+    ordered = sorted(records, key=_sort_key)
 
     # 并列分数组的所有成员都标记并列（1,1,3 式 competition ranking）
     score_counts: dict[float, int] = {}
