@@ -103,7 +103,11 @@ def generate_site_data(
 ) -> dict:
     """生成全部前端数据文件，返回统计信息。"""
     stats = {"files_written": 0}
-    now = utc_now_iso()
+    # 数据驱动时间戳：取所有记录中最大的 fetched_at（而非当前墙钟时间）。
+    # 配合适配器的"业务内容不变则继承 fetched_at"策略，保证数据无变化时
+    # 输出文件逐字节稳定，CI 不会产生无意义提交。
+    all_ts = [r.fetched_at for r in records if r.fetched_at]
+    now = max(all_ts) if all_ts else utc_now_iso()
 
     used_models = {r.model_id for r in records if not r.model_is_unmapped}
     unmapped_ids = {r.model_id for r in records if r.model_is_unmapped}
@@ -137,7 +141,7 @@ def generate_site_data(
     active_sources = [s for s in results if s.status in ("ok", "degraded")]
     failed_sources = [s for s in results if s.status == "failed"]
     last_success = max(
-        (s.records[0].fetched_at for s in active_sources if s.records),
+        (r.fetched_at for s in active_sources for r in s.records if r.fetched_at),
         default=None,
     )
     meta = {
@@ -174,6 +178,9 @@ def generate_site_data(
         run_status = result.status if result else ("disabled" if s.status == "disabled" else "skipped")
         recs = result.records if result else []
         last_eval = max((r.evaluation_date or "" for r in recs), default=None)
+        # 数据驱动的 last_success：该来源记录的最大 fetched_at（内容不变则稳定）
+        src_last_success = max((r.fetched_at for r in recs if r.fetched_at), default=None) \
+            if run_status in ("ok", "degraded") else None
         health_sources.append({
             "source_id": s.source_id,
             "source_name": s.source_name,
@@ -188,9 +195,8 @@ def generate_site_data(
             "registry_status": s.status,
             "run_status": run_status,
             "record_count": len(recs),
-            "last_success": result.records[0].fetched_at if result and result.status == "ok" and result.records else None,
+            "last_success": src_last_success,
             "error_message": result.error_message if result else None,
-            "response_time_ms": result.response_time_ms if result else None,
             "data_freshness": last_eval,
         })
     health = {

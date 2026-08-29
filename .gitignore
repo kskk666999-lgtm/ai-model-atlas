@@ -19,3 +19,7 @@ data/cache/http_cache.sqlite
 
 # 日志
 *.log
+
+# 运行期诊断报告（每次更新都会变，不入库；审计类报告另行保存）
+data/reports/latest-update.json
+data/reports/latest-update.md

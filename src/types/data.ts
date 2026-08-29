@@ -144,7 +144,7 @@ export interface SourceHealthItem {
   record_count: number;
   last_success: string | null;
   error_message: string | null;
-  response_time_ms: number | null;
+  response_time_ms?: number | null;
   data_freshness: string | null;
 }
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T18:44:15Z",
+  "generated_at": "2026-08-29T19:39:51Z",
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "count": 455,
   "unmapped": [
@@ -8,8 +8,6 @@
       "raw_name": "Undisclosed",
       "temp_id": "unmapped--swebench--undisclosed",
       "occurrences": 24,
-      "first_seen": "2026-08-29T18:42:57Z",
-      "last_seen": "2026-08-29T18:43:38Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240509_amazon-q-developer-agent-20240430-dev"
     },
     {
@@ -17,8 +15,6 @@
       "raw_name": "InternVL-Chat-V1.5",
       "temp_id": "unmapped--vlmevalkit--internvl-chat-v1.5",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/OpenGVLab/InternVL"
     },
     {
@@ -26,8 +22,6 @@
       "raw_name": "TransCore-M",
       "temp_id": "unmapped--vlmevalkit--transcore-m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/PCIResearch/TransCore-M"
     },
     {
@@ -35,8 +29,6 @@
       "raw_name": "InternLM-XComposer2",
       "temp_id": "unmapped--vlmevalkit--internlm-xcomposer2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/InternLM-XComposer"
     },
     {
@@ -44,8 +36,6 @@
       "raw_name": "360VL-70B",
       "temp_id": "unmapped--vlmevalkit--360vl-70b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5"
     },
     {
@@ -53,8 +43,6 @@
       "raw_name": "IDEFICS2-8B",
       "temp_id": "unmapped--vlmevalkit--idefics2-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceM4/idefics2-8b"
     },
     {
@@ -62,8 +50,6 @@
       "raw_name": "DeepSeek-VL-7B",
       "temp_id": "unmapped--vlmevalkit--deepseek-vl-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/deepseek-ai/DeepSeek-VL"
     },
     {
@@ -71,8 +57,6 @@
       "raw_name": "Phi-3-Vision",
       "temp_id": "unmapped--vlmevalkit--phi-3-vision",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/microsoft/Phi-3-vision-128k-instruct"
     },
     {
@@ -80,8 +64,6 @@
       "raw_name": "InternLM-XComposer2-1.8B",
       "temp_id": "unmapped--vlmevalkit--internlm-xcomposer2-1.8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/InternLM-XComposer"
     },
     {
@@ -89,8 +71,6 @@
       "raw_name": "Monkey-Chat",
       "temp_id": "unmapped--vlmevalkit--monkey-chat",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/Yuliang-Liu/Monkey"
     },
     {
@@ -98,8 +78,6 @@
       "raw_name": "PaliGemma-3B-mix-448",
       "temp_id": "unmapped--vlmevalkit--paligemma-3b-mix-448",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/google-research/big_vision/blob/main/big_vision/configs/proj/paligemma/README.md"
     },
     {
@@ -107,8 +85,6 @@
       "raw_name": "LLaVA-Next-Vicuna-13B",
       "temp_id": "unmapped--vlmevalkit--llava-next-vicuna-13b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -116,8 +92,6 @@
       "raw_name": "LLaVA-Next-Mistral-7B",
       "temp_id": "unmapped--vlmevalkit--llava-next-mistral-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -125,8 +99,6 @@
       "raw_name": "LLaVA-Next-Vicuna-7B",
       "temp_id": "unmapped--vlmevalkit--llava-next-vicuna-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -134,8 +106,6 @@
       "raw_name": "LLaVA-v1.5-13B",
       "temp_id": "unmapped--vlmevalkit--llava-v1.5-13b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2310.03744"
     },
     {
@@ -143,8 +113,6 @@
       "raw_name": "MiniCPM-V-2",
       "temp_id": "unmapped--vlmevalkit--minicpm-v-2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/MiniCPM-V-2"
     },
     {
@@ -152,8 +120,6 @@
       "raw_name": "LLaVA-v1.5-7B",
       "temp_id": "unmapped--vlmevalkit--llava-v1.5-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2310.03744"
     },
     {
@@ -161,8 +127,6 @@
       "raw_name": "DeepSeek-VL-1.3B",
       "temp_id": "unmapped--vlmevalkit--deepseek-vl-1.3b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/deepseek-ai/DeepSeek-VL"
     },
     {
@@ -170,8 +134,6 @@
       "raw_name": "Qwen-VL-Chat",
       "temp_id": "unmapped--vlmevalkit--qwen-vl-chat",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/QwenLM/Qwen-VL"
     },
     {
@@ -179,8 +141,6 @@
       "raw_name": "Monkey",
       "temp_id": "unmapped--vlmevalkit--monkey",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/Yuliang-Liu/Monkey"
     },
     {
@@ -188,8 +148,6 @@
       "raw_name": "Qwen-VL",
       "temp_id": "unmapped--vlmevalkit--qwen-vl",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/QwenLM/Qwen-VL"
     },
     {
@@ -197,8 +155,6 @@
       "raw_name": "InternVL2-1B",
       "temp_id": "unmapped--vlmevalkit--internvl2-1b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-1B"
     },
     {
@@ -206,8 +162,6 @@
       "raw_name": "InternVL2-2B",
       "temp_id": "unmapped--vlmevalkit--internvl2-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-2B"
     },
     {
@@ -215,8 +169,6 @@
       "raw_name": "InternVL2-4B",
       "temp_id": "unmapped--vlmevalkit--internvl2-4b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-4B"
     },
     {
@@ -224,8 +176,6 @@
       "raw_name": "InternVL2-8B",
       "temp_id": "unmapped--vlmevalkit--internvl2-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-8B"
     },
     {
@@ -233,8 +183,6 @@
       "raw_name": "InternVL2-26B",
       "temp_id": "unmapped--vlmevalkit--internvl2-26b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-26B"
     },
     {
@@ -242,8 +190,6 @@
       "raw_name": "Bunny-Llama3-8B",
       "temp_id": "unmapped--vlmevalkit--bunny-llama3-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BAAI/Bunny-v1_1-Llama-3-8B-V"
     },
     {
@@ -251,8 +197,6 @@
       "raw_name": "InternVL2-Llama3-76B",
       "temp_id": "unmapped--vlmevalkit--internvl2-llama3-76b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-Llama3-76B"
     },
     {
@@ -260,8 +204,6 @@
       "raw_name": "Ovis1.5-Llama3-8B",
       "temp_id": "unmapped--vlmevalkit--ovis1.5-llama3-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis1.5-Llama3-8B"
     },
     {
@@ -269,8 +211,6 @@
       "raw_name": "LLaVA-Next-Llama3",
       "temp_id": "unmapped--vlmevalkit--llava-next-llama3",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -278,8 +218,6 @@
       "raw_name": "LLaVA-Next-Interleave-7B-DPO",
       "temp_id": "unmapped--vlmevalkit--llava-next-interleave-7b-dpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -287,8 +225,6 @@
       "raw_name": "Ovis1.5-Gemma2-9B",
       "temp_id": "unmapped--vlmevalkit--ovis1.5-gemma2-9b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis1.5-Gemma2-9B"
     },
     {
@@ -296,8 +232,6 @@
       "raw_name": "LLaVA-Next-Interleave-7B",
       "temp_id": "unmapped--vlmevalkit--llava-next-interleave-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -305,8 +239,6 @@
       "raw_name": "Mantis-8B-clip-llama3",
       "temp_id": "unmapped--vlmevalkit--mantis-8b-clip-llama3",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/TIGER-Lab/Mantis-8B-clip-llama3"
     },
     {
@@ -314,8 +246,6 @@
       "raw_name": "Mantis-8B-siglip-llama3",
       "temp_id": "unmapped--vlmevalkit--mantis-8b-siglip-llama3",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/TIGER-Lab/Mantis-8B-siglip-llama3"
     },
     {
@@ -323,8 +253,6 @@
       "raw_name": "Mantis-8B-Idefics2",
       "temp_id": "unmapped--vlmevalkit--mantis-8b-idefics2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/TIGER-Lab/Mantis-8B-Idefics2"
     },
     {
@@ -332,8 +260,6 @@
       "raw_name": "MiniCPM-V-2.6",
       "temp_id": "unmapped--vlmevalkit--minicpm-v-2.6",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/TIGER-Lab/Mantis-8B-siglip-llama3"
     },
     {
@@ -341,8 +267,6 @@
       "raw_name": "MMAlaya2",
       "temp_id": "unmapped--vlmevalkit--mmalaya2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/DataCanvas/MMAlaya2"
     },
     {
@@ -350,8 +274,6 @@
       "raw_name": "Qwen2-VL-7B",
       "temp_id": "unmapped--vlmevalkit--qwen2-vl-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
     },
     {
@@ -359,8 +281,6 @@
       "raw_name": "Qwen2-VL-2B",
       "temp_id": "unmapped--vlmevalkit--qwen2-vl-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct"
     },
     {
@@ -368,8 +288,6 @@
       "raw_name": "Mantis-8B-Fuyu",
       "temp_id": "unmapped--vlmevalkit--mantis-8b-fuyu",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/TIGER-Lab/Mantis-8B-Fuyu"
     },
     {
@@ -377,8 +295,6 @@
       "raw_name": "Slime-7B",
       "temp_id": "unmapped--vlmevalkit--slime-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/yifanzhang114/SliME-vicuna-7B"
     },
     {
@@ -386,8 +302,6 @@
       "raw_name": "Slime-8B",
       "temp_id": "unmapped--vlmevalkit--slime-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/yifanzhang114/SliME-Llama3-8B"
     },
     {
@@ -395,8 +309,6 @@
       "raw_name": "Slime-13B",
       "temp_id": "unmapped--vlmevalkit--slime-13b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/yifanzhang114/SliME-vicuna-13B"
     },
     {
@@ -404,8 +316,6 @@
       "raw_name": "Pixtral-12B",
       "temp_id": "unmapped--vlmevalkit--pixtral-12b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/mistralai/Pixtral-12B-2409"
     },
     {
@@ -413,8 +323,6 @@
       "raw_name": "Gemini-1.5-Flash",
       "temp_id": "unmapped--vlmevalkit--gemini-1.5-flash",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://deepmind.google/technologies/gemini/"
     },
     {
@@ -422,8 +330,6 @@
       "raw_name": "LLaVA-OneVision-0.5B",
       "temp_id": "unmapped--vlmevalkit--llava-onevision-0.5b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-0.5b-ov"
     },
     {
@@ -431,8 +337,6 @@
       "raw_name": "LLaVA-OneVision-7B",
       "temp_id": "unmapped--vlmevalkit--llava-onevision-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov"
     },
     {
@@ -440,8 +344,6 @@
       "raw_name": "LLaVA-OneVision-0.5B (SI)",
       "temp_id": "unmapped--vlmevalkit--llava-onevision-0.5b-si",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-0.5b-si"
     },
     {
@@ -449,8 +351,6 @@
       "raw_name": "LLaVA-OneVision-7B (SI)",
       "temp_id": "unmapped--vlmevalkit--llava-onevision-7b-si",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-si"
     },
     {
@@ -458,8 +358,6 @@
       "raw_name": "Qwen-VL-Plus-0809",
       "temp_id": "unmapped--vlmevalkit--qwen-vl-plus-0809",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://help.aliyun.com/zh/dashscope/developer-reference/tongyi-qianwen-vl-plus-api"
     },
     {
@@ -467,8 +365,6 @@
       "raw_name": "Ovis1.6-Gemma2-9B",
       "temp_id": "unmapped--vlmevalkit--ovis1.6-gemma2-9b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis1.6-Gemma2-9B"
     },
     {
@@ -476,8 +372,6 @@
       "raw_name": "Eagle-X5-7B",
       "temp_id": "unmapped--vlmevalkit--eagle-x5-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NVEagle/Eagle-X5-7B"
     },
     {
@@ -485,8 +379,6 @@
       "raw_name": "Eagle-X5-13B",
       "temp_id": "unmapped--vlmevalkit--eagle-x5-13b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NVEagle/Eagle-X5-13B"
     },
     {
@@ -494,8 +386,6 @@
       "raw_name": "Moondream1",
       "temp_id": "unmapped--vlmevalkit--moondream1",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/vikhyatk/moondream1"
     },
     {
@@ -503,8 +393,6 @@
       "raw_name": "MiniMonkey",
       "temp_id": "unmapped--vlmevalkit--minimonkey",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/mx262/MiniMonkey"
     },
     {
@@ -512,8 +400,6 @@
       "raw_name": "BlueLM-V-3B",
       "temp_id": "unmapped--vlmevalkit--bluelm-v-3b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://developers.vivo.com/product/ai/bluelm"
     },
     {
@@ -521,8 +407,6 @@
       "raw_name": "XinYuan-VL-2B-Instruct",
       "temp_id": "unmapped--vlmevalkit--xinyuan-vl-2b-instruct",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Cylingo/Xinyuan-VL-2B"
     },
     {
@@ -530,8 +414,6 @@
       "raw_name": "Llama-3.2-11B-Vision-Instruct",
       "temp_id": "unmapped--vlmevalkit--llama-3.2-11b-vision-instruct",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct"
     },
     {
@@ -539,8 +421,6 @@
       "raw_name": "Molmo-7B-D",
       "temp_id": "unmapped--vlmevalkit--molmo-7b-d",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/allenai/Molmo-7B-D-0924"
     },
     {
@@ -548,8 +428,6 @@
       "raw_name": "POINTS-Yi-1.5-9B",
       "temp_id": "unmapped--vlmevalkit--points-yi-1.5-9b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/WePOINTS/POINTS-Yi-1-5-9B-Chat"
     },
     {
@@ -557,8 +435,6 @@
       "raw_name": "POINTS-Qwen2.5-7B",
       "temp_id": "unmapped--vlmevalkit--points-qwen2.5-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/WePOINTS/POINTS-Qwen-2-5-7B-Chat"
     },
     {
@@ -566,8 +442,6 @@
       "raw_name": "Kosmos2",
       "temp_id": "unmapped--vlmevalkit--kosmos2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/microsoft/kosmos-2-patch14-224"
     },
     {
@@ -575,8 +449,6 @@
       "raw_name": "NVLM-D-72B",
       "temp_id": "unmapped--vlmevalkit--nvlm-d-72b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/nvidia/NVLM-D-72B"
     },
     {
@@ -584,8 +456,6 @@
       "raw_name": "Molmo-7B-O",
       "temp_id": "unmapped--vlmevalkit--molmo-7b-o",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/allenai/Molmo-7B-O-0924"
     },
     {
@@ -593,8 +463,6 @@
       "raw_name": "MolmoE-1B",
       "temp_id": "unmapped--vlmevalkit--molmoe-1b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/allenai/MolmoE-1B-0924"
     },
     {
@@ -602,8 +470,6 @@
       "raw_name": "Janus-1.3B",
       "temp_id": "unmapped--vlmevalkit--janus-1.3b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/deepseek-ai/Janus-1.3B"
     },
     {
@@ -611,8 +477,6 @@
       "raw_name": "Vintern-3B-beta",
       "temp_id": "unmapped--vlmevalkit--vintern-3b-beta",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/5CD-AI/Vintern-3B-beta"
     },
     {
@@ -620,8 +484,6 @@
       "raw_name": "Ovis1.6-Llama3.2-3B",
       "temp_id": "unmapped--vlmevalkit--ovis1.6-llama3.2-3b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis1.6-Llama3.2-3B"
     },
     {
@@ -629,8 +491,6 @@
       "raw_name": "Aquila-VL-2B",
       "temp_id": "unmapped--vlmevalkit--aquila-vl-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BAAI/Aquila-VL-2B-llava-qwen"
     },
     {
@@ -638,8 +498,6 @@
       "raw_name": "Qwen2-VL-72B",
       "temp_id": "unmapped--vlmevalkit--qwen2-vl-72b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct"
     },
     {
@@ -647,8 +505,6 @@
       "raw_name": "Falcon2-VLM-11B",
       "temp_id": "unmapped--vlmevalkit--falcon2-vlm-11b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/tiiuae/falcon-11B-vlm"
     },
     {
@@ -656,8 +512,6 @@
       "raw_name": "H2OVL-800M",
       "temp_id": "unmapped--vlmevalkit--h2ovl-800m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/h2oai/h2ovl-mississippi-800m"
     },
     {
@@ -665,8 +519,6 @@
       "raw_name": "H2OVL-2B",
       "temp_id": "unmapped--vlmevalkit--h2ovl-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/h2oai/h2ovl-mississippi-2b"
     },
     {
@@ -674,8 +526,6 @@
       "raw_name": "Taiyi",
       "temp_id": "unmapped--vlmevalkit--taiyi",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://taiyi.megvii.com"
     },
     {
@@ -683,8 +533,6 @@
       "raw_name": "RBDash-v1.5",
       "temp_id": "unmapped--vlmevalkit--rbdash-v1.5",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/RBDash-Team/RBDash-v1.5"
     },
     {
@@ -692,8 +540,6 @@
       "raw_name": "InternVL2-8B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2-8b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-8B-MPO"
     },
     {
@@ -701,8 +547,6 @@
       "raw_name": "InternVL2-8B-MPO-CoT",
       "temp_id": "unmapped--vlmevalkit--internvl2-8b-mpo-cot",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-8B-MPO"
     },
     {
@@ -710,8 +554,6 @@
       "raw_name": "SmolVLM-Instruct",
       "temp_id": "unmapped--vlmevalkit--smolvlm-instruct",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct"
     },
     {
@@ -719,8 +561,6 @@
       "raw_name": "SmolVLM-Instruct-DPO",
       "temp_id": "unmapped--vlmevalkit--smolvlm-instruct-dpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct-DPO"
     },
     {
@@ -728,8 +568,6 @@
       "raw_name": "SmolVLM-Synthetic",
       "temp_id": "unmapped--vlmevalkit--smolvlm-synthetic",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-Synthetic"
     },
     {
@@ -737,8 +575,6 @@
       "raw_name": "Eagle-X5-34B-Chat",
       "temp_id": "unmapped--vlmevalkit--eagle-x5-34b-chat",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NVEagle/Eagle-X5-34B-Chat"
     },
     {
@@ -746,8 +582,6 @@
       "raw_name": "Ovis1.6-Gemma2-27B",
       "temp_id": "unmapped--vlmevalkit--ovis1.6-gemma2-27b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis1.6-Gemma2-27B"
     },
     {
@@ -755,8 +589,6 @@
       "raw_name": "Aria",
       "temp_id": "unmapped--vlmevalkit--aria",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/rhymes-ai/Aria"
     },
     {
@@ -764,8 +596,6 @@
       "raw_name": "POINTS1.5-Qwen2.5-7B",
       "temp_id": "unmapped--vlmevalkit--points1.5-qwen2.5-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/WePOINTS/POINTS-1-5-Qwen-2-5-7B-Chat"
     },
     {
@@ -773,8 +603,6 @@
       "raw_name": "BailingMM-Lite-1203",
       "temp_id": "unmapped--vlmevalkit--bailingmm-lite-1203",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://zxb.alipay.com/llm/landing"
     },
     {
@@ -782,8 +610,6 @@
       "raw_name": "Step-1.5V-mini",
       "temp_id": "unmapped--vlmevalkit--step-1.5v-mini",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.stepfun.com"
     },
     {
@@ -791,8 +617,6 @@
       "raw_name": "abab6.5s",
       "temp_id": "unmapped--vlmevalkit--abab6.5s",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://www.minimaxi.com/"
     },
     {
@@ -800,8 +624,6 @@
       "raw_name": "abab7-preview",
       "temp_id": "unmapped--vlmevalkit--abab7-preview",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://www.minimaxi.com/"
     },
     {
@@ -809,8 +631,6 @@
       "raw_name": "SAIL-VL-2B",
       "temp_id": "unmapped--vlmevalkit--sail-vl-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BytedanceDouyinContent/SAIL-VL-2B"
     },
     {
@@ -818,8 +638,6 @@
       "raw_name": "InternVL2.5-1B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-1b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-1B-MPO"
     },
     {
@@ -827,8 +645,6 @@
       "raw_name": "InternVL2.5-2B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-2b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-2B-MPO"
     },
     {
@@ -836,8 +652,6 @@
       "raw_name": "InternVL2.5-4B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-4b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-4B-MPO"
     },
     {
@@ -845,8 +659,6 @@
       "raw_name": "InternVL2.5-8B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-8b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B-MPO"
     },
     {
@@ -854,8 +666,6 @@
       "raw_name": "InternVL2.5-26B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-26b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-26B-MPO"
     },
     {
@@ -863,8 +673,6 @@
       "raw_name": "InternVL2.5-38B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-38b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-38B-MPO"
     },
     {
@@ -872,8 +680,6 @@
       "raw_name": "InternVL2.5-78B-MPO",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-78b-mpo",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-78B-MPO"
     },
     {
@@ -881,8 +687,6 @@
       "raw_name": "VARCO-VISION-14B",
       "temp_id": "unmapped--vlmevalkit--varco-vision-14b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NCSOFT/VARCO-VISION-14B-HF"
     },
     {
@@ -890,8 +694,6 @@
       "raw_name": "Step-1o",
       "temp_id": "unmapped--vlmevalkit--step-1o",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.stepfun.com"
     },
     {
@@ -899,8 +701,6 @@
       "raw_name": "HunYuan-Standard-Vision",
       "temp_id": "unmapped--vlmevalkit--hunyuan-standard-vision",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://cloud.tencent.com/document/product/1729/104753"
     },
     {
@@ -908,8 +708,6 @@
       "raw_name": "Ross-Qwen2-7B",
       "temp_id": "unmapped--vlmevalkit--ross-qwen2-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HaochenWang/ross-qwen2-7b"
     },
     {
@@ -917,8 +715,6 @@
       "raw_name": "VITA-1.5",
       "temp_id": "unmapped--vlmevalkit--vita-1.5",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/VITA-MLLM/VITA-1.5"
     },
     {
@@ -926,8 +722,6 @@
       "raw_name": "MiniCPM-o-2.6",
       "temp_id": "unmapped--vlmevalkit--minicpm-o-2.6",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/MiniCPM-o-2_6"
     },
     {
@@ -935,8 +729,6 @@
       "raw_name": "BailingMM-Pro-0120",
       "temp_id": "unmapped--vlmevalkit--bailingmm-pro-0120",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://zxb.alipay.com/llm/landing"
     },
     {
@@ -944,8 +736,6 @@
       "raw_name": "GLM-4v-Plus-20250111",
       "temp_id": "unmapped--vlmevalkit--glm-4v-plus-20250111",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://open.bigmodel.cn/dev/api/normal-model/glm-4v"
     },
     {
@@ -953,8 +743,6 @@
       "raw_name": "Emu3_chat",
       "temp_id": "unmapped--vlmevalkit--emu3_chat",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BAAI/Emu3-Chat"
     },
     {
@@ -962,8 +750,6 @@
       "raw_name": "SmolVLM-256M",
       "temp_id": "unmapped--vlmevalkit--smolvlm-256m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-256M-Instruct"
     },
     {
@@ -971,8 +757,6 @@
       "raw_name": "SmolVLM-500M",
       "temp_id": "unmapped--vlmevalkit--smolvlm-500m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct"
     },
     {
@@ -980,8 +764,6 @@
       "raw_name": "Janus-Pro-7B",
       "temp_id": "unmapped--vlmevalkit--janus-pro-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/deepseek-ai/Janus-Pro-7B"
     },
     {
@@ -989,8 +771,6 @@
       "raw_name": "Ovis2-1B",
       "temp_id": "unmapped--vlmevalkit--ovis2-1b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis2-1B"
     },
     {
@@ -998,8 +778,6 @@
       "raw_name": "Ovis2-2B",
       "temp_id": "unmapped--vlmevalkit--ovis2-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis2-2B"
     },
     {
@@ -1007,8 +785,6 @@
       "raw_name": "Ovis2-4B",
       "temp_id": "unmapped--vlmevalkit--ovis2-4b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis2-4B"
     },
     {
@@ -1016,8 +792,6 @@
       "raw_name": "Ovis2-8B",
       "temp_id": "unmapped--vlmevalkit--ovis2-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis2-8B"
     },
     {
@@ -1025,8 +799,6 @@
       "raw_name": "Ovis2-16B",
       "temp_id": "unmapped--vlmevalkit--ovis2-16b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis2-16B"
     },
     {
@@ -1034,8 +806,6 @@
       "raw_name": "Qwen2.5-VL-3B",
       "temp_id": "unmapped--vlmevalkit--qwen2.5-vl-3b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct"
     },
     {
@@ -1043,8 +813,6 @@
       "raw_name": "Qwen2.5-VL-7B",
       "temp_id": "unmapped--vlmevalkit--qwen2.5-vl-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
     },
     {
@@ -1052,8 +820,6 @@
       "raw_name": "Claude3.7-Sonnet",
       "temp_id": "unmapped--vlmevalkit--claude3.7-sonnet",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.anthropic.com/claude/docs/vision"
     },
     {
@@ -1061,8 +827,6 @@
       "raw_name": "moonshot-v1-8k",
       "temp_id": "unmapped--vlmevalkit--moonshot-v1-8k",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.moonshot.cn/docs/api/chat"
     },
     {
@@ -1070,8 +834,6 @@
       "raw_name": "grok-2-vision-1212",
       "temp_id": "unmapped--vlmevalkit--grok-2-vision-1212",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.x.ai/docs/overview"
     },
     {
@@ -1079,8 +841,6 @@
       "raw_name": "SmolVLM2",
       "temp_id": "unmapped--vlmevalkit--smolvlm2",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-2.2B-Instruct"
     },
     {
@@ -1088,8 +848,6 @@
       "raw_name": "SmolVLM2-256M",
       "temp_id": "unmapped--vlmevalkit--smolvlm2-256m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-256M-Video-Instruct"
     },
     {
@@ -1097,8 +855,6 @@
       "raw_name": "SmolVLM2-500M",
       "temp_id": "unmapped--vlmevalkit--smolvlm2-500m",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct"
     },
     {
@@ -1106,8 +862,6 @@
       "raw_name": "Phi-4-MultiModal",
       "temp_id": "unmapped--vlmevalkit--phi-4-multimodal",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct"
     },
     {
@@ -1115,8 +869,6 @@
       "raw_name": "MUG-U-7B",
       "temp_id": "unmapped--vlmevalkit--mug-u-7b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/Shopee-MUG/MUG-U"
     },
     {
@@ -1124,8 +876,6 @@
       "raw_name": "Gemma3-4B",
       "temp_id": "unmapped--vlmevalkit--gemma3-4b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/google/gemma-3-4b-it"
     },
     {
@@ -1133,8 +883,6 @@
       "raw_name": "Gemma3-12B",
       "temp_id": "unmapped--vlmevalkit--gemma3-12b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/google/gemma-3-12b-it"
     },
     {
@@ -1142,8 +890,6 @@
       "raw_name": "Gemma3-27B",
       "temp_id": "unmapped--vlmevalkit--gemma3-27b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/google/gemma-3-27b-it"
     },
     {
@@ -1151,8 +897,6 @@
       "raw_name": "AKI-4B",
       "temp_id": "unmapped--vlmevalkit--aki-4b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Sony/AKI-4B-phi-3.5-mini"
     },
     {
@@ -1160,8 +904,6 @@
       "raw_name": "Kimi-VL-A3B-Instruct",
       "temp_id": "unmapped--vlmevalkit--kimi-vl-a3b-instruct",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct"
     },
     {
@@ -1169,8 +911,6 @@
       "raw_name": "InternVL3-1B",
       "temp_id": "unmapped--vlmevalkit--internvl3-1b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL3-1B"
     },
     {
@@ -1178,8 +918,6 @@
       "raw_name": "InternVL3-2B",
       "temp_id": "unmapped--vlmevalkit--internvl3-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL3-2B"
     },
     {
@@ -1187,8 +925,6 @@
       "raw_name": "InternVL3-8B",
       "temp_id": "unmapped--vlmevalkit--internvl3-8b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL3-8B"
     },
     {
@@ -1196,8 +932,6 @@
       "raw_name": "InternVL3-14B",
       "temp_id": "unmapped--vlmevalkit--internvl3-14b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL3-14B"
     },
     {
@@ -1205,8 +939,6 @@
       "raw_name": "GPT-4.1-nano-20250414",
       "temp_id": "unmapped--vlmevalkit--gpt-4.1-nano-20250414",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/gpt-4-1/"
     },
     {
@@ -1214,8 +946,6 @@
       "raw_name": "granite-vision-3.2-2b",
       "temp_id": "unmapped--vlmevalkit--granite-vision-3.2-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/ibm-granite/granite-vision-3.2-2b"
     },
     {
@@ -1223,8 +953,6 @@
       "raw_name": "granite-vision-3.3-2b",
       "temp_id": "unmapped--vlmevalkit--granite-vision-3.3-2b",
       "occurrences": 17,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/ibm-granite/granite-vision-3.3-2b"
     },
     {
@@ -1232,8 +960,6 @@
       "raw_name": "WeMM",
       "temp_id": "unmapped--vlmevalkit--wemm",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/scenarios/WeMM/tree/main"
     },
     {
@@ -1241,8 +967,6 @@
       "raw_name": "MiniCPM-Llama3-V2.5",
       "temp_id": "unmapped--vlmevalkit--minicpm-llama3-v2.5",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5"
     },
     {
@@ -1250,8 +974,6 @@
       "raw_name": "CogVLM2-19B-Chat",
       "temp_id": "unmapped--vlmevalkit--cogvlm2-19b-chat",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/THUDM/cogvlm2-llama3-chat-19B"
     },
     {
@@ -1259,8 +981,6 @@
       "raw_name": "Yi-VL-34B",
       "temp_id": "unmapped--vlmevalkit--yi-vl-34b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/01-ai/Yi-VL-34B"
     },
     {
@@ -1268,8 +988,6 @@
       "raw_name": "Yi-VL-6B",
       "temp_id": "unmapped--vlmevalkit--yi-vl-6b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/01-ai/Yi-VL-6B"
     },
     {
@@ -1277,8 +995,6 @@
       "raw_name": "CogVLM-17B-Chat",
       "temp_id": "unmapped--vlmevalkit--cogvlm-17b-chat",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/THUDM/cogvlm-chat-hf"
     },
     {
@@ -1286,8 +1002,6 @@
       "raw_name": "Mini-InternVL-Chat-2B-V1.5",
       "temp_id": "unmapped--vlmevalkit--mini-internvl-chat-2b-v1.5",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/OpenGVLab/InternVL"
     },
     {
@@ -1295,8 +1009,6 @@
       "raw_name": "Mini-InternVL-Chat-4B-V1.5",
       "temp_id": "unmapped--vlmevalkit--mini-internvl-chat-4b-v1.5",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/OpenGVLab/InternVL"
     },
     {
@@ -1304,8 +1016,6 @@
       "raw_name": "GLM-4v-9B",
       "temp_id": "unmapped--vlmevalkit--glm-4v-9b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/THUDM/glm-4v-9b"
     },
     {
@@ -1313,8 +1023,6 @@
       "raw_name": "InternVL2-40B",
       "temp_id": "unmapped--vlmevalkit--internvl2-40b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2-40B"
     },
     {
@@ -1322,8 +1030,6 @@
       "raw_name": "Cambrian-8B",
       "temp_id": "unmapped--vlmevalkit--cambrian-8b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/nyu-visionx/cambrian-8b"
     },
     {
@@ -1331,8 +1037,6 @@
       "raw_name": "Cambrian-13B",
       "temp_id": "unmapped--vlmevalkit--cambrian-13b",
       "occurrences": 16,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/nyu-visionx/cambrian-13b"
     },
     {
@@ -1340,8 +1044,6 @@
       "raw_name": "InternLM-XComposer2-4KHD",
       "temp_id": "unmapped--vlmevalkit--internlm-xcomposer2-4khd",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/InternLM-XComposer"
     },
     {
@@ -1349,8 +1051,6 @@
       "raw_name": "Qwen-VL-Max",
       "temp_id": "unmapped--vlmevalkit--qwen-vl-max",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/spaces/Qwen/Qwen-VL-Max"
     },
     {
@@ -1358,8 +1058,6 @@
       "raw_name": "InternLM-XComposer",
       "temp_id": "unmapped--vlmevalkit--internlm-xcomposer",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/InternLM-XComposer"
     },
     {
@@ -1367,8 +1065,6 @@
       "raw_name": "LLaVA-LLaMA-3-8B",
       "temp_id": "unmapped--vlmevalkit--llava-llama-3-8b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/xtuner/llava-llama-3-8b-v1_1"
     },
     {
@@ -1376,8 +1072,6 @@
       "raw_name": "ShareGPT4V-13B",
       "temp_id": "unmapped--vlmevalkit--sharegpt4v-13b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://sharegpt4v.github.io"
     },
     {
@@ -1385,8 +1079,6 @@
       "raw_name": "LLaVA-InternLM-7B (QLoRA)",
       "temp_id": "unmapped--vlmevalkit--llava-internlm-7b-qlora",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/README.md"
     },
     {
@@ -1394,8 +1086,6 @@
       "raw_name": "LLaVA-v1.5-13B (QLoRA)",
       "temp_id": "unmapped--vlmevalkit--llava-v1.5-13b-qlora",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/README.md"
     },
     {
@@ -1403,8 +1093,6 @@
       "raw_name": "LLaVA-v1.5-7B (QLoRA)",
       "temp_id": "unmapped--vlmevalkit--llava-v1.5-7b-qlora",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/README.md"
     },
     {
@@ -1412,8 +1100,6 @@
       "raw_name": "ShareGPT4V-7B",
       "temp_id": "unmapped--vlmevalkit--sharegpt4v-7b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://sharegpt4v.github.io"
     },
     {
@@ -1421,8 +1107,6 @@
       "raw_name": "RekaEdge",
       "temp_id": "unmapped--vlmevalkit--rekaedge",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://www.reka.ai"
     },
     {
@@ -1430,8 +1114,6 @@
       "raw_name": "MiniCPM-V",
       "temp_id": "unmapped--vlmevalkit--minicpm-v",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/MiniCPM-V"
     },
     {
@@ -1439,8 +1121,6 @@
       "raw_name": "IDEFICS-9B-Instruct",
       "temp_id": "unmapped--vlmevalkit--idefics-9b-instruct",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceM4/idefics-9b-instruct"
     },
     {
@@ -1448,8 +1128,6 @@
       "raw_name": "Claude3.5-Sonnet",
       "temp_id": "unmapped--vlmevalkit--claude3.5-sonnet",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.anthropic.com/claude/docs/vision"
     },
     {
@@ -1457,8 +1135,6 @@
       "raw_name": "Cambrian-34B",
       "temp_id": "unmapped--vlmevalkit--cambrian-34b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/nyu-visionx/cambrian-34b"
     },
     {
@@ -1466,8 +1142,6 @@
       "raw_name": "GPT-4o-mini (0718, detail-high)",
       "temp_id": "unmapped--vlmevalkit--gpt-4o-mini-0718-detail-high",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/"
     },
     {
@@ -1475,8 +1149,6 @@
       "raw_name": "Chameleon-7B",
       "temp_id": "unmapped--vlmevalkit--chameleon-7b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/facebook/chameleon-7b"
     },
     {
@@ -1484,8 +1156,6 @@
       "raw_name": "Chameleon-30B",
       "temp_id": "unmapped--vlmevalkit--chameleon-30b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/facebook/chameleon-30b"
     },
     {
@@ -1493,8 +1163,6 @@
       "raw_name": "Yi-Vision",
       "temp_id": "unmapped--vlmevalkit--yi-vision",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.lingyiwanwu.com"
     },
     {
@@ -1502,8 +1170,6 @@
       "raw_name": "LLaVA-Next-Qwen-32B",
       "temp_id": "unmapped--vlmevalkit--llava-next-qwen-32b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -1511,8 +1177,6 @@
       "raw_name": "Llama-3-MixSense-v1.1",
       "temp_id": "unmapped--vlmevalkit--llama-3-mixsense-v1.1",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Zero-Vision/Llama-3-MixSenseV1_1"
     },
     {
@@ -1520,8 +1184,6 @@
       "raw_name": "OmChat-v2.0-13B",
       "temp_id": "unmapped--vlmevalkit--omchat-v2.0-13b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/omlab/omchat-v2.0-13B-single-beta_hf"
     },
     {
@@ -1529,8 +1191,6 @@
       "raw_name": "Parrot-7B",
       "temp_id": "unmapped--vlmevalkit--parrot-7b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Parrot-7B"
     },
     {
@@ -1538,8 +1198,6 @@
       "raw_name": "VILA1.5-3B",
       "temp_id": "unmapped--vlmevalkit--vila1.5-3b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Efficient-Large-Model/VILA1.5-3b"
     },
     {
@@ -1547,8 +1205,6 @@
       "raw_name": "Llama-3-VILA1.5-8B",
       "temp_id": "unmapped--vlmevalkit--llama-3-vila1.5-8b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Efficient-Large-Model/Llama-3-VILA1.5-8b"
     },
     {
@@ -1556,8 +1212,6 @@
       "raw_name": "VILA1.5-13B",
       "temp_id": "unmapped--vlmevalkit--vila1.5-13b",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Efficient-Large-Model/VILA1.5-13b"
     },
     {
@@ -1565,8 +1219,6 @@
       "raw_name": "Idefics3-8B-Llama3",
       "temp_id": "unmapped--vlmevalkit--idefics3-8b-llama3",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceM4/Idefics3-8B-Llama3"
     },
     {
@@ -1574,8 +1226,6 @@
       "raw_name": "Phi-3.5-Vision",
       "temp_id": "unmapped--vlmevalkit--phi-3.5-vision",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/microsoft/Phi-3.5-vision-instruct"
     },
     {
@@ -1583,8 +1233,6 @@
       "raw_name": "XGen-MM-Instruct-Interleave-v1.5",
       "temp_id": "unmapped--vlmevalkit--xgen-mm-instruct-interleave-v1.5",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Salesforce/xgen-mm-phi3-mini-instruct-interleave-r-v1.5"
     },
     {
@@ -1592,8 +1240,6 @@
       "raw_name": "XGen-MM-Instruct-DPO-v1.5",
       "temp_id": "unmapped--vlmevalkit--xgen-mm-instruct-dpo-v1.5",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Salesforce/xgen-mm-phi3-mini-instruct-dpo-r-v1.5"
     },
     {
@@ -1601,8 +1247,6 @@
       "raw_name": "Llama-3.2-90B-Vision-Instruct",
       "temp_id": "unmapped--vlmevalkit--llama-3.2-90b-vision-instruct",
       "occurrences": 15,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/meta-llama/Llama-3.2-90B-Vision-Instruct"
     },
     {
@@ -1610,8 +1254,6 @@
       "raw_name": "LLaVA-Next-Yi-34B",
       "temp_id": "unmapped--vlmevalkit--llava-next-yi-34b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
     },
     {
@@ -1619,8 +1261,6 @@
       "raw_name": "RekaFlash",
       "temp_id": "unmapped--vlmevalkit--rekaflash",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://www.reka.ai"
     },
     {
@@ -1628,8 +1268,6 @@
       "raw_name": "XVERSE-V-13B",
       "temp_id": "unmapped--vlmevalkit--xverse-v-13b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/xverse-ai/XVERSE-V-13B"
     },
     {
@@ -1637,8 +1275,6 @@
       "raw_name": "LLaVA-InternLM2-20B (QLoRA)",
       "temp_id": "unmapped--vlmevalkit--llava-internlm2-20b-qlora",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/README.md"
     },
     {
@@ -1646,8 +1282,6 @@
       "raw_name": "LLaVA-InternLM2-7B (QLoRA)",
       "temp_id": "unmapped--vlmevalkit--llava-internlm2-7b-qlora",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/README.md"
     },
     {
@@ -1655,8 +1289,6 @@
       "raw_name": "OmniLMM-12B",
       "temp_id": "unmapped--vlmevalkit--omnilmm-12b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/openbmb/OmniLMM-12B"
     },
     {
@@ -1664,8 +1296,6 @@
       "raw_name": "Claude3-Sonnet",
       "temp_id": "unmapped--vlmevalkit--claude3-sonnet",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.anthropic.com/claude/docs/vision"
     },
     {
@@ -1673,8 +1303,6 @@
       "raw_name": "ShareCaptioner",
       "temp_id": "unmapped--vlmevalkit--sharecaptioner",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Lin-Chen/ShareCaptioner/"
     },
     {
@@ -1682,8 +1310,6 @@
       "raw_name": "mPLUG-Owl2",
       "temp_id": "unmapped--vlmevalkit--mplug-owl2",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/X-PLUG/mPLUG-Owl/tree/main/mPLUG-Owl2"
     },
     {
@@ -1691,8 +1317,6 @@
       "raw_name": "Claude3-Haiku",
       "temp_id": "unmapped--vlmevalkit--claude3-haiku",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.anthropic.com/claude/docs/vision"
     },
     {
@@ -1700,8 +1324,6 @@
       "raw_name": "LLaVA-v1-7B",
       "temp_id": "unmapped--vlmevalkit--llava-v1-7b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2304.08485"
     },
     {
@@ -1709,8 +1331,6 @@
       "raw_name": "PandaGPT-13B",
       "temp_id": "unmapped--vlmevalkit--pandagpt-13b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2305.16355"
     },
     {
@@ -1718,8 +1338,6 @@
       "raw_name": "VisualGLM",
       "temp_id": "unmapped--vlmevalkit--visualglm",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/THUDM/VisualGLM-6B"
     },
     {
@@ -1727,8 +1345,6 @@
       "raw_name": "InstructBLIP-7B",
       "temp_id": "unmapped--vlmevalkit--instructblip-7b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2305.06500"
     },
     {
@@ -1736,8 +1352,6 @@
       "raw_name": "MiniGPT-4-v1-7B",
       "temp_id": "unmapped--vlmevalkit--minigpt-4-v1-7b",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/abs/2304.10592"
     },
     {
@@ -1745,8 +1359,6 @@
       "raw_name": "MiniGPT-4-v2",
       "temp_id": "unmapped--vlmevalkit--minigpt-4-v2",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://minigpt-v2.github.io"
     },
     {
@@ -1754,8 +1366,6 @@
       "raw_name": "OpenFlamingo v2",
       "temp_id": "unmapped--vlmevalkit--openflamingo-v2",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/mlfoundations/open_flamingo"
     },
     {
@@ -1763,8 +1373,6 @@
       "raw_name": "CongRong",
       "temp_id": "unmapped--vlmevalkit--congrong",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://mllm.cloudwalk.com/web/"
     },
     {
@@ -1772,8 +1380,6 @@
       "raw_name": "InternLM-XComposer2.5",
       "temp_id": "unmapped--vlmevalkit--internlm-xcomposer2.5",
       "occurrences": 14,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/internlm/internlm-xcomposer2d5-7b"
     },
     {
@@ -1781,8 +1387,6 @@
       "raw_name": "GLM-4v",
       "temp_id": "unmapped--vlmevalkit--glm-4v",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://open.bigmodel.cn/dev/api#glm-4v"
     },
     {
@@ -1790,8 +1394,6 @@
       "raw_name": "Gemini-1.0-Pro",
       "temp_id": "unmapped--vlmevalkit--gemini-1.0-pro",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://deepmind.google/technologies/gemini/"
     },
     {
@@ -1799,8 +1401,6 @@
       "raw_name": "Qwen-VL-Plus",
       "temp_id": "unmapped--vlmevalkit--qwen-vl-plus",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/QwenLM/Qwen-VL?tab=readme-ov-file#qwen-vl-plus"
     },
     {
@@ -1808,8 +1408,6 @@
       "raw_name": "Emu2_chat",
       "temp_id": "unmapped--vlmevalkit--emu2_chat",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/baaivision/Emu/tree/main/Emu2"
     },
     {
@@ -1817,8 +1415,6 @@
       "raw_name": "MMAlaya",
       "temp_id": "unmapped--vlmevalkit--mmalaya",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/DataCanvas/MMAlaya"
     },
     {
@@ -1826,8 +1422,6 @@
       "raw_name": "IDEFICS-80B-Instruct",
       "temp_id": "unmapped--vlmevalkit--idefics-80b-instruct",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/HuggingFaceM4/idefics-80b-instruct"
     },
     {
@@ -1835,8 +1429,6 @@
       "raw_name": "VILA1.5-40B",
       "temp_id": "unmapped--vlmevalkit--vila1.5-40b",
       "occurrences": 13,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Efficient-Large-Model/VILA1.5-40b"
     },
     {
@@ -1844,8 +1436,6 @@
       "raw_name": "Claude3-Opus",
       "temp_id": "unmapped--vlmevalkit--claude3-opus",
       "occurrences": 12,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.anthropic.com/claude/docs/vision"
     },
     {
@@ -1853,8 +1443,6 @@
       "raw_name": "DeepSeek-VL2-Tiny",
       "temp_id": "unmapped--vlmevalkit--deepseek-vl2-tiny",
       "occurrences": 12,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/deepseek-ai/deepseek-vl2-tiny"
     },
     {
@@ -1862,8 +1450,6 @@
       "raw_name": "DeepSeek-VL2-Small",
       "temp_id": "unmapped--vlmevalkit--deepseek-vl2-small",
       "occurrences": 12,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/deepseek-ai/deepseek-vl2-small"
     },
     {
@@ -1871,8 +1457,6 @@
       "raw_name": "Moondream2",
       "temp_id": "unmapped--vlmevalkit--moondream2",
       "occurrences": 11,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/vikhyatk/moondream2"
     },
     {
@@ -1880,8 +1464,6 @@
       "raw_name": "LLaVA-OneVision-72B (SI)",
       "temp_id": "unmapped--vlmevalkit--llava-onevision-72b-si",
       "occurrences": 10,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-72b-si"
     },
     {
@@ -1889,8 +1471,6 @@
       "raw_name": "bailingMM-mini",
       "temp_id": "unmapped--vlmevalkit--bailingmm-mini",
       "occurrences": 10,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://bailingmm.alipay.com/llm/landing"
     },
     {
@@ -1898,8 +1478,6 @@
       "raw_name": "Gemini-2.0-Pro",
       "temp_id": "unmapped--vlmevalkit--gemini-2.0-pro",
       "occurrences": 10,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://deepmind.google/technologies/gemini/"
     },
     {
@@ -1907,8 +1485,6 @@
       "raw_name": "TeleMM",
       "temp_id": "unmapped--vlmevalkit--telemm",
       "occurrences": 9,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://docs.siliconflow.cn/api-reference/chat-completions/chat-completions"
     },
     {
@@ -1916,8 +1492,6 @@
       "raw_name": "InternVL2.5-8B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-8b",
       "occurrences": 9,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B"
     },
     {
@@ -1925,8 +1499,6 @@
       "raw_name": "Ola-7b",
       "temp_id": "unmapped--vlmevalkit--ola-7b",
       "occurrences": 9,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/THUdyh/Ola-7b"
     },
     {
@@ -1934,8 +1506,6 @@
       "raw_name": "MiMo-VL-7B",
       "temp_id": "unmapped--vlmevalkit--mimo-vl-7b",
       "occurrences": 9,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/XiaomiMiMo/MiMo-VL-7B-RL"
     },
     {
@@ -1943,8 +1513,6 @@
       "raw_name": "JT-VL-Chat-V3.0",
       "temp_id": "unmapped--vlmevalkit--jt-vl-chat-v3.0",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://github.com/jiutiancv/JT-VL-Chat/tree/main"
     },
     {
@@ -1952,8 +1520,6 @@
       "raw_name": "Vintern-1B-v2",
       "temp_id": "unmapped--vlmevalkit--vintern-1b-v2",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/5CD-AI/Vintern-1B-v2"
     },
     {
@@ -1961,8 +1527,6 @@
       "raw_name": "Gemini-1.5-Pro-002",
       "temp_id": "unmapped--vlmevalkit--gemini-1.5-pro-002",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://deepmind.google/technologies/gemini/"
     },
     {
@@ -1970,8 +1534,6 @@
       "raw_name": "Gemini-1.5-Flash-002",
       "temp_id": "unmapped--vlmevalkit--gemini-1.5-flash-002",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://deepmind.google/technologies/gemini/"
     },
     {
@@ -1979,8 +1541,6 @@
       "raw_name": "GPT-4o (1120, detail-high)",
       "temp_id": "unmapped--vlmevalkit--gpt-4o-1120-detail-high",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/hello-gpt-4o/"
     },
     {
@@ -1988,8 +1548,6 @@
       "raw_name": "LLaVA-CoT",
       "temp_id": "unmapped--vlmevalkit--llava-cot",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Xkev/Llama-3.2V-11B-cot"
     },
     {
@@ -1997,8 +1555,6 @@
       "raw_name": "SenseNova",
       "temp_id": "unmapped--vlmevalkit--sensenova",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.sensenova.cn/home"
     },
     {
@@ -2006,8 +1562,6 @@
       "raw_name": "InternVL2.5-1B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-1b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-1B"
     },
     {
@@ -2015,8 +1569,6 @@
       "raw_name": "InternVL2.5-2B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-2b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-2B"
     },
     {
@@ -2024,8 +1576,6 @@
       "raw_name": "InternVL2.5-4B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-4b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-4B"
     },
     {
@@ -2033,8 +1583,6 @@
       "raw_name": "InternVL2.5-26B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-26b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-26B"
     },
     {
@@ -2042,8 +1590,6 @@
       "raw_name": "InternVL2.5-38B",
       "temp_id": "unmapped--vlmevalkit--internvl2.5-38b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-38B"
     },
     {
@@ -2051,8 +1597,6 @@
       "raw_name": "Valley-Eagle",
       "temp_id": "unmapped--vlmevalkit--valley-eagle",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/bytedance-research/Valley-Eagle-7B"
     },
     {
@@ -2060,8 +1604,6 @@
       "raw_name": "VITA",
       "temp_id": "unmapped--vlmevalkit--vita",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/VITA-MLLM/VITA"
     },
     {
@@ -2069,8 +1611,6 @@
       "raw_name": "GPT-4.5",
       "temp_id": "unmapped--vlmevalkit--gpt-4.5",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/introducing-gpt-4-5/"
     },
     {
@@ -2078,8 +1618,6 @@
       "raw_name": "Ristretto-3B",
       "temp_id": "unmapped--vlmevalkit--ristretto-3b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/LiAutoAD/Ristretto-3B"
     },
     {
@@ -2087,8 +1625,6 @@
       "raw_name": "ChatGPT-4o-latest",
       "temp_id": "unmapped--vlmevalkit--chatgpt-4o-latest",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/hello-gpt-4o/"
     },
     {
@@ -2096,8 +1632,6 @@
       "raw_name": "Kimi-VL-A3B-Thinking",
       "temp_id": "unmapped--vlmevalkit--kimi-vl-a3b-thinking",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking"
     },
     {
@@ -2105,8 +1639,6 @@
       "raw_name": "SAIL-VL-1.5-2B",
       "temp_id": "unmapped--vlmevalkit--sail-vl-1.5-2b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BytedanceDouyinContent/SAIL-VL-1d5-2B"
     },
     {
@@ -2114,8 +1646,6 @@
       "raw_name": "SAIL-VL-1.5-8B",
       "temp_id": "unmapped--vlmevalkit--sail-vl-1.5-8b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BytedanceDouyinContent/SAIL-VL-1d5-8B"
     },
     {
@@ -2123,8 +1653,6 @@
       "raw_name": "SAIL-VL-1.6-8B",
       "temp_id": "unmapped--vlmevalkit--sail-vl-1.6-8b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/BytedanceDouyinContent/SAIL-VL-1d6-8B"
     },
     {
@@ -2132,8 +1660,6 @@
       "raw_name": "SenseNova-V6-Pro",
       "temp_id": "unmapped--vlmevalkit--sensenova-v6-pro",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.sensenova.cn/technology/fusion/Pro/"
     },
     {
@@ -2141,8 +1667,6 @@
       "raw_name": "QTuneVL1-2B",
       "temp_id": "unmapped--vlmevalkit--qtunevl1-2b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/hanchaow/QTuneVL1-2B"
     },
     {
@@ -2150,8 +1674,6 @@
       "raw_name": "CongRong-v2.0",
       "temp_id": "unmapped--vlmevalkit--congrong-v2.0",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "http://115.120.28.181:20228/web/#/document-center"
     },
     {
@@ -2159,8 +1681,6 @@
       "raw_name": "WeThink-Qwen2.5VL-7B",
       "temp_id": "unmapped--vlmevalkit--wethink-qwen2.5vl-7b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/yangjie-cv/WeThink-Qwen2.5VL-7B"
     },
     {
@@ -2168,8 +1688,6 @@
       "raw_name": "valley2",
       "temp_id": "unmapped--vlmevalkit--valley2",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/bytedance-research/Valley-Eagle-7B"
     },
     {
@@ -2177,8 +1695,6 @@
       "raw_name": "valley2_dpo",
       "temp_id": "unmapped--vlmevalkit--valley2_dpo",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/bytedance-research/Valley2-DPO"
     },
     {
@@ -2186,8 +1702,6 @@
       "raw_name": "Flash-VL-2B-Dynamic-ISS",
       "temp_id": "unmapped--vlmevalkit--flash-vl-2b-dynamic-iss",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/FlashVL/FlashVL-2B-Dynamic-ISS"
     },
     {
@@ -2195,8 +1709,6 @@
       "raw_name": "Long-VITA-16K",
       "temp_id": "unmapped--vlmevalkit--long-vita-16k",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/VITA-MLLM/Long-VITA-16K"
     },
     {
@@ -2204,8 +1716,6 @@
       "raw_name": "HawkVL-2B",
       "temp_id": "unmapped--vlmevalkit--hawkvl-2b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/xjtupanda/HawkVL-2B"
     },
     {
@@ -2213,8 +1723,6 @@
       "raw_name": "granite-vision-3.1-2b-preview",
       "temp_id": "unmapped--vlmevalkit--granite-vision-3.1-2b-preview",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/ibm-granite/granite-vision-3.1-2b-preview"
     },
     {
@@ -2222,8 +1730,6 @@
       "raw_name": "Qwen2.5-VL-32B",
       "temp_id": "unmapped--vlmevalkit--qwen2.5-vl-32b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct"
     },
     {
@@ -2231,8 +1737,6 @@
       "raw_name": "Kimi-VL-A3B-Thinking-2506",
       "temp_id": "unmapped--vlmevalkit--kimi-vl-a3b-thinking-2506",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506"
     },
     {
@@ -2240,8 +1744,6 @@
       "raw_name": "BlueLM-2.5-3B",
       "temp_id": "unmapped--vlmevalkit--bluelm-2.5-3b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://arxiv.org/pdf/2507.05934"
     },
     {
@@ -2249,8 +1751,6 @@
       "raw_name": "Ovis-U1-3B",
       "temp_id": "unmapped--vlmevalkit--ovis-u1-3b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/AIDC-AI/Ovis-U1-3B"
     },
     {
@@ -2258,8 +1758,6 @@
       "raw_name": "VARCO-VISION-2.0-1.7B",
       "temp_id": "unmapped--vlmevalkit--varco-vision-2.0-1.7b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NCSOFT/VARCO-VISION-2.0-1.7B"
     },
     {
@@ -2267,8 +1765,6 @@
       "raw_name": "VARCO-VISION-2.0-14B",
       "temp_id": "unmapped--vlmevalkit--varco-vision-2.0-14b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/NCSOFT/VARCO-VISION-2.0-14B"
     },
     {
@@ -2276,8 +1772,6 @@
       "raw_name": "QTuneVL1.5-2B",
       "temp_id": "unmapped--vlmevalkit--qtunevl1.5-2b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/hanchaow/QTuneVL1_5-2B"
     },
     {
@@ -2285,8 +1779,6 @@
       "raw_name": "QTuneVL1.5-3B",
       "temp_id": "unmapped--vlmevalkit--qtunevl1.5-3b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/hanchaow/QTuneVL1_5-3B"
     },
     {
@@ -2294,8 +1786,6 @@
       "raw_name": "R-4B",
       "temp_id": "unmapped--vlmevalkit--r-4b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://huggingface.co/YannQi/R-4B"
     },
     {
@@ -2303,8 +1793,6 @@
       "raw_name": "GPT-5-20250807",
       "temp_id": "unmapped--vlmevalkit--gpt-5-20250807",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/introducing-gpt-5/"
     },
     {
@@ -2312,8 +1800,6 @@
       "raw_name": "GPT-5-nano-20250807",
       "temp_id": "unmapped--vlmevalkit--gpt-5-nano-20250807",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/introducing-gpt-5/"
     },
     {
@@ -2321,8 +1807,6 @@
       "raw_name": "GPT-5-mini-20250807",
       "temp_id": "unmapped--vlmevalkit--gpt-5-mini-20250807",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://openai.com/index/introducing-gpt-5/"
     },
     {
@@ -2330,8 +1814,6 @@
       "raw_name": "SenseNova-V6-5-Pro",
       "temp_id": "unmapped--vlmevalkit--sensenova-v6-5-pro",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://platform.sensenova.cn/technology/fusion/Pro/"
     },
     {
@@ -2339,8 +1821,6 @@
       "raw_name": "BlueLM-2.6-3B",
       "temp_id": "unmapped--vlmevalkit--bluelm-2.6-3b",
       "occurrences": 8,
-      "first_seen": "2026-08-29T18:44:00Z",
-      "last_seen": "2026-08-29T18:44:00Z",
       "example_url": "https://developers.vivo.com/product/ai/bluelm"
     },
     {
@@ -2348,8 +1828,6 @@
       "raw_name": "claude-4-sonnet-20250514",
       "temp_id": "unmapped--swebench--claude-4-sonnet-20250514",
       "occurrences": 7,
-      "first_seen": "2026-08-29T18:42:11Z",
-      "last_seen": "2026-08-29T18:43:43Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20250726_mini-v1.0.0_claude-sonnet-4-20250514"
     },
     {
@@ -2357,8 +1835,6 @@
       "raw_name": "Qwen 2.5",
       "temp_id": "unmapped--swebench--qwen-2.5",
       "occurrences": 3,
-      "first_seen": "2026-08-29T18:43:15Z",
-      "last_seen": "2026-08-29T18:43:31Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128"
     },
     {
@@ -2366,8 +1842,6 @@
       "raw_name": "claude-4-sonnet",
       "temp_id": "unmapped--swebench--claude-4-sonnet",
       "occurrences": 3,
-      "first_seen": "2026-08-29T18:43:38Z",
-      "last_seen": "2026-08-29T18:43:50Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250603_Refact_Agent_claude-4-sonnet"
     },
     {
@@ -2375,8 +1849,6 @@
       "raw_name": "claude-opus-4-6",
       "temp_id": "unmapped--swebench--claude-opus-4-6",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:42:19Z",
-      "last_seen": "2026-08-29T18:42:43Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20260217_mini-v2.0.0_claude-4-6-opus"
     },
     {
@@ -2384,8 +1856,6 @@
       "raw_name": "claude-3-opus-20240229",
       "temp_id": "unmapped--swebench--claude-3-opus-20240229",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:42:54Z",
-      "last_seen": "2026-08-29T18:42:55Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240402_rag_claude3opus"
     },
     {
@@ -2393,8 +1863,6 @@
       "raw_name": "gpt-4-1106-preview",
       "temp_id": "unmapped--swebench--gpt-4-1106-preview",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:42:55Z",
-      "last_seen": "2026-08-29T18:42:55Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240402_rag_gpt4"
     },
     {
@@ -2402,8 +1870,6 @@
       "raw_name": "NV-EmbedCode",
       "temp_id": "unmapped--swebench--nv-embedcode",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:30Z",
-      "last_seen": "2026-08-29T18:43:33Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250410_cortexa"
     },
     {
@@ -2411,8 +1877,6 @@
       "raw_name": "Q",
       "temp_id": "unmapped--swebench--q",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:39Z",
-      "last_seen": "2026-08-29T18:43:39Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250616_Skywork-SWE-32B+TTS_Bo8"
     },
     {
@@ -2420,8 +1884,6 @@
       "raw_name": "https://huggingface.co/agentica-org/DeepSWE-Preview",
       "temp_id": "unmapped--swebench--https-huggingface.co-agentica-org-deepswe-preview",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:42Z",
-      "last_seen": "2026-08-29T18:43:42Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250629_deepswerl_r2eagent"
     },
     {
@@ -2429,8 +1891,6 @@
       "raw_name": "Qwen3-Coder-30B-A3B-Instruct",
       "temp_id": "unmapped--swebench--qwen3-coder-30b-a3b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:47Z",
-      "last_seen": "2026-08-29T18:43:47Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250901_entroPO_R2E_QwenCoder30BA3B"
     },
     {
@@ -2438,8 +1898,6 @@
       "raw_name": "claude-sonnet-4.5",
       "temp_id": "unmapped--swebench--claude-sonnet-4.5",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:51Z",
-      "last_seen": "2026-08-29T18:43:51Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251021_SalesforceAIResearch_SAGE_bash_only"
     },
     {
@@ -2447,8 +1905,6 @@
       "raw_name": "Magicoder-S-DS-6.7B",
       "temp_id": "unmapped--bigcodebench--magicoder-s-ds-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2456,8 +1912,6 @@
       "raw_name": "StarCoder2-15B-Instruct-v0.1",
       "temp_id": "unmapped--bigcodebench--starcoder2-15b-instruct-v0.1",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2465,8 +1919,6 @@
       "raw_name": "CodeGemma-7B-Instruct",
       "temp_id": "unmapped--bigcodebench--codegemma-7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2474,8 +1926,6 @@
       "raw_name": "GPT-3.5-Turbo-0125",
       "temp_id": "unmapped--bigcodebench--gpt-3.5-turbo-0125",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2483,8 +1933,6 @@
       "raw_name": "GPT-4-Turbo-2024-04-09",
       "temp_id": "unmapped--bigcodebench--gpt-4-turbo-2024-04-09",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2492,8 +1940,6 @@
       "raw_name": "GPT-4-0613",
       "temp_id": "unmapped--bigcodebench--gpt-4-0613",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2501,8 +1947,6 @@
       "raw_name": "CodeLlama-7B-Instruct",
       "temp_id": "unmapped--bigcodebench--codellama-7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2510,8 +1954,6 @@
       "raw_name": "CodeLlama-13B-Instruct",
       "temp_id": "unmapped--bigcodebench--codellama-13b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2519,8 +1961,6 @@
       "raw_name": "Mistral-Large-2402",
       "temp_id": "unmapped--bigcodebench--mistral-large-2402",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2528,8 +1968,6 @@
       "raw_name": "Mistral-Small-2402",
       "temp_id": "unmapped--bigcodebench--mistral-small-2402",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2537,8 +1975,6 @@
       "raw_name": "Mixtral-8x22B-Instruct",
       "temp_id": "unmapped--bigcodebench--mixtral-8x22b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2546,8 +1982,6 @@
       "raw_name": "CodeLlama-34B-Instruct",
       "temp_id": "unmapped--bigcodebench--codellama-34b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2555,8 +1989,6 @@
       "raw_name": "CodeLlama-70B-Instruct",
       "temp_id": "unmapped--bigcodebench--codellama-70b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2564,8 +1996,6 @@
       "raw_name": "CodeQwen1.5-7B-Chat",
       "temp_id": "unmapped--bigcodebench--codeqwen1.5-7b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2573,8 +2003,6 @@
       "raw_name": "Qwen1.5-110B-Chat",
       "temp_id": "unmapped--bigcodebench--qwen1.5-110b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2582,8 +2010,6 @@
       "raw_name": "Qwen1.5-72B-Chat",
       "temp_id": "unmapped--bigcodebench--qwen1.5-72b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2591,8 +2017,6 @@
       "raw_name": "Qwen1.5-32B-Chat",
       "temp_id": "unmapped--bigcodebench--qwen1.5-32b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2600,8 +2024,6 @@
       "raw_name": "DeepSeek-V2-Chat",
       "temp_id": "unmapped--bigcodebench--deepseek-v2-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2609,8 +2031,6 @@
       "raw_name": "DeepSeek-Coder-1.3B-Instruct",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-1.3b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2618,8 +2038,6 @@
       "raw_name": "DeepSeek-Coder-33B-Instruct",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-33b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2627,8 +2045,6 @@
       "raw_name": "DeepSeek-Coder-6.7B-Instruct",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-6.7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2636,8 +2052,6 @@
       "raw_name": "Llama-3-70B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3-70b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2645,8 +2059,6 @@
       "raw_name": "Llama-3-8B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3-8b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2654,8 +2066,6 @@
       "raw_name": "Granite-Code-20B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-code-20b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2663,8 +2073,6 @@
       "raw_name": "Granite-Code-34B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-code-34b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2672,8 +2080,6 @@
       "raw_name": "Claude-3-Haiku-20240307",
       "temp_id": "unmapped--bigcodebench--claude-3-haiku-20240307",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2681,8 +2087,6 @@
       "raw_name": "Claude-3-Sonnet-20240229",
       "temp_id": "unmapped--bigcodebench--claude-3-sonnet-20240229",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2690,8 +2094,6 @@
       "raw_name": "Claude-3-Opus-20240229",
       "temp_id": "unmapped--bigcodebench--claude-3-opus-20240229",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2699,8 +2101,6 @@
       "raw_name": "Yi-1.5-34B-Chat",
       "temp_id": "unmapped--bigcodebench--yi-1.5-34b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2708,8 +2108,6 @@
       "raw_name": "Yi-1.5-9B-Chat",
       "temp_id": "unmapped--bigcodebench--yi-1.5-9b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2717,8 +2115,6 @@
       "raw_name": "Yi-1.5-6B-Chat",
       "temp_id": "unmapped--bigcodebench--yi-1.5-6b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2726,8 +2122,6 @@
       "raw_name": "Qwen2-57B-A14B",
       "temp_id": "unmapped--bigcodebench--qwen2-57b-a14b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2735,8 +2129,6 @@
       "raw_name": "Qwen2-7B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2-7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2744,8 +2136,6 @@
       "raw_name": "Qwen2-72B-Chat",
       "temp_id": "unmapped--bigcodebench--qwen2-72b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2753,8 +2143,6 @@
       "raw_name": "Gemini-1.5-Pro-API-0514",
       "temp_id": "unmapped--bigcodebench--gemini-1.5-pro-api-0514",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2762,8 +2150,6 @@
       "raw_name": "Gemini-1.5-Flash-API-0514",
       "temp_id": "unmapped--bigcodebench--gemini-1.5-flash-api-0514",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2771,8 +2157,6 @@
       "raw_name": "OpenCodeInterpreter-DS-6.7B",
       "temp_id": "unmapped--bigcodebench--opencodeinterpreter-ds-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2780,8 +2164,6 @@
       "raw_name": "OpenCodeInterpreter-DS-1.3B",
       "temp_id": "unmapped--bigcodebench--opencodeinterpreter-ds-1.3b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2789,8 +2171,6 @@
       "raw_name": "Phi-3-Medium-128K-Instruct",
       "temp_id": "unmapped--bigcodebench--phi-3-medium-128k-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2798,8 +2178,6 @@
       "raw_name": "Phi-3-Small-128K-Instruct",
       "temp_id": "unmapped--bigcodebench--phi-3-small-128k-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2807,8 +2185,6 @@
       "raw_name": "Codestral-22B-v0.1",
       "temp_id": "unmapped--bigcodebench--codestral-22b-v0.1",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2816,8 +2192,6 @@
       "raw_name": "Codestral-Mamba",
       "temp_id": "unmapped--bigcodebench--codestral-mamba",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2825,8 +2199,6 @@
       "raw_name": "Mistral-7B-Instruct-v0.3",
       "temp_id": "unmapped--bigcodebench--mistral-7b-instruct-v0.3",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2834,8 +2206,6 @@
       "raw_name": "Command R+",
       "temp_id": "unmapped--bigcodebench--command-r",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2843,8 +2213,6 @@
       "raw_name": "DeepSeek-Coder-V2-Instruct",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-v2-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2852,8 +2220,6 @@
       "raw_name": "DeepSeek-Coder-V2-Lite-Instruct",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-v2-lite-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2861,8 +2227,6 @@
       "raw_name": "Claude-3.5-Sonnet-20240620",
       "temp_id": "unmapped--bigcodebench--claude-3.5-sonnet-20240620",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2870,8 +2234,6 @@
       "raw_name": "Hermes-2-Theta-Llama-3-70B",
       "temp_id": "unmapped--bigcodebench--hermes-2-theta-llama-3-70b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2879,8 +2241,6 @@
       "raw_name": "WaveCoder-Ultra-6.7B",
       "temp_id": "unmapped--bigcodebench--wavecoder-ultra-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2888,8 +2248,6 @@
       "raw_name": "Gemma-2-9B-Instruct",
       "temp_id": "unmapped--bigcodebench--gemma-2-9b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2897,8 +2255,6 @@
       "raw_name": "AutoCoder",
       "temp_id": "unmapped--bigcodebench--autocoder",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2906,8 +2262,6 @@
       "raw_name": "AutoCoder-S-6.7B",
       "temp_id": "unmapped--bigcodebench--autocoder-s-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2915,8 +2269,6 @@
       "raw_name": "AutoCoder-QW-7B",
       "temp_id": "unmapped--bigcodebench--autocoder-qw-7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2924,8 +2276,6 @@
       "raw_name": "ReflectionCoder-DS-33B",
       "temp_id": "unmapped--bigcodebench--reflectioncoder-ds-33b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2933,8 +2283,6 @@
       "raw_name": "ReflectionCoder-DS-6.7B",
       "temp_id": "unmapped--bigcodebench--reflectioncoder-ds-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2942,8 +2290,6 @@
       "raw_name": "ReflectionCoder-CL-34B",
       "temp_id": "unmapped--bigcodebench--reflectioncoder-cl-34b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2951,8 +2297,6 @@
       "raw_name": "ReflectionCoder-CL-7B",
       "temp_id": "unmapped--bigcodebench--reflectioncoder-cl-7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2960,8 +2304,6 @@
       "raw_name": "Phi-3.1-Mini-128K-Instruct",
       "temp_id": "unmapped--bigcodebench--phi-3.1-mini-128k-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2969,8 +2311,6 @@
       "raw_name": "Phi-3-Mini-128K-Instruct",
       "temp_id": "unmapped--bigcodebench--phi-3-mini-128k-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2978,8 +2318,6 @@
       "raw_name": "InternLM2.5-7B-Chat",
       "temp_id": "unmapped--bigcodebench--internlm2.5-7b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2987,8 +2325,6 @@
       "raw_name": "Hermes-2-Pro-Llama-3-70B",
       "temp_id": "unmapped--bigcodebench--hermes-2-pro-llama-3-70b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -2996,8 +2332,6 @@
       "raw_name": "DeepSeek-V2-Chat (2024-06-28)",
       "temp_id": "unmapped--bigcodebench--deepseek-v2-chat-2024-06-28",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3005,8 +2339,6 @@
       "raw_name": "Gemma-2-27B-Instruct",
       "temp_id": "unmapped--bigcodebench--gemma-2-27b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3014,8 +2346,6 @@
       "raw_name": "Artigenz-Coder-DS-6.7B",
       "temp_id": "unmapped--bigcodebench--artigenz-coder-ds-6.7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3023,8 +2353,6 @@
       "raw_name": "OpenChat-3.6-8B-20240522",
       "temp_id": "unmapped--bigcodebench--openchat-3.6-8b-20240522",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3032,8 +2360,6 @@
       "raw_name": "Phind-CodeLlama-34B-v2",
       "temp_id": "unmapped--bigcodebench--phind-codellama-34b-v2",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3041,8 +2367,6 @@
       "raw_name": "Yi-Large",
       "temp_id": "unmapped--bigcodebench--yi-large",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3050,8 +2374,6 @@
       "raw_name": "CodeGeex4-All-9B",
       "temp_id": "unmapped--bigcodebench--codegeex4-all-9b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3059,8 +2381,6 @@
       "raw_name": "Athene-70B",
       "temp_id": "unmapped--bigcodebench--athene-70b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3068,8 +2388,6 @@
       "raw_name": "Nxcode-CQ-7B-Orpo",
       "temp_id": "unmapped--bigcodebench--nxcode-cq-7b-orpo",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3077,8 +2395,6 @@
       "raw_name": "Llama-3-70B-Synthia-v3.5",
       "temp_id": "unmapped--bigcodebench--llama-3-70b-synthia-v3.5",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3086,8 +2402,6 @@
       "raw_name": "Tess-v2.5.2-Qwen2-72B",
       "temp_id": "unmapped--bigcodebench--tess-v2.5.2-qwen2-72b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3095,8 +2409,6 @@
       "raw_name": "WhiteRabbitNeo-33B-v1.5",
       "temp_id": "unmapped--bigcodebench--whiterabbitneo-33b-v1.5",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3104,8 +2416,6 @@
       "raw_name": "Llama-3.1-8B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3.1-8b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3113,8 +2423,6 @@
       "raw_name": "Llama-3.1-70B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3.1-70b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3122,8 +2430,6 @@
       "raw_name": "Phi-3.5-Mini-Instruct",
       "temp_id": "unmapped--bigcodebench--phi-3.5-mini-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3131,8 +2437,6 @@
       "raw_name": "C4AI-Command-R-08-2024",
       "temp_id": "unmapped--bigcodebench--c4ai-command-r-08-2024",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3140,8 +2444,6 @@
       "raw_name": "Yi-Coder-9B-Chat",
       "temp_id": "unmapped--bigcodebench--yi-coder-9b-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3149,8 +2451,6 @@
       "raw_name": "Qwen2.5-Coder-1.5B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-coder-1.5b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3158,8 +2458,6 @@
       "raw_name": "Qwen2.5-Coder-7B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-coder-7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3167,8 +2465,6 @@
       "raw_name": "Mistral-Small-Instruct-2409",
       "temp_id": "unmapped--bigcodebench--mistral-small-instruct-2409",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3176,8 +2472,6 @@
       "raw_name": "Qwen2.5-0.5B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-0.5b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3185,8 +2479,6 @@
       "raw_name": "Qwen2.5-1.5B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-1.5b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3194,8 +2486,6 @@
       "raw_name": "Qwen2.5-7B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-7b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3203,8 +2493,6 @@
       "raw_name": "Qwen2.5-14B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-14b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3212,8 +2500,6 @@
       "raw_name": "Qwen2.5-32B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-32b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3221,8 +2507,6 @@
       "raw_name": "Llama-3.2-1B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3.2-1b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3230,8 +2514,6 @@
       "raw_name": "Llama-3.2-3B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3.2-3b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3239,8 +2521,6 @@
       "raw_name": "Llama-3.1-Nemotron-70B-Instruct",
       "temp_id": "unmapped--bigcodebench--llama-3.1-nemotron-70b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3248,8 +2528,6 @@
       "raw_name": "Claude-3.5-Sonnet-20241022",
       "temp_id": "unmapped--bigcodebench--claude-3.5-sonnet-20241022",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3257,8 +2535,6 @@
       "raw_name": "Granite-3.0-8B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-3.0-8b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3266,8 +2542,6 @@
       "raw_name": "Claude-3.5-Haiku-20241022",
       "temp_id": "unmapped--bigcodebench--claude-3.5-haiku-20241022",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3275,8 +2549,6 @@
       "raw_name": "Qwen2.5-Coder-14B-Instruct",
       "temp_id": "unmapped--bigcodebench--qwen2.5-coder-14b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3284,8 +2556,6 @@
       "raw_name": "OpenCoder-1.5B-Instruct",
       "temp_id": "unmapped--bigcodebench--opencoder-1.5b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3293,8 +2563,6 @@
       "raw_name": "OpenCoder-8B-Instruct",
       "temp_id": "unmapped--bigcodebench--opencoder-8b-instruct",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3302,8 +2570,6 @@
       "raw_name": "Athene-V2-Agent",
       "temp_id": "unmapped--bigcodebench--athene-v2-agent",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3311,8 +2577,6 @@
       "raw_name": "Athene-V2-Chat",
       "temp_id": "unmapped--bigcodebench--athene-v2-chat",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3320,8 +2584,6 @@
       "raw_name": "Gemini-Exp-1114",
       "temp_id": "unmapped--bigcodebench--gemini-exp-1114",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3329,8 +2591,6 @@
       "raw_name": "Gemini-Exp-1121",
       "temp_id": "unmapped--bigcodebench--gemini-exp-1121",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3338,8 +2598,6 @@
       "raw_name": "Gemini-Exp-1206",
       "temp_id": "unmapped--bigcodebench--gemini-exp-1206",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3347,8 +2605,6 @@
       "raw_name": "DeepSeek-V2.5-1210",
       "temp_id": "unmapped--bigcodebench--deepseek-v2.5-1210",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3356,8 +2612,6 @@
       "raw_name": "Gemini-2.0-Flash-Exp",
       "temp_id": "unmapped--bigcodebench--gemini-2.0-flash-exp",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3365,8 +2619,6 @@
       "raw_name": "Phi-4",
       "temp_id": "unmapped--bigcodebench--phi-4",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3374,8 +2626,6 @@
       "raw_name": "DeepSeek-R1-Distill-Llama-70B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-llama-70b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3383,8 +2633,6 @@
       "raw_name": "DeepSeek-R1-Distill-Qwen-32B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-qwen-32b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3392,8 +2640,6 @@
       "raw_name": "DeepSeek-R1-Distill-Qwen-14B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-qwen-14b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3401,8 +2647,6 @@
       "raw_name": "DeepSeek-R1-Distill-Llama-8B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-llama-8b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3410,8 +2654,6 @@
       "raw_name": "DeepSeek-R1-Distill-Qwen-7B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-qwen-7b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3419,8 +2661,6 @@
       "raw_name": "DeepSeek-R1-Distill-Qwen-1.5B",
       "temp_id": "unmapped--bigcodebench--deepseek-r1-distill-qwen-1.5b",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3428,8 +2668,6 @@
       "raw_name": "Mistral-Small-24B-Instruct-2501",
       "temp_id": "unmapped--bigcodebench--mistral-small-24b-instruct-2501",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3437,8 +2675,6 @@
       "raw_name": "Sky-T1-32B-Flash",
       "temp_id": "unmapped--bigcodebench--sky-t1-32b-flash",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3446,8 +2682,6 @@
       "raw_name": "Sky-T1-32B-Preview",
       "temp_id": "unmapped--bigcodebench--sky-t1-32b-preview",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3455,8 +2689,6 @@
       "raw_name": "QwQ-32B-Preview",
       "temp_id": "unmapped--bigcodebench--qwq-32b-preview",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3464,8 +2696,6 @@
       "raw_name": "DeepCoder-14B-Preview",
       "temp_id": "unmapped--bigcodebench--deepcoder-14b-preview",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3473,8 +2703,6 @@
       "raw_name": "Quasar-Alpha",
       "temp_id": "unmapped--bigcodebench--quasar-alpha",
       "occurrences": 2,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3482,8 +2710,6 @@
       "raw_name": "gemini-3-pro-preview-20251118",
       "temp_id": "unmapped--swebench--gemini-3-pro-preview-20251118",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:15Z",
-      "last_seen": "2026-08-29T18:42:15Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20251118_mini-v1.15.0_gemini-3-pro-preview-20251118"
     },
     {
@@ -3491,8 +2717,6 @@
       "raw_name": "gpt-5.1-2025-11-13",
       "temp_id": "unmapped--swebench--gpt-5.1-2025-11-13",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:15Z",
-      "last_seen": "2026-08-29T18:42:15Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20251120_mini-v1.15.0_gpt-5.1-2025-11-13"
     },
     {
@@ -3500,8 +2724,6 @@
       "raw_name": "gpt-5.1-codex",
       "temp_id": "unmapped--swebench--gpt-5.1-codex",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:16Z",
-      "last_seen": "2026-08-29T18:42:16Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20251124_mini-v1.16.0_gpt-5.1-codex"
     },
     {
@@ -3509,8 +2731,6 @@
       "raw_name": "claude-4-5-opus-high",
       "temp_id": "unmapped--swebench--claude-4-5-opus-high",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:19Z",
-      "last_seen": "2026-08-29T18:42:19Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20260217_mini-v2.0.0_claude-4-5-opus-high"
     },
     {
@@ -3518,8 +2738,6 @@
       "raw_name": "glm-5-high",
       "temp_id": "unmapped--swebench--glm-5-high",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:20Z",
-      "last_seen": "2026-08-29T18:42:20Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20260217_mini-v2.0.0_glm-5-high"
     },
     {
@@ -3527,8 +2745,6 @@
       "raw_name": "gpt-5-2-high",
       "temp_id": "unmapped--swebench--gpt-5-2-high",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:20Z",
-      "last_seen": "2026-08-29T18:42:20Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/bash-only/20260217_mini-v2.0.0_gpt-5-2-high"
     },
     {
@@ -3536,8 +2752,6 @@
       "raw_name": "minimax-2.5",
       "temp_id": "unmapped--swebench--minimax-2.5",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:45Z",
-      "last_seen": "2026-08-29T18:42:45Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/multilingual/20260216_mini-v2.0.0a0_minimax-2-5"
     },
     {
@@ -3545,8 +2759,6 @@
       "raw_name": "claude-2",
       "temp_id": "unmapped--swebench--claude-2",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:53Z",
-      "last_seen": "2026-08-29T18:42:53Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20231010_rag_claude2"
     },
     {
@@ -3554,8 +2766,6 @@
       "raw_name": "GPT-3.5",
       "temp_id": "unmapped--swebench--gpt-3.5",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:54Z",
-      "last_seen": "2026-08-29T18:42:54Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20231010_rag_gpt35"
     },
     {
@@ -3563,8 +2773,6 @@
       "raw_name": "SWE-Llama 13B",
       "temp_id": "unmapped--swebench--swe-llama-13b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:54Z",
-      "last_seen": "2026-08-29T18:42:54Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20231010_rag_swellama13b"
     },
     {
@@ -3572,8 +2780,6 @@
       "raw_name": "SWE-Llama",
       "temp_id": "unmapped--swebench--swe-llama",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:42:54Z",
-      "last_seen": "2026-08-29T18:42:54Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20231010_rag_swellama7b"
     },
     {
@@ -3581,8 +2787,6 @@
       "raw_name": "Lingma SWE-GPT 72b (v0918)",
       "temp_id": "unmapped--swebench--lingma-swe-gpt-72b-v0918",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:02Z",
-      "last_seen": "2026-08-29T18:43:02Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240918_lingma-agent_lingma-swe-gpt-72b"
     },
     {
@@ -3590,8 +2794,6 @@
       "raw_name": "Lingma SWE-GPT 7b (v0918)",
       "temp_id": "unmapped--swebench--lingma-swe-gpt-7b-v0918",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:02Z",
-      "last_seen": "2026-08-29T18:43:02Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240918_lingma-agent_lingma-swe-gpt-7b"
     },
     {
@@ -3599,8 +2801,6 @@
       "raw_name": "Lingma SWE-GPT 72b (v0925)",
       "temp_id": "unmapped--swebench--lingma-swe-gpt-72b-v0925",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:05Z",
-      "last_seen": "2026-08-29T18:43:05Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241002_lingma-agent_lingma-swe-gpt-72b"
     },
     {
@@ -3608,8 +2808,6 @@
       "raw_name": "Lingma SWE-GPT 7b (v0925)",
       "temp_id": "unmapped--swebench--lingma-swe-gpt-7b-v0925",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:06Z",
-      "last_seen": "2026-08-29T18:43:06Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241002_lingma-agent_lingma-swe-gpt-7b"
     },
     {
@@ -3617,8 +2815,6 @@
       "raw_name": "claude-3-haiku-20240307",
       "temp_id": "unmapped--swebench--claude-3-haiku-20240307",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:07Z",
-      "last_seen": "2026-08-29T18:43:07Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241022_tools_claude-3-5-haiku"
     },
     {
@@ -3626,8 +2822,6 @@
       "raw_name": "CodeAct v2.1 (claude-3-5-sonnet-20241022)",
       "temp_id": "unmapped--swebench--codeact-v2.1-claude-3-5-sonnet-20241022",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:10Z",
-      "last_seen": "2026-08-29T18:43:10Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241029_OpenHands-CodeAct-2.1-sonnet-20241022"
     },
     {
@@ -3635,8 +2829,6 @@
       "raw_name": "Llama 3.1",
       "temp_id": "unmapped--swebench--llama-3.1",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:14Z",
-      "last_seen": "2026-08-29T18:43:14Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241113_nebius-search-open-weight-models-11-24"
     },
     {
@@ -3644,8 +2836,6 @@
       "raw_name": "Gemini 2.0 Flash (v20241212-experimental)",
       "temp_id": "unmapped--swebench--gemini-2.0-flash-v20241212-experimental",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:18Z",
-      "last_seen": "2026-08-29T18:43:18Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241212_google_jules_gemini_2.0_flash_experimental"
     },
     {
@@ -3653,8 +2843,6 @@
       "raw_name": "o1-preview",
       "temp_id": "unmapped--swebench--o1-preview",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:22Z",
-      "last_seen": "2026-08-29T18:43:22Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250117_wandb_programmer_o1_crosscheck5"
     },
     {
@@ -3662,8 +2850,6 @@
       "raw_name": "gemini-2.0-flash-exp",
       "temp_id": "unmapped--swebench--gemini-2.0-flash-exp",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:22Z",
-      "last_seen": "2026-08-29T18:43:22Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250118_codeshellagent_gemini_2.0_flash_experimental"
     },
     {
@@ -3671,8 +2857,6 @@
       "raw_name": "4x Scaled",
       "temp_id": "unmapped--swebench--4x-scaled",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:23Z",
-      "last_seen": "2026-08-29T18:43:23Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250203_openhands_4x_scaled"
     },
     {
@@ -3680,8 +2864,6 @@
       "raw_name": "Claude 3.7 Sonnet",
       "temp_id": "unmapped--swebench--claude-3.7-sonnet",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:26Z",
-      "last_seen": "2026-08-29T18:43:26Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250224_tools_claude-3-7-sonnet"
     },
     {
@@ -3689,8 +2871,6 @@
       "raw_name": "Llama3-SWE-RL-70B",
       "temp_id": "unmapped--swebench--llama3-swe-rl-70b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:26Z",
-      "last_seen": "2026-08-29T18:43:26Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250226_swerl_llama3_70b"
     },
     {
@@ -3698,8 +2878,6 @@
       "raw_name": "mistralai/Devstral-Small-2505",
       "temp_id": "unmapped--swebench--mistralai-devstral-small-2505",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:34Z",
-      "last_seen": "2026-08-29T18:43:34Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250520_openhands_devstral_small"
     },
     {
@@ -3707,8 +2885,6 @@
       "raw_name": "amazon.nova-premier-v1:0",
       "temp_id": "unmapped--swebench--amazon.nova-premier-v1-0",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:37Z",
-      "last_seen": "2026-08-29T18:43:37Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250527_amazon.nova-premier-v1.0"
     },
     {
@@ -3716,8 +2892,6 @@
       "raw_name": "Co-PatcheR",
       "temp_id": "unmapped--swebench--co-patcher",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:38Z",
-      "last_seen": "2026-08-29T18:43:38Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250528_patchpilot_Co-PatcheR"
     },
     {
@@ -3725,8 +2899,6 @@
       "raw_name": "claude-4-sonnet-20250522",
       "temp_id": "unmapped--swebench--claude-4-sonnet-20250522",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:39Z",
-      "last_seen": "2026-08-29T18:43:39Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250612_trae"
     },
     {
@@ -3734,8 +2906,6 @@
       "raw_name": "MCTS-Refine-7B",
       "temp_id": "unmapped--swebench--mcts-refine-7b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:42Z",
-      "last_seen": "2026-08-29T18:43:42Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250627_agentless_MCTS-Refine-7B"
     },
     {
@@ -3743,8 +2913,6 @@
       "raw_name": "moonshot/kimi-k2-0711-preview",
       "temp_id": "unmapped--swebench--moonshot-kimi-k2-0711-preview",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:43Z",
-      "last_seen": "2026-08-29T18:43:43Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250716_openhands_kimi_k2"
     },
     {
@@ -3752,8 +2920,6 @@
       "raw_name": "c",
       "temp_id": "unmapped--swebench--c",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:46Z",
-      "last_seen": "2026-08-29T18:43:46Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250731_harness_ai"
     },
     {
@@ -3761,8 +2927,6 @@
       "raw_name": "openai/gpt-5-2025-08-07",
       "temp_id": "unmapped--swebench--openai-gpt-5-2025-08-07",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:46Z",
-      "last_seen": "2026-08-29T18:43:46Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250807_openhands_gpt5"
     },
     {
@@ -3770,8 +2934,6 @@
       "raw_name": "Doubao-Seed-Code",
       "temp_id": "unmapped--swebench--doubao-seed-code",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:50Z",
-      "last_seen": "2026-08-29T18:43:50Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250928_trae_doubao_seed_code"
     },
     {
@@ -3779,8 +2941,6 @@
       "raw_name": "kimi-k2-0905-preview",
       "temp_id": "unmapped--swebench--kimi-k2-0905-preview",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:51Z",
-      "last_seen": "2026-08-29T18:43:51Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251014_Lingxi_kimi_k2"
     },
     {
@@ -3788,8 +2948,6 @@
       "raw_name": "claude-sonnet-4-5",
       "temp_id": "unmapped--swebench--claude-sonnet-4-5",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:53Z",
-      "last_seen": "2026-08-29T18:43:53Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251103_sonar-foundation-agent_claude-sonnet-4-5"
     },
     {
@@ -3797,8 +2955,6 @@
       "raw_name": "FrogBoss-32B-2510",
       "temp_id": "unmapped--swebench--frogboss-32b-2510",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:53Z",
-      "last_seen": "2026-08-29T18:43:53Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251110_frogboss-32b"
     },
     {
@@ -3806,8 +2962,6 @@
       "raw_name": "FrogMini-14B-2510",
       "temp_id": "unmapped--swebench--frogmini-14b-2510",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:54Z",
-      "last_seen": "2026-08-29T18:43:54Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251110_frogmini-14b"
     },
     {
@@ -3815,8 +2969,6 @@
       "raw_name": "claude-opus-4-5",
       "temp_id": "unmapped--swebench--claude-opus-4-5",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:54Z",
-      "last_seen": "2026-08-29T18:43:54Z",
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251205_sonar-foundation-agent_claude-opus-4-5"
     },
     {
@@ -3824,8 +2976,6 @@
       "raw_name": "StarCoder2-3B",
       "temp_id": "unmapped--bigcodebench--starcoder2-3b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3833,8 +2983,6 @@
       "raw_name": "StarCoder2-7B",
       "temp_id": "unmapped--bigcodebench--starcoder2-7b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3842,8 +2990,6 @@
       "raw_name": "StarCoder2-15B",
       "temp_id": "unmapped--bigcodebench--starcoder2-15b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3851,8 +2997,6 @@
       "raw_name": "CodeQwen1.5-7B",
       "temp_id": "unmapped--bigcodebench--codeqwen1.5-7b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3860,8 +3004,6 @@
       "raw_name": "CodeGemma-2B",
       "temp_id": "unmapped--bigcodebench--codegemma-2b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3869,8 +3011,6 @@
       "raw_name": "CodeGemma-7B",
       "temp_id": "unmapped--bigcodebench--codegemma-7b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3878,8 +3018,6 @@
       "raw_name": "CodeLlama-7B-Base",
       "temp_id": "unmapped--bigcodebench--codellama-7b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3887,8 +3025,6 @@
       "raw_name": "CodeLlama-13B-Base",
       "temp_id": "unmapped--bigcodebench--codellama-13b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3896,8 +3032,6 @@
       "raw_name": "Mixtral-8x22B-Base",
       "temp_id": "unmapped--bigcodebench--mixtral-8x22b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3905,8 +3039,6 @@
       "raw_name": "CodeLlama-34B-Base",
       "temp_id": "unmapped--bigcodebench--codellama-34b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3914,8 +3046,6 @@
       "raw_name": "CodeLlama-70B-Base",
       "temp_id": "unmapped--bigcodebench--codellama-70b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3923,8 +3053,6 @@
       "raw_name": "DeepSeek-Coder-1.3B-Base",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-1.3b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3932,8 +3060,6 @@
       "raw_name": "DeepSeek-Coder-33B-Base",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-33b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3941,8 +3067,6 @@
       "raw_name": "DeepSeek-Coder-6.7B-Base",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-6.7b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3950,8 +3074,6 @@
       "raw_name": "Llama-3-70B-Base",
       "temp_id": "unmapped--bigcodebench--llama-3-70b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3959,8 +3081,6 @@
       "raw_name": "Llama-3-8B-Base",
       "temp_id": "unmapped--bigcodebench--llama-3-8b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3968,8 +3088,6 @@
       "raw_name": "Granite-Code-3B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-code-3b-instruct",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3977,8 +3095,6 @@
       "raw_name": "Granite-Code-8B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-code-8b-instruct",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3986,8 +3102,6 @@
       "raw_name": "Granite-Code-3B-Base",
       "temp_id": "unmapped--bigcodebench--granite-code-3b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -3995,8 +3109,6 @@
       "raw_name": "Granite-Code-8B-Base",
       "temp_id": "unmapped--bigcodebench--granite-code-8b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4004,8 +3116,6 @@
       "raw_name": "Granite-Code-20B-Base",
       "temp_id": "unmapped--bigcodebench--granite-code-20b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4013,8 +3123,6 @@
       "raw_name": "Granite-Code-34B-Base",
       "temp_id": "unmapped--bigcodebench--granite-code-34b-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4022,8 +3130,6 @@
       "raw_name": "Yi-1.5-34B",
       "temp_id": "unmapped--bigcodebench--yi-1.5-34b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4031,8 +3137,6 @@
       "raw_name": "Yi-1.5-9B",
       "temp_id": "unmapped--bigcodebench--yi-1.5-9b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4040,8 +3144,6 @@
       "raw_name": "Yi-1.5-6B",
       "temp_id": "unmapped--bigcodebench--yi-1.5-6b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4049,8 +3151,6 @@
       "raw_name": "OpenCodeInterpreter-DS-33B",
       "temp_id": "unmapped--bigcodebench--opencodeinterpreter-ds-33b",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4058,8 +3158,6 @@
       "raw_name": "Mistral-7B-v0.3",
       "temp_id": "unmapped--bigcodebench--mistral-7b-v0.3",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4067,8 +3165,6 @@
       "raw_name": "DeepSeek-Coder-V2-Lite-Base",
       "temp_id": "unmapped--bigcodebench--deepseek-coder-v2-lite-base",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4076,8 +3172,6 @@
       "raw_name": "Granite-3.0-2B-Instruct",
       "temp_id": "unmapped--bigcodebench--granite-3.0-2b-instruct",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4085,8 +3179,6 @@
       "raw_name": "KwaiCoder-23B-A4B-v1",
       "temp_id": "unmapped--bigcodebench--kwaicoder-23b-a4b-v1",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     },
     {
@@ -4094,8 +3186,6 @@
       "raw_name": "WarriorCoder-6.7B (Reproduced)",
       "temp_id": "unmapped--bigcodebench--warriorcoder-6.7b-reproduced",
       "occurrences": 1,
-      "first_seen": "2026-08-29T18:43:58Z",
-      "last_seen": "2026-08-29T18:43:58Z",
       "example_url": null
     }
   ]

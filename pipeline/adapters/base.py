@@ -69,10 +69,18 @@ class BaseAdapter(ABC):
 
     def _save_lkg(self, records: list[BenchmarkRecord]) -> None:
         self._lkg_path.parent.mkdir(parents=True, exist_ok=True)
+        # 适配器并发抓取的完成顺序不确定，必须规范化排序保证 LKG 逐字节稳定
+        ordered = sorted(
+            records,
+            key=lambda r: (r.benchmark_id, r.model_id, r.raw_model_name or "",
+                           r.agent_scaffold or "", r.benchmark_version or "", r.score),
+        )
         self._lkg_path.write_text(
             json.dumps(
-                {"source_id": self.source_id, "fetched_at": records[0].fetched_at if records else None,
-                 "count": len(records), "records": [r.model_dump() for r in records]},
+                {"source_id": self.source_id,
+                 "fetched_at": max((r.fetched_at for r in ordered if r.fetched_at), default=None),
+                 "count": len(ordered),
+                 "records": [r.model_dump() for r in ordered]},
                 ensure_ascii=False, indent=1,
             ),
             encoding="utf-8",
@@ -93,12 +101,41 @@ class BaseAdapter(ABC):
             # 来源返回空数据视为失败，保留上一次有效数据
             return self._fallback("来源返回 0 条有效记录", started)
 
+        self._inherit_fetched_at(records)
         self._save_lkg(records)
         elapsed_ms = int((time.monotonic() - started) * 1000)
         return AdapterResult(
             source_id=self.source_id, status="ok", records=records,
             response_time_ms=elapsed_ms,
         )
+
+    def _inherit_fetched_at(self, records: list[BenchmarkRecord]) -> None:
+        """业务内容与上次成功数据完全一致的记录，继承其 fetched_at。
+
+        保证"数据没变 → 输出 JSON 逐字节不变 → CI 不产生无意义提交"。
+        业务内容 = 除 fetched_at 外的全部字段。
+        """
+        try:
+            old = self._load_lkg()
+        except Exception:
+            return
+        if not old:
+            return
+        old_by_key: dict[str, str] = {}
+        for r in old:
+            d = r.model_dump(exclude={"fetched_at"})
+            old_by_key[self._business_key(d)] = r.fetched_at
+        for rec in records:
+            d = rec.model_dump(exclude={"fetched_at"})
+            prev = old_by_key.get(self._business_key(d))
+            if prev:
+                rec.fetched_at = prev
+
+    @staticmethod
+    def _business_key(d: dict) -> str:
+        import json as _json
+
+        return _json.dumps(d, ensure_ascii=False, sort_keys=True)
 
     def _fallback(self, message: str, started: float) -> AdapterResult:
         lkg = self._load_lkg()

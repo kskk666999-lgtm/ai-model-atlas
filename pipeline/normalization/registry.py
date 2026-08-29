@@ -65,13 +65,19 @@ class ModelNormalizer:
             )
 
     def save_unmapped_report(self) -> list[UnmappedModel]:
-        items = sorted(self._unmapped.values(), key=lambda u: -u.occurrences)
+        items = sorted(
+            self._unmapped.values(),
+            key=lambda u: (-u.occurrences, u.source_id, u.raw_name),
+        )
         UNMAPPED_FILE.parent.mkdir(parents=True, exist_ok=True)
         payload = {
-            "generated_at": utc_now_iso(),
             "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
             "count": len(items),
-            "unmapped": [u.model_dump() for u in items],
+            # 不输出任何墙钟时间戳，保证内容不变时文件逐字节稳定
+            "unmapped": [
+                {k: v for k, v in u.model_dump().items() if k not in ("first_seen", "last_seen")}
+                for u in items
+            ],
         }
         import json
 

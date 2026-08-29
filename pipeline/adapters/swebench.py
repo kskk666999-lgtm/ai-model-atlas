@@ -65,12 +65,19 @@ class SWEBenchAdapter(BaseAdapter):
                 if rec is not None:
                     records.append(rec)
 
-        # 同一 (benchmark, model, agent_scaffold) 保留最近一次运行
+        # 同一 (benchmark, model, agent_scaffold) 保留最近一次运行；
+        # 日期并列时按 run_id 字典序决胜（run_id 以日期开头，字典序即时间序），
+        # 消除并发完成顺序带来的不确定性。
         latest: dict[tuple, object] = {}
         for rec in records:
             key = (rec.benchmark_id, rec.model_id, rec.agent_scaffold)
             prev = latest.get(key)
-            if prev is None or (rec.evaluation_date or "") >= (prev.evaluation_date or ""):
+            if prev is None:
+                latest[key] = rec
+                continue
+            prev_run = (prev.source_url or "").rsplit("/", 1)[-1]
+            cur_run = (rec.source_url or "").rsplit("/", 1)[-1]
+            if ((rec.evaluation_date or ""), cur_run) >= ((prev.evaluation_date or ""), prev_run):
                 latest[key] = rec
         return list(latest.values())
 
