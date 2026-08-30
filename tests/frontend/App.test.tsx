@@ -36,6 +36,7 @@ const capabilitiesIndex = {
   capabilities: [
     { capability_id: 'reasoning', name: '逻辑推理', short: '推理', group: 'text_reasoning', status: 'active', benchmark_count: 1, has_composite: false },
     { capability_id: 'coding', name: '编程能力', short: '编程', group: 'coding_agent', status: 'active', benchmark_count: 1, has_composite: true },
+    { capability_id: 'swe', name: '软件工程（模型 + Agent 系统）', short: '软件工程', group: 'coding_agent', status: 'active', benchmark_count: 1, has_composite: false },
     { capability_id: 'chat_preference', name: '人类偏好与聊天体验', short: '人类偏好', group: 'safety', status: 'pending', benchmark_count: 0, has_composite: false },
   ],
   weight_presets: [{ preset_id: 'general', name: '通用助手', weights: { reasoning: 1 } }],
@@ -52,6 +53,7 @@ const modelsIndex = {
       overall_index: 92.5, overall_rank: 1, overall_benchmark_count: 6, overall_source_count: 2,
       price_input_usd_per_mtok: 1.25, price_output_usd_per_mtok: 10, output_speed_tps: 120,
       latency_seconds: 0.4, benchmark_count: 6, source_count: 2, rank_changes: {},
+      is_current: true, freshness_bucket: 'ACTIVE', lifecycle_status: 'ga',
     },
     {
       model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', family: 'glm',
@@ -61,6 +63,7 @@ const modelsIndex = {
       overall_index: 86.0, overall_rank: 2, overall_benchmark_count: 5, overall_source_count: 2,
       price_input_usd_per_mtok: 0.6, price_output_usd_per_mtok: 2.2, output_speed_tps: 90,
       latency_seconds: 0.5, benchmark_count: 5, source_count: 2, rank_changes: { reasoning: { d7: 2 } },
+      is_current: false, freshness_bucket: 'LEGACY', lifecycle_status: 'deprecated',
     },
   ],
 };
@@ -107,11 +110,44 @@ const capabilityReasoning = {
       fetched_at: '2026-08-30T00:00:00Z', provider: null, region: null, open_weights: null,
       record_verification_status: 'unknown',
       data_file_url: 'https://livebench.ai/table.csv', data_json_path: 'csv: model=z', data_sha256: 'abc',
-      is_current: false, freshness_bucket: 'UNKNOWN',
     },
   ],
   composite: null,
   composite_gate: [{ reason: '单一合格基准，不产生综合' }],
+};
+
+const capabilitySwe = {
+  capability_id: 'swe',
+  name: '软件工程（模型 + Agent 系统）',
+  short: '软件工程',
+  status: 'active',
+  description: 'SWE-bench Verified 记录代表模型与 Agent 框架的完整系统表现。',
+  generated_at: '2026-08-30T00:00:00Z',
+  benchmarks: [{ benchmark_id: 'swebench-verified', benchmark_name: 'SWE-bench Verified', source_id: 'swebench', higher_is_better: true, score_unit: 'percent', record_count: 2, eligible_for_composite: false }],
+  official: [
+    {
+      benchmark_id: 'swebench-verified', benchmark_name: 'SWE-bench Verified', capability: 'swe',
+      source_id: 'swebench', source_name: 'SWE-bench（官方）', source_level: 'A', source_url: 'https://www.swebench.com/',
+      model_id: 'gpt-5.2-high', raw_model_name: 'gpt-5.2-high', model_is_unmapped: false,
+      score: 78.2, score_unit: 'percent', higher_is_better: true, rank: 2, tie: false,
+      evaluation_date: '2026-02-17', evaluation_target_type: 'model_plus_agent', agent_scaffold: 'mini-SWE-agent',
+      prompt_mode: 'high', benchmark_version: 'verified', sample_size: 500, notes: 'test',
+      fetched_at: '2026-08-30T00:00:00Z', record_verification_status: 'maintainer_verified',
+      data_file_url: 'https://www.swebench.com/verified.json', data_json_path: '$[0]', data_sha256: 'abc',
+    },
+    {
+      benchmark_id: 'swebench-verified', benchmark_name: 'SWE-bench Verified', capability: 'swe',
+      source_id: 'swebench', source_name: 'SWE-bench（官方）', source_level: 'A', source_url: 'https://www.swebench.com/',
+      model_id: 'unmapped--swebench--doubao-seed-code', raw_model_name: 'Doubao-Seed-Code', model_is_unmapped: true,
+      score: 88.8, score_unit: 'percent', higher_is_better: true, rank: 1, tie: false,
+      evaluation_date: '2025-07-26', evaluation_target_type: 'model_plus_agent', agent_scaffold: 'OpenHands',
+      prompt_mode: null, benchmark_version: 'verified', sample_size: 500, notes: 'legacy without freshness metadata',
+      fetched_at: '2026-08-30T00:00:00Z', record_verification_status: 'third_party_submitted',
+      data_file_url: 'https://www.swebench.com/verified.json', data_json_path: '$[1]', data_sha256: 'abc',
+    },
+  ],
+  composite: null,
+  composite_gate: [{ reason: 'Agent 系统不生成基础模型综合' }],
 };
 
 const heatmap = {
@@ -145,6 +181,7 @@ function baseMocks() {
     '/data/models/index.json': modelsIndex,
     '/data/capabilities/index.json': capabilitiesIndex,
     '/data/capabilities/reasoning.json': capabilityReasoning,
+    '/data/capabilities/swe.json': capabilitySwe,
     '/data/heatmap.json': heatmap,
     '/data/source-health.json': { generated_at: '', counts: { healthy: 2, degraded: 0, failed: 0, disabled: 3 }, sources: [] },
   });
@@ -182,10 +219,28 @@ describe('前端核心路径（V2 口径）', () => {
     window.location.hash = '#/leaderboard?cap=reasoning';
     render(<HashRouter><App /></HashRouter>);
     expect(await screen.findAllByText(/LiveBench 逻辑推理/).then((els) => els.length)).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole('tab', { name: /HISTORY/ }));
     const input = screen.getByLabelText('搜索模型');
     fireEvent.change(input, { target: { value: 'glm' } });
     await waitFor(() => expect(screen.queryAllByText('gpt-5.2-2025-12-11-high').length).toBe(0));
     expect(screen.getAllByText('glm-5.3').length).toBeGreaterThan(0);
+  });
+
+  it('Agent 榜默认 fail-closed 为 CURRENT，并分列发布与评测日期', async () => {
+    window.location.hash = '#/leaderboard?cap=swe';
+    render(<HashRouter><App /></HashRouter>);
+    await waitFor(() => expect(screen.getAllByText(/SWE-bench Verified/).length).toBeGreaterThan(0));
+
+    expect(screen.getByRole('tab', { name: /CURRENT/ })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.queryByText('Doubao-Seed-Code')).not.toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: /Agent 框架/ })).toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: /发布日期/ })).toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: /评测日期/ })).toBeInTheDocument();
+    expect(screen.getAllByText('2025-12-11').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('2026-02-17').length).toBeGreaterThan(0);
+
+    fireEvent.click(screen.getByRole('tab', { name: /HISTORY/ }));
+    expect(await screen.findByText('Doubao-Seed-Code')).toBeInTheDocument();
   });
 
   it('相对百分位为次级且单基准能力被门槛禁用', async () => {

@@ -91,10 +91,11 @@ def _record_row(rec, include_notes: bool = True) -> dict:
     }
     if include_notes:
         row["notes"] = rec.notes
-    fm = (FRESHNESS_REF.get("map") or {}).get(rec.model_id)
-    if fm:
-        row["is_current"] = fm.get("is_current")
-        row["freshness_bucket"] = fm.get("freshness_bucket")
+    fm = ((FRESHNESS_REF.get("map") or {}).get(rec.model_id) or {}
+          if not rec.model_is_unmapped else {})
+    # Fail closed：每条官方记录都显式携带当前状态；未映射或缺少目录证据时为历史。
+    row["is_current"] = fm.get("is_current") is True
+    row["freshness_bucket"] = fm.get("freshness_bucket")
     return row
 
 

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import type { OfficialRow } from '@/types/data';
 import { ExternalLink, X } from 'lucide-react';
 import { evalTargetLabel, fmtDate, fmtScore, sourceLevelBadge } from '@/lib/format';
-import type { OfficialRow } from '@/types/data';
+
 
 export function TypeBadge({ type }: { type: string }) {
   const { text, kind } = evalTargetLabel(type);
@@ -41,12 +42,13 @@ export function RankCell({ rank, tie }: { rank: number | null | undefined; tie?:
 
 /** 数据溯源抽屉：点击任一分数后展示该成绩的完整来源信息。 */
 export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClose: () => void }) {
-  if (!row) return null;
+  const r = row;
+  if (!r) return null;
   // 数据年龄：评测日期 → 抓取日期的天数差（"今天抓取"不等于"今天评测"）
   const dataAgeDays = (() => {
-    if (!row.evaluation_date || !row.fetched_at) return null;
-    const a = new Date(row.evaluation_date).getTime();
-    const b = new Date(row.fetched_at).getTime();
+    if (!r.evaluation_date || !r.fetched_at) return null;
+    const a = new Date(r.evaluation_date).getTime();
+    const b = new Date(r.fetched_at).getTime();
     if (Number.isNaN(a) || Number.isNaN(b)) return null;
     return Math.max(0, Math.round((b - a) / 86_400_000));
   })();
@@ -57,7 +59,7 @@ export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClos
         <div className="mb-4 flex items-start justify-between gap-3">
           <div>
             <p className="text-xs text-slate-400">数据溯源 · Data Provenance</p>
-            <h3 className="mt-1 text-lg font-semibold text-slate-100">{row.benchmark_name}</h3>
+            <h3 className="mt-1 text-lg font-semibold text-slate-100">{r.benchmark_name}</h3>
           </div>
           <button className="rounded-lg border border-slate-500/30 p-1.5 text-slate-400 hover:text-slate-100" onClick={onClose} aria-label="关闭">
             <X size={16} />
@@ -66,60 +68,60 @@ export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClos
 
         <div className="panel-2 mb-4 px-4 py-3">
           <p className="num text-2xl font-bold text-cyan-300">
-            {fmtScore(row.score, row.score_unit)}
-            <span className="ml-2 text-xs font-normal text-slate-400">{row.score_unit}</span>
+            {fmtScore(r.score, r.score_unit)}
+            <span className="ml-2 text-xs font-normal text-slate-400">{r.score_unit}</span>
           </p>
           <p className="mt-1 text-sm text-slate-300">
-            {row.model_is_unmapped ? (row.raw_model_name || row.model_id) : row.model_id}
-            {' · '}排名 {row.rank ?? '—'}
+            {r.model_is_unmapped ? (r.raw_model_name || r.model_id) : r.model_id}
+            {' · '}排名 {r.rank ?? '—'}
           </p>
         </div>
 
         <dl className="space-y-2.5 text-sm">
-          <Field label="数据来源">{row.source_name}</Field>
-          <Field label="来源等级"><LevelBadge level={row.source_level} /></Field>
-          <Field label="记录验证状态"><VerificationBadge status={row.record_verification_status} /></Field>
-          <Field label="评测目标类型"><TypeBadge type={row.evaluation_target_type} /></Field>
-          {row.agent_scaffold && <Field label="Agent 框架">{row.agent_scaffold}</Field>}
-          {row.prompt_mode && <Field label="推理/提交模式">{row.prompt_mode}</Field>}
-          {row.benchmark_version && <Field label="基准版本">{row.benchmark_version}</Field>}
+          <Field label="数据来源">{r.source_name}</Field>
+          <Field label="来源等级"><LevelBadge level={r.source_level} /></Field>
+          <Field label="记录验证状态"><VerificationBadge status={r.record_verification_status} /></Field>
+          <Field label="评测目标类型"><TypeBadge type={r.evaluation_target_type} /></Field>
+          {r.agent_scaffold && <Field label="Agent 框架">{r.agent_scaffold}</Field>}
+          {r.prompt_mode && <Field label="推理/提交模式">{r.prompt_mode}</Field>}
+          {r.benchmark_version && <Field label="基准版本">{r.benchmark_version}</Field>}
           <Field label="评测日期">
-            {fmtDate(row.evaluation_date)}
+            {fmtDate(r.evaluation_date)}
             {dataAgeDays !== null && (
               <span className="ml-1.5 text-[10px] text-slate-500">（数据年龄约 {dataAgeDays} 天）</span>
             )}
           </Field>
-          {row.sample_size !== null && row.sample_size !== undefined && (
-            <Field label="样本量">{row.sample_size}</Field>
+          {r.sample_size !== null && r.sample_size !== undefined && (
+            <Field label="样本量">{r.sample_size}</Field>
           )}
-          <Field label="本站抓取时间">{fmtDate(row.fetched_at)}</Field>
-          {row.upstream_updated_at && <Field label="上游数据更新时间">{row.upstream_updated_at}</Field>}
-          <Field label="模型原始名称（来源侧）">{row.raw_model_name || row.model_id}</Field>
-          {row.model_is_unmapped && (
+          <Field label="本站抓取时间">{fmtDate(r.fetched_at)}</Field>
+          {r.upstream_updated_at && <Field label="上游数据更新时间">{r.upstream_updated_at}</Field>}
+          <Field label="模型原始名称（来源侧）">{r.raw_model_name || r.model_id}</Field>
+          {r.model_is_unmapped && (
             <Field label="映射状态">
               <span className="text-amber-300">未映射：尚未建立到注册表的别名，仅出现在官方原始榜</span>
             </Field>
           )}
-          {row.data_file_url && (
+          {r.data_file_url && (
             <Field label="精确数据文件">
               <a
                 className="inline-flex items-center gap-1 break-all text-cyan-300 hover:text-cyan-200"
-                href={row.data_file_url}
+                href={r.data_file_url}
                 target="_blank"
                 rel="noreferrer"
               >
-                {row.data_file_url.length > 60 ? row.data_file_url.slice(0, 60) + '…' : row.data_file_url}
+                {r.data_file_url.length > 60 ? r.data_file_url.slice(0, 60) + '…' : r.data_file_url}
                 <ExternalLink size={13} />
               </a>
             </Field>
           )}
-          {row.data_json_path && <Field label="文件内定位">{row.data_json_path}</Field>}
-          {row.notes && <Field label="备注">{row.notes}</Field>}
-          {row.source_url && (
+          {r.data_json_path && <Field label="文件内定位">{r.data_json_path}</Field>}
+          {r.notes && <Field label="备注">{r.notes}</Field>}
+          {r.source_url && (
             <Field label="原始出处">
               <a
                 className="inline-flex items-center gap-1 text-cyan-300 hover:text-cyan-200"
-                href={row.source_url}
+                href={r.source_url}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -130,9 +132,9 @@ export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClos
         </dl>
 
         <div className="mt-5 flex gap-3">
-          {!row.model_is_unmapped && (
+          {!r.model_is_unmapped && (
             <Link
-              to={`/model/${row.model_id}`}
+              to={`/model/${r.model_id}`}
               className="rounded-lg border border-cyan-400/40 bg-cyan-400/10 px-3 py-1.5 text-sm text-cyan-200 hover:bg-cyan-400/20"
             >
               模型详情页

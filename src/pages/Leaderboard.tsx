@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useJson } from '@/lib/api';
 import { useCapabilities } from '@/lib/capabilities';
@@ -10,6 +10,7 @@ import {
   FilterBar,
   applyOfficialFilters,
   emptyOfficialFilters,
+  filterCurrent,
   joinRows,
   type OfficialFilters,
   type JoinedRow,
@@ -23,20 +24,31 @@ export function LeaderboardPage() {
   const [benchmarkId, setBenchmarkId] = useState<string>('');
   const [filters, setFilters] = useState<OfficialFilters>(emptyOfficialFilters);
   const [picked, setPicked] = useState<OfficialRow | null>(null);
+  const [showHistory, setShowHistory] = useState(false);
 
   const { capabilities, groups } = useCapabilities();
   const capMeta = capabilities.find((c) => c.capability_id === capId);
   const { data, error, loading } = useJson<CapabilityFile>(`/data/capabilities/${capId}.json`);
   const { data: index } = useJson<ModelsIndex>('/data/models/index.json');
 
-  const rows: JoinedRow[] = useMemo(() => {
-    if (!data) return [];
+  useEffect(() => {
+    // 切换能力时恢复安全默认值，避免上一页开启的 HISTORY 状态带入 Agent 榜。
+    setShowHistory(false);
+  }, [capId]);
+
+  const { currentRows, legacyRows } = useMemo(() => {
+    if (!data) return { currentRows: [] as JoinedRow[], legacyRows: [] as JoinedRow[] };
     const official =
       benchmarkId === ''
         ? data.official
         : data.official.filter((r) => r.benchmark_id === benchmarkId);
-    return applyOfficialFilters(joinRows(official, index?.models ?? []), filters);
+    const all = applyOfficialFilters(joinRows(official, index?.models ?? []), filters);
+    const { current, legacy } = filterCurrent(all);
+    return { currentRows: current, legacyRows: legacy };
   }, [data, index, filters, benchmarkId]);
+  const rows = showHistory
+    ? [...currentRows, ...legacyRows].sort((a, b) => a.rank - b.rank)
+    : currentRows;
 
   const providers = useMemo(() => {
     const set = new Set<string>();
@@ -85,6 +97,7 @@ export function LeaderboardPage() {
                     setParams({ cap: c.capability_id });
                     setBenchmarkId('');
                     setFilters(emptyOfficialFilters);
+                    setShowHistory(false);
                   }}
                   className={`rounded-lg px-3 py-1.5 text-sm ${
                     c.capability_id === capId
@@ -136,6 +149,41 @@ export function LeaderboardPage() {
 
           {mode === 'official' ? (
             <>
+              {/* CURRENT / HISTORY 分离 */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex rounded-xl border border-slate-500/25 p-0.5" role="tablist" aria-label="模型代际">
+                  <button
+                    role="tab"
+                    aria-selected={!showHistory}
+                    onClick={() => setShowHistory(false)}
+                    className={`rounded-lg px-3 py-1.5 text-xs ${!showHistory ? 'bg-emerald-400/15 text-emerald-300' : 'text-slate-400'}`}
+                  >
+                    CURRENT · 当前模型
+                  </button>
+                  <button
+                    role="tab"
+                    aria-selected={showHistory}
+                    onClick={() => setShowHistory(true)}
+                    className={`rounded-lg px-3 py-1.5 text-xs ${showHistory ? 'bg-slate-500/25 text-slate-200' : 'text-slate-400'}`}
+                  >
+                    HISTORY · 含历史{legacyRows.length > 0 && `（${legacyRows.length}）`}
+                  </button>
+                </div>
+                <span className="text-[11px] text-slate-500">
+                  默认仅展示当前活跃模型；历史结果请手动展开
+                </span>
+                {(() => {
+                  const freshN = currentRows.length;
+                  if (freshN > 0 && freshN < 5) {
+                    return (
+                      <span className="rounded-lg border border-amber-400/25 bg-amber-400/5 px-3 py-1.5 text-[11px] text-amber-200/90">
+                        该基准当前仅覆盖 {freshN} 个活跃模型，不拿历史模型补位
+                      </span>
+                    );
+                  }
+                  return null;
+                })()}
+              </div>
               <div className="flex flex-col gap-3">
                 <SearchInput value={filters.query} onChange={(v) => setFilters({ ...filters, query: v })} />
                 <div className="flex flex-wrap items-center gap-3">
@@ -155,7 +203,7 @@ export function LeaderboardPage() {
                   <FilterBar filters={filters} setFilters={setFilters} providers={providers} showAgentToggle={!isSwe} />
                 </div>
               </div>
-              <OfficialTable rows={rows} onPick={setPicked} />
+              <OfficialTable rows={rows} onPick={setPicked} showAgentColumn={isSwe} showFreshness />
               {isSwe && (
                 <div className="rounded-xl border border-violet-400/25 bg-violet-400/5 px-4 py-3 text-xs leading-6 text-violet-200/90">
                   说明：SWE-bench 分数反映的是「模型 + Agent 框架 + 推理预算」的完整系统表现，不是基础模型的纯能力。

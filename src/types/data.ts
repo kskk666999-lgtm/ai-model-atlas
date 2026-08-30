@@ -97,7 +97,7 @@ export interface OfficialRow {
   fetched_at: string;
   record_verification_status?: 'maintainer_verified' | 'third_party_submitted' | 'unknown';
   is_current?: boolean;
-  freshness_bucket?: string;
+  freshness_bucket?: string | null;
   data_file_url?: string | null;
   data_json_path?: string | null;
   data_sha256?: string | null;

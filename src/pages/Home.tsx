@@ -5,9 +5,10 @@ import { useJson, useMeta } from '@/lib/api';
 import { useCapabilities, capShort } from '@/lib/capabilities';
 import { fmtDate, fmtScore } from '@/lib/format';
 import { providerColor } from '@/types/data';
-import type { CapabilityFile, Homepage, ModelsIndex, OfficialRow } from '@/types/data';
+import type { CapabilityFile, Homepage, Meta, ModelsIndex } from '@/types/data';
 import { EmptyState, NoDataState } from '@/components/StateViews';
-import { AbilityScatter } from '@/charts/TrendLine';
+import { PricePerformanceMatrix } from '@/components/PricePerformanceMatrix';
+import { filterCurrent, joinRows, type JoinedRow } from '@/components/OfficialTable';
 
 interface HeatmapData {
   generated_at: string;
@@ -74,12 +75,17 @@ export function HomePage() {
           </p>
         </div>
         <dl className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
-          <InlineStat label="当前模型" value={index?.models.filter((m) => m.overall_index !== null || m.source_count).length} />
+          <InlineStat
+            label="当前模型"
+            value={index?.models.filter((m) => m.is_current === true && (m.overall_index !== null || m.source_count)).length}
+          />
           <InlineStat label="基准" value={meta?.counts.benchmarks} />
           <InlineStat label="数据源" value={meta?.counts.sources_active} />
           <InlineStat label="数据更新" value={fmtDate(meta?.update.last_success)} />
         </dl>
       </section>
+
+      <DataFreshnessSummary meta={rawMeta} index={index} />
 
       {/* Current Picks：由当天数据动态计算，不硬编码 */}
       <CurrentPicks home={home} index={index} />
@@ -173,7 +179,7 @@ export function HomePage() {
       )}
 
       {/* 第三屏：价格-编程散点 */}
-      <PriceAbilityScatter index={index} />
+      <PricePerformanceMatrix index={index} />
 
       {/* 最近上升 & 接入中 */}
       {home && home.movers_7d.length > 0 && (
@@ -228,7 +234,8 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
     }
     // 最低价（当前 + 有价格数据）
     if (index) {
-      const priced = index.models
+      const currentModels = index.models.filter((m) => m.is_current === true);
+      const priced = currentModels
         .filter((m) => (m.overall_index !== null || m.benchmark_count > 0) && m.price_input_usd_per_mtok !== null && m.price_input_usd_per_mtok > 0)
         .sort((a, b) => (a.price_input_usd_per_mtok ?? 9e9) - (b.price_input_usd_per_mtok ?? 9e9));
       if (priced[0]) {
@@ -238,7 +245,7 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
           note: `$${priced[0].price_input_usd_per_mtok?.toFixed(3)}/1M tokens`,
         });
       }
-      const openWeights = index.models
+      const openWeights = currentModels
         .filter((m) => m.open_weights === true && (m.capability_indices.coding !== undefined || m.capability_indices.reasoning !== undefined))
         .sort((a, b) => {
           const av = Math.max(a.capability_indices.coding ?? 0, a.capability_indices.reasoning ?? 0);
@@ -252,7 +259,7 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
           note: '当前模型中开放权重相对百分位最高',
         });
       }
-      const longest = index.models
+      const longest = currentModels
         .filter((m) => m.context_window)
         .sort((a, b) => (b.context_window ?? 0) - (a.context_window ?? 0));
       if (longest[0]) {
@@ -298,9 +305,11 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
   const counts = new Map<string, number>();
   data.official.forEach((r) => counts.set(r.benchmark_id, (counts.get(r.benchmark_id) ?? 0) + 1));
   const topBench = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0][0];
-  const all = data.official.filter((r) => r.benchmark_id === topBench);
-  const fresh = all.filter((r) => r.is_current !== false);
-  const legacy = all.filter((r) => r.is_current === false);
+  const all = joinRows(
+    data.official.filter((r) => r.benchmark_id === topBench),
+    index?.models ?? [],
+  );
+  const { current: fresh, legacy } = filterCurrent(all);
   const rows = (showHistory ? all : fresh).slice(0, 10);
   const benchName = data.benchmarks.find((b) => b.benchmark_id === topBench)?.benchmark_name ?? topBench;
 
@@ -313,7 +322,7 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
         </p>
       )}
       <div className="panel overflow-x-auto">
-        <table className="data-table w-full min-w-[640px] text-sm">
+        <table className="data-table w-full min-w-[760px] text-sm">
           <thead>
             <tr className="border-b border-slate-500/15 text-slate-400">
               <th className="px-3 py-2.5 text-left">#</th>
@@ -321,13 +330,13 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
               <th className="px-3 py-2.5 text-left">厂商</th>
               {highlightAgent && <th className="px-3 py-2.5 text-left">Agent 框架</th>}
               <th className="px-3 py-2.5 text-left">官方原始分</th>
+              <th className="px-3 py-2.5 text-left">发布日期</th>
               <th className="px-3 py-2.5 text-left">评测日期</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((r) => (
-              <BoardRow key={`${r.model_id}-${r.agent_scaffold ?? ''}`} r={r} highlightAgent={highlightAgent}
-                provider={index?.models.find((m) => m.model_id === r.model_id)?.provider ?? null} />
+              <BoardRow key={`${r.benchmark_id}-${r.model_id}-${r.agent_scaffold ?? ''}-${r.rank}`} r={r} highlightAgent={highlightAgent} />
             ))}
           </tbody>
         </table>
@@ -344,7 +353,7 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
   );
 }
 
-function BoardRow({ r, highlightAgent, provider }: { r: OfficialRow; highlightAgent?: boolean; provider: string | null }) {
+function BoardRow({ r, highlightAgent }: { r: JoinedRow; highlightAgent?: boolean }) {
   const isAgent = r.evaluation_target_type === 'model_plus_agent' || r.evaluation_target_type === 'complete_agent_system';
   return (
     <tr className={`border-b border-slate-500/10 ${r.is_current === false ? 'opacity-50' : ''} hover:bg-slate-500/5`}>
@@ -355,7 +364,7 @@ function BoardRow({ r, highlightAgent, provider }: { r: OfficialRow; highlightAg
       </td>
       <td className="px-3 py-2.5">
         <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: providerColor(provider) }} aria-hidden />
+          <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: providerColor(r.provider) }} aria-hidden />
           <span className="truncate font-medium text-slate-100" title={r.raw_model_name || r.model_id}>
             {r.raw_model_name || r.model_id}
           </span>
@@ -365,11 +374,12 @@ function BoardRow({ r, highlightAgent, provider }: { r: OfficialRow; highlightAg
           )}
         </div>
       </td>
-      <td className="px-3 py-2.5 text-slate-400">{provider ?? '未知厂商'}</td>
+      <td className="px-3 py-2.5 text-slate-400">{r.provider ?? '—'}</td>
       {highlightAgent && <td className="px-3 py-2.5 text-xs text-slate-400">{r.agent_scaffold ?? '—'}</td>}
       <td className="px-3 py-2.5">
         <span className="num font-semibold text-cyan-300">{fmtScore(r.score, r.score_unit)}</span>
       </td>
+      <td className="px-3 py-2.5"><span className="num text-slate-400">{fmtDate(r.release_date)}</span></td>
       <td className="px-3 py-2.5"><span className="num text-slate-400">{fmtDate(r.evaluation_date)}</span></td>
     </tr>
   );
@@ -380,8 +390,10 @@ function ValueBoard({ index }: { index: ModelsIndex | null }) {
   const { data: coding } = useJson<CapabilityFile>('/data/capabilities/coding.json');
   const rows = useMemo(() => {
     if (!index || !coding || !coding.composite) return null;
+    const currentIds = new Set(index.models.filter((m) => m.is_current === true).map((m) => m.model_id));
     const priceOf = new Map(index.models.map((m) => [m.model_id, m.price_input_usd_per_mtok]));
     const out = coding.composite.models
+      .filter((m) => currentIds.has(m.model_id))
       .map((m) => ({ m, price: priceOf.get(m.model_id) }))
       .filter((x): x is { m: typeof x.m; price: number } => x.price !== null && x.price !== undefined && x.price > 0)
       .map((x) => ({ ...x, value: x.m.index / x.price }))
@@ -494,43 +506,26 @@ function HeatmapGrid({ data, capabilities }: { data: HeatmapData; capabilities: 
   );
 }
 
-/** 价格-编程相对百分位散点。 */
-function PriceAbilityScatter({ index }: { index: ModelsIndex | null }) {
-  const { data: coding } = useJson<CapabilityFile>('/data/capabilities/coding.json');
-  const points = useMemo(() => {
-    if (!index || !coding || !coding.composite) return [];
-    const priceOf = new Map(index.models.map((m) => [m.model_id, m.price_input_usd_per_mtok]));
-    return coding.composite.models
-      .map((m) => ({ mid: m.model_id, price: priceOf.get(m.model_id) }))
-      .filter((x): x is { mid: string; price: number } => typeof x.price === 'number' && x.price > 0)
-      .map((x) => {
-        const cell = coding.composite!.models.find((m) => m.model_id === x.mid)!;
-        return { name: x.mid, x: x.price, y: cell.index, color: providerColor(null), modelId: x.mid };
-      });
-  }, [index, coding]);
-  if (points.length < 3) return null;
-  return (
-    <section className="panel px-5 py-6">
-      <h2 className="text-lg font-bold text-slate-100">价格 × 编程相对百分位</h2>
-      <p className="mt-1 text-xs text-slate-500">
-        横轴为 LiveBench 官方统计输入价（USD/1M），纵轴为编程相对百分位（通过映射门槛的综合）。
-      </p>
-      <div className="mt-3">
-        <AbilityScatter
-          points={points}
-          xName="输入价格 USD/1M"
-          yName="编程相对百分位"
-          logX
-          height={320}
-        />
-      </div>
-    </section>
-  );
-}
 
 export function fmtContextK(ctx: number): string {
   if (ctx >= 1_000_000) return `${(ctx / 1_000_000).toFixed(ctx % 1_000_000 === 0 ? 0 : 1)}M`;
   return `${Math.round(ctx / 1000)}K`;
+}
+
+/** 数据可信度信息条。 */
+function DataFreshnessSummary({ meta, index }: { meta: Meta | null; index: ModelsIndex | null }) {
+  const currentCount = index?.models.filter((m) => m.is_current === true).length ?? null;
+  const withCoding = index?.models.filter(
+    (m) => m.is_current === true && m.capability_indices.coding !== undefined,
+  ).length ?? null;
+  return (
+    <div className="flex flex-wrap gap-x-5 gap-y-1 rounded-xl border border-slate-500/15 bg-slate-900/30 px-4 py-2.5 text-xs text-slate-400">
+      <span>当前活跃模型：<b className="num text-slate-200">{currentCount ?? '—'}</b></span>
+      <span>本页有编程证据：<b className="num text-slate-200">{withCoding ?? '—'}</b></span>
+      <span>数据更新时间：<b className="num text-slate-200">{fmtDate(meta?.update.last_success)}</b></span>
+      <Link to="/methodology" className="ml-auto text-cyan-400 hover:text-cyan-300">数据方法 →</Link>
+    </div>
+  );
 }
 
 function InlineStat({ label, value }: { label: string; value: number | string | null | undefined }) {
