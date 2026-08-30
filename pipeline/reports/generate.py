@@ -380,9 +380,11 @@ def generate_site_data(
         if entry.canonical_id not in used_models:
             continue
         # 价格：优先 Artificial Analysis（可选来源），缺失时回退 LiveBench 官方统计
-        def latest_price(bench_aa: str, bench_lb: str) -> float | None:
-            v = latest_score(entry.canonical_id, bench_aa)
-            return v if v is not None else latest_score(entry.canonical_id, bench_lb)
+        canonical = entry.canonical_id
+
+        def latest_price(bench_aa: str, bench_lb: str, *, cid: str = canonical) -> float | None:
+            v = latest_score(cid, bench_aa)
+            return v if v is not None else latest_score(cid, bench_lb)
 
         cap_indices = {c: v["index"] for c, v in cap_index_of.get(entry.canonical_id, {}).items()}
         price_in = latest_price("aa-price-input", "livebench-price-input")
