@@ -78,7 +78,7 @@
 
 - `update-data.yml`：移除了会引起重复运行的 workflow_run 触发；concurrency 串行化；
   数据完整性门禁（records>0 且 demo_mode=false）；失败日志 Artifact；手动触发可用；
-  每 12 小时 cron；fork 无 Secret 时 AA 源自动跳过、其余照常
+  每日两次 cron（约北京时间 09:00 / 21:00）；fork 无 Secret 时 AA 源自动跳过、其余照常
 - `ci.yml`：新增 concurrency 与 timeout；数据提交（public/data、data/**、*.md）走
   paths-ignore 跳过，避免每个数据提交空跑 CI
 - `deploy-pages.yml`：仅 push + 手动触发（数据提交经 push 自然触发部署，无双触发）；

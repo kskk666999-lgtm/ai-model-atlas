@@ -1,6 +1,7 @@
 name: update-data
 
-# 每 12 小时自动更新一次数据；也支持在 Actions 页面手动触发。
+# 每日计划更新两次（UTC 01:00 / 13:00 ≈ 北京时间 09:00 / 21:00）；
+# 定时任务并非绝对准点，平台高峰期可能略有延迟。也支持在 Actions 页面手动触发。
 # 全流程为普通 Python 抓取 + 确定性计算，不调用任何大模型 API。
 # GITHUB_TOKEN 推送不会触发新的 push 工作流，因此数据提交成功后显式触发
 # deploy-pages；无需额外的 workflow_run 触发器。
@@ -95,3 +96,23 @@ jobs:
             data/reports/
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: 失败时创建/更新提醒 Issue（不重复建帖）
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          TITLE="🚨 数据更新失败待处理"
+          BODY="update-data 工作流失败于 $(date -u '+%FT%TZ')。
+          - 运行日志: $RUN_URL
+          - 影响评估: 失败来源已自动回退上次成功数据（LKG），线上榜单不受影响；
+            若反复失败或全部来源失败，请检查日志是否为上游数据格式变化。"
+          EXISTING=$(gh issue list --state open --search "数据更新失败待处理 in:title" --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+            echo "已在已有提醒 Issue #$EXISTING 追加记录"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+            echo "已创建提醒 Issue"
+          fi

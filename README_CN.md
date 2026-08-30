@@ -6,7 +6,7 @@
 
 - 技术栈：Vite + React + TypeScript + Tailwind CSS + ECharts + TanStack Table（前端）；Python 3.13 + httpx + pydantic + pandas（数据流水线）
 - 部署：GitHub Pages / Cloudflare Pages（免费，无服务器）
-- 数据更新：GitHub Actions 每 12 小时自动抓取一次，支持手动触发
+- 数据更新：GitHub Actions 每日计划更新两次（北京时间约 09:00 / 21:00）（实际执行时间可能因 GitHub Actions 调度略有延迟）；支持手动触发
 
 ## 快速开始（Windows 11 + PowerShell）
 

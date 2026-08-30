@@ -1,0 +1,61 @@
+name: check-data-freshness
+
+# 每日巡检：update-data 是否按计划运行。
+# 防止两种静默故障：
+# 1. scheduled workflow 被禁用（公共仓库 60 天无活动会自动暂停调度）
+# 2. GitHub 调度长期积压导致数据长期不更新
+# 超过 26 小时无运行 → 创建/更新提醒 Issue；恢复正常 → 自动关闭提醒。
+
+on:
+  schedule:
+    - cron: "30 15 * * *" # UTC 15:30 ≈ 北京时间 23:30
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: check-data-freshness
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查最近一次 update-data 运行时间
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          TITLE="🚨 数据更新疑似停止，请检查 update-data"
+          LATEST=$(gh run list --workflow=update-data.yml --branch main --limit 1 \
+            --json status,createdAt --jq '.[0]')
+          CREATED=$(echo "$LATEST" | jq -r .createdAt)
+          STATUS=$(echo "$LATEST" | jq -r .status)
+          AGE_H=$(( ( $(date -u +%s) - $(date -u -d "$CREATED" +%s) ) / 3600 ))
+          echo "最近一次 update-data: $CREATED（${AGE_H} 小时前，状态 $STATUS）"
+
+          EXISTING=$(gh issue list --state open --search "数据更新疑似停止 in:title" --json number --jq '.[0].number' || true)
+
+          if [ "$AGE_H" -gt 26 ]; then
+            BODY="update-data 最近一次运行在 ${CREATED}（${AGE_H} 小时前）。
+            可能原因：
+            1. 公共仓库 60 天无活动导致 scheduled workflows 被自动禁用（到仓库 Actions 页确认，点 Enable 重新启用）；
+            2. GitHub 调度长期积压；
+            3. 工作流被手动禁用。
+            处理：到 [Actions 页](../actions/workflows/update-data.yml) 手动 Run workflow 一次即可恢复。"
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --body "$BODY"
+            else
+              gh issue create --title "$TITLE" --body "$BODY"
+            fi
+          else
+            echo "调度正常，无需提醒。"
+            if [ -n "$EXISTING" ]; then
+              gh issue close "$EXISTING" --comment "数据更新已恢复正常（最近运行 ${CREATED}），自动关闭本提醒。"
+            fi
+          fi

@@ -89,7 +89,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <ul className="list-disc space-y-2 pl-5">
         <li>网站是纯静态页面：浏览器只读取提前生成好的 JSON，图表全部在本地绘制。</li>
-        <li>数据更新是普通 Python 抓取 + 确定性计算（GitHub Actions 每 12 小时），不调用任何生成式模型 API。</li>
+        <li>数据更新是普通 Python 抓取 + 确定性计算，每日计划更新两次（北京时间约 09:00 / 21:00（实际执行时间可能因 GitHub Actions 调度略有延迟）），不调用任何生成式模型 API。</li>
         <li>排名、综合指数、优势短板、场景推荐全部是确定性算法 / 规则，没有 LLM 参与。</li>
         <li>项目内置 <span className="num">scripts/verify-no-llm-runtime.py</span> 自动检查依赖与代码中不存在推理 API 调用。</li>
       </ul>

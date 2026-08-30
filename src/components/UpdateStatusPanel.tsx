@@ -26,7 +26,7 @@ export function UpdateStatusPanel({ meta }: { meta: Meta | null }) {
       </div>
       <dl className="space-y-2">
         <Row label="上次更新成功" value={fmtDateTime(lastSuccess)} />
-        <Row label="下次计划更新" value={nextDue} sub={`每 ${meta?.update.interval_hours ?? 12} 小时（GitHub Actions）`} />
+        <Row label="下次计划更新" value={nextDue} sub={`GitHub Actions 调度 · 实际执行可能略有延迟`} />
         <Row
           label="健康数据源"
           value={<span className="text-emerald-300">{counts.healthy}</span>}
