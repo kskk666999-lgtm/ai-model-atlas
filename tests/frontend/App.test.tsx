@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, cleanup } from '@testing-library/react';
 import { HashRouter } from 'react-router-dom';
 import App from '@/App';
 import { clearCache } from '@/lib/api';
@@ -8,7 +8,7 @@ import { clearCache } from '@/lib/api';
 function mockFetch(data: Record<string, unknown>) {
   return vi.fn(async (url: string | URL | Request) => {
     const path = String(url).replace(/^https?:\/\/[^/]+/, '');
-    const clean = path.replace(/\?.*$/, '');
+    const clean = path.replace(/\?.*$/, '').split('#')[0];
     if (clean in data) {
       return new Response(JSON.stringify(data[clean]), { status: 200 });
     }
@@ -21,8 +21,23 @@ const meta = {
   pipeline_version: '0.1.0',
   demo_mode: false,
   site_name: 'AI 模型天梯',
+  latest_commit: 'abc1234',
   counts: { models: 3, unmapped_models: 1, benchmarks: 4, capabilities_active: 2, records: 20, sources_active: 2, history_snapshots: 2 },
   update: { interval_hours: 12, last_success: '2026-08-29T12:00:00Z', failed_sources: [], degraded_sources: [] },
+  weight_presets: [{ preset_id: 'general', name: '通用助手', weights: { reasoning: 1 } }],
+};
+
+const capabilitiesIndex = {
+  generated_at: '2026-08-30T00:00:00Z',
+  groups: [
+    { group_id: 'text_reasoning', name: '文本与推理' },
+    { group_id: 'coding_agent', name: '编程与 Agent' },
+  ],
+  capabilities: [
+    { capability_id: 'reasoning', name: '逻辑推理', short: '推理', group: 'text_reasoning', status: 'active', benchmark_count: 1, has_composite: false },
+    { capability_id: 'coding', name: '编程能力', short: '编程', group: 'coding_agent', status: 'active', benchmark_count: 1, has_composite: true },
+    { capability_id: 'chat_preference', name: '人类偏好与聊天体验', short: '人类偏好', group: 'safety', status: 'pending', benchmark_count: 0, has_composite: false },
+  ],
   weight_presets: [{ preset_id: 'general', name: '通用助手', weights: { reasoning: 1 } }],
 };
 
@@ -57,7 +72,7 @@ const capabilityReasoning = {
   status: 'active',
   description: null,
   generated_at: '2026-08-30T00:00:00Z',
-  benchmarks: [{ benchmark_id: 'livebench-reasoning', benchmark_name: 'LiveBench 逻辑推理', source_id: 'livebench', higher_is_better: true, score_unit: 'percent', record_count: 2 }],
+  benchmarks: [{ benchmark_id: 'livebench-reasoning', benchmark_name: 'LiveBench 逻辑推理', source_id: 'livebench', higher_is_better: true, score_unit: 'percent', record_count: 2, eligible_for_composite: true }],
   official: [
     {
       benchmark_id: 'livebench-reasoning', benchmark_name: 'LiveBench 逻辑推理', capability: 'reasoning',
@@ -67,6 +82,8 @@ const capabilityReasoning = {
       evaluation_date: '2026-06-25', evaluation_target_type: 'base_model', agent_scaffold: null,
       prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: 'test',
       fetched_at: '2026-08-30T00:00:00Z', provider: 'OpenAI', region: 'us', open_weights: false,
+      record_verification_status: 'maintainer_verified',
+      data_file_url: 'https://livebench.ai/table.csv', data_json_path: 'csv: model=x', data_sha256: 'abc',
     },
     {
       benchmark_id: 'livebench-reasoning', benchmark_name: 'LiveBench 逻辑推理', capability: 'reasoning',
@@ -76,40 +93,75 @@ const capabilityReasoning = {
       evaluation_date: '2026-06-25', evaluation_target_type: 'base_model', agent_scaffold: null,
       prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: 'test',
       fetched_at: '2026-08-30T00:00:00Z', provider: 'Zhipu AI', region: 'cn', open_weights: true,
+      record_verification_status: 'maintainer_verified',
+      data_file_url: 'https://livebench.ai/table.csv', data_json_path: 'csv: model=y', data_sha256: 'abc',
     },
   ],
-  composite: {
-    method: 'percentile-weighted（本站计算，非官方榜单）',
-    benchmark_count: 1,
-    source_count: 1,
-    models: [
-      { model_id: 'gpt-5.2-high', index: 100.0, rank: 1, tie: false, benchmark_count: 1, source_count: 1, single_source: true, confidence: 'medium', per_benchmark: [{ benchmark_id: 'livebench-reasoning', percentile: 100 }] },
-      { model_id: 'glm-5.3', index: 50.0, rank: 2, tie: false, benchmark_count: 1, source_count: 1, single_source: true, confidence: 'medium', per_benchmark: [{ benchmark_id: 'livebench-reasoning', percentile: 50 }] },
-    ],
-  },
+  composite: null,
+  composite_gate: [{ reason: '单一合格基准，不产生综合' }],
 };
 
-describe('前端核心路径', () => {
+const heatmap = {
+  generated_at: '2026-08-30T00:00:00Z',
+  capabilities: [
+    {
+      capability_id: 'reasoning', benchmark_id: 'livebench-reasoning', higher_is_better: true, score_unit: 'percent',
+      cells: [
+        { model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, tie: false, agent_scaffold: null, evaluation_date: '2026-06-25' },
+        { model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', score: 90.1, rank: 2, tie: false, agent_scaffold: null, evaluation_date: '2026-06-25' },
+      ],
+    },
+  ],
+  models: ['gpt-5.2-high', 'glm-5.3'],
+};
+
+const homepage = {
+  generated_at: meta.generated_at,
+  stats: meta.counts,
+  update: meta.update,
+  top3: { reasoning: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, benchmark_id: 'livebench-reasoning', kind: 'official' }] },
+  movers_7d: [{ model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', capability: 'reasoning', delta: 2 }],
+  trend_30d: [],
+};
+
+function baseMocks() {
+  return mockFetch({
+    '/data/meta.json': meta,
+    '/data/homepage.json': homepage,
+    '/data/models/index.json': modelsIndex,
+    '/data/capabilities/index.json': capabilitiesIndex,
+    '/data/capabilities/reasoning.json': capabilityReasoning,
+    '/data/heatmap.json': heatmap,
+    '/data/source-health.json': { generated_at: '', counts: { healthy: 2, degraded: 0, failed: 0, disabled: 3 }, sources: [] },
+  });
+}
+
+describe('前端核心路径（V2 口径）', () => {
   beforeEach(() => {
     clearCache();
     window.location.hash = '#/';
-    vi.stubGlobal('fetch', mockFetch({
-      '/data/meta.json': meta,
-      '/data/homepage.json': { generated_at: meta.generated_at, stats: meta.counts, update: meta.update, top3: { reasoning: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', index: 100, rank: 1 }] }, movers_7d: [{ model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', capability: 'reasoning', delta: 2 }], trend_30d: [] },
-      '/data/models/index.json': modelsIndex,
-      '/data/capabilities/reasoning.json': capabilityReasoning,
-      '/data/source-health.json': { generated_at: '', counts: { healthy: 2, degraded: 0, failed: 0, disabled: 3 }, sources: [] },
-    }));
+    vi.stubGlobal('fetch', baseMocks());
   });
   afterEach(() => {
+    cleanup();
     vi.unstubAllGlobals();
   });
 
-  it('首页正常加载：统计与前三名可见', async () => {
+  it('首页正常加载：官方榜为主、相对口径标注可见', async () => {
     render(<HashRouter><App /></HashRouter>);
     await waitFor(() => expect(screen.getByText('全球 AI 模型能力')).toBeInTheDocument());
-    expect((await screen.findAllByText('收录模型')).length).toBeGreaterThan(0);
-    await waitFor(() => expect(screen.getAllByText('GPT-5.2 High').length).toBeGreaterThan(0));
+    // 官方原始分榜单出现（默认推理 Tab）
+    await waitFor(() => expect(screen.getAllByText('gpt-5.2-2025-12-11-high').length).toBeGreaterThan(0));
+    // 状态圆点存在于全局导航
+    expect(screen.getByLabelText(/数据状态/)).toBeInTheDocument();
+    // 官方榜 Tab 存在
+    expect(screen.getByRole('button', { name: '文本推理' })).toBeInTheDocument();
+  });
+
+  it('首页热力图渲染官方原始分', async () => {
+    render(<HashRouter><App /></HashRouter>);
+    await waitFor(() => expect(screen.getByText('能力 × 模型热力图')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getAllByText('96.2').length).toBeGreaterThan(0));
   });
 
   it('榜单页支持搜索筛选', async () => {
@@ -118,16 +170,29 @@ describe('前端核心路径', () => {
     expect(await screen.findAllByText(/LiveBench 逻辑推理/).then((els) => els.length)).toBeGreaterThan(0);
     const input = screen.getByLabelText('搜索模型');
     fireEvent.change(input, { target: { value: 'glm' } });
-    await waitFor(() => expect(screen.queryByText('gpt-5.2-2025-12-11-high')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryAllByText('gpt-5.2-2025-12-11-high').length).toBe(0));
     expect(screen.getAllByText('glm-5.3').length).toBeGreaterThan(0);
   });
 
-  it('榜单页可切换到综合指数模式', async () => {
+  it('相对百分位为次级且单基准能力被门槛禁用', async () => {
     window.location.hash = '#/leaderboard?cap=reasoning';
     render(<HashRouter><App /></HashRouter>);
-    const tab = await screen.findByRole('tab', { name: /综合指数/ });
-    fireEvent.click(tab);
-    expect(await screen.findAllByText('单一来源').then((els) => els.length)).toBeGreaterThan(0);
+    await screen.findAllByRole('tab', { name: /本站相对百分位/ }).then((tabs) => {
+      expect(tabs[0]).toHaveAttribute('disabled'); // mock 数据为单基准 -> 门槛禁用
+    });
+    expect(screen.getAllByText(/仅提供官方原始榜/).length).toBeGreaterThan(0);
+  });
+
+  it('点击分数打开溯源抽屉并显示验证状态与数据年龄', async () => {
+    window.location.hash = '#/leaderboard?cap=reasoning';
+    render(<HashRouter><App /></HashRouter>);
+    await waitFor(() => expect(screen.getAllByText('96.2').length).toBeGreaterThan(0));
+    const btn = screen.getAllByText('96.2')[0];
+    fireEvent.click(btn);
+    await waitFor(() => expect(screen.getByText('数据溯源 · Data Provenance')).toBeInTheDocument());
+    expect(screen.getByText('官方核验')).toBeInTheDocument();
+    expect(screen.getAllByText(/数据年龄/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/精确数据文件/).length).toBeGreaterThan(0);
   });
 
   it('数据缺失时显示空状态而非模拟数据', async () => {

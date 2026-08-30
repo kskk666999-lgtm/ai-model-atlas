@@ -1,10 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useJson } from '@/lib/api';
+import { useCapabilities, capName, capShort } from '@/lib/capabilities';
 import type { ModelDetail, OfficialRow } from '@/types/data';
 import { ModelRadar, type RadarSeries } from '@/charts/ModelRadar';
 import { TrendLine } from '@/charts/TrendLine';
-import { CAPABILITIES } from '@/lib/capabilities';
 import { fmtContext, fmtDate, fmtScore } from '@/lib/format';
 import { LevelBadge, TypeBadge, RankCell, SourceDrawer, OpenWeightBadge } from '@/components/Badges';
 import { EmptyState, ErrorState, Skeleton } from '@/components/StateViews';
@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 export function ModelDetailPage() {
   const { modelId = '' } = useParams();
+  const { capabilities } = useCapabilities();
   const { data, error, loading } = useJson<ModelDetail>(`/data/models/${modelId}.json`);
   const [picked, setPicked] = useState<OfficialRow | null>(null);
 
@@ -22,13 +23,8 @@ export function ModelDetailPage() {
   const m = data.meta;
   const indicators = data.radar.map((r) => ({ name: r.name, max: 100 }));
   const series: RadarSeries[] = [
-    {
-      name: m.display_name,
-      color: '#22d3ee',
-      values: data.radar.map((r) => r.index),
-    },
+    { name: m.display_name, color: '#22d3ee', values: data.radar.map((r) => r.index) },
   ];
-  const radarCaps = new Set(data.radar.map((r) => r.capability_id));
 
   return (
     <div className="space-y-6">
@@ -52,7 +48,8 @@ export function ModelDetailPage() {
           <div className="flex flex-col items-end gap-2 text-sm">
             {m.overall_index !== null && (
               <span className="panel-2 px-4 py-2">
-                综合指数 <span className="num text-lg font-bold text-cyan-300">{m.overall_index.toFixed(1)}</span>
+                本站相对百分位（综合，参考值）
+                <span className="num ml-2 text-lg font-bold text-cyan-300">{m.overall_index.toFixed(1)}</span>
                 <span className="ml-1 text-xs text-slate-400">第 {m.overall_rank} 名</span>
               </span>
             )}
@@ -73,39 +70,43 @@ export function ModelDetailPage() {
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="panel px-5 py-6">
           <h2 className="text-lg font-bold text-slate-100">能力雷达图</h2>
-          <p className="mt-1 text-xs text-slate-500">能力指数（0~100）为本站基于官方原始分的确定性计算。</p>
+          <p className="mt-1 text-xs text-slate-500">
+            数值为本站相对百分位（0~100，表示在当前参与计算的模型集合中的相对位置，不是能力满分），
+            仅包含通过全部质量门槛的能力；缺失能力不绘制。
+          </p>
           {data.radar.length ? (
             <ModelRadar indicators={indicators} series={series} height={360} />
           ) : (
-            <p className="py-10 text-center text-sm text-slate-500">该模型暂无足够数据绘制雷达图</p>
+            <p className="py-10 text-center text-sm text-slate-500">
+              该模型暂无通过质量门槛的能力百分位（多数能力当前仅提供官方原始榜）。
+            </p>
           )}
         </section>
 
         <section className="panel px-5 py-6">
-          <h2 className="text-lg font-bold text-slate-100">各项排名</h2>
+          <h2 className="text-lg font-bold text-slate-100">各项相对排名</h2>
           <ul className="mt-3 divide-y divide-slate-500/10">
             {data.radar.map((r) => (
               <li key={r.capability_id} className="flex items-center gap-3 py-2.5 text-sm">
                 <Link to={`/leaderboard?cap=${r.capability_id}`} className="min-w-0 flex-1 truncate text-slate-200 hover:text-cyan-300">
-                  {CAPABILITIES.find((c) => c.id === r.capability_id)?.name ?? r.name}
+                  {capName(capabilities, r.capability_id)}
                 </Link>
                 <span className="num text-slate-400">{r.index.toFixed(1)}</span>
                 <RankCell rank={r.rank} />
               </li>
             ))}
-            {data.radar.length === 0 && <li className="py-6 text-sm text-slate-500">暂无能力指数</li>}
+            {data.radar.length === 0 && <li className="py-6 text-sm text-slate-500">暂无通过门槛的能力百分位</li>}
           </ul>
         </section>
       </div>
 
-      {/* 历史趋势 */}
       {Object.keys(data.history).length > 0 && (
         <section className="panel px-5 py-6">
           <h2 className="text-lg font-bold text-slate-100">历史趋势</h2>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             {Object.entries(data.history).slice(0, 4).map(([cap, pts]) => (
               <div key={cap} className="panel-2 px-3 py-3">
-                <p className="text-xs text-slate-400">{CAPABILITIES.find((c) => c.id === cap)?.name ?? cap} · 指数</p>
+                <p className="text-xs text-slate-400">{capName(capabilities, cap)} · 相对百分位</p>
                 <TrendLine
                   series={[{ name: m.display_name, color: '#22d3ee', points: pts.map((p) => ({ date: p.date, value: p.index })) }]}
                   height={200}
@@ -116,18 +117,17 @@ export function ModelDetailPage() {
         </section>
       )}
 
-      {/* 每条成绩 + 溯源 */}
       <section className="panel px-5 py-6">
-        <h2 className="text-lg font-bold text-slate-100">全部基准成绩</h2>
-        <p className="mt-1 text-xs text-slate-500">点击任一分数查看完整数据溯源（来源、版本、评测条件与原始出处链接）。</p>
+        <h2 className="text-lg font-bold text-slate-100">全部基准成绩（官方原始分）</h2>
+        <p className="mt-1 text-xs text-slate-500">点击任一分数查看完整溯源：来源、验证状态、文件内定位、数据年龄与原始出处。</p>
         <div className="mt-3 overflow-x-auto">
-          <table className="data-table w-full min-w-[680px] text-sm">
+          <table className="data-table w-full min-w-[720px] text-sm">
             <thead>
               <tr className="border-b border-slate-500/15 text-slate-400">
                 <th className="px-3 py-2 text-left">能力</th>
                 <th className="px-3 py-2 text-left">基准</th>
-                <th className="px-3 py-2 text-left">排名</th>
-                <th className="px-3 py-2 text-left">分数</th>
+                <th className="px-3 py-2 text-left">官方原始榜排名</th>
+                <th className="px-3 py-2 text-left">官方原始分</th>
                 <th className="px-3 py-2 text-left">类型</th>
                 <th className="px-3 py-2 text-left">来源</th>
                 <th className="px-3 py-2 text-left">评测日期</th>
@@ -136,7 +136,7 @@ export function ModelDetailPage() {
             <tbody>
               {data.records.map((r, i) => (
                 <tr key={`${r.benchmark_id}-${i}`} className="border-b border-slate-500/10 hover:bg-slate-500/5">
-                  <td className="px-3 py-2 text-slate-300">{CAPABILITIES.find((c) => c.id === r.capability)?.short ?? r.capability}</td>
+                  <td className="px-3 py-2 text-slate-300">{capShort(capabilities, r.capability)}</td>
                   <td className="px-3 py-2 text-slate-200">{r.benchmark_name}</td>
                   <td className="px-3 py-2"><RankCell rank={r.rank} tie={r.tie} /></td>
                   <td className="px-3 py-2">
@@ -152,18 +152,18 @@ export function ModelDetailPage() {
             </tbody>
           </table>
         </div>
-        {!radarCaps.size && data.records.length === 0 && <p className="mt-4 text-sm text-slate-500">暂无成绩记录</p>}
+        {data.records.length === 0 && <p className="mt-4 text-sm text-slate-500">暂无成绩记录</p>}
       </section>
 
-      {/* 已知限制 */}
       <section className="panel px-5 py-6">
         <h2 className="text-lg font-bold text-slate-100">已知限制</h2>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-slate-400">
           {m.open_weights === false && <li>闭源 API 模型：评测结果依赖厂商端点的稳定性与版本管理。</li>}
           {m.open_weights === true && <li>开放权重模型：不同部署/量化方式可能产生与官方评测不同的结果。</li>}
-          <li>能力指数基于当前可用基准的百分位计算，基准覆盖不全时会低估真实能力差距。</li>
-          {!radarCaps.has('chat_preference') && <li>人类偏好维度暂无可信公开数据源，本页雷达图未包含。</li>}
-          <li>分数反映评测时点表现；模型端点可能已更新，请以来源页评测日期为准。</li>
+          <li>雷达图中的百分位是"相对位置"：参与计算的模型集合变化时数值会变化，不代表能力绝对值。</li>
+          {!data.radar.length && <li>当前该模型没有通过质量门槛的能力百分位；请以下方官方原始分为准。</li>}
+          <li>软件工程成绩（如有）属于「模型 + Agent 框架」系统表现，不能当作基础模型纯能力。</li>
+          <li>评测分数反映评测时点表现；"本站抓取时间"晚于"评测日期"不代表重新测评。</li>
         </ul>
       </section>
 

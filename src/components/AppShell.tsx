@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { BarChart3, GitCompareArrows, Globe2, Home, Menu, ScrollText, Sparkles, X } from 'lucide-react';
 import { useState } from 'react';
 import { AppThemeProvider } from '@/lib/theme';
+import { StatusDot } from '@/components/StatusDot';
 
 const NAV = [
   { to: '/', label: '首页', icon: Home },
@@ -43,8 +44,11 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
+        <span className="ml-auto flex items-center gap-2 md:ml-2">
+          <StatusDot />
+        </span>
         <button
-          className="ml-auto rounded-lg border border-slate-500/30 p-2 text-slate-300 md:hidden"
+          className="rounded-lg border border-slate-500/30 p-2 text-slate-300 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? '关闭菜单' : '打开菜单'}

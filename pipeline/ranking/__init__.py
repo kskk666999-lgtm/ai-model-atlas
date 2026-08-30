@@ -1,5 +1,6 @@
 from .composite import (
     AGENT_TYPES,
+    benchmark_eligibility,
     benchmark_ranking,
     capability_composite,
     overall_composite,
@@ -7,6 +8,7 @@ from .composite import (
 
 __all__ = [
     "AGENT_TYPES",
+    "benchmark_eligibility",
     "benchmark_ranking",
     "capability_composite",
     "overall_composite",

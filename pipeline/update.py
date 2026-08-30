@@ -25,6 +25,7 @@ from .paths import (
 )
 from .ranking.composite import (
     AGENT_TYPES,
+    benchmark_eligibility,
     benchmark_ranking,
     capability_composite,
     overall_composite,
@@ -142,16 +143,30 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
         for row in rows:
             row["record"].rank = row["rank"]
 
+    # 基准级门槛：映射覆盖率 >= 95% 且已映射去重模型 >= 10
+    eligibility = benchmark_eligibility(all_records)
+    print(f"    通过综合门槛的基准：{len(eligibility)} 个")
+    _write_mapping_coverage(all_records, eligibility)
+
     capability_composites = {}
+    composite_gates: dict[str, list[dict]] = {}
     for cap in caps_registry:
         cap_id = cap["capability_id"]
+        # SWE 为「模型 + Agent 系统」能力：只提供官方原始榜，不设综合指数
+        if cap_id == "swe":
+            composite_gates[cap_id] = [
+                {"reason": "软件工程成绩来自「模型 + Agent 框架」的完整系统，"
+                           "不能折算为基础模型能力百分位；请使用按分区/Scaffold 的官方原始榜"}
+            ]
+            continue
         cap_records = [
             r for r in all_records
             if r.capability == cap_id
             and not r.model_is_unmapped
-            and (cap_id == "swe" or r.evaluation_target_type not in AGENT_TYPES)
+            and r.evaluation_target_type not in AGENT_TYPES
         ]
-        comp = capability_composite(cap_records, benchmarks_by_id)
+        comp, gate_notes = capability_composite(cap_records, benchmarks_by_id, eligibility)
+        composite_gates[cap_id] = gate_notes
         if comp and comp["models"]:
             capability_composites[cap_id] = comp
 
@@ -202,6 +217,8 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
         benchmarks_registry=benchmarks_by_id,
         capability_weights=cap_weights,
         capability_composites=capability_composites,
+        composite_gates=composite_gates,
+        eligibility=eligibility,
         official_rankings=official_rankings,
         overall=overall,
         rank_changes=rank_changes,
@@ -214,6 +231,56 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     _write_reports(results, len(all_records), unmapped, overall, stats)
     print(f"[8/8] 完成：写入 {stats['files_written']} 个数据文件")
     return 0
+
+
+def _write_mapping_coverage(records, eligibility) -> None:
+    import json as _json
+    from collections import defaultdict
+
+    from .paths import MAPPING_COVERAGE_JSON, MAPPING_COVERAGE_MD
+
+    by_bench: dict[str, dict] = defaultdict(lambda: {
+        "total": 0, "distinct": set(), "mapped": set(), "sources": set(),
+    })
+    for r in records:
+        st = by_bench[r.benchmark_id]
+        st["total"] += 1
+        st["distinct"].add(
+            r.model_id if not r.model_is_unmapped else (r.raw_model_name or r.model_id))
+        st["sources"].add(r.source_id)
+        if not r.model_is_unmapped:
+            st["mapped"].add(r.model_id)
+    rows = []
+    for bid, st in sorted(by_bench.items()):
+        distinct = len(st["distinct"])
+        mapped = len(st["mapped"])
+        rate = round(mapped / distinct, 4) if distinct else 0.0
+        el = eligibility.get(bid)
+        rows.append({
+            "benchmark_id": bid,
+            "sources": sorted(st["sources"]),
+            "total_records": st["total"],
+            "distinct_models": distinct,
+            "mapped_distinct_models": mapped,
+            "mapped_rate": rate,
+            "eligible_for_composite": bool(el),
+            "reason": (el["reason"] if el else "未通过门槛（映射覆盖率/参评模型数不足）"),
+        })
+    MAPPING_COVERAGE_JSON.parent.mkdir(parents=True, exist_ok=True)
+    MAPPING_COVERAGE_JSON.write_text(
+        _json.dumps({"generated_at": utc_now_iso(), "benchmarks": rows},
+                    ensure_ascii=False, indent=1),
+        encoding="utf-8", newline="\n")
+    md = ["# 模型名称映射覆盖率", "",
+          "| 基准 | 来源 | 记录数 | 去重模型 | 已映射 | 映射率 | 可进综合 | 说明 |",
+          "|---|---|---|---|---|---|---|---|"]
+    for r in rows:
+        md.append(
+            f"| {r['benchmark_id']} | {','.join(r['sources'])} | {r['total_records']} "
+            f"| {r['distinct_models']} | {r['mapped_distinct_models']} "
+            f"| {r['mapped_rate']:.0%} | {'✅' if r['eligible_for_composite'] else '❌'} "
+            f"| {r['reason']} |")
+    MAPPING_COVERAGE_MD.write_text("\n".join(md), encoding="utf-8", newline="\n")
 
 
 def _offline_result(adapter) -> object:

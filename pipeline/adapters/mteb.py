@@ -107,12 +107,14 @@ class MTEBAdapter(BaseAdapter):
                 (canonical_id, model_dir, revision, benchmark_id, task_file)) from e
         scores = payload.get("scores") or {}
         main_score = None
+        split_used = None
         for split in SPLIT_ORDER:
             arr = scores.get(split)
             if isinstance(arr, list) and arr:
                 cand = arr[0].get("main_score")
                 if isinstance(cand, (int, float)):
                     main_score = float(cand)
+                    split_used = split
                     break
         if main_score is None:
             return None
@@ -120,7 +122,10 @@ class MTEBAdapter(BaseAdapter):
             benchmark_id=benchmark_id,
             raw_model_name=canonical_id,  # 已是 canonical_id，直接复用注册表别名
             score=main_score,
-            evaluation_target_type="embedding_model" if "sts" not in benchmark_id else "embedding_model",
+            evaluation_target_type="embedding_model",
+            record_verification_status="maintainer_verified",
+            data_file_url=url,
+            data_json_path=f"scores.{split_used}[0].main_score",
             source_commit_sha=revision if REVISION_RE.match(revision) else None,
             source_url=f"https://github.com/embeddings-benchmark/results/tree/main/results/{model_dir}/{revision}/{task_file}.json",
             notes=f"task={task_file}; revision={revision}",

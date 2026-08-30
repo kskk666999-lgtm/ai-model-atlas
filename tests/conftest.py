@@ -94,6 +94,22 @@ BENCHMARKS = {
         "higher_is_better": True,
         "score_unit": "percent",
     },
+    "bench-y": {
+        "benchmark_id": "bench-y",
+        "benchmark_name": "Benchmark Y",
+        "source_id": "testsource",
+        "capability": "reasoning",
+        "higher_is_better": True,
+        "score_unit": "percent",
+    },
+    "bench-z": {
+        "benchmark_id": "bench-z",
+        "benchmark_name": "Benchmark Z",
+        "source_id": "testsource",
+        "capability": "reasoning",
+        "higher_is_better": True,
+        "score_unit": "percent",
+    },
     "bench-low": {
         "benchmark_id": "bench-low",
         "benchmark_name": "Benchmark Lower Better",

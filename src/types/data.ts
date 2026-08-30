@@ -57,6 +57,8 @@ export interface ModelIndexItem {
   output_speed_tps: number | null;
   latency_seconds: number | null;
   benchmark_count: number;
+  benchmark_total?: number;
+  coverage?: number;
   source_count: number;
   rank_changes: Record<string, { d7?: number; d30?: number }>;
 }
@@ -90,6 +92,11 @@ export interface OfficialRow {
   sample_size: number | null;
   notes?: string | null;
   fetched_at: string;
+  record_verification_status?: 'maintainer_verified' | 'third_party_submitted' | 'unknown';
+  data_file_url?: string | null;
+  data_json_path?: string | null;
+  data_sha256?: string | null;
+  upstream_updated_at?: string | null;
 }
 
 export interface CompositeModel {
@@ -98,6 +105,8 @@ export interface CompositeModel {
   rank: number;
   tie: boolean;
   benchmark_count: number;
+  benchmark_total?: number;
+  coverage?: number;
   source_count: number;
   single_source: boolean;
   confidence: 'high' | 'medium' | 'low';

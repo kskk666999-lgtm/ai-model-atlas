@@ -115,6 +115,10 @@ class SWEBenchAdapter(BaseAdapter):
             meta = pyyaml.safe_load(body.decode("utf-8")) or {}
         except Exception:
             return None  # 内容损坏视为该运行无效
+        import hashlib
+
+        meta_sha = hashlib.sha256(body).hexdigest()
+        meta_url = RAW_BASE + path
 
         info = meta.get("info") or {}
         tags = meta.get("tags") or {}
@@ -155,6 +159,11 @@ class SWEBenchAdapter(BaseAdapter):
             agent_scaffold=agent_scaffold,
             evaluation_date=evaluation_date,
             source_url=f"https://github.com/SWE-bench/experiments/tree/main/evaluation/{split}/{run_id}",
+            record_verification_status="maintainer_verified",
+            data_file_url=meta_url,
+            data_json_path=("metadata.yaml: info.resolved" if split != "verified"
+                            else "results/results.json: len(resolved) / 500"),
+            data_sha256=meta_sha,
             prompt_mode=f"pass@{attempts}" if attempts else None,
             hardware_or_endpoint=f"agent:{agent}",
             notes=(

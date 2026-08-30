@@ -69,10 +69,15 @@ class LiveBenchAdapter(BaseAdapter):
         raise AdapterError("未能发现可用的 LiveBench release")
 
     def fetch_records(self):
+        import hashlib
+
         release = self._discover_release()
         token = release.replace("-", "_")
-        table = csv.DictReader(io.StringIO(
-            self.http.get(f"{SITE_BASE}/table_{token}.csv").decode("utf-8")))
+        table_url = f"{SITE_BASE}/table_{token}.csv"
+        cost_url = f"{SITE_BASE}/cost_{token}.csv"
+        table_body = self.http.get(table_url)
+        table_sha = hashlib.sha256(table_body).hexdigest()
+        table = csv.DictReader(io.StringIO(table_body.decode("utf-8")))
         rows = list(table)
         categories = json.loads(self.http.get(f"{SITE_BASE}/categories_{token}.json").decode("utf-8"))
 
@@ -109,6 +114,11 @@ class LiveBenchAdapter(BaseAdapter):
                     evaluation_date=release,
                     benchmark_version=release,
                     source_url=f"{SITE_BASE}/",
+                    record_verification_status="maintainer_verified",
+                    data_file_url=table_url,
+                    data_json_path=f"csv: model={model}, 类别={category} 的 {len(scores)} 个任务列",
+                    data_sha256=table_sha,
+                    upstream_updated_at=release,
                     notes=f"官方排行榜导出；release={release}；任务数={len(scores)}（官方类别平均）",
                 ))
 
@@ -140,6 +150,9 @@ class LiveBenchAdapter(BaseAdapter):
                     evaluation_date=release,
                     benchmark_version=release,
                     source_url=f"{SITE_BASE}/",
+                    record_verification_status="maintainer_verified",
+                    data_file_url=cost_url,
+                    data_json_path=f"csv: model={model}, 列={col}",
                     notes="LiveBench 官方统计的 API 价格（USD / 1M tokens）",
                 ))
 

@@ -113,7 +113,7 @@ benchmarks:
   - benchmark_id: ovl-mmbench-test-cn-v11
     benchmark_name: MMBench v1.1 中文
     source_id: vlmevalkit
-    capability: chinese
+    capability: chinese_mm
     higher_is_better: true
     score_unit: percent
   - benchmark_id: ovl-mmbench-test-en-v11
@@ -161,7 +161,7 @@ benchmarks:
   - benchmark_id: ovl-ccbench
     benchmark_name: CCBench（中国传统文化）
     source_id: vlmevalkit
-    capability: chinese
+    capability: chinese_mm
     higher_is_better: true
     score_unit: percent
   - benchmark_id: ovl-mmstar
