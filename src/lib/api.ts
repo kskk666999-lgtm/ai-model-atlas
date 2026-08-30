@@ -2,6 +2,18 @@ import { useEffect, useState } from 'react';
 
 const cache = new Map<string, unknown>();
 
+/**
+ * Resolve root-relative static assets against Vite's deployment base.
+ *
+ * GitHub Pages hosts project sites below /<repository>/, so requesting
+ * /data/... directly would incorrectly target the account-site root.
+ */
+export function resolveStaticUrl(url: string, baseUrl = import.meta.env.BASE_URL): string {
+  if (!url.startsWith('/') || url.startsWith('//')) return url;
+  const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${base}${url.replace(/^\/+/, '')}`;
+}
+
 /** 测试用：清空模块级缓存。 */
 export function clearCache() {
   cache.clear();
@@ -22,7 +34,7 @@ export function useJson<T>(url: string | null): { data: T | null; error: string 
     }
     setLoading(true);
     setError(null);
-    fetch(url)
+    fetch(resolveStaticUrl(url))
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -72,7 +84,7 @@ export function useJsonMany<T>(urls: string[]): { data: Map<string, T>; loading:
     Promise.all(
       urls.map(async (u) => {
         if (cache.has(u)) return [u, cache.get(u) as T] as const;
-        const r = await fetch(u);
+        const r = await fetch(resolveStaticUrl(u));
         if (!r.ok) throw new Error(`HTTP ${r.status} @ ${u}`);
         const json = (await r.json()) as T;
         cache.set(u, json);

@@ -12,7 +12,7 @@ import io
 import json
 import random
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -167,7 +167,7 @@ def main() -> int:
     for r in rows:
         by_source.setdefault(r["source_id"], []).append(r)
     sample: list[dict] = []
-    for sid, lst in sorted(by_source.items()):
+    for _sid, lst in sorted(by_source.items()):
         rng.shuffle(lst)
         sample.extend(lst[:4])
     while len(sample) < SAMPLE_N:
@@ -241,7 +241,7 @@ def main() -> int:
     n_ok = sum(1 for e in results if e["verified"] is True)
     n_bad = sum(1 for e in results if e["verified"] is False)
     report = {
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "seed": SEED,
         "total_records_in_site": len(rows),
         "sampled": len(results),

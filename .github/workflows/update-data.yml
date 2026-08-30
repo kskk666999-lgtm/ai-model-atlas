@@ -2,8 +2,8 @@ name: update-data
 
 # 每 12 小时自动更新一次数据；也支持在 Actions 页面手动触发。
 # 全流程为普通 Python 抓取 + 确定性计算，不调用任何大模型 API。
-# 注意：不要添加 workflow_run 触发器——数据提交通过 push 事件自然触发
-# ci 与 deploy-pages，额外触发会造成重复运行。
+# GITHUB_TOKEN 推送不会触发新的 push 工作流，因此数据提交成功后显式触发
+# deploy-pages；无需额外的 workflow_run 触发器。
 
 on:
   schedule:
@@ -16,6 +16,7 @@ on:
         default: ""
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -78,6 +79,12 @@ jobs:
       - name: 推送
         if: steps.commit.outputs.changed == 'true'
         run: git push
+
+      - name: 数据变化后触发 Pages 部署
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main --repo "$GITHUB_REPOSITORY"
 
       - name: 失败时上传诊断日志
         if: failure()

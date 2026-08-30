@@ -13,7 +13,7 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -86,7 +86,7 @@ def check_env_file() -> list[str]:
     env = PROJECT_ROOT / ".env"
     if env.exists():
         content = env.read_text(encoding="utf-8")
-        vals = [l for l in content.splitlines() if re.match(r"[A-Z_]+=\S+", l)]
+        vals = [line for line in content.splitlines() if re.match(r"[A-Z_]+=\S+", line)]
         problems.append(f".env 实际文件存在且含 {len(vals)} 个非空值 —— 应确认被 .gitignore 排除且不入库")
     tracked = subprocess.run(
         ["git", "ls-files", ".env", "*.env"], cwd=PROJECT_ROOT,
@@ -110,7 +110,7 @@ def main() -> int:
     lines = [
         "# 安全审计报告",
         "",
-        f"- 审计时间：{datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}",
+        f"- 审计时间：{datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')}",
         f"- 密钥模式扫描（工作区 + dist 前端产物 + **完整 git 历史**）：{len(hits)} 处命中 "
         + ("✅" if not hits else "❌"),
         f"- 工作流 Secret 处理检查：{len(wf_problems)} 处问题 " + ("✅" if not wf_problems else "❌"),

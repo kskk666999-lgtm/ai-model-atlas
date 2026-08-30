@@ -8,7 +8,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-import yaml  # noqa: E402
+import yaml  # noqa: E402, F401
 
 from pipeline.normalization.registry import ModelNormalizer, _canon_key  # noqa: E402
 from pipeline.paths import REGISTRY_MODELS, UNMAPPED_FILE  # noqa: E402
@@ -17,7 +17,7 @@ from pipeline.schemas.records import parse_registry_models  # noqa: E402
 
 def main() -> int:
     models = parse_registry_models(REGISTRY_MODELS)
-    norm = ModelNormalizer(models)
+    _norm = ModelNormalizer(models)
 
     # 1) 别名冲突检查：同一别名键映射到多个 canonical
     alias_map: dict[str, set[str]] = {}
