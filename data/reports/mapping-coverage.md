@@ -2,6 +2,9 @@
 
 | 基准 | 来源 | 记录数 | 去重模型 | 已映射 | 映射率 | 可进综合 | 说明 |
 |---|---|---|---|---|---|---|---|
+| bfcl-v4-memory | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| bfcl-v4-overall | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| bfcl-v4-web-search | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-agentic-coding | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
@@ -40,3 +43,4 @@
 | swebench-bash-only | swebench | 45 | 45 | 37 | 82% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-multilingual | swebench | 13 | 13 | 11 | 85% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-verified | swebench | 112 | 54 | 14 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| terminalbench-4 | terminalbench | 10 | 10 | 9 | 90% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |

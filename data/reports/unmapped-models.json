@@ -1,5 +1,5 @@
 {
-  "count": 453,
+  "count": 517,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1830,6 +1830,447 @@
       "temp_id": "unmapped--swebench--claude-4-sonnet-20250514"
     },
     {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "DeepSeek-V3.2-Exp",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--deepseek-v3.2-exp"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "GPT-4.1-nano-2025-04-14",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--gpt-4.1-nano-2025-04-14"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Mistral-Medium-2505",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--mistral-medium-2505"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Open-Mistral-Nemo-2407",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--open-mistral-nemo-2407"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-0.6B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-0.6b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-14B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-14b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-30B-A3B-Instruct-2507",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-30b-a3b-instruct-2507"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-32B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-32b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-4B-Instruct-2507",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-4b-instruct-2507"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 6,
+      "raw_name": "Qwen3-8B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-8b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Amazon-Nova-2-Lite-v1:0",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--amazon-nova-2-lite-v1-0"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Amazon-Nova-Micro-v1:0",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--amazon-nova-micro-v1-0"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Arch-Agent-1.5B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--arch-agent-1.5b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Arch-Agent-32B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--arch-agent-32b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Arch-Agent-3B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--arch-agent-3b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Bielik-11B-v2.3-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--bielik-11b-v2.3-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "BitAgent-Bounty-8B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--bitagent-bounty-8b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "CoALM-70B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--coalm-70b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "CoALM-8B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--coalm-8b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Command A",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--command-a"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Command A Reasoning",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--command-a-reasoning"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Command R7B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--command-r7b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Falcon3-10B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--falcon3-10b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Falcon3-1B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--falcon3-1b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Falcon3-3B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--falcon3-3b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Falcon3-7B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--falcon3-7b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Gemma-3-12b-it",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--gemma-3-12b-it"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Gemma-3-1b-it",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--gemma-3-1b-it"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Gemma-3-27b-it",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--gemma-3-27b-it"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Gemma-3-4b-it",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--gemma-3-4b-it"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Granite-20b-FunctionCalling",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--granite-20b-functioncalling"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Granite-3.1-8B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--granite-3.1-8b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Granite-3.2-8B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--granite-3.2-8b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Granite-4.0-350m",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--granite-4.0-350m"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Grok-4-1-fast-non-reasoning",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--grok-4-1-fast-non-reasoning"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Grok-4-1-fast-reasoning",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--grok-4-1-fast-reasoning"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Hammer2.1-0.5b",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--hammer2.1-0.5b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Hammer2.1-1.5b",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--hammer2.1-1.5b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Hammer2.1-3b",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--hammer2.1-3b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Hammer2.1-7b",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--hammer2.1-7b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Llama-3.1-8B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--llama-3.1-8b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Llama-3.1-Nemotron-Ultra-253B-v1",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--llama-3.1-nemotron-ultra-253b-v1"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Llama-3.2-1B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--llama-3.2-1b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Llama-3.2-3B-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--llama-3.2-3b-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--llama-4-maverick-17b-128e-instruct-fp8"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "MiniCPM3-4B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--minicpm3-4b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "MiniCPM3-4B-FC",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--minicpm3-4b-fc"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Ministral-8B-Instruct-2410",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--ministral-8b-instruct-2410"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Mistral-Small-2506",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--mistral-small-2506"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Mistral-small-2506",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--mistral-small-2506"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Moonshotai-Kimi-K2-Instruct",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--moonshotai-kimi-k2-instruct"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Nanbeige3.5-Pro-Thinking",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--nanbeige3.5-pro-thinking"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Nanbeige4-3B-Thinking-2511",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--nanbeige4-3b-thinking-2511"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Phi-4",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--phi-4"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "Qwen3-1.7B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--qwen3-1.7b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "RZN-T",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--rzn-t"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "ToolACE-2-8B",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--toolace-2-8b"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "palmyra-x-004",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--palmyra-x-004"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "xLAM-2-1b-fc-r",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--xlam-2-1b-fc-r"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "xLAM-2-32b-fc-r",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--xlam-2-32b-fc-r"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "xLAM-2-3b-fc-r",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--xlam-2-3b-fc-r"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "xLAM-2-70b-fc-r",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--xlam-2-70b-fc-r"
+    },
+    {
+      "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "occurrences": 3,
+      "raw_name": "xLAM-2-8b-fc-r",
+      "source_id": "bfcl",
+      "temp_id": "unmapped--bfcl--xlam-2-8b-fc-r"
+    },
+    {
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20241128_SWE-Fixer_Qwen2.5-7b-retriever_Qwen2.5-72b-editor_20241128",
       "occurrences": 3,
       "raw_name": "Qwen 2.5",
@@ -3172,6 +3613,13 @@
       "raw_name": "openai/gpt-5-2025-08-07",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--openai-gpt-5-2025-08-07"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Sonnet 5",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--sonnet-5"
     }
   ]
 }

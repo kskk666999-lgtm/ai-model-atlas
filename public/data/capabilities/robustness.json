@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"robustness","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-08-30T09:57:11Z","group":"safety","name":"鲁棒性","official":[],"short":"鲁棒性","status":"pending"}
+{"benchmarks":[],"capability_id":"robustness","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-08-30T20:53:10Z","group":"safety","name":"鲁棒性","official":[],"short":"鲁棒性","status":"pending"}

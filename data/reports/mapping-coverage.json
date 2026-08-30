@@ -1,6 +1,42 @@
 {
- "generated_at": "2026-08-30T20:01:06Z",
+ "generated_at": "2026-08-30T20:53:28Z",
  "benchmarks": [
+  {
+   "benchmark_id": "bfcl-v4-memory",
+   "sources": [
+    "bfcl"
+   ],
+   "total_records": 109,
+   "distinct_models": 93,
+   "mapped_distinct_models": 20,
+   "mapped_rate": 0.2151,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "bfcl-v4-overall",
+   "sources": [
+    "bfcl"
+   ],
+   "total_records": 109,
+   "distinct_models": 93,
+   "mapped_distinct_models": 20,
+   "mapped_rate": 0.2151,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "bfcl-v4-web-search",
+   "sources": [
+    "bfcl"
+   ],
+   "total_records": 109,
+   "distinct_models": 93,
+   "mapped_distinct_models": 20,
+   "mapped_rate": 0.2151,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
   {
    "benchmark_id": "bigcodebench-complete",
    "sources": [
@@ -454,6 +490,18 @@
    "distinct_models": 54,
    "mapped_distinct_models": 14,
    "mapped_rate": 0.2593,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "terminalbench-4",
+   "sources": [
+    "terminalbench"
+   ],
+   "total_records": 10,
+   "distinct_models": 10,
+   "mapped_distinct_models": 9,
+   "mapped_rate": 0.9,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   }
