@@ -1,66 +1,38 @@
 # DEPLOYMENT_RESULT · 部署结果
 
-> 状态：**待登录部署**（本机无 GitHub 凭据、未装 gh CLI）。
-> 除"GitHub 登录"外的一切已就绪；完成登录后运行一条命令即可上线。
+> 状态：**✅ 已上线**（2026-08-30）。网站、数据接口、自动更新全部验证通过。
 
 ## 当前状态
 
 | 项 | 状态 |
 |---|---|
 | 本地项目路径 | `C:\Users\wjr15\.zcode\workspace\default\ai-model-atlas` |
-| Git 仓库 | 已初始化，全部工作已提交（见下方 SHA） |
-| GitHub 远程 | 尚未设置（等待登录） |
-| Pages 地址 | 部署后为 `https://<你的用户名>.github.io/ai-model-atlas/` |
-| 部署自动化 | `scripts/deploy.ps1`（登录后一条命令完成 8 步） |
+| GitHub 仓库 | <https://github.com/kskk666999-lgtm/ai-model-atlas> |
+| 数据提交（CI 注入） | `4fa3c8b`（站点状态栏"最新数据提交"可见） |
+| **线上地址** | **<https://kskk666999-lgtm.github.io/ai-model-atlas/>** |
+| 最终提交 | [52f56d4](https://github.com/kskk666999-lgtm/ai-model-atlas/commit/52f56d41ccc6c51c236d0d74a15234b0377189a3) |
 
-## 你需要做的唯一一步（约 3 分钟）
+## 工作流状态（全部绿色）
 
-打开 PowerShell，执行：
+| 工作流 | 状态 | 运行记录 |
+|---|---|---|
+| CI | completed / success | [run 33297930046](https://github.com/kskk666999-lgtm/ai-model-atlas/actions/runs/33297930046) |
+| update-data | completed / success | [run 33297932362](https://github.com/kskk666999-lgtm/ai-model-atlas/actions/runs/33297932362) |
+| deploy-pages | completed / success | [run 33298039345](https://github.com/kskk666999-lgtm/ai-model-atlas/actions/runs/33298039345) |
 
-```powershell
-winget install --id GitHub.cli -e
-gh auth login
-```
+## 上线验收记录（2026-08-30）
 
-`gh auth login` 的选择：**GitHub.com → HTTPS → Login with a web browser**，
-浏览器里输入屏幕显示的一次性代码并授权。
+- Pages 首页、meta.json、homepage.json、capabilities/reasoning.json、models/index.json 全部 HTTP 200
+- `meta.json`：`demo_mode:false`，`records:5038`，`models:115`，`latest_commit:4fa3c8b`（CI 注入生效）
+- 真实浏览器打开线上地址：深色界面、右侧自动更新状态栏（含"最新数据提交 4fa3c8b"）、
+  2026 现役模型榜单全部正常渲染（截图 `data/reports/screenshots/11-live-pages.png`）
+- 部署过程 PowerShell 5.1 兼容（UTF-8 BOM + ConvertTo-Json），本地 main 与 origin/main 同步
 
-然后回到项目目录执行：
+## 之后全自动
 
-```powershell
-cd C:\Users\wjr15\.zcode\workspace\default\ai-model-atlas
-powershell -ExecutionPolicy Bypass -File scripts\deploy.ps1
-```
-
-脚本会自动完成：创建公开仓库 `ai-model-atlas` → 推送 main → 开启 Actions 读写权限 →
-Pages 来源设为 GitHub Actions → 触发首次 update-data 与 deploy-pages → 轮询等待 →
-验证站点 200 → 打印实际访问地址。
-
-（如果你更愿意用 Token：`$env:GITHUB_TOKEN = "ghp_xxx"` 后直接运行 deploy.ps1 也可以，
-Token 需要 repo + workflow 权限。）
-
-## 登录后脚本自动完成的 8 步
-
-1. 读取 GitHub 账号
-2. 创建公开仓库 `<user>/ai-model-atlas`
-3. 推送 main 分支（全部代码 + 数据 + 验收报告）
-4. 开启 Actions 读写权限
-5. Pages 来源 = GitHub Actions
-6. 触发 `update-data`（首次真实数据更新）+ `deploy-pages`
-7. 轮询工作流至完成（约 2~4 分钟）
-8. 验证 `https://<user>.github.io/ai-model-atlas/` 返回 200
-
-## 上线后 24 小时内会自动发生
-
-- `update-data` 每 12 小时（北京时间约 09:00 / 21:00）自动抓取官方数据并生成静态 JSON；
+- `update-data` 每 12 小时（北京时间约 09:00 / 21:00）自动抓取官方数据；
   数据无变化时不产生提交（幂等输出已验证：连续 4 轮 0 文件变化）
 - 数据提交经 push 自动触发 Pages 重新部署
-
-## 上线后请把实际值填进下表
-
-- [ ] 实际 Pages 地址：`https://________.github.io/ai-model-atlas/`
-- [ ] 首次 deploy-pages 工作流：`https://github.com/________/ai-model-atlas/actions/runs/________`
-- [ ] 首次 update-data 工作流：`https://github.com/________/ai-model-atlas/actions/runs/________`
 
 ## 可选配置
 
