@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { useJson, useMeta } from '@/lib/api';
 import { useCapabilities, capShort } from '@/lib/capabilities';
 import { fmtDate, fmtScore } from '@/lib/format';
@@ -34,7 +34,7 @@ type TabId = 'reasoning' | 'coding' | 'agent' | 'multimodal' | 'chinese_mm' | 'v
 
 const TABS: { id: TabId; label: string; note: string }[] = [
   { id: 'reasoning', label: '文本推理', note: 'LiveBench 官方推理类别平均（原始分）' },
-  { id: 'coding', label: '编程', note: 'LiveBench 编程 + Agentic Coding 官方综合（相对百分位，已通过映射门槛）' },
+  { id: 'coding', label: '编程', note: 'LiveBench 编程官方综合（相对百分位，已通过映射门槛）' },
   { id: 'agent', label: 'Agent 软件工程', note: 'SWE-bench Verified 官方榜 · 模型 + Agent 框架系统成绩' },
   { id: 'multimodal', label: '多模态', note: 'MMBench v1.1 英文（官方 Overall，原始分）' },
   { id: 'chinese_mm', label: '中文多模态', note: 'MMBench v1.1 中文（官方 Overall，原始分）· 不代表综合中文能力' },
@@ -48,6 +48,7 @@ export function HomePage() {
   const { data: heatmap } = useJson<HeatmapData>('/data/heatmap.json');
   const { capabilities } = useCapabilities();
   const [tab, setTab] = useState<TabId>('reasoning');
+  const [releaseWindow, setReleaseWindow] = useState<'7d' | '30d' | '90d'>('30d');
 
   if (error && !rawMeta) {
     return <NoDataState detail={`meta.json 加载失败：${error}`} />;
@@ -56,10 +57,11 @@ export function HomePage() {
 
   const activeTab = TABS.find((t) => t.id === tab)!;
   const officialCap = tab === 'agent' ? 'swe' : tab;
+  const releases = home?.latest_releases?.[releaseWindow] ?? [];
 
   return (
     <div className="space-y-8">
-      {/* 紧凑头部信息（状态圆点在全局导航栏） */}
+      {/* 紧凑头部 */}
       <section className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-500/15 pb-5">
         <div>
           <h1 className="text-2xl font-black tracking-tight text-slate-50 sm:text-3xl">
@@ -68,17 +70,68 @@ export function HomePage() {
           </h1>
           <p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-400">
             官方原始分为主，本站计算一律标注为相对百分位。每条分数可点开溯源。
+            首页默认只显示当前活跃模型。
           </p>
         </div>
         <dl className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
-          <InlineStat label="模型" value={meta?.counts.models} />
+          <InlineStat label="当前模型" value={index?.models.filter((m) => m.overall_index !== null || m.source_count).length} />
           <InlineStat label="基准" value={meta?.counts.benchmarks} />
           <InlineStat label="数据源" value={meta?.counts.sources_active} />
           <InlineStat label="数据更新" value={fmtDate(meta?.update.last_success)} />
         </dl>
       </section>
 
-      {/* 第一屏：核心榜（官方原始分为主） */}
+      {/* Current Picks：由当天数据动态计算，不硬编码 */}
+      <CurrentPicks home={home} index={index} />
+
+      {/* Latest Releases */}
+      <section className="panel px-5 py-6">
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-slate-100">
+            <Sparkles size={17} className="text-amber-300" aria-hidden /> 最新发布
+          </h2>
+          <span className="badge">来源：models.dev 模型目录</span>
+          <div className="ml-auto flex rounded-lg border border-slate-500/25 p-0.5" role="tablist" aria-label="发布时间窗口">
+            {(['7d', '30d', '90d'] as const).map((w) => (
+              <button
+                key={w}
+                role="tab"
+                aria-selected={releaseWindow === w}
+                onClick={() => setReleaseWindow(w)}
+                className={`rounded-md px-2.5 py-1 text-xs ${releaseWindow === w ? 'bg-amber-400/15 text-amber-300' : 'text-slate-400'}`}
+              >
+                {{ '7d': '7 天', '30d': '30 天', '90d': '90 天' }[w]}
+              </button>
+            ))}
+          </div>
+        </div>
+        {releases.length === 0 ? (
+          <p className="mt-3 text-sm text-slate-500">该窗口内暂无目录收录的新发布。</p>
+        ) : (
+          <ul className="mt-4 grid gap-2.5 md:grid-cols-2">
+            {releases.slice(0, 10).map((r: Homepage['latest_releases']['30d'][number]) => (
+              <li key={`${r.provider_id}-${r.model_id}`} className="panel-2 px-4 py-3">
+                <div className="flex flex-wrap items-center gap-2 text-sm">
+                  <span className="num text-xs text-slate-500">{fmtDate(r.release_date || r.last_updated)}</span>
+                  <span className="font-semibold text-slate-100">{r.name}</span>
+                  <span className="text-xs text-slate-500">{r.provider_id}</span>
+                  {r.reasoning && <span className="badge border-violet-400/30 text-violet-300">推理</span>}
+                  {r.tool_call && <span className="badge border-cyan-400/30 text-cyan-300">工具调用</span>}
+                  {r.open_weights && <span className="badge border-emerald-400/30 text-emerald-300">开放权重</span>}
+                  <span className="ml-auto flex items-center gap-2 text-xs text-slate-400">
+                    {r.context_window ? <span className="num">{fmtContextK(r.context_window)}</span> : null}
+                    {r.input_price !== null && r.input_price !== undefined && (
+                      <span className="num">${r.input_price >= 1 ? r.input_price.toFixed(2) : r.input_price.toFixed(3)}/1M</span>
+                    )}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      {/* 第一屏：核心榜（官方原始分为主，默认仅当前模型） */}
       <section>
         <nav className="flex flex-wrap gap-1.5" aria-label="核心榜切换">
           {TABS.map((t) => (
@@ -104,15 +157,16 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 第二屏：能力 × 模型热力图（官方原始分） */}
+      {/* 第二屏：能力 × 模型热力图（当前模型） */}
       {heatmap && heatmap.capabilities.length > 0 && (
         <section className="panel px-5 py-6">
           <div className="flex flex-wrap items-baseline gap-3">
             <h2 className="text-lg font-bold text-slate-100">能力 × 模型热力图</h2>
-            <span className="badge">官方原始分 · 每行取该能力主基准 Top 12</span>
+            <span className="badge">官方原始分 · 仅当前模型 · 每行取主基准 Top 12</span>
           </div>
           <p className="mt-1 text-xs text-slate-500">
-            颜色深浅为同一能力内的相对高低；— 表示无数据（不计为 0）。Agent 行为「模型 + Agent 系统」成绩。
+            颜色深浅为同一能力内的相对高低；— 表示无数据（不计为 0）。
+            已从默认视图移除 legacy 模型（完整历史见模型详情页）。
           </p>
           <HeatmapGrid data={heatmap} capabilities={capabilities} />
         </section>
@@ -147,49 +201,145 @@ export function HomePage() {
         {capabilities.filter((c) => c.status === 'pending').slice(0, 8).map((c) => (
           <span key={c.capability_id} className="badge opacity-70">{c.short} · 接入中</span>
         ))}
-        <Link to="/methodology" className="ml-auto text-cyan-400 hover:text-cyan-300">排名是怎么算的 →</Link>
+        <Link to="/models" className="ml-auto text-cyan-400 hover:text-cyan-300">全部模型目录 →</Link>
+        <Link to="/methodology" className="text-cyan-400 hover:text-cyan-300">排名是怎么算的 →</Link>
       </section>
     </div>
   );
 }
 
-/** 官方原始榜 Top 10（来自对应能力文件，客户端截取）。 */
+/** Current Picks：由当天数据动态计算的快速入口（不硬编码获胜者）。 */
+function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsIndex | null }) {
+  const picks = useMemo(() => {
+    if (!home) return [];
+    const out: { label: string; pick: { display_name: string; model_id: string; provider: string | null }; note: string }[] = [];
+    for (const [cap, blockRaw] of Object.entries(home.top3)) {
+      const block = blockRaw as { rows?: { display_name: string; model_id: string; provider: string | null; score?: number; index?: number; kind: string; agent_scaffold?: string | null }[] };
+      const first = block.rows?.[0];
+      if (!first) continue;
+      const label = { reasoning: '推理最强', coding: '编程最强', math: '数学最强', chinese_mm: '中文多模态最强', multimodal: '多模态最强', swe: 'Agent 软件工程（Verified）' }[cap];
+      if (!label) continue;
+      const agent = first.agent_scaffold ? `（${first.agent_scaffold}）` : '';
+      out.push({
+        label,
+        pick: { display_name: first.display_name, model_id: first.model_id, provider: first.provider },
+        note: first.kind === 'official' ? `官方原始分 ${fmtScore(first.score)}` : `相对百分位 ${fmtScore(first.index)}${agent}`,
+      });
+    }
+    // 最低价（当前 + 有价格数据）
+    if (index) {
+      const priced = index.models
+        .filter((m) => (m.overall_index !== null || m.benchmark_count > 0) && m.price_input_usd_per_mtok !== null && m.price_input_usd_per_mtok > 0)
+        .sort((a, b) => (a.price_input_usd_per_mtok ?? 9e9) - (b.price_input_usd_per_mtok ?? 9e9));
+      if (priced[0]) {
+        out.push({
+          label: '最低输入价',
+          pick: { display_name: priced[0].display_name, model_id: priced[0].model_id, provider: priced[0].provider },
+          note: `$${priced[0].price_input_usd_per_mtok?.toFixed(3)}/1M tokens`,
+        });
+      }
+      const openWeights = index.models
+        .filter((m) => m.open_weights === true && (m.capability_indices.coding !== undefined || m.capability_indices.reasoning !== undefined))
+        .sort((a, b) => {
+          const av = Math.max(a.capability_indices.coding ?? 0, a.capability_indices.reasoning ?? 0);
+          const bv = Math.max(b.capability_indices.coding ?? 0, b.capability_indices.reasoning ?? 0);
+          return bv - av;
+        });
+      if (openWeights[0]) {
+        out.push({
+          label: '最佳开放权重',
+          pick: { display_name: openWeights[0].display_name, model_id: openWeights[0].model_id, provider: openWeights[0].provider },
+          note: '当前模型中开放权重相对百分位最高',
+        });
+      }
+      const longest = index.models
+        .filter((m) => m.context_window)
+        .sort((a, b) => (b.context_window ?? 0) - (a.context_window ?? 0));
+      if (longest[0]) {
+        out.push({
+          label: '最长上下文',
+          pick: { display_name: longest[0].display_name, model_id: longest[0].model_id, provider: longest[0].provider },
+          note: `${((longest[0].context_window ?? 0) / 1000).toFixed(0)}K tokens`,
+        });
+      }
+    }
+    return out;
+  }, [home, index]);
+
+  if (!picks.length) return null;
+  return (
+    <section>
+      <h2 className="mb-3 flex items-center gap-2 text-sm font-bold tracking-wide text-slate-300">
+        <Sparkles size={15} className="text-amber-300" aria-hidden /> 当前答案 · 由最新数据自动生成
+      </h2>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        {picks.slice(0, 8).map((p) => (
+          <Link key={p.label} to={`/model/${p.pick.model_id}`} className="panel block px-4 py-3.5 transition-colors hover:border-cyan-400/40">
+            <p className="text-[11px] uppercase tracking-wider text-slate-500">{p.label}</p>
+            <p className="mt-1.5 truncate text-sm font-bold" style={{ color: providerColor(p.pick.provider) }}>
+              {p.pick.display_name}
+            </p>
+            <p className="num mt-1 text-xs text-slate-400">{p.note}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/** 官方原始榜 Top 10（默认仅当前模型；不足时明确说明而不是拿旧模型凑数）。 */
 function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highlightAgent?: boolean; index: ModelsIndex | null }) {
   const { data, loading } = useJson<CapabilityFile>(`/data/capabilities/${capId}.json`);
+  const [showHistory, setShowHistory] = useState(false);
   if (loading) return <div className="skeleton h-72 w-full" />;
   if (!data || data.official.length === 0) {
     return <EmptyState title="该能力暂无数据" hint="数据接入中，不生成模拟排名。" />;
   }
-  // 选记录数最多的单一基准（与后端热力图口径一致），避免混用量纲
   const counts = new Map<string, number>();
   data.official.forEach((r) => counts.set(r.benchmark_id, (counts.get(r.benchmark_id) ?? 0) + 1));
   const topBench = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0][0];
-  const rows = data.official.filter((r) => r.benchmark_id === topBench).slice(0, 10);
+  const all = data.official.filter((r) => r.benchmark_id === topBench);
+  const fresh = all.filter((r) => r.is_current !== false);
+  const legacy = all.filter((r) => r.is_current === false);
+  const rows = (showHistory ? all : fresh).slice(0, 10);
   const benchName = data.benchmarks.find((b) => b.benchmark_id === topBench)?.benchmark_name ?? topBench;
 
   return (
-    <div className="panel overflow-x-auto">
-      <table className="data-table w-full min-w-[640px] text-sm">
-        <thead>
-          <tr className="border-b border-slate-500/15 text-slate-400">
-            <th className="px-3 py-2.5 text-left">#</th>
-            <th className="px-3 py-2.5 text-left">模型</th>
-            <th className="px-3 py-2.5 text-left">厂商</th>
-            {highlightAgent && <th className="px-3 py-2.5 text-left">Agent 框架</th>}
-            <th className="px-3 py-2.5 text-left">官方原始分</th>
-            <th className="px-3 py-2.5 text-left">评测日期</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <BoardRow key={`${r.model_id}-${r.agent_scaffold ?? ''}`} r={r} highlightAgent={highlightAgent}
-              provider={index?.models.find((m) => m.model_id === r.model_id)?.provider ?? null} />
-          ))}
-        </tbody>
-      </table>
-      <p className="px-4 py-2.5 text-[11px] text-slate-500">
-        基准：{benchName} · 每条分数可点击查看溯源 · 共 {counts.get(topBench)} 条官方记录
-      </p>
+    <div>
+      {fresh.length < 5 && (
+        <p className="mb-2 rounded-xl border border-amber-400/25 bg-amber-400/5 px-4 py-2.5 text-xs text-amber-200/90">
+          该基准当前仅覆盖 {fresh.length} 个活跃模型（共 {all.length} 条官方记录）。为诚实起见，不再拿历史模型补位；
+          可打开下方"包含历史模型"查看完整记录。
+        </p>
+      )}
+      <div className="panel overflow-x-auto">
+        <table className="data-table w-full min-w-[640px] text-sm">
+          <thead>
+            <tr className="border-b border-slate-500/15 text-slate-400">
+              <th className="px-3 py-2.5 text-left">#</th>
+              <th className="px-3 py-2.5 text-left">模型</th>
+              <th className="px-3 py-2.5 text-left">厂商</th>
+              {highlightAgent && <th className="px-3 py-2.5 text-left">Agent 框架</th>}
+              <th className="px-3 py-2.5 text-left">官方原始分</th>
+              <th className="px-3 py-2.5 text-left">评测日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <BoardRow key={`${r.model_id}-${r.agent_scaffold ?? ''}`} r={r} highlightAgent={highlightAgent}
+                provider={index?.models.find((m) => m.model_id === r.model_id)?.provider ?? null} />
+            ))}
+          </tbody>
+        </table>
+        <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[11px] text-slate-500">
+          <span>基准：{benchName} · 每条分数可点击查看溯源</span>
+          {legacy.length > 0 && (
+            <button className="text-cyan-400 hover:text-cyan-300" onClick={() => setShowHistory((v) => !v)}>
+              {showHistory ? '仅看当前模型' : `包含历史模型（${legacy.length} 条）`}
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -197,7 +347,7 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
 function BoardRow({ r, highlightAgent, provider }: { r: OfficialRow; highlightAgent?: boolean; provider: string | null }) {
   const isAgent = r.evaluation_target_type === 'model_plus_agent' || r.evaluation_target_type === 'complete_agent_system';
   return (
-    <tr className="border-b border-slate-500/10 hover:bg-slate-500/5">
+    <tr className={`border-b border-slate-500/10 ${r.is_current === false ? 'opacity-50' : ''} hover:bg-slate-500/5`}>
       <td className="px-3 py-2.5">
         <span className={`num font-semibold ${r.rank === 1 ? 'rank-medal-1' : r.rank === 2 ? 'rank-medal-2' : r.rank === 3 ? 'rank-medal-3' : 'text-slate-400'}`}>
           {r.rank}{r.tie && <span className="ml-1 text-[10px] font-normal text-amber-300">并列</span>}
@@ -209,6 +359,7 @@ function BoardRow({ r, highlightAgent, provider }: { r: OfficialRow; highlightAg
           <span className="truncate font-medium text-slate-100" title={r.raw_model_name || r.model_id}>
             {r.raw_model_name || r.model_id}
           </span>
+          {r.is_current === false && <span className="badge border-slate-500/40 text-slate-500">历史</span>}
           {isAgent && highlightAgent && (
             <span className="badge border-violet-400/40 bg-violet-400/10 text-violet-200">模型+Agent</span>
           )}
@@ -229,7 +380,6 @@ function ValueBoard({ index }: { index: ModelsIndex | null }) {
   const { data: coding } = useJson<CapabilityFile>('/data/capabilities/coding.json');
   const rows = useMemo(() => {
     if (!index || !coding || !coding.composite) return null;
-    // 编程相对百分位（已通过映射门槛的综合）÷ 输入价格
     const priceOf = new Map(index.models.map((m) => [m.model_id, m.price_input_usd_per_mtok]));
     const out = coding.composite.models
       .map((m) => ({ m, price: priceOf.get(m.model_id) }))
@@ -344,13 +494,12 @@ function HeatmapGrid({ data, capabilities }: { data: HeatmapData; capabilities: 
   );
 }
 
-/** 价格-编程官方分散点。 */
+/** 价格-编程相对百分位散点。 */
 function PriceAbilityScatter({ index }: { index: ModelsIndex | null }) {
   const { data: coding } = useJson<CapabilityFile>('/data/capabilities/coding.json');
   const points = useMemo(() => {
-    if (!index || !coding) return [];
+    if (!index || !coding || !coding.composite) return [];
     const priceOf = new Map(index.models.map((m) => [m.model_id, m.price_input_usd_per_mtok]));
-    if (!coding.composite) return [];
     return coding.composite.models
       .map((m) => ({ mid: m.model_id, price: priceOf.get(m.model_id) }))
       .filter((x): x is { mid: string; price: number } => typeof x.price === 'number' && x.price > 0)
@@ -364,7 +513,7 @@ function PriceAbilityScatter({ index }: { index: ModelsIndex | null }) {
     <section className="panel px-5 py-6">
       <h2 className="text-lg font-bold text-slate-100">价格 × 编程相对百分位</h2>
       <p className="mt-1 text-xs text-slate-500">
-        横轴为 LiveBench 官方统计输入价（USD/1M，对数轴更直观，此处线性），纵轴为编程相对百分位（通过映射门槛的综合）。
+        横轴为 LiveBench 官方统计输入价（USD/1M），纵轴为编程相对百分位（通过映射门槛的综合）。
       </p>
       <div className="mt-3">
         <AbilityScatter
@@ -377,6 +526,11 @@ function PriceAbilityScatter({ index }: { index: ModelsIndex | null }) {
       </div>
     </section>
   );
+}
+
+export function fmtContextK(ctx: number): string {
+  if (ctx >= 1_000_000) return `${(ctx / 1_000_000).toFixed(ctx % 1_000_000 === 0 ? 0 : 1)}M`;
+  return `${Math.round(ctx / 1000)}K`;
 }
 
 function InlineStat({ label, value }: { label: string; value: number | string | null | undefined }) {

@@ -95,6 +95,19 @@ const capabilityReasoning = {
       fetched_at: '2026-08-30T00:00:00Z', provider: 'Zhipu AI', region: 'cn', open_weights: true,
       record_verification_status: 'maintainer_verified',
       data_file_url: 'https://livebench.ai/table.csv', data_json_path: 'csv: model=y', data_sha256: 'abc',
+      is_current: false, freshness_bucket: 'LEGACY',
+    },
+    {
+      benchmark_id: 'livebench-reasoning', benchmark_name: 'LiveBench 逻辑推理', capability: 'reasoning',
+      source_id: 'livebench', source_name: 'LiveBench（官方）', source_level: 'B', source_url: 'https://livebench.ai/',
+      model_id: 'unmapped--livebench--old-model', raw_model_name: 'Old-2024-Model', model_is_unmapped: true,
+      score: 99.9, score_unit: 'percent', higher_is_better: true, rank: 1, tie: false,
+      evaluation_date: '2024-01-01', evaluation_target_type: 'base_model', agent_scaffold: null,
+      prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: '',
+      fetched_at: '2026-08-30T00:00:00Z', provider: null, region: null, open_weights: null,
+      record_verification_status: 'unknown',
+      data_file_url: 'https://livebench.ai/table.csv', data_json_path: 'csv: model=z', data_sha256: 'abc',
+      is_current: false, freshness_bucket: 'UNKNOWN',
     },
   ],
   composite: null,
@@ -119,7 +132,8 @@ const homepage = {
   generated_at: meta.generated_at,
   stats: meta.counts,
   update: meta.update,
-  top3: { reasoning: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, benchmark_id: 'livebench-reasoning', kind: 'official' }] },
+  top3: { reasoning: { rows: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, benchmark_id: 'livebench-reasoning', kind: 'official' }], current_count: 1, total_rows: 2, benchmark_id: 'livebench-reasoning' } },
+  latest_releases: { '7d': [], '30d': [{ model_id: 'qwen-3.8-27b', name: 'Qwen 3.8 27B', provider_id: 'alibaba', release_date: '2026-08-14', last_updated: '2026-08-14', status: null, lifecycle_status: 'ga', open_weights: true, reasoning: true, tool_call: true, context_window: 262144, input_price: 0.3, output_price: 1.2 }], '90d': [] },
   movers_7d: [{ model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', capability: 'reasoning', delta: 2 }],
   trend_30d: [],
 };
@@ -193,6 +207,23 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.getByText('官方核验')).toBeInTheDocument();
     expect(screen.getAllByText(/数据年龄/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/精确数据文件/).length).toBeGreaterThan(0);
+  });
+
+  it('Latest Releases 展示目录数据（非 benchmark 日期冒充）', async () => {
+    render(<HashRouter><App /></HashRouter>);
+    await waitFor(() => expect(screen.getByText('最新发布')).toBeInTheDocument());
+    expect(await screen.findByText('Qwen 3.8 27B')).toBeInTheDocument();
+    expect(screen.getByText('2026-08-14')).toBeInTheDocument();
+  });
+
+  it('首页默认仅当前模型：unmapped 与 legacy 不进主榜', async () => {
+    render(<HashRouter><App /></HashRouter>);
+    await waitFor(() => expect(screen.getAllByText('gpt-5.2-2025-12-11-high').length).toBeGreaterThan(0));
+    // 未映射模型禁止出现在首页
+    expect(screen.queryAllByText('Old-2024-Model').length).toBe(0);
+    expect(screen.queryAllByText(/unmapped--/).length).toBe(0);
+    // legacy 不在默认视图
+    expect(screen.queryByText('Old-2024-Model')).toBeNull();
   });
 
   it('数据缺失时显示空状态而非模拟数据', async () => {

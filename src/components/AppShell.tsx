@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { BarChart3, GitCompareArrows, Globe2, Home, Menu, ScrollText, Sparkles, X } from 'lucide-react';
+import { BarChart3, GitCompareArrows, Globe2, Home, Menu, ScrollText, Sparkles, X, Boxes } from 'lucide-react';
 import { useState } from 'react';
 import { AppThemeProvider } from '@/lib/theme';
 import { StatusDot } from '@/components/StatusDot';
@@ -8,6 +8,7 @@ const NAV = [
   { to: '/', label: '首页', icon: Home },
   { to: '/leaderboard', label: '能力榜单', icon: BarChart3 },
   { to: '/compare', label: '模型对比', icon: GitCompareArrows },
+  { to: '/models', label: '模型目录', icon: Boxes },
   { to: '/recommender', label: '场景推荐', icon: Sparkles },
   { to: '/sources', label: '数据来源', icon: Globe2 },
   { to: '/methodology', label: '方法论', icon: ScrollText },

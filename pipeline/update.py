@@ -97,7 +97,6 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     for s in sources_registry:
         if s.source_id not in run_ids and s.status in ("optional", "disabled"):
             results.append(_unrun_result(s))
-    http.close()
 
     all_records = [r for res in results for r in res.records]
 
@@ -136,12 +135,160 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     unmapped = normalizer.save_unmapped_report()
     print(f"    未映射模型名 {len(unmapped)} 个（详见 data/reports/unmapped-models.json）")
 
+    # ---- 模型目录（models.dev）：新鲜度 / 生命周期 / 当前资格 ----
+    print("[4.5/8] 加载模型目录（models.dev）...")
+    from .registry.directory import enrich_entry, load_model_directory
+    from .registry.freshness import is_current, today_utc
+
+    directory = None
+    directory_meta = None
+    try:
+        directory, directory_meta = load_model_directory(http)
+        print(f"    目录条目 {directory_meta['models']} 个（{directory_meta['providers']} 个 provider）")
+    except Exception as e:
+        print(f"    [warn] 模型目录加载失败（回退 LKG / 元数据缺失）: {type(e).__name__}: {e}")
+
+    def compute_freshness():
+        """canonical_id -> 新鲜度/生命周期/当前资格。"""
+        today = today_utc()
+        out: dict[str, dict] = {}
+        # 活跃来源"最新官方榜"兜底信号
+        lb_versions = [r.benchmark_version for r in all_records
+                       if r.source_id == "livebench" and r.benchmark_version]
+        lb_latest = max(lb_versions) if lb_versions else None
+        latest_board_models = {
+            r.model_id for r in all_records
+            if r.source_id == "livebench" and lb_latest and r.benchmark_version == lb_latest
+        }
+        swe_recent_models = {
+            r.model_id for r in all_records
+            if r.source_id == "swebench" and r.evaluation_date
+            and (today - date.fromisoformat(r.evaluation_date)).days <= 120
+        }
+        for entry in models_registry:
+            enriched = None
+            if directory is not None:
+                hit = directory.match(entry.canonical_id, entry.aliases)
+                if hit is not None:
+                    enriched = enrich_entry(hit)
+            seen_recent = entry.canonical_id in latest_board_models or entry.canonical_id in swe_recent_models
+            if enriched:
+                if enriched["freshness_bucket"] == "UNKNOWN":
+                    enriched["is_current"] = is_current(
+                        lifecycle=enriched["lifecycle_status"],
+                        bucket="UNKNOWN",
+                        seen_in_latest_official_board=seen_recent,
+                    )
+                    if seen_recent:
+                        enriched["freshness_bucket"] = "ACTIVE"
+                        enriched["freshness_note"] = "元数据缺失，因出现在活跃来源最新官方榜而视为当前"
+                enriched["matched_directory"] = True
+            else:
+                enriched = {
+                    "release_date": entry.release_date,
+                    "last_updated": None,
+                    "freshness_days": None,
+                    "freshness_bucket": None,
+                    "lifecycle_status": "unknown",
+                    "is_current": seen_recent,
+                    "matched_directory": False,
+                }
+                if entry.release_date:
+                    from .registry.freshness import freshness_bucket as _fb
+                    from .registry.freshness import freshness_days as _fd
+                    enriched["freshness_days"] = _fd(entry.release_date, today=today)
+                    enriched["freshness_bucket"] = _fb(enriched["freshness_days"])
+                    enriched["is_current"] = is_current(
+                        lifecycle=enriched["lifecycle_status"],
+                        bucket=enriched["freshness_bucket"],
+                        seen_in_latest_official_board=seen_recent,
+                    )
+                elif seen_recent:
+                    enriched["freshness_bucket"] = "ACTIVE"
+                    enriched["freshness_note"] = "元数据缺失，因出现在活跃来源最新官方榜而视为当前"
+            out[entry.canonical_id] = enriched
+        return out
+
+    freshness_map = compute_freshness()
+    n_current = sum(1 for v in freshness_map.values() if v.get("is_current"))
+    n_legacy = sum(1 for v in freshness_map.values()
+                   if v.get("lifecycle_status") in ("legacy", "deprecated")
+                   or v.get("freshness_bucket") == "LEGACY")
+    print(f"    当前模型 {n_current} 个；legacy/deprecated {n_legacy} 个")
+    http.close()
+
     print("[5/8] 排名计算 ...")
     official_rankings = {bid: benchmark_ranking(
         [r for r in all_records if r.benchmark_id == bid]) for bid in benchmarks_by_id}
     for _bid, rows in official_rankings.items():
         for row in rows:
             row["record"].rank = row["rank"]
+
+    # 基准相关性：当前模型覆盖权重远高于历史记录总量，
+    # 避免"100 个旧模型、只有 2 个当前模型"的基准霸占首页。
+    def benchmark_relevance(today):
+        out: dict[str, dict] = {}
+        for bid, rows in official_rankings.items():
+            if not rows:
+                continue
+            recs = [row["record"] for row in rows]
+            distinct = {r.model_id if not r.model_is_unmapped else (r.raw_model_name or r.model_id)
+                        for r in recs}
+            current_ids = {r.model_id for r in recs
+                           if not r.model_is_unmapped and
+                           freshness_map.get(r.model_id, {}).get("is_current")}
+            current_count = len(current_ids)
+            coverage = current_count / len(distinct) if distinct else 0.0
+            from .registry.freshness import parse_date as _pd
+
+            parsed = [d0 for d0 in (_pd(r.evaluation_date) for r in recs) if d0]
+            recency_days = min((today - d0).days for d0 in parsed) if parsed else 9999
+            recency = max(0.0, 1 - recency_days / 365)
+            score = (0.45 * min(1.0, current_count / 20)
+                     + 0.25 * coverage
+                     + 0.20 * recency
+                     + 0.10 * min(1.0, len(recs) / 200))
+            out[bid] = {
+                "score": round(score, 4),
+                "current_model_count": current_count,
+                "distinct_models": len(distinct),
+                "current_model_coverage": round(coverage, 3),
+                "recency_days": recency_days,
+                "record_count": len(recs),
+            }
+        return out
+
+    relevance = benchmark_relevance(today_utc())
+    top_by_relevance = sorted(relevance.items(), key=lambda kv: -kv[1]["score"])
+    if top_by_relevance:
+        print("    相关性最高的基准："
+              + ", ".join(f"{bid}({v['current_model_count']} 当前模型)" for bid, v in top_by_relevance[:3]))
+
+    # 每能力选主基准（供首页 Top 榜/热力图）：按相关性得分
+    cap_top_benchmarks: dict[str, str] = {}
+    for cap in caps_registry:
+        cap_id = cap["capability_id"]
+        bids = [bid for bid, b in benchmarks_by_id.items()
+                if b["capability"] == cap_id and bid in relevance]
+        if bids:
+            cap_top_benchmarks[cap_id] = max(bids, key=lambda bid: relevance[bid]["score"])
+
+    # 写出全量模型目录（All Models 页面数据）
+    directory_enriched: list = []
+    if directory is not None:
+        import json as _json
+        enriched_dir = [enrich_entry(e) for e in directory.entries]
+        directory_enriched = enriched_dir
+        enriched_dir.sort(key=lambda x: (x.get("release_date") or "", x["model_id"]), reverse=True)
+        from .paths import PUBLIC_DATA_DIR as _PDD
+        (_PDD / "directory.json").write_text(
+            _json.dumps({"generated_at": utc_now_iso(),
+                         "source": "models.dev",
+                         "count": len(enriched_dir),
+                         "models": enriched_dir},
+                        ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8", newline="\n")
+        print(f"    directory.json 写入 {len(enriched_dir)} 条目录条目")
 
     # 基准级门槛：映射覆盖率 >= 95% 且已映射去重模型 >= 10
     eligibility = benchmark_eligibility(all_records)
@@ -219,6 +366,9 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
         capability_composites=capability_composites,
         composite_gates=composite_gates,
         eligibility=eligibility,
+        freshness_map=freshness_map,
+        cap_top_benchmarks=cap_top_benchmarks,
+        directory_enriched=directory_enriched,
         official_rankings=official_rankings,
         overall=overall,
         rank_changes=rank_changes,

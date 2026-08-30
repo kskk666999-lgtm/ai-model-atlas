@@ -21,6 +21,20 @@ export function ModelDetailPage() {
   if (!data) return <EmptyState title="未找到模型" />;
 
   const m = data.meta;
+  const fresh = (data as unknown as {
+    freshness?: {
+      freshness_days: number | null; freshness_bucket: string | null;
+      lifecycle_status: string; is_current: boolean | null;
+      release_date: string | null; last_updated: string | null; matched_directory: boolean;
+    };
+    lineage?: {
+      family: string | null;
+      previous: { model_id: string; display_name: string; release_date: string | null } | null;
+      next: { model_id: string; display_name: string; release_date: string | null } | null;
+    };
+  });
+  const freshness = fresh.freshness;
+  const lineage = fresh.lineage;
   const indicators = data.radar.map((r) => ({ name: r.name, max: 100 }));
   const series: RadarSeries[] = [
     { name: m.display_name, color: '#22d3ee', values: data.radar.map((r) => r.index) },
@@ -37,6 +51,23 @@ export function ModelDetailPage() {
               {m.variant ? ` · ${m.variant}` : ''}
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
+              {freshness && freshness.is_current !== null && freshness.is_current !== undefined && (
+                freshness.is_current
+                  ? <span className="badge border-emerald-400/40 bg-emerald-400/10 text-emerald-200">当前模型</span>
+                  : <span className="badge border-slate-500/40 bg-slate-500/10 text-slate-400">
+                      {freshness.lifecycle_status === 'deprecated' ? '已弃用' : '历史模型'}
+                    </span>
+              )}
+              {freshness?.freshness_bucket && freshness.freshness_bucket !== 'UNKNOWN' && (
+                <span className="badge border-cyan-400/30 bg-cyan-400/10 text-cyan-200">
+                  {freshness.freshness_bucket}
+                  {freshness.freshness_days !== null && (
+                    <span className="ml-1 text-[10px] text-slate-400">
+                      · 发布于 {freshness.freshness_days} 天前
+                    </span>
+                  )}
+                </span>
+              )}
               <OpenWeightBadge open={m.open_weights} />
               <span className="badge">上下文 {fmtContext(m.context_window)}</span>
               <span className="badge">发布 {fmtDate(m.release_date)}</span>
@@ -154,6 +185,28 @@ export function ModelDetailPage() {
         </div>
         {data.records.length === 0 && <p className="mt-4 text-sm text-slate-500">暂无成绩记录</p>}
       </section>
+
+      {lineage && (lineage.previous || lineage.next) && (
+        <section className="panel px-5 py-5">
+          <h2 className="text-sm font-bold text-slate-100">
+            家族演进{lineage.family ? ` · ${lineage.family}` : ''}
+          </h2>
+          <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+            {lineage.previous ? (
+              <Link to={`/model/${lineage.previous.model_id}`} className="panel-2 px-3 py-2 text-slate-300 hover:text-cyan-300">
+                ← 前代 {lineage.previous.display_name}
+                <span className="num ml-1 text-[10px] text-slate-500">{lineage.previous.release_date}</span>
+              </Link>
+            ) : <span className="text-xs text-slate-600">（无更早的同族记录）</span>}
+            {lineage.next ? (
+              <Link to={`/model/${lineage.next.model_id}`} className="panel-2 px-3 py-2 text-slate-300 hover:text-cyan-300">
+                后代 {lineage.next.display_name}
+                <span className="num ml-1 text-[10px] text-slate-500">{lineage.next.release_date}</span> →
+              </Link>
+            ) : <span className="text-xs text-slate-600">（无更新的同族记录）</span>}
+          </div>
+        </section>
+      )}
 
       <section className="panel px-5 py-6">
         <h2 className="text-lg font-bold text-slate-100">已知限制</h2>

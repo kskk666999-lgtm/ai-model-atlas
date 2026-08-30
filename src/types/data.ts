@@ -93,6 +93,8 @@ export interface OfficialRow {
   notes?: string | null;
   fetched_at: string;
   record_verification_status?: 'maintainer_verified' | 'third_party_submitted' | 'unknown';
+  is_current?: boolean;
+  freshness_bucket?: string;
   data_file_url?: string | null;
   data_json_path?: string | null;
   data_sha256?: string | null;
@@ -167,7 +169,19 @@ export interface Homepage {
   generated_at: string;
   stats: Meta['counts'];
   update: Meta['update'];
-  top3: Record<string, { model_id: string; display_name: string; provider: string | null; index: number; rank: number }[]>;
+  top3: Record<string, {
+    rows: { model_id: string; display_name: string; provider: string | null; score?: number; index?: number; rank: number; kind: string; agent_scaffold?: string | null; is_current?: boolean; freshness_bucket?: string }[];
+    current_count: number;
+    total_rows: number;
+    benchmark_id: string | null;
+  }>;
+  latest_releases: Record<'7d' | '30d' | '90d', {
+    model_id: string; name: string; provider_id: string;
+    release_date: string | null; last_updated: string | null;
+    status: string | null; lifecycle_status: string; freshness_bucket?: string;
+    open_weights: boolean | null; reasoning: boolean | null; tool_call: boolean | null;
+    context_window: number | null; input_price: number | null; output_price: number | null;
+  }[]>;
   movers_7d: { model_id: string; display_name: string; provider: string; capability: string; delta: number }[];
   trend_30d: { date: string; models: number; capabilities: number }[];
 }

@@ -8,6 +8,7 @@ import { ModelDetailPage } from '@/pages/ModelDetail';
 import { RecommenderPage } from '@/pages/Recommender';
 import { SourcesPage } from '@/pages/Sources';
 import { MethodologyPage } from '@/pages/Methodology';
+import { ModelsPage } from '@/pages/ModelsCatalog';
 import { EmptyState } from '@/components/StateViews';
 
 function ScrollToTop() {
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/model/:modelId" element={<ModelDetailPage />} />
+        <Route path="/models" element={<ModelsPage />} />
         <Route path="/recommender" element={<RecommenderPage />} />
         <Route path="/sources" element={<SourcesPage />} />
         <Route path="/methodology" element={<MethodologyPage />} />

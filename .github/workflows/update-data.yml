@@ -57,6 +57,10 @@ jobs:
           meta = json.loads(pathlib.Path("public/data/meta.json").read_text(encoding="utf-8"))
           assert meta["demo_mode"] is False
           assert meta["counts"]["records"] > 0, "成绩记录为空，禁止发布"
+          hp = json.loads(pathlib.Path("public/data/homepage.json").read_text(encoding="utf-8"))
+          leaked = [r["model_id"] for block in hp.get("top3", {}).values()
+                    for r in block.get("rows", []) if "unmapped--" in r.get("model_id", "")]
+          assert not leaked, f"首页 Top 榜出现未映射模型: {leaked[:5]}"
           print("数据完整性 OK:", meta["counts"])
           PY
 
