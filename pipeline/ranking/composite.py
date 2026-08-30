@@ -76,19 +76,99 @@ def _percentile_positions(ordered_scores: list[float], hib: bool) -> dict[float,
     return out
 
 
-def capability_composite(records: list[BenchmarkRecord], benchmarks: dict[str, dict]) -> dict | None:
-    """能力级综合指数。
+MIN_DISTINCT_MAPPED_MODELS = 10
+MAX_UNMAPPED_RATE = 0.05
 
-    只使用已映射模型（model_is_unmapped=False）且非 Agent 系统的记录；
-    Agent 类基准（如 SWE-bench）由调用方决定是否传入。
+
+def benchmark_eligibility(records: list[BenchmarkRecord]) -> dict[str, dict]:
+    """基准级综合指数门槛：映射覆盖率 >= 95% 且已映射去重模型 >= 10。
+
+    模型身份：已映射用 canonical_id；未映射用来源原始名（不猜测合并）。
+    返回 {benchmark_id: {...统计..., eligible, reason}}（仅含 eligible 的键）。
     """
-    mapped = [r for r in records if not r.model_is_unmapped]
-    if not mapped:
-        return None
+    stats: dict[str, dict] = {}
+    for r in records:
+        st = stats.setdefault(r.benchmark_id, {
+            "total_records": 0, "distinct_models": set(), "mapped_models": set(),
+        })
+        st["total_records"] += 1
+        identity = r.model_id if not r.model_is_unmapped else (r.raw_model_name or r.model_id)
+        st["distinct_models"].add(identity)
+        if not r.model_is_unmapped:
+            st["mapped_models"].add(r.model_id)
 
+    out: dict[str, dict] = {}
+    for bid, st in stats.items():
+        distinct = len(st["distinct_models"])
+        mapped = len(st["mapped_models"])
+        unmapped_rate = round(1 - mapped / distinct, 4) if distinct else 1.0
+        eligible = mapped >= MIN_DISTINCT_MAPPED_MODELS and unmapped_rate <= MAX_UNMAPPED_RATE
+        info = {
+            "total_records": st["total_records"],
+            "distinct_models": distinct,
+            "mapped_distinct_models": mapped,
+            "mapped_rate": round(mapped / distinct, 4) if distinct else 0.0,
+            "unmapped_rate": unmapped_rate,
+            "eligible": eligible,
+            "reason": (
+                "通过门槛"
+                if eligible else
+                (f"已映射模型数 {mapped} < {MIN_DISTINCT_MAPPED_MODELS}"
+                 if mapped < MIN_DISTINCT_MAPPED_MODELS else
+                 f"未映射比例 {unmapped_rate:.0%} > {MAX_UNMAPPED_RATE:.0%}")
+            ),
+        }
+        if eligible:
+            out[bid] = info
+    return out
+
+
+def capability_composite(
+    records: list[BenchmarkRecord],
+    benchmarks: dict[str, dict],
+    eligible_benchmarks: dict[str, dict] | None = None,
+) -> tuple[dict | None, list[dict]]:
+    """能力级综合指数（带严格门槛）。
+
+    门槛（不满足则返回 None 并在 gate_notes 给出原因）：
+    - 只有通过基准级门槛的基准参与（eligible_benchmarks 由调用方计算传入）
+    - 只使用 maintainer_verified 且已映射的记录
+    - 模型须覆盖 >=2 个合格基准，且覆盖合格基准总数的 >=60%
+
+    返回 (composite | None, gate_notes)。
+    """
+    gate_notes: list[dict] = []
+    if eligible_benchmarks is None:
+        eligible_benchmarks = {
+            bid: {"reason": "未启用门槛（调用方未传入）"}
+            for bid in {r.benchmark_id for r in records}
+        }
+    eligible_ids = set(eligible_benchmarks)
+
+    for bid in sorted({r.benchmark_id for r in records}):
+        meta = eligible_benchmarks.get(bid)
+        if meta:
+            gate_notes.append({"benchmark_id": bid, "included": True, **meta})
+        else:
+            gate_notes.append({
+                "benchmark_id": bid,
+                "included": False,
+                "reason": "未通过基准级门槛（映射覆盖率/参评模型数不足）",
+            })
+
+    verified_mapped = [
+        r for r in records
+        if not r.model_is_unmapped
+        and r.record_verification_status == "maintainer_verified"
+        and r.benchmark_id in eligible_ids
+    ]
     by_benchmark: dict[str, list[BenchmarkRecord]] = defaultdict(list)
-    for r in mapped:
+    for r in verified_mapped:
         by_benchmark[r.benchmark_id].append(r)
+    total_eligible = len(by_benchmark)
+    if total_eligible == 0:
+        gate_notes.append({"reason": "无合格基准可用（全部被门槛排除）"})
+        return None, gate_notes
 
     percentile_maps: dict[str, dict[float, float]] = {}
     benchmark_meta: dict[str, dict] = {}
@@ -107,7 +187,23 @@ def capability_composite(records: list[BenchmarkRecord], benchmarks: dict[str, d
         for r in recs:
             model_pcts[r.model_id][bid] = percentile_maps[bid][r.score]
 
-    # 来源内平均 -> 来源间加权
+    # 模型级门槛：>=2 个合格基准且覆盖率 >=60%
+    min_benchmarks = 2
+    coverage_min = 0.6
+    gated = {
+        m: pb for m, pb in model_pcts.items()
+        if len(pb) >= min_benchmarks and len(pb) / total_eligible >= coverage_min
+    }
+    if not gated:
+        gate_notes.append({
+            "reason": (
+                f"无模型满足覆盖门槛（需覆盖 >= {min_benchmarks} 个合格基准且 "
+                f">= {int(coverage_min * 100)}%）；合格基准共 {total_eligible} 个"
+            ),
+        })
+        return None, gate_notes
+    model_pcts = gated
+
     bench_source = {bid: meta["source_id"] for bid, meta in benchmark_meta.items()}
     bench_weight = {bid: source_weight(meta["source_level"]) for bid, meta in benchmark_meta.items()}
 
@@ -116,30 +212,30 @@ def capability_composite(records: list[BenchmarkRecord], benchmarks: dict[str, d
         by_source: dict[str, list[float]] = defaultdict(list)
         for bid, pct in per_bench.items():
             by_source[bench_source[bid]].append(pct)
-        source_scores = {
-            sid: sum(pcts) / len(pcts) for sid, pcts in by_source.items()
-        }
-        src_weights = {sid: bench_weight[bid] for bid in per_bench for sid in [bench_source[bid]]}
-        # 同一来源取该来源内最高权重（A 与 B 并存时按 A）
+        source_scores = {sid: sum(pcts) / len(pcts) for sid, pcts in by_source.items()}
         src_weights = {
-            sid: max(w for bid2, w in bench_weight.items() if bench_source.get(bid2) == sid and bid2 in per_bench)
+            sid: max(w for bid2, w in bench_weight.items()
+                     if bench_source.get(bid2) == sid and bid2 in per_bench)
             for sid in source_scores
         }
         total_w = sum(src_weights.values())
         if total_w <= 0:
             continue
         index = sum(source_scores[sid] * src_weights[sid] for sid in source_scores) / total_w
-        n_benchmarks = len(per_bench)
         n_sources = len(source_scores)
         if n_sources >= 2:
-            confidence = "high" if all(source_weight(_level_of(bid, benchmark_meta)) >= 0.8 for bid in per_bench) else "medium"
+            confidence = ("high" if all(
+                source_weight(_level_of(bid, benchmark_meta)) >= 0.8 for bid in per_bench)
+                else "medium")
         else:
             only_level = _level_of(next(iter(per_bench)), benchmark_meta)
             confidence = "medium" if only_level in ("A", "B") else "low"
         models_out.append({
             "model_id": model_id,
             "index": round(index, 1),
-            "benchmark_count": n_benchmarks,
+            "benchmark_count": len(per_bench),
+            "benchmark_total": total_eligible,
+            "coverage": round(len(per_bench) / total_eligible, 2),
             "source_count": n_sources,
             "source_ids": sorted(source_scores.keys()),
             "single_source": n_sources == 1,
@@ -154,12 +250,14 @@ def capability_composite(records: list[BenchmarkRecord], benchmarks: dict[str, d
     _assign_competition_ranks(models_out, key="index")
     for m in models_out:
         m["tie"] = _has_tie(models_out, m, "index")
-    return {
-        "method": "percentile-weighted（本站计算，非官方榜单）",
+    composite = {
+        "method": "percentile-weighted（本站计算的相对百分位，非绝对能力分，非官方榜单）",
         "benchmark_count": len(by_benchmark),
         "source_count": len({meta["source_id"] for meta in benchmark_meta.values()}),
+        "model_gate": {"min_benchmarks": min_benchmarks, "coverage_min": coverage_min},
         "models": models_out,
     }
+    return composite, gate_notes
 
 
 def _level_of(benchmark_id: str, benchmark_meta: dict[str, dict]) -> str:

@@ -29,7 +29,10 @@ class BigCodeBenchAdapter(BaseAdapter):
     source_id = "bigcodebench"
 
     def fetch_records(self):
+        import hashlib
+
         body = self.http.get(PARQUET_URL)
+        data_sha = hashlib.sha256(body).hexdigest()
         df = pd.read_parquet(io.BytesIO(body))
 
         cols = {c.lower(): c for c in df.columns}
@@ -77,6 +80,10 @@ class BigCodeBenchAdapter(BaseAdapter):
                         score=score,
                         evaluation_target_type="base_model",
                         prompt_mode=mode,
+                        record_verification_status="maintainer_verified",
+                        data_file_url=PARQUET_URL,
+                        data_json_path=f"parquet: model={model_name}, 列={col}",
+                        data_sha256=data_sha,
                         notes=f"模式={mode}（官方结果数据集）",
                     )
                 )

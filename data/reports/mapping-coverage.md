@@ -1,0 +1,42 @@
+# 模型名称映射覆盖率
+
+| 基准 | 来源 | 记录数 | 去重模型 | 已映射 | 映射率 | 可进综合 | 说明 |
+|---|---|---|---|---|---|---|---|
+| bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-agentic-coding | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-coding | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-data-analysis | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-instruction-following | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-language | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-mathematics | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-price-input | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-price-output | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| livebench-reasoning | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
+| mteb-arguana | mteb | 5 | 5 | 5 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-askubuntudupquestions | mteb | 1 | 1 | 1 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-nfcorpus | mteb | 3 | 3 | 3 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-scidoCSrr | mteb | 1 | 1 | 1 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-scifact | mteb | 3 | 3 | 3 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-sts17 | mteb | 5 | 5 | 5 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| mteb-stsbenchmark | mteb | 5 | 5 | 5 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-abench | vlmevalkit | 160 | 159 | 11 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-ai2d | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-blink | vlmevalkit | 182 | 181 | 12 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-ccbench | vlmevalkit | 229 | 226 | 18 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-hallusionbench | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mathvista | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmbench-test-cn-v11 | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmbench-test-en-v11 | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mme | vlmevalkit | 235 | 232 | 21 | 9% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmmu-val | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmstar | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmt-bench-val | vlmevalkit | 207 | 206 | 13 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-mmvet | vlmevalkit | 284 | 281 | 22 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-qbench | vlmevalkit | 160 | 159 | 11 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-realworldqa | vlmevalkit | 235 | 232 | 20 | 9% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-scienceqa-test | vlmevalkit | 218 | 217 | 16 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| ovl-seedbench-img | vlmevalkit | 226 | 223 | 18 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| swebench-bash-only | swebench | 45 | 45 | 37 | 82% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| swebench-multilingual | swebench | 13 | 13 | 11 | 85% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| swebench-verified | swebench | 112 | 54 | 14 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |

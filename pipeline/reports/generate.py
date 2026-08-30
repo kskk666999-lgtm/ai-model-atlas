@@ -80,6 +80,11 @@ def _record_row(rec, include_notes: bool = True) -> dict:
         "sample_size": rec.sample_size,
         "reasoning_effort": rec.reasoning_effort,
         "fetched_at": rec.fetched_at,
+        "record_verification_status": rec.record_verification_status,
+        "data_file_url": rec.data_file_url,
+        "data_json_path": rec.data_json_path,
+        "data_sha256": rec.data_sha256,
+        "upstream_updated_at": rec.upstream_updated_at,
     }
     if include_notes:
         row["notes"] = rec.notes
@@ -97,6 +102,8 @@ def generate_site_data(
     benchmarks_registry: dict,
     capability_weights: dict,
     capability_composites: dict,
+    composite_gates: dict | None = None,
+    eligibility: dict | None = None,
     official_rankings: dict,  # benchmark_id -> ranking rows (with record refs)
     overall: dict,
     rank_changes: dict,
@@ -106,6 +113,8 @@ def generate_site_data(
     interval_hours: int = 12,
 ) -> dict:
     """生成全部前端数据文件，返回统计信息。"""
+    composite_gates = composite_gates or {}
+    eligibility = eligibility or {}
     stats = {"files_written": 0}
     # 数据驱动时间戳：取所有记录中最大的 fetched_at（而非当前墙钟时间）。
     # 配合适配器的"业务内容不变则继承 fetched_at"策略，保证数据无变化时
@@ -237,6 +246,7 @@ def generate_site_data(
             "capability_id": cap_id,
             "name": cap["name"],
             "short": cap.get("short", cap["name"]),
+            "group": cap.get("group", "text_reasoning"),
             "status": cap.get("status", "active"),
             "description": cap.get("description"),
             "generated_at": now,
@@ -248,11 +258,14 @@ def generate_site_data(
                     "higher_is_better": benchmarks_registry[bid]["higher_is_better"],
                     "score_unit": benchmarks_registry[bid]["score_unit"],
                     "record_count": sum(1 for r in cap_records if r.benchmark_id == bid),
+                    "eligible_for_composite": bool(eligibility.get(bid)),
+                    "eligibility": eligibility.get(bid),
                 }
                 for bid in bench_ids
             ],
             "official": official_rows,
             "composite": comp,
+            "composite_gate": composite_gates.get(cap_id) or [],
         }
         if write_json(caps_dir / f"{cap_id}.json", cap_payload):
             stats["files_written"] += 1
@@ -261,6 +274,88 @@ def generate_site_data(
                 cap_index_of.setdefault(m["model_id"], {})[cap_id] = {
                     "index": m["index"], "rank": m["rank"],
                 }
+
+    # ---------- capabilities/index.json（前端能力单一事实源）----------
+    cap_index_payload = {
+        "generated_at": now,
+        "groups": cap_yaml.get("groups") or [],
+        "capabilities": [
+            {
+                "capability_id": c["capability_id"],
+                "name": c["name"],
+                "short": c.get("short", c["name"]),
+                "group": c.get("group", "text_reasoning"),
+                "status": c.get("status", "active"),
+                "description": c.get("description"),
+                "planned_source": c.get("planned_source"),
+                "benchmark_count": len({r.benchmark_id for r in records
+                                        if r.capability == c["capability_id"]}),
+                "has_composite": c["capability_id"] in capability_composites,
+            }
+            for c in capabilities_registry
+        ],
+        "weight_presets": weight_presets,
+    }
+    if write_json(PUBLIC_DATA_DIR / "capabilities" / "index.json", cap_index_payload):
+        stats["files_written"] += 1
+
+    # ---------- heatmap.json（首页能力×模型热力图，官方原始分 Top N）----------
+    heatmap_caps = [
+        ("reasoning", None), ("coding", None), ("math", None),
+        ("chinese_mm", None), ("multimodal", None), ("swe", "swebench-verified"),
+    ]
+    heatmap = {"generated_at": now, "capabilities": [], "models": [], "cells": {}}
+    model_order: list[str] = []
+    for cap_id, bench_filter in heatmap_caps:
+        rows = [row for row in (official_rankings.get(
+            bench_filter, []) if bench_filter else official_rankings.get(
+            next((bid for bid, rows2 in official_rankings.items()
+                  if rows2 and benchmarks_registry[bid]["capability"] == cap_id), ""), []))]
+        # 对于无 bench_filter 的能力：优先取通过综合门槛的基准，否则取记录数最多的基准
+        if not bench_filter:
+            best_bid, best_rows = None, []
+            cap_bids = [
+                (bid, len(irows)) for bid, irows in official_rankings.items()
+                if irows and benchmarks_registry[bid]["capability"] == cap_id
+            ]
+            eligible_bids = [bid for bid, _ in cap_bids if bid in eligibility]
+            chosen = eligible_bids[0] if eligible_bids else None
+            if not chosen:
+                cap_bids.sort(key=lambda x: -x[1])
+                chosen = cap_bids[0][0] if cap_bids else None
+            best_bid = chosen
+            best_rows = official_rankings.get(chosen, []) if chosen else []
+            rows = best_rows
+        if not rows:
+            continue
+        hib = rows[0]["record"].higher_is_better
+        top = rows[:12]
+        cells = []
+        for row in top:
+            rec = row["record"]
+            entry = next((e for e in models_registry if e.canonical_id == rec.model_id), None)
+            cells.append({
+                "model_id": rec.model_id,
+                "display_name": entry.display_name if entry else (rec.raw_model_name or rec.model_id),
+                "provider": entry.provider if entry else None,
+                "score": rec.score,
+                "rank": row["rank"],
+                "tie": row["tie"],
+                "agent_scaffold": rec.agent_scaffold,
+                "evaluation_date": rec.evaluation_date,
+            })
+            if rec.model_id not in model_order:
+                model_order.append(rec.model_id)
+        heatmap["capabilities"].append({
+            "capability_id": cap_id,
+            "benchmark_id": bench_filter or best_bid,
+            "higher_is_better": hib,
+            "score_unit": rows[0]["record"].score_unit,
+            "cells": cells,
+        })
+    heatmap["models"] = model_order
+    if write_json(PUBLIC_DATA_DIR / "heatmap.json", heatmap):
+        stats["files_written"] += 1
 
     # ---------- benchmarks/<id>.json ----------
     bench_dir = PUBLIC_DATA_DIR / "benchmarks"
@@ -284,9 +379,14 @@ def generate_site_data(
     for entry in models_registry:
         if entry.canonical_id not in used_models:
             continue
+        # 价格：优先 Artificial Analysis（可选来源），缺失时回退 LiveBench 官方统计
+        def latest_price(bench_aa: str, bench_lb: str) -> float | None:
+            v = latest_score(entry.canonical_id, bench_aa)
+            return v if v is not None else latest_score(entry.canonical_id, bench_lb)
+
         cap_indices = {c: v["index"] for c, v in cap_index_of.get(entry.canonical_id, {}).items()}
-        price_in = latest_score(entry.canonical_id, "aa-price-input")
-        price_out = latest_score(entry.canonical_id, "aa-price-output")
+        price_in = latest_price("aa-price-input", "livebench-price-input")
+        price_out = latest_price("aa-price-output", "livebench-price-output")
         speed = latest_score(entry.canonical_id, "aa-output-speed")
         latency = latest_score(entry.canonical_id, "aa-latency")
         n_benchmarks = len({r.benchmark_id for r in by_model_records.get(entry.canonical_id, [])})
@@ -378,26 +478,67 @@ def generate_site_data(
         "movers_7d": movers[:8],
         "trend_30d": trend_30d,
     }
-    for cap_id in ("reasoning", "coding", "math", "chinese", "multimodal", "swe"):
+    # 首页"单项能力前三"：默认官方原始榜（综合指数仅在通过全部门槛时作为次选）
+    def _top3_from_official(cap_id: str, benchmark_id: str | None = None):
+        # 多基准能力：选定单一基准展示（优先通过综合门槛的基准，避免混用不同量纲）
+        if benchmark_id is None:
+            cap_bids: dict[str, int] = {}
+            for r in records:
+                if r.capability == cap_id:
+                    cap_bids[r.benchmark_id] = cap_bids.get(r.benchmark_id, 0) + 1
+            if not cap_bids:
+                return []
+            eligible_bids = [b for b in cap_bids if b in eligibility]
+            benchmark_id = eligible_bids[0] if eligible_bids else max(cap_bids, key=cap_bids.get)
+        rows = [r for r in records if r.capability == cap_id and r.benchmark_id == benchmark_id]
+        if not rows:
+            return []
+        hib = rows[0].higher_is_better
+        ranked = sorted(rows, key=lambda r: (-r.score if hib else r.score,
+                                             r.model_id, r.raw_model_name or ""))
+        out, seen_rank, prev = [], 0, None
+        for i, r in enumerate(ranked[:3]):
+            if prev is None or r.score != prev:
+                seen_rank = i + 1
+            prev = r.score
+            entry = next((e for e in models_registry if e.canonical_id == r.model_id), None)
+            out.append({
+                "model_id": r.model_id,
+                "display_name": entry.display_name if entry else (r.raw_model_name or r.model_id),
+                "provider": entry.provider if entry else None,
+                "score": r.score,
+                "rank": seen_rank,
+                "benchmark_id": r.benchmark_id,
+                "agent_scaffold": r.agent_scaffold,
+                "kind": "official",
+            })
+        return out
+
+    def _top3_for(cap_id: str):
         comp = capability_composites.get(cap_id)
-        if not comp:
-            continue
-        names = {m["model_id"]: next(
-            (e.display_name for e in models_registry if e.canonical_id == m["model_id"]), m["model_id"])
-            for m in comp["models"][:3]}
-        providers = {m["model_id"]: next(
-            (e.provider for e in models_registry if e.canonical_id == m["model_id"]), None)
-            for m in comp["models"][:3]}
-        homepage["top3"][cap_id] = [
-            {
+        if comp:
+            names = {m["model_id"]: next(
+                (e.display_name for e in models_registry if e.canonical_id == m["model_id"]), m["model_id"])
+                for m in comp["models"][:3]}
+            providers = {m["model_id"]: next(
+                (e.provider for e in models_registry if e.canonical_id == m["model_id"]), None)
+                for m in comp["models"][:3]}
+            return [{
                 "model_id": m["model_id"],
                 "display_name": names[m["model_id"]],
                 "provider": providers[m["model_id"]],
                 "index": m["index"],
                 "rank": m["rank"],
-            }
-            for m in comp["models"][:3]
-        ]
+                "kind": "composite_relative",
+            } for m in comp["models"][:3]]
+        if cap_id == "swe":
+            return _top3_from_official("swe", "swebench-verified")
+        return _top3_from_official(cap_id)
+
+    for cap_id in ("reasoning", "coding", "math", "chinese_mm", "multimodal", "swe"):
+        rows3 = _top3_for(cap_id)
+        if rows3:
+            homepage["top3"][cap_id] = rows3
     if write_json(PUBLIC_DATA_DIR / "homepage.json", homepage):
         stats["files_written"] += 1
 

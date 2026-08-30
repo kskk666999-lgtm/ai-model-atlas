@@ -1,0 +1,215 @@
+# 能力定义 · 单一事实源
+# 前端能力菜单、对比页能力选择、权重预设、待接入列表全部由本文件经流水线生成
+# （public/data/capabilities/index.json），前端禁止再手写独立能力数组。
+#
+# group: 五大能力域（text_reasoning / coding_agent / multimodal / cost_efficiency / safety）
+# status: active = 已接入可信数据；pending = 暂无满足可信标准的来源，前台显示"数据接入中"
+
+groups:
+  - group_id: text_reasoning
+    name: 文本与推理
+  - group_id: coding_agent
+    name: 编程与 Agent
+  - group_id: multimodal
+    name: 多模态
+  - group_id: cost_efficiency
+    name: 成本与效率
+  - group_id: safety
+    name: 安全与可靠性
+
+capabilities:
+  # ===== 文本与推理 =====
+  - capability_id: reasoning
+    name: 逻辑推理
+    short: 推理
+    group: text_reasoning
+    status: active
+  - capability_id: math
+    name: 数学能力
+    short: 数学
+    group: text_reasoning
+    status: active
+  - capability_id: data_analysis
+    name: 数据分析
+    short: 数据分析
+    group: text_reasoning
+    status: active
+  - capability_id: instruction_following
+    name: 指令遵循
+    short: 指令遵循
+    group: text_reasoning
+    status: active
+  - capability_id: language
+    name: 英文语言能力
+    short: 语言
+    group: text_reasoning
+    status: active
+  - capability_id: creative_writing
+    name: 创意写作
+    short: 创意写作
+    group: text_reasoning
+    status: active
+  # ===== 编程与 Agent =====
+  - capability_id: coding
+    name: 编程能力
+    short: 编程
+    group: coding_agent
+    status: active
+  - capability_id: swe
+    name: 软件工程（模型 + Agent 系统）
+    short: 软件工程
+    group: coding_agent
+    status: active
+    description: >
+      SWE-bench 系列成绩反映「模型 + Agent 框架 + 推理预算」的完整系统表现，
+      本能力不设综合指数，只提供按分区与按 Scaffold 的官方原始榜。
+  # ===== 多模态 =====
+  - capability_id: multimodal
+    name: 多模态视觉理解
+    short: 多模态
+    group: multimodal
+    status: active
+  - capability_id: chinese_mm
+    name: 中文多模态理解
+    short: 中文多模态
+    group: multimodal
+    status: active
+    description: >
+      当前仅包含两个中文多模态视觉基准（MMBench v1.1 中文、CCBench 中国传统文化），
+      不代表中文写作、中文问答、中文翻译或综合中文能力。
+  - capability_id: chart
+    name: 图表与视觉数学理解
+    short: 图表理解
+    group: multimodal
+    status: active
+  - capability_id: ocr
+    name: OCR 与文档识别
+    short: OCR
+    group: multimodal
+    status: active
+  # ===== 成本与效率 =====
+  - capability_id: price
+    name: 价格（输入/输出）
+    short: 价格
+    group: cost_efficiency
+    status: active
+  - capability_id: speed
+    name: 输出速度
+    short: 速度
+    group: cost_efficiency
+    status: active
+  - capability_id: latency
+    name: 首字延迟
+    short: 延迟
+    group: cost_efficiency
+    status: active
+  - capability_id: retrieval
+    name: 信息检索（Embedding）
+    short: 检索
+    group: cost_efficiency
+    status: active
+  - capability_id: sts
+    name: 语义相似度（Embedding）
+    short: 语义相似度
+    group: cost_efficiency
+    status: active
+  - capability_id: reranker
+    name: Reranker 重排序
+    short: 重排序
+    group: cost_efficiency
+    status: active
+  # ===== 安全与可靠性（暂无满足可信标准的公开结构化来源）=====
+  - capability_id: chat_preference
+    name: 人类偏好与聊天体验
+    short: 人类偏好
+    group: safety
+    status: pending
+    planned_source: LMArena（待其提供稳定合法数据接口）
+  - capability_id: long_context
+    name: 长上下文
+    short: 长上下文
+    group: safety
+    status: pending
+    planned_source: RULER / LongBench v2（待官方结构化结果确认）
+  - capability_id: tool_calling
+    name: 工具调用
+    short: 工具调用
+    group: safety
+    status: pending
+    planned_source: BFCL（待官方结构化结果确认）
+  - capability_id: agentic_general
+    name: Agent 自主执行（电脑/终端）
+    short: Agent 通用
+    group: safety
+    status: pending
+    planned_source: OSWorld Verified / Terminal-Bench（待官方结构化结果确认）
+  - capability_id: search_research
+    name: 搜索与深度研究
+    short: 深度研究
+    group: safety
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: image_gen
+    name: 图像生成
+    short: 图像生成
+    group: safety
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: video_gen
+    name: 视频生成
+    short: 视频生成
+    group: safety
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: speech
+    name: 语音识别 / 合成
+    short: 语音
+    group: safety
+    status: pending
+    planned_source: 官方可复现评测
+  - capability_id: safety_eval
+    name: 安全性 / 越狱抵抗
+    short: 安全评测
+    group: safety
+    status: pending
+    planned_source: HarmBench（待官方结构化结果确认）
+  - capability_id: robustness
+    name: 鲁棒性
+    short: 鲁棒性
+    group: safety
+    status: pending
+    planned_source: 官方可复现评测
+
+# 综合能力（overall）计算时各能力类别的默认权重
+default_capability_weights:
+  reasoning: 0.20
+  math: 0.12
+  coding: 0.16
+  swe: 0.14
+  data_analysis: 0.06
+  instruction_following: 0.08
+  language: 0.06
+  creative_writing: 0.04
+  multimodal: 0.08
+  chinese_mm: 0.06
+
+# 前端可切换的权重预设（浏览器本地重算，不调用服务器）
+weight_presets:
+  - preset_id: general
+    name: 通用助手
+    weights: {reasoning: 0.2, math: 0.12, coding: 0.16, swe: 0.14, data_analysis: 0.06, instruction_following: 0.08, language: 0.06, creative_writing: 0.04, multimodal: 0.08, chinese_mm: 0.06}
+  - preset_id: developer
+    name: 编程开发
+    weights: {reasoning: 0.1, math: 0.08, coding: 0.3, swe: 0.35, data_analysis: 0.05, instruction_following: 0.07, language: 0.02, creative_writing: 0, multimodal: 0.02, chinese_mm: 0.01}
+  - preset_id: math_reasoning
+    name: 数学推理
+    weights: {reasoning: 0.35, math: 0.4, coding: 0.08, swe: 0.05, data_analysis: 0.06, instruction_following: 0.03, language: 0.02, creative_writing: 0, multimodal: 0.01, chinese_mm: 0}
+  - preset_id: chinese_mm_understanding
+    name: 中文多模态理解
+    weights: {reasoning: 0.12, math: 0.06, coding: 0.08, swe: 0.04, data_analysis: 0.12, instruction_following: 0.18, language: 0.05, creative_writing: 0.1, multimodal: 0.05, chinese_mm: 0.2}
+  - preset_id: agent
+    name: Agent 自动化
+    weights: {reasoning: 0.25, math: 0.1, coding: 0.25, swe: 0.25, data_analysis: 0.05, instruction_following: 0.1, language: 0, creative_writing: 0, multimodal: 0, chinese_mm: 0}
+  - preset_id: multimodal_creator
+    name: 多模态创作
+    weights: {reasoning: 0.08, math: 0.05, coding: 0.05, swe: 0, data_analysis: 0.05, instruction_following: 0.12, language: 0.1, creative_writing: 0.15, multimodal: 0.3, chinese_mm: 0.1}

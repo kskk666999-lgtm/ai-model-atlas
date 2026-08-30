@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"agentic_general","composite":null,"description":null,"generated_at":"2026-08-29T18:44:15Z","name":"Agent 自主执行","official":[],"short":"Agent","status":"pending"}
+{"benchmarks":[],"capability_id":"agentic_general","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-08-30T09:57:11Z","group":"safety","name":"Agent 自主执行（电脑/终端）","official":[],"short":"Agent 通用","status":"pending"}

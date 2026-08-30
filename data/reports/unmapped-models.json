@@ -1,5 +1,5 @@
 {
-  "count": 455,
+  "count": 453,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3088,20 +3088,6 @@
       "raw_name": "claude-4-sonnet-20250522",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--claude-4-sonnet-20250522"
-    },
-    {
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251205_sonar-foundation-agent_claude-opus-4-5",
-      "occurrences": 1,
-      "raw_name": "claude-opus-4-5",
-      "source_id": "swebench",
-      "temp_id": "unmapped--swebench--claude-opus-4-5"
-    },
-    {
-      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251103_sonar-foundation-agent_claude-sonnet-4-5",
-      "occurrences": 1,
-      "raw_name": "claude-sonnet-4-5",
-      "source_id": "swebench",
-      "temp_id": "unmapped--swebench--claude-sonnet-4-5"
     },
     {
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250118_codeshellagent_gemini_2.0_flash_experimental",

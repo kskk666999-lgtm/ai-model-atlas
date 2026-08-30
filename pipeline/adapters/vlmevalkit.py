@@ -5,6 +5,8 @@
 """
 from __future__ import annotations
 
+import json
+
 from .base import AdapterError, BaseAdapter
 
 OPENVLM_URL = "http://opencompass.openxlab.space/assets/OpenVLM.json"
@@ -39,21 +41,35 @@ class VLMEvalKitAdapter(BaseAdapter):
     source_id = "vlmevalkit"
 
     def fetch_records(self):
-        data = self.http.get_json(OPENVLM_URL)
+        import hashlib
+
+        raw = self.http.get(OPENVLM_URL)
+        data_sha = hashlib.sha256(raw).hexdigest()
+        data = json.loads(raw.decode("utf-8"))
         results = data.get("results")
         if not isinstance(results, dict) or not results:
             raise AdapterError("OpenVLM.json 结构变化：缺少 results")
+        upstream_ts = str(data.get("time") or "") or None
 
         records = []
         for model_name, entry in results.items():
             meta = entry.get("META") or {}
             eval_date = (meta.get("Time") or "").replace("/", "-") or None
-            verified = str(meta.get("Verified", "")).lower() == "yes"
             org = meta.get("Org")
             method_url = ""
             method_field = meta.get("Method")
             if isinstance(method_field, list) and len(method_field) > 1:
                 method_url = str(method_field[1] or "")
+
+            # 记录级可信度：官方维护者复现 vs 官方平台收录的第三方提交
+            # Verified=yes -> maintainer_verified；no/缺失 -> 不进入严格榜
+            verified_raw = str(meta.get("Verified", "")).strip().lower()
+            if verified_raw == "yes":
+                verification = "maintainer_verified"
+            elif verified_raw == "no":
+                verification = "third_party_submitted"
+            else:
+                verification = "unknown"
 
             # detail-high / detail-low 是官方评测设置差异，必须作为变体区分保留
             variant = None
@@ -92,9 +108,14 @@ class VLMEvalKitAdapter(BaseAdapter):
                     model_variant=variant,
                     evaluation_date=eval_date,
                     source_url=method_url or self.source.homepage_url or "",
+                    record_verification_status=verification,
+                    data_file_url=OPENVLM_URL,
+                    data_json_path=f'results["{model_name}"]["{bench_key}"]["Overall"]',
+                    data_sha256=data_sha,
+                    upstream_updated_at=upstream_ts,
                     benchmark_version="v11" if bench_key.endswith("V11") else None,
                     notes=(
-                        f"官方复现结果；Org={org}; Verified={'yes' if verified else 'no'}"
+                        f"官方复现汇总；Org={org}; Verified={verified_raw or 'unknown'}"
                     ),
                 )
                 if rec.model_is_unmapped and org and "(" not in model_name:

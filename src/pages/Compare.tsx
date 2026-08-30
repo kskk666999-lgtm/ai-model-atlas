@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { X, Table2, Radar as RadarIcon } from 'lucide-react';
 import { useJson, useJsonMany } from '@/lib/api';
+import { useCapabilities } from '@/lib/capabilities';
 import type { ModelDetail, ModelsIndex } from '@/types/data';
 import { providerColor } from '@/types/data';
 import { ModelRadar, type RadarSeries } from '@/charts/ModelRadar';
 import { TrendLine } from '@/charts/TrendLine';
-import { CAPABILITIES } from '@/lib/capabilities';
 import { fmtContext, fmtDate, fmtScore } from '@/lib/format';
 import { Skeleton, EmptyState } from '@/components/StateViews';
 
@@ -16,6 +16,7 @@ export function ComparePage() {
   const [params, setParams] = useSearchParams();
   const selected = (params.get('models') || '').split(',').filter(Boolean).slice(0, MAX_COMPARE);
   const { data: index } = useJson<ModelsIndex>('/data/models/index.json');
+  const { capabilities, groups } = useCapabilities();
 
   const [query, setQuery] = useState('');
   const candidates = useMemo(() => {
@@ -36,16 +37,16 @@ export function ComparePage() {
     setParams({ models: selected.filter((s) => s !== id).join(',') });
   };
 
-  
-
   return (
     <div className="space-y-5">
       <header>
         <h1 className="text-2xl font-bold text-slate-100">模型对比</h1>
-        <p className="mt-1 text-sm text-slate-400">选择 2~{MAX_COMPARE} 个模型，对比能力雷达、价格、速度与历史趋势。对比结果可通过 URL 分享。</p>
+        <p className="mt-1 text-sm text-slate-400">
+          选择 2~{MAX_COMPARE} 个模型。主视图为能力矩阵热力图（官方原始分），雷达图为可选项。
+          对比结果可通过 URL 分享。
+        </p>
       </header>
 
-      {/* 选择器 */}
       <div className="panel px-5 py-4">
         <div className="flex flex-wrap items-center gap-2">
           {selected.map((id) => {
@@ -88,15 +89,29 @@ export function ComparePage() {
       </div>
 
       {selected.length === 0 ? (
-        <EmptyState title="先选择至少 2 个模型" hint="例如：gpt-5.2、claude-opus-5、glm-5.3、deepseek-v4…" />
+        <EmptyState title="先选择至少 2 个模型" hint="例如：gpt-5.2-2025-12-11-high、glm-5.3、kimi-k3…" />
       ) : (
-        <ComparePanels ids={selected} />
+        <ComparePanels ids={selected} capabilities={capabilities} groups={groups} />
       )}
     </div>
   );
 }
 
-function ComparePanels({ ids }: { ids: string[] }) {
+interface Group {
+  group_id: string;
+  name: string;
+}
+
+function ComparePanels({
+  ids,
+  capabilities,
+  groups,
+}: {
+  ids: string[];
+  capabilities: ReturnType<typeof useCapabilities>['capabilities'];
+  groups: Group[];
+}) {
+  const [view, setView] = useState<'matrix' | 'radar'>('matrix');
   const urls = ids.map((id) => `/data/models/${id}.json`);
   const { data: detailsMap, loading } = useJsonMany<ModelDetail>(urls);
   if (loading) return <Skeleton rows={8} />;
@@ -104,26 +119,32 @@ function ComparePanels({ ids }: { ids: string[] }) {
   const loaded = urls.map((u) => detailsMap.get(u)).filter(Boolean) as ModelDetail[];
   if (loaded.length === 0) return <EmptyState title="未找到所选模型的数据" />;
 
-  // 雷达图：能力取并集
-  const capSet = new Set<string>();
-  loaded.forEach((d) => d.radar.forEach((r) => capSet.add(r.capability_id)));
-  const capOrder = CAPABILITIES.filter((c) => capSet.has(c.id));
-  const indicators = capOrder.map((c) => ({ name: c.short, max: 100 }));
-  const series: RadarSeries[] = loaded.map((d) => ({
-    name: d.meta.display_name,
-    color: providerColor(d.meta.provider),
-    values: capOrder.map((c) => d.radar.find((r) => r.capability_id === c.id)?.index ?? null),
-  }));
-
   return (
     <div className="space-y-6">
-      <section className="panel px-5 py-6">
-        <h2 className="text-lg font-bold text-slate-100">能力雷达图</h2>
-        <p className="mt-1 text-xs text-slate-500">数值为本站计算的能力指数（0~100）；模型缺失的能力在图中断开显示，不计为 0。</p>
-        <div className="mt-3">
-          <ModelRadar indicators={indicators} series={series} height={420} />
-        </div>
-      </section>
+      <div className="flex rounded-xl border border-slate-500/25 p-0.5" role="tablist" aria-label="对比视图">
+        <button
+          role="tab"
+          aria-selected={view === 'matrix'}
+          onClick={() => setView('matrix')}
+          className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm ${view === 'matrix' ? 'bg-cyan-400/15 text-cyan-300' : 'text-slate-400'}`}
+        >
+          <Table2 size={14} aria-hidden /> 能力矩阵（主视图）
+        </button>
+        <button
+          role="tab"
+          aria-selected={view === 'radar'}
+          onClick={() => setView('radar')}
+          className={`flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm ${view === 'radar' ? 'bg-cyan-400/15 text-cyan-300' : 'text-slate-400'}`}
+        >
+          <RadarIcon size={14} aria-hidden /> 雷达图（可选）
+        </button>
+      </div>
+
+      {view === 'matrix' ? (
+        <MatrixView details={loaded} capabilities={capabilities} groups={groups} />
+      ) : (
+        <RadarView details={loaded} capabilities={capabilities} />
+      )}
 
       <section className="panel overflow-x-auto px-5 py-6">
         <h2 className="text-lg font-bold text-slate-100">基础信息与价格</h2>
@@ -152,10 +173,155 @@ function ComparePanels({ ids }: { ids: string[] }) {
         </table>
       </section>
 
-      <AdvantagePanel details={loaded} />
-
-      <HistoryPanel details={loaded} />
+      <AdvantagePanel details={loaded} capabilities={capabilities} />
+      <HistoryPanel details={loaded} capabilities={capabilities} />
     </div>
+  );
+}
+
+/** 主视图：能力 × 模型热力矩阵（官方原始分），按能力域分组，缺失显示 —。 */
+function MatrixView({
+  details,
+  capabilities,
+  groups,
+}: {
+  details: ModelDetail[];
+  capabilities: ReturnType<typeof useCapabilities>['capabilities'];
+  groups: Group[];
+}) {
+  // 每个模型的成绩按 (capability, benchmark) 索引，取该能力下"最新评测"的一条官方分
+  const cellOf = (d: ModelDetail, capId: string) => {
+    const rows = d.records.filter((r) => r.capability === capId);
+    if (!rows.length) return null;
+    rows.sort((a, b) => (b.evaluation_date || '').localeCompare(a.evaluation_date || ''));
+    const r = rows[0];
+    return { score: r.score, unit: r.score_unit, date: r.evaluation_date, bench: r.benchmark_name, type: r.evaluation_target_type };
+  };
+  const activeCaps = capabilities.filter((c) => c.status === 'active');
+  const cellColor = (v: number, min: number, max: number) => {
+    if (max === min) return 'rgba(34,211,238,0.12)';
+    const t = (v - min) / (max - min);
+    return `rgba(34,211,238,${0.06 + t * 0.26})`;
+  };
+
+  return (
+    <section className="space-y-4">
+      <p className="text-xs text-slate-500">
+        单元格为<b>官方原始分</b>（非本站百分位），同行内颜色深浅表示相对高低；— 表示该模型无此能力数据（不按 0 分处理）。
+        悬停可查看基准与评测日期。软件工程行为「模型 + Agent 系统」成绩。
+      </p>
+      {groups.map((g) => {
+        const caps = activeCaps.filter((c) => c.group === g.group_id);
+        const capsWithData = caps.filter((c) => details.some((d) => cellOf(d, c.capability_id)));
+        if (!capsWithData.length) return null;
+        return (
+          <div key={g.group_id} className="panel overflow-x-auto px-4 py-4">
+            <h3 className="mb-2 text-sm font-bold text-slate-100">{g.name}</h3>
+            <table className="w-full min-w-[560px] text-sm">
+              <thead>
+                <tr className="text-slate-400">
+                  <th className="px-3 py-2 text-left font-medium">能力</th>
+                  {details.map((d) => (
+                    <th key={d.meta.model_id} className="px-3 py-2 text-left font-medium" style={{ color: providerColor(d.meta.provider) }}>
+                      {d.meta.display_name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {capsWithData.map((c) => {
+                  const vals = details.map((d) => cellOf(d, c.capability_id)).filter(Boolean) as NonNullable<ReturnType<typeof cellOf>>[];
+                  const numeric = vals.filter((v) => ['percent', 'index_0_100'].includes(v.unit) || !v.unit.startsWith('absolute'));
+                  const min = Math.min(...numeric.map((v) => v.score));
+                  const max = Math.max(...numeric.map((v) => v.score));
+                  return (
+                    <tr key={c.capability_id} className="border-t border-slate-500/10">
+                      <td className="px-3 py-2 text-slate-300">{c.name}</td>
+                      {details.map((d) => {
+                        const v = cellOf(d, c.capability_id);
+                        if (!v) {
+                          return (
+                            <td key={d.meta.model_id} className="px-3 py-2 text-slate-600" title="无数据（不计为 0）">
+                              —
+                            </td>
+                          );
+                        }
+                        return (
+                          <td
+                            key={d.meta.model_id}
+                            className="px-3 py-2"
+                            style={{ background: cellColor(v.score, min, max) }}
+                            title={`${v.bench} · ${fmtDate(v.date)}${v.type === 'model_plus_agent' ? ' · 模型+Agent 系统' : ''}`}
+                          >
+                            <span className="num">{fmtScore(v.score, v.unit)}</span>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        );
+      })}
+    </section>
+  );
+}
+
+/** 可选视图：雷达图，用户勾选 ≤8 个维度，缺失断开不按 0 分。 */
+function RadarView({ details, capabilities }: { details: ModelDetail[]; capabilities: ReturnType<typeof useCapabilities>['capabilities'] }) {
+  const capSet = new Set<string>();
+  details.forEach((d) => d.radar.forEach((r) => capSet.add(r.capability_id)));
+  const available = capabilities.filter((c) => capSet.has(c.capability_id));
+  const [picked, setPicked] = useState<string[]>(available.slice(0, 6).map((c) => c.capability_id));
+
+  const toggle = (id: string) => {
+    setPicked((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : prev.length >= 8 ? prev : [...prev, id],
+    );
+  };
+  const indicators = picked.map((id) => ({
+    name: capabilities.find((c) => c.capability_id === id)?.short ?? id,
+    max: 100,
+  }));
+  const series: RadarSeries[] = details.map((d) => ({
+    name: d.meta.display_name,
+    color: providerColor(d.meta.provider),
+    values: picked.map((id) => d.radar.find((r) => r.capability_id === id)?.index ?? null),
+  }));
+
+  return (
+    <section className="panel px-5 py-6">
+      <h2 className="text-lg font-bold text-slate-100">雷达图（可选视图）</h2>
+      <p className="mt-1 text-xs text-slate-500">
+        勾选最多 8 个维度（仅限有通过门槛数据的能力）；缺失维度断开显示，不按 0 分。
+        数值为本站相对百分位（相对位置，非能力满分）。
+      </p>
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {available.map((c) => (
+          <button
+            key={c.capability_id}
+            onClick={() => toggle(c.capability_id)}
+            className={`rounded-lg px-2.5 py-1 text-xs ${
+              picked.includes(c.capability_id)
+                ? 'bg-cyan-400/15 text-cyan-300'
+                : 'border border-slate-500/25 text-slate-500 hover:text-slate-300'
+            } ${!picked.includes(c.capability_id) && picked.length >= 8 ? 'opacity-40' : ''}`}
+            disabled={!picked.includes(c.capability_id) && picked.length >= 8}
+          >
+            {c.short}
+          </button>
+        ))}
+      </div>
+      {picked.length >= 2 ? (
+        <div className="mt-3">
+          <ModelRadar indicators={indicators} series={series} height={400} />
+        </div>
+      ) : (
+        <p className="py-8 text-center text-sm text-slate-500">请至少勾选 2 个维度</p>
+      )}
+    </section>
   );
 }
 
@@ -171,7 +337,7 @@ function Row({ label, cells }: { label: string; cells: string[] }) {
 }
 
 /** 优势与短板：确定性规则生成（不使用任何 LLM）。 */
-function AdvantagePanel({ details }: { details: ModelDetail[] }) {
+function AdvantagePanel({ details, capabilities }: { details: ModelDetail[]; capabilities: ReturnType<typeof useCapabilities>['capabilities'] }) {
   const entries = details.map((d) => ({
     d,
     values: d.radar.map((r) => r.index).filter((v): v is number => v !== null),
@@ -192,17 +358,15 @@ function AdvantagePanel({ details }: { details: ModelDetail[] }) {
           for (const r of d.radar) {
             if (r.index === null) continue;
             const rankPct = r.rank && d.radar.length ? r.rank / d.radar.length : 1;
-            if (rankPct <= 0.1) strengths.push(`${r.name}（指数 ${r.index.toFixed(1)}，前 10%）`);
-            else if (r.index < median) weaknesses.push(`${r.name}（指数 ${r.index.toFixed(1)}，低于中位数 ${median.toFixed(1)}）`);
+            const nm = capabilities.find((c) => c.capability_id === r.capability_id)?.short ?? r.name;
+            if (rankPct <= 0.1) strengths.push(`${nm}（相对百分位 ${r.index.toFixed(1)}，前 10%）`);
+            else if (r.index < median) weaknesses.push(`${nm}（相对百分位 ${r.index.toFixed(1)}，低于中位数 ${median.toFixed(1)}）`);
           }
           const prices = details.map((x) => x.meta.price_input_usd_per_mtok).filter((p): p is number => p !== null && p > 0);
           if (prices.length >= 2 && d.meta.price_input_usd_per_mtok !== null && d.meta.price_input_usd_per_mtok > 0) {
             const sorted = [...prices].sort((a, b) => a - b);
             const q1 = sorted[Math.floor(sorted.length * 0.25)];
             if (d.meta.price_input_usd_per_mtok <= q1) strengths.push(`输入价格位于最低 25%（$${d.meta.price_input_usd_per_mtok}/1M）`);
-          }
-          if (d.meta.context_window && details.some((x) => x.meta.context_window && x.meta.context_window > d.meta.context_window! * 4)) {
-            weaknesses.push('上下文窗口显著短于对比模型');
           }
           return (
             <div key={d.meta.model_id} className="panel-2 px-4 py-4">
@@ -223,7 +387,7 @@ function AdvantagePanel({ details }: { details: ModelDetail[] }) {
   );
 }
 
-function HistoryPanel({ details }: { details: ModelDetail[] }) {
+function HistoryPanel({ details, capabilities }: { details: ModelDetail[]; capabilities: ReturnType<typeof useCapabilities>['capabilities'] }) {
   const capSet = new Set<string>();
   details.forEach((d) => Object.keys(d.history).forEach((c) => capSet.add(c)));
   const caps = Array.from(capSet).slice(0, 4);
@@ -241,15 +405,16 @@ function HistoryPanel({ details }: { details: ModelDetail[] }) {
       <div className="mt-3 grid gap-4 md:grid-cols-2">
         {caps.map((cap) => (
           <div key={cap} className="panel-2 px-3 py-3">
-            <p className="text-xs text-slate-400">{CAPABILITIES.find((c) => c.id === cap)?.name ?? cap} · 排名（越低越好）</p>
+            <p className="text-xs text-slate-400">
+              {capabilities.find((c) => c.capability_id === cap)?.name ?? cap} · 相对百分位
+            </p>
             <TrendLine
-              yName="排名"
               series={details
                 .filter((d) => d.history[cap]?.length)
                 .map((d) => ({
                   name: d.meta.display_name,
                   color: providerColor(d.meta.provider),
-                  points: d.history[cap].map((p) => ({ date: p.date, value: p.rank })),
+                  points: d.history[cap].map((p) => ({ date: p.date, value: p.index })),
                 }))}
               height={220}
             />

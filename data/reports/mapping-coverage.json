@@ -1,0 +1,461 @@
+{
+ "generated_at": "2026-08-30T10:06:12Z",
+ "benchmarks": [
+  {
+   "benchmark_id": "bigcodebench-complete",
+   "sources": [
+    "bigcodebench"
+   ],
+   "total_records": 154,
+   "distinct_models": 154,
+   "mapped_distinct_models": 10,
+   "mapped_rate": 0.0649,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "bigcodebench-instruct",
+   "sources": [
+    "bigcodebench"
+   ],
+   "total_records": 126,
+   "distinct_models": 126,
+   "mapped_distinct_models": 9,
+   "mapped_rate": 0.0714,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "livebench-agentic-coding",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-coding",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-data-analysis",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-instruction-following",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-language",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-mathematics",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-price-input",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-price-output",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "livebench-reasoning",
+   "sources": [
+    "livebench"
+   ],
+   "total_records": 49,
+   "distinct_models": 49,
+   "mapped_distinct_models": 49,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": true,
+   "reason": "通过门槛"
+  },
+  {
+   "benchmark_id": "mteb-arguana",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 5,
+   "distinct_models": 5,
+   "mapped_distinct_models": 5,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-askubuntudupquestions",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 1,
+   "distinct_models": 1,
+   "mapped_distinct_models": 1,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-nfcorpus",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 3,
+   "distinct_models": 3,
+   "mapped_distinct_models": 3,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-scidoCSrr",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 1,
+   "distinct_models": 1,
+   "mapped_distinct_models": 1,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-scifact",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 3,
+   "distinct_models": 3,
+   "mapped_distinct_models": 3,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-sts17",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 5,
+   "distinct_models": 5,
+   "mapped_distinct_models": 5,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "mteb-stsbenchmark",
+   "sources": [
+    "mteb"
+   ],
+   "total_records": 5,
+   "distinct_models": 5,
+   "mapped_distinct_models": 5,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-abench",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 160,
+   "distinct_models": 159,
+   "mapped_distinct_models": 11,
+   "mapped_rate": 0.0692,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-ai2d",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-blink",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 182,
+   "distinct_models": 181,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 0.0663,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-ccbench",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 229,
+   "distinct_models": 226,
+   "mapped_distinct_models": 18,
+   "mapped_rate": 0.0796,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-hallusionbench",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mathvista",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmbench-test-cn-v11",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmbench-test-en-v11",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mme",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 235,
+   "distinct_models": 232,
+   "mapped_distinct_models": 21,
+   "mapped_rate": 0.0905,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmmu-val",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmstar",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmt-bench-val",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 207,
+   "distinct_models": 206,
+   "mapped_distinct_models": 13,
+   "mapped_rate": 0.0631,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-mmvet",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 284,
+   "distinct_models": 281,
+   "mapped_distinct_models": 22,
+   "mapped_rate": 0.0783,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-qbench",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 160,
+   "distinct_models": 159,
+   "mapped_distinct_models": 11,
+   "mapped_rate": 0.0692,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-realworldqa",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 235,
+   "distinct_models": 232,
+   "mapped_distinct_models": 20,
+   "mapped_rate": 0.0862,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-scienceqa-test",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 218,
+   "distinct_models": 217,
+   "mapped_distinct_models": 16,
+   "mapped_rate": 0.0737,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "ovl-seedbench-img",
+   "sources": [
+    "vlmevalkit"
+   ],
+   "total_records": 226,
+   "distinct_models": 223,
+   "mapped_distinct_models": 18,
+   "mapped_rate": 0.0807,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "swebench-bash-only",
+   "sources": [
+    "swebench"
+   ],
+   "total_records": 45,
+   "distinct_models": 45,
+   "mapped_distinct_models": 37,
+   "mapped_rate": 0.8222,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "swebench-multilingual",
+   "sources": [
+    "swebench"
+   ],
+   "total_records": 13,
+   "distinct_models": 13,
+   "mapped_distinct_models": 11,
+   "mapped_rate": 0.8462,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "swebench-verified",
+   "sources": [
+    "swebench"
+   ],
+   "total_records": 112,
+   "distinct_models": 54,
+   "mapped_distinct_models": 14,
+   "mapped_rate": 0.2593,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  }
+ ]
+}

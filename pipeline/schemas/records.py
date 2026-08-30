@@ -71,6 +71,18 @@ class BenchmarkRecord(BaseModel):
     attribution: str | None = None
     notes: str | None = None
 
+    # ---- 记录级可信度与精确溯源 ----
+    # maintainer_verified：官方维护者复现/官方核验
+    # third_party_submitted：官方平台收录的第三方提交（不进入严格榜）
+    # unknown：未标注（默认不进入严格榜）
+    record_verification_status: Literal[
+        "maintainer_verified", "third_party_submitted", "unknown"
+    ] = "maintainer_verified"
+    data_file_url: str | None = None        # 包含该成绩的确切数据文件地址
+    data_json_path: str | None = None       # JSON Path / CSV 行列定位
+    data_sha256: str | None = None          # 本次抓取的数据文件 SHA256
+    upstream_updated_at: str | None = None  # 上游数据文件发布/更新时间（可空）
+
     @field_validator("score")
     @classmethod
     def _score_must_be_finite(cls, v: float) -> float:
