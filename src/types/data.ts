@@ -60,6 +60,9 @@ export interface ModelIndexItem {
   benchmark_total?: number;
   coverage?: number;
   source_count: number;
+  is_current?: boolean;
+  freshness_bucket?: string | null;
+  lifecycle_status?: string | null;
   rank_changes: Record<string, { d7?: number; d30?: number }>;
 }
 

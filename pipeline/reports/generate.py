@@ -412,8 +412,12 @@ def generate_site_data(
         latency = latest_score(entry.canonical_id, "aa-latency")
         n_benchmarks = len({r.benchmark_id for r in by_model_records.get(entry.canonical_id, [])})
         n_sources = len({r.source_id for r in by_model_records.get(entry.canonical_id, [])})
+        fm_i = freshness_map.get(entry.canonical_id, {})
         models_index.append({
             **_model_lite(entry, cap_indices, overall_rows.get(entry.canonical_id)),
+            "is_current": fm_i.get("is_current", False),
+            "freshness_bucket": fm_i.get("freshness_bucket"),
+            "lifecycle_status": fm_i.get("lifecycle_status"),
             "price_input_usd_per_mtok": price_in,
             "price_output_usd_per_mtok": price_out,
             "output_speed_tps": speed,
