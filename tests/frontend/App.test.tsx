@@ -34,9 +34,9 @@ const capabilitiesIndex = {
     { group_id: 'coding_agent', name: '编程与 Agent' },
   ],
   capabilities: [
-    { capability_id: 'reasoning', name: '逻辑推理', short: '推理', group: 'text_reasoning', status: 'active', benchmark_count: 1, has_composite: false },
-    { capability_id: 'coding', name: '编程能力', short: '编程', group: 'coding_agent', status: 'active', benchmark_count: 1, has_composite: true },
-    { capability_id: 'swe', name: '软件工程（模型 + Agent 系统）', short: '软件工程', group: 'coding_agent', status: 'active', benchmark_count: 1, has_composite: false },
+    { capability_id: 'reasoning', name: '逻辑推理', short: '推理', group: 'text_reasoning', status: 'active', benchmark_count: 1, current_model_count: 1, coverage_status: 'current', primary_benchmark_id: 'livebench-reasoning', has_composite: false },
+    { capability_id: 'coding', name: '编程能力', short: '编程', group: 'coding_agent', status: 'active', benchmark_count: 2, current_model_count: 2, coverage_status: 'current', primary_benchmark_id: 'livebench-coding', has_composite: true },
+    { capability_id: 'swe', name: '软件工程（模型 + Agent 系统）', short: '软件工程', group: 'coding_agent', status: 'active', benchmark_count: 1, current_model_count: 1, coverage_status: 'current', primary_benchmark_id: 'swebench-verified', has_composite: false },
     { capability_id: 'chat_preference', name: '人类偏好与聊天体验', short: '人类偏好', group: 'safety', status: 'pending', benchmark_count: 0, has_composite: false },
   ],
   weight_presets: [{ preset_id: 'general', name: '通用助手', weights: { reasoning: 1 } }],
@@ -150,6 +150,49 @@ const capabilitySwe = {
   composite_gate: [{ reason: 'Agent 系统不生成基础模型综合' }],
 };
 
+const capabilityCoding = {
+  capability_id: 'coding',
+  name: '编程能力',
+  short: '编程',
+  status: 'active',
+  description: null,
+  generated_at: '2026-08-30T00:00:00Z',
+  benchmarks: [
+    { benchmark_id: 'bigcodebench-complete', benchmark_name: 'BigCodeBench Complete', source_id: 'bigcodebench', higher_is_better: true, score_unit: 'percent', record_count: 3 },
+    { benchmark_id: 'livebench-coding', benchmark_name: 'LiveBench 编程', source_id: 'livebench', higher_is_better: true, score_unit: 'percent', record_count: 2 },
+  ],
+  official: [
+    {
+      ...capabilityReasoning.official[0],
+      benchmark_id: 'bigcodebench-complete', benchmark_name: 'BigCodeBench Complete', capability: 'coding',
+      raw_model_name: 'bigcode-current-only', score: 57.5, rank: 17, evaluation_date: null,
+    },
+    {
+      ...capabilityReasoning.official[1],
+      benchmark_id: 'bigcodebench-complete', benchmark_name: 'BigCodeBench Complete', capability: 'coding',
+      raw_model_name: 'bigcode-legacy-a', score: 90, rank: 1, evaluation_date: null,
+    },
+    {
+      ...capabilityReasoning.official[2],
+      benchmark_id: 'bigcodebench-complete', benchmark_name: 'BigCodeBench Complete', capability: 'coding',
+      raw_model_name: 'bigcode-legacy-b', score: 89, rank: 2, evaluation_date: null,
+    },
+    {
+      ...capabilityReasoning.official[0],
+      benchmark_id: 'livebench-coding', benchmark_name: 'LiveBench 编程', capability: 'coding',
+      raw_model_name: 'livebench-current-a', score: 91, rank: 1, evaluation_date: '2026-06-25',
+    },
+    {
+      ...capabilityReasoning.official[0],
+      benchmark_id: 'livebench-coding', benchmark_name: 'LiveBench 编程', capability: 'coding',
+      model_id: 'qwen-current', raw_model_name: 'livebench-current-b', score: 89, rank: 2,
+      evaluation_date: '2026-06-25', is_current: true,
+    },
+  ],
+  composite: null,
+  composite_gate: [],
+};
+
 const heatmap = {
   generated_at: '2026-08-30T00:00:00Z',
   capabilities: [
@@ -168,7 +211,12 @@ const homepage = {
   generated_at: meta.generated_at,
   stats: meta.counts,
   update: meta.update,
-  top3: { reasoning: { rows: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, benchmark_id: 'livebench-reasoning', kind: 'official' }], current_count: 1, total_rows: 2, benchmark_id: 'livebench-reasoning' } },
+  top3: {
+    reasoning: { rows: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, benchmark_id: 'livebench-reasoning', kind: 'official' }], current_count: 1, total_rows: 2, benchmark_id: 'livebench-reasoning' },
+    coding: { rows: [{ model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 91, rank: 1, benchmark_id: 'livebench-coding', kind: 'official' }], current_count: 2, total_rows: 2, benchmark_id: 'livebench-coding' },
+  },
+  official_releases_verified_at: '2026-08-31',
+  official_releases: [{ model_id: 'qwen3.8-flash-next', model_name: 'Qwen3.8-Flash-Next', provider: 'Alibaba / Qwen', release_date: '2026-08-27', status: 'preview', open_weights: true, capabilities: ['推理', '编程'], summary: '官方发布测试条目。', source_url: 'https://qwen.ai/blog?id=qwen3.8-flash-next' }],
   latest_releases: { '7d': [], '30d': [{ model_id: 'qwen-3.8-27b', name: 'Qwen 3.8 27B', provider_id: 'alibaba', release_date: '2026-08-14', last_updated: '2026-08-14', status: null, lifecycle_status: 'ga', open_weights: true, reasoning: true, tool_call: true, context_window: 262144, input_price: 0.3, output_price: 1.2 }], '90d': [] },
   movers_7d: [{ model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', capability: 'reasoning', delta: 2 }],
   trend_30d: [],
@@ -181,6 +229,7 @@ function baseMocks() {
     '/data/models/index.json': modelsIndex,
     '/data/capabilities/index.json': capabilitiesIndex,
     '/data/capabilities/reasoning.json': capabilityReasoning,
+    '/data/capabilities/coding.json': capabilityCoding,
     '/data/capabilities/swe.json': capabilitySwe,
     '/data/heatmap.json': heatmap,
     '/data/source-health.json': { generated_at: '', counts: { healthy: 2, degraded: 0, failed: 0, disabled: 3 }, sources: [] },
@@ -206,7 +255,10 @@ describe('前端核心路径（V2 口径）', () => {
     // 状态圆点存在于全局导航
     expect(screen.getByLabelText(/数据状态/)).toBeInTheDocument();
     // 官方榜 Tab 存在
-    expect(screen.getByRole('button', { name: '文本推理' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '逻辑推理' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '数学' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '数据分析' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '指令遵循' })).toBeInTheDocument();
   });
 
   it('首页热力图渲染官方原始分', async () => {
@@ -264,11 +316,21 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.getAllByText(/精确数据文件/).length).toBeGreaterThan(0);
   });
 
-  it('Latest Releases 展示目录数据（非 benchmark 日期冒充）', async () => {
+  it('官方模型动态与目录上架分离展示', async () => {
     render(<HashRouter><App /></HashRouter>);
-    await waitFor(() => expect(screen.getByText('最新发布')).toBeInTheDocument());
-    expect(await screen.findByText('Qwen 3.8 27B')).toBeInTheDocument();
-    expect(screen.getByText('2026-08-14')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText('官方模型动态')).toBeInTheDocument());
+    expect(await screen.findByText('Qwen3.8-Flash-Next')).toBeInTheDocument();
+    expect(screen.getByText('2026-08-27')).toBeInTheDocument();
+    expect(screen.getByText(/目录上架不等于厂商发布新闻/)).toBeInTheDocument();
+  });
+
+  it('首页编程榜按 CURRENT 覆盖选 LiveBench，不再被旧 BigCodeBench 记录数劫持', async () => {
+    render(<HashRouter><App /></HashRouter>);
+    fireEvent.click(await screen.findByRole('button', { name: '编程' }));
+    expect(await screen.findByText('livebench-current-a')).toBeInTheDocument();
+    expect(screen.getByText('livebench-current-b')).toBeInTheDocument();
+    expect(screen.queryByText('bigcode-current-only')).not.toBeInTheDocument();
+    expect(screen.getByText(/2 个当前模型 \/ 2 条记录/)).toBeInTheDocument();
   });
 
   it('首页默认仅当前模型：unmapped 与 legacy 不进主榜', async () => {

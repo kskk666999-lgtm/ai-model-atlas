@@ -12,6 +12,12 @@ export interface CapabilityDef {
   description?: string | null;
   planned_source?: string | null;
   benchmark_count: number;
+  official_record_count?: number;
+  current_model_count?: number;
+  primary_benchmark_id?: string | null;
+  primary_benchmark_name?: string | null;
+  latest_evaluation_date?: string | null;
+  coverage_status?: 'current' | 'history_only' | 'pending' | 'unavailable';
   has_composite: boolean;
 }
 

@@ -1,0 +1,98 @@
+# 主流模型官方发布动态（人工核验的官方一手来源）。
+#
+# 这里记录的是“模型已经发布以及官方主打哪些方向”，不是第三方能力排名。
+# 首页必须把本列表与独立评测榜分开展示，禁止把厂商自报成绩混入排行榜。
+# 更新时仅接受模型厂商的官网、官方文档或官方代码仓库。
+
+verified_at: "2026-08-31"
+
+releases:
+  - model_id: tencent-hy4-preview
+    model_name: Tencent Hy4 preview
+    provider: Tencent
+    release_date: "2026-08-28"
+    status: preview
+    open_weights: true
+    capabilities: [编程, 办公, 科研, 长上下文]
+    summary: 面向真实生产力任务的下一代开放权重预览模型，官方披露上下文超过 1M tokens。
+    source_url: https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/
+
+  - model_id: qwen3.8-flash-next
+    model_name: Qwen3.8-Flash-Next
+    provider: Alibaba / Qwen
+    release_date: "2026-08-27"
+    status: preview
+    open_weights: true
+    capabilities: [推理, 编程, 长上下文, 高效推理]
+    summary: Qwen3.8 系列的高效长上下文模型，采用混合注意力与稀疏注意力架构。
+    source_url: https://qwen.ai/blog?id=qwen3.8-flash-next
+
+  - model_id: glm-5.3
+    model_name: GLM-5.3
+    provider: Zhipu AI
+    release_date: "2026-08-14"
+    status: released
+    open_weights: true
+    capabilities: [编程, 长程任务, 工具使用]
+    summary: GLM-5.2 基础上的后训练升级，重点加强复杂编程与长程任务执行。
+    source_url: https://z.ai/blog/glm-5.3
+
+  - model_id: claude-opus-5
+    model_name: Claude Opus 5
+    provider: Anthropic
+    release_date: "2026-07-24"
+    status: released
+    open_weights: false
+    capabilities: [编程, 知识工作, 电脑操作, 数据分析]
+    summary: Anthropic 的 Opus 级日常旗舰，主打软件工程、知识工作与成本效率。
+    source_url: https://www.anthropic.com/news/claude-opus-5
+
+  - model_id: kimi-k3
+    model_name: Kimi K3
+    provider: Moonshot AI
+    release_date: "2026-07-16"
+    status: released
+    open_weights: true
+    capabilities: [视觉, 编程, 知识工作, 长上下文]
+    summary: 2.8T 参数开放模型，原生视觉并支持 1M tokens 上下文。
+    source_url: https://www.kimi.com/en/blog/kimi-k3
+
+  - model_id: gpt-5.6
+    model_name: GPT-5.6 系列
+    provider: OpenAI
+    release_date: "2026-07-09"
+    status: released
+    open_weights: false
+    capabilities: [编程, 知识工作, 科研, 性价比]
+    summary: Sol、Terra、Luna 三档正式发布，覆盖旗舰、均衡与高性价比场景。
+    source_url: https://openai.com/index/gpt-5-6/
+
+  - model_id: minimax-m3
+    model_name: MiniMax M3
+    provider: MiniMax
+    release_date: "2026-06-01"
+    status: released
+    open_weights: true
+    capabilities: [编程, Agent, 多模态, 长上下文]
+    summary: 面向编程与 Agent 的开放权重原生多模态模型，支持最高 1M tokens 上下文。
+    source_url: https://www.minimax.io/blog/minimax-m3
+
+  - model_id: gemini-3.5
+    model_name: Gemini 3.5
+    provider: Google
+    release_date: "2026-05-19"
+    status: released
+    open_weights: false
+    capabilities: [Agent, 多模态, 工具使用]
+    summary: Google I/O 2026 发布的新一代 Gemini 系列，强调可执行的 Agent 工作流。
+    source_url: https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/
+
+  - model_id: deepseek-v4
+    model_name: DeepSeek V4
+    provider: DeepSeek
+    release_date: "2026-04-24"
+    status: released
+    open_weights: false
+    capabilities: [推理, 编程, 长上下文]
+    summary: DeepSeek API 的 V4-Pro / V4-Flash 代际更新。
+    source_url: https://api-docs.deepseek.com/updates/

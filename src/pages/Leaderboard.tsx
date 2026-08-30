@@ -34,7 +34,8 @@ export function LeaderboardPage() {
   useEffect(() => {
     // 切换能力时恢复安全默认值，避免上一页开启的 HISTORY 状态带入 Agent 榜。
     setShowHistory(false);
-  }, [capId]);
+    setBenchmarkId(capMeta?.primary_benchmark_id ?? '');
+  }, [capId, capMeta?.primary_benchmark_id]);
 
   const { currentRows, legacyRows } = useMemo(() => {
     if (!data) return { currentRows: [] as JoinedRow[], legacyRows: [] as JoinedRow[] };
@@ -193,7 +194,7 @@ export function LeaderboardPage() {
                     onChange={(e) => setBenchmarkId(e.target.value)}
                     aria-label="切换基准"
                   >
-                    <option value="">全部基准（合并显示）</option>
+                    <option value="">全部基准（合并显示，需自行核对口径）</option>
                     {data.benchmarks.map((b) => (
                       <option key={b.benchmark_id} value={b.benchmark_id}>
                         {b.benchmark_name}（{b.record_count}）
@@ -213,7 +214,7 @@ export function LeaderboardPage() {
               )}
             </>
           ) : (
-            data.composite && <CompositeTable file={data} />
+            data.composite && <CompositeTable file={data} index={index} />
           )}
         </>
       )}
@@ -223,8 +224,10 @@ export function LeaderboardPage() {
   );
 }
 
-function CompositeTable({ file }: { file: CapabilityFile }) {
+function CompositeTable({ file, index }: { file: CapabilityFile; index: ModelsIndex | null }) {
   const comp = file.composite!;
+  const currentIds = new Set((index?.models ?? []).filter((model) => model.is_current === true).map((model) => model.model_id));
+  const currentModels = comp.models.filter((model) => currentIds.has(model.model_id));
   return (
     <div>
       <p className="mb-3 rounded-xl border border-violet-400/25 bg-violet-400/5 px-4 py-3 text-xs leading-6 text-violet-200/90">
@@ -232,6 +235,7 @@ function CompositeTable({ file }: { file: CapabilityFile }) {
         <b>不是能力满分</b>），再按来源等级权重（A=1.0 / B=0.8 / C=0.6）加权平均。
         参与门槛：仅 maintainer_verified 记录；基准映射覆盖率 ≥95% 且已映射模型 ≥10；
         模型须覆盖 ≥2 个合格基准且 ≥60%。缺失数据不计为 0。
+        当前默认只展示活跃模型（{currentModels.length}/{comp.models.length}）。
       </p>
       <div className="panel overflow-x-auto">
         <table className="data-table w-full min-w-[720px] text-sm">
@@ -246,7 +250,7 @@ function CompositeTable({ file }: { file: CapabilityFile }) {
             </tr>
           </thead>
           <tbody>
-            {comp.models.map((m) => (
+            {currentModels.map((m) => (
               <tr key={m.model_id} className="border-b border-slate-500/10 hover:bg-slate-500/5">
                 <td className="px-3 py-2.5"><span className="num font-semibold text-slate-200">{m.rank}</span></td>
                 <td className="px-3 py-2.5">

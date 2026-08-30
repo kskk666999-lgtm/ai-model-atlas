@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 
 from ..paths import PUBLIC_DATA_DIR
@@ -57,6 +58,43 @@ def _model_lite(model_entry, capability_indices: dict, overall_row: dict | None)
 
 
 FRESHNESS_REF: dict = {"map": None}  # 由 generate_site_data 注入 freshness_map
+
+
+def _directory_release_key(entry: dict) -> str:
+    """把同一模型在不同 API 渠道的目录条目归为一组。"""
+    raw = str(entry.get("model_id") or entry.get("name") or "").lower()
+    raw = raw.rsplit("/", 1)[-1]
+    return re.sub(r"[^a-z0-9]+", "", raw)
+
+
+def _dedupe_directory_releases(entries: list[dict]) -> list[dict]:
+    """models.dev 是接入目录，不是新闻源；按模型去重并保留渠道列表。"""
+    grouped: dict[str, list[dict]] = {}
+    for entry in entries:
+        name = str(entry.get("name") or "")
+        # 集成插件不是基础模型发布，不能占据“模型新上架”位置。
+        if "integration" in name.lower() or entry.get("provider_id") == "klokintegration":
+            continue
+        key = _directory_release_key(entry)
+        if key:
+            grouped.setdefault(key, []).append(entry)
+
+    out: list[dict] = []
+    for key in sorted(grouped):
+        candidates = grouped[key]
+
+        def quality(item: dict) -> tuple[int, int, str]:
+            filled = sum(item.get(field) not in (None, "", []) for field in (
+                "release_date", "open_weights", "reasoning", "tool_call",
+                "context_window", "input_price", "output_price",
+            ))
+            # 同等完整度时优先更清楚的展示名，再以 provider 保证确定性。
+            return filled, len(str(item.get("name") or "")), str(item.get("provider_id") or "")
+
+        best = max(candidates, key=quality)
+        channels = sorted({str(c.get("provider_id")) for c in candidates if c.get("provider_id")})
+        out.append({**best, "channels": channels, "channel_count": len(channels)})
+    return out
 
 
 def _record_row(rec, include_notes: bool = True) -> dict:
@@ -291,24 +329,47 @@ def generate_site_data(
                 }
 
     # ---------- capabilities/index.json（前端能力单一事实源）----------
+    def capability_catalog_row(cap: dict) -> dict:
+        cap_id = cap["capability_id"]
+        cap_records = [r for r in records if r.capability == cap_id]
+        primary_bid = cap_top_benchmarks.get(cap_id)
+        primary_records = [r for r in cap_records if r.benchmark_id == primary_bid]
+        current_ids = {
+            r.model_id for r in primary_records
+            if not r.model_is_unmapped and freshness_map.get(r.model_id, {}).get("is_current") is True
+        }
+        eval_dates = sorted((r.evaluation_date for r in primary_records if r.evaluation_date), reverse=True)
+        if current_ids:
+            coverage_status = "current"
+        elif cap_records:
+            coverage_status = "history_only"
+        elif cap.get("status", "active") == "pending":
+            coverage_status = "pending"
+        else:
+            coverage_status = "unavailable"
+        primary = benchmarks_registry.get(primary_bid or "", {})
+        return {
+            "capability_id": cap_id,
+            "name": cap["name"],
+            "short": cap.get("short", cap["name"]),
+            "group": cap.get("group", "text_reasoning"),
+            "status": cap.get("status", "active"),
+            "description": cap.get("description"),
+            "planned_source": cap.get("planned_source"),
+            "benchmark_count": len({r.benchmark_id for r in cap_records}),
+            "official_record_count": len(cap_records),
+            "current_model_count": len(current_ids),
+            "primary_benchmark_id": primary_bid,
+            "primary_benchmark_name": primary.get("benchmark_name"),
+            "latest_evaluation_date": eval_dates[0] if eval_dates else None,
+            "coverage_status": coverage_status,
+            "has_composite": cap_id in capability_composites,
+        }
+
     cap_index_payload = {
         "generated_at": now,
         "groups": cap_yaml.get("groups") or [],
-        "capabilities": [
-            {
-                "capability_id": c["capability_id"],
-                "name": c["name"],
-                "short": c.get("short", c["name"]),
-                "group": c.get("group", "text_reasoning"),
-                "status": c.get("status", "active"),
-                "description": c.get("description"),
-                "planned_source": c.get("planned_source"),
-                "benchmark_count": len({r.benchmark_id for r in records
-                                        if r.capability == c["capability_id"]}),
-                "has_composite": c["capability_id"] in capability_composites,
-            }
-            for c in capabilities_registry
-        ],
+        "capabilities": [capability_catalog_row(c) for c in capabilities_registry],
         "weight_presets": weight_presets,
     }
     if write_json(PUBLIC_DATA_DIR / "capabilities" / "index.json", cap_index_payload):
@@ -316,19 +377,15 @@ def generate_site_data(
 
     # ---------- heatmap.json（首页能力×模型热力图，官方原始分 Top N）----------
     heatmap_caps = [
-        ("reasoning", None), ("coding", None), ("math", None),
-        ("chinese_mm", None), ("multimodal", None), ("swe", "swebench-verified"),
+        ("reasoning", None), ("math", None), ("coding", None),
+        ("data_analysis", None), ("instruction_following", None), ("language", None),
+        ("swe", None), ("multimodal", None), ("chinese_mm", None), ("chart", None),
     ]
     heatmap = {"generated_at": now, "capabilities": [], "models": [], "cells": {}}
     model_order: list[str] = []
     for cap_id, bench_filter in heatmap_caps:
-        rows = [row for row in (official_rankings.get(
-            bench_filter, []) if bench_filter else official_rankings.get(
-            next((bid for bid, rows2 in official_rankings.items()
-                  if rows2 and benchmarks_registry[bid]["capability"] == cap_id), ""), []))]
         # 基准选择：相关性得分优先（当前模型覆盖为主权重）
-        if not bench_filter:
-            best_bid = cap_top_benchmarks.get(cap_id)
+        best_bid = bench_filter or cap_top_benchmarks.get(cap_id)
         if best_bid is None:
             cap_bids = [
                 (bid, len(irows)) for bid, irows in official_rankings.items()
@@ -588,14 +645,22 @@ def generate_site_data(
                 "benchmark_id": benchmark_id}
 
     def _top3_for(cap_id: str):
+        # 首页优先展示同一官方基准的原始分，不能让相对百分位掩盖榜单口径。
+        official = _top3_from_official(cap_id)
+        if official and official["rows"]:
+            return official
         comp = capability_composites.get(cap_id)
         if comp:
+            current_models = [
+                m for m in comp["models"]
+                if freshness_map.get(m["model_id"], {}).get("is_current") is True
+            ]
             names = {m["model_id"]: next(
                 (e.display_name for e in models_registry if e.canonical_id == m["model_id"]), m["model_id"])
-                for m in comp["models"][:3]}
+                for m in current_models[:3]}
             providers = {m["model_id"]: next(
                 (e.provider for e in models_registry if e.canonical_id == m["model_id"]), None)
-                for m in comp["models"][:3]}
+                for m in current_models[:3]}
             rows = [{
                 "model_id": m["model_id"],
                 "display_name": names[m["model_id"]],
@@ -603,23 +668,36 @@ def generate_site_data(
                 "index": m["index"],
                 "rank": m["rank"],
                 "kind": "composite_relative",
-            } for m in comp["models"][:3]]
-            return {"rows": rows, "current_count": len(rows), "total_rows": len(rows),
+            } for m in current_models[:3]]
+            return {"rows": rows, "current_count": len(current_models), "total_rows": len(comp["models"]),
                     "benchmark_id": None}
-        if cap_id == "swe":
-            return _top3_from_official("swe", cap_top_benchmarks.get("swe", "swebench-verified"))
-        return _top3_from_official(cap_id)
+        return official
 
-    for cap_id in ("reasoning", "coding", "math", "chinese_mm", "multimodal", "swe"):
+    for cap in capabilities_registry:
+        if cap.get("status", "active") != "active":
+            continue
+        cap_id = cap["capability_id"]
         block = _top3_for(cap_id)
         if block and block["rows"]:
             homepage["top3"][cap_id] = block
-    # Latest Releases：来自模型目录（models.dev），按发布日期窗口
+
+    # 官方发布动态：人工核验的一手来源，只说明“已发布/主打方向”，不参与排名。
+    from ..paths import REGISTRY_RELEASES
+
+    releases_config = _yaml.safe_load(REGISTRY_RELEASES.read_text(encoding="utf-8"))
+    homepage["official_releases_verified_at"] = releases_config.get("verified_at")
+    homepage["official_releases"] = sorted(
+        releases_config.get("releases") or [],
+        key=lambda x: (x.get("release_date") or "", x.get("model_id") or ""),
+        reverse=True,
+    )[:12]
+
+    # 模型目录新上架：来自 models.dev；按模型去重，不把同一模型的多个 API 渠道当多次发布。
     def releases_within(days: int) -> list[dict]:
         from datetime import datetime as _dt
 
         today = _dt.strptime(now[:10], "%Y-%m-%d").date()
-        out = []
+        candidates = []
         for e in directory_enriched:
             dstr = e.get("release_date") or e.get("last_updated")
             if not dstr:
@@ -629,7 +707,7 @@ def generate_site_data(
             except ValueError:
                 continue
             if 0 <= (today - d).days <= days:
-                out.append({
+                candidates.append({
                     "model_id": e.get("model_id"),
                     "name": e.get("name"),
                     "provider_id": e.get("provider_id"),
@@ -645,6 +723,7 @@ def generate_site_data(
                     "input_price": e.get("input_price"),
                     "output_price": e.get("output_price"),
                 })
+        out = _dedupe_directory_releases(candidates)
         out.sort(key=lambda x: x.get("release_date") or "", reverse=True)
         return out[:12]
 

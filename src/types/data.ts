@@ -178,12 +178,25 @@ export interface Homepage {
     total_rows: number;
     benchmark_id: string | null;
   }>;
+  official_releases_verified_at?: string | null;
+  official_releases?: {
+    model_id: string;
+    model_name: string;
+    provider: string;
+    release_date: string;
+    status: 'preview' | 'released';
+    open_weights: boolean;
+    capabilities: string[];
+    summary: string;
+    source_url: string;
+  }[];
   latest_releases: Record<'7d' | '30d' | '90d', {
     model_id: string; name: string; provider_id: string;
     release_date: string | null; last_updated: string | null;
     status: string | null; lifecycle_status: string; freshness_bucket?: string;
     open_weights: boolean | null; reasoning: boolean | null; tool_call: boolean | null;
     context_window: number | null; input_price: number | null; output_price: number | null;
+    channels?: string[]; channel_count?: number;
   }[]>;
   movers_7d: { model_id: string; display_name: string; provider: string; capability: string; delta: number }[];
   trend_30d: { date: string; models: number; capabilities: number }[];

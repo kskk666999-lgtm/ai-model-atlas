@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Sparkles } from 'lucide-react';
 import { useJson, useMeta } from '@/lib/api';
 import { useCapabilities, capShort } from '@/lib/capabilities';
 import { fmtDate, fmtScore } from '@/lib/format';
@@ -31,15 +31,33 @@ interface HeatmapData {
   models: string[];
 }
 
-type TabId = 'reasoning' | 'coding' | 'agent' | 'multimodal' | 'chinese_mm' | 'value';
+type TabId =
+  | 'reasoning'
+  | 'math'
+  | 'coding'
+  | 'data_analysis'
+  | 'instruction_following'
+  | 'language'
+  | 'agent'
+  | 'multimodal'
+  | 'chinese_mm'
+  | 'chart'
+  | 'retrieval'
+  | 'value';
 
 const TABS: { id: TabId; label: string; note: string }[] = [
-  { id: 'reasoning', label: '文本推理', note: 'LiveBench 官方推理类别平均（原始分）' },
-  { id: 'coding', label: '编程', note: 'LiveBench 编程官方综合（相对百分位，已通过映射门槛）' },
-  { id: 'agent', label: 'Agent 软件工程', note: 'SWE-bench Verified 官方榜 · 模型 + Agent 框架系统成绩' },
-  { id: 'multimodal', label: '多模态', note: 'MMBench v1.1 英文（官方 Overall，原始分）' },
-  { id: 'chinese_mm', label: '中文多模态', note: 'MMBench v1.1 中文（官方 Overall，原始分）· 不代表综合中文能力' },
-  { id: 'value', label: '性价比', note: '编程官方相对位置 ÷ 输入价格（客户端计算，公开公式）' },
+  { id: 'reasoning', label: '逻辑推理', note: 'LiveBench 官方逻辑推理类别平均（原始分）' },
+  { id: 'math', label: '数学', note: 'LiveBench 官方数学类别平均（原始分）' },
+  { id: 'coding', label: '编程', note: '优先选择当前模型覆盖最完整的 LiveBench 编程主榜（官方原始分）' },
+  { id: 'data_analysis', label: '数据分析', note: 'LiveBench 官方数据分析类别平均（原始分）' },
+  { id: 'instruction_following', label: '指令遵循', note: 'LiveBench 官方指令遵循类别平均（原始分）' },
+  { id: 'language', label: '语言理解（英文）', note: 'LiveBench 官方英文语言类别平均；不冒充中文能力' },
+  { id: 'agent', label: 'Agent 软件工程', note: 'SWE-bench 当前覆盖优先 · 模型 + Agent 框架系统成绩' },
+  { id: 'multimodal', label: '多模态', note: 'OpenCompass / VLMEvalKit 官方复现结果；若无当前覆盖则明确留空' },
+  { id: 'chinese_mm', label: '中文能力证据', note: '当前仅有中文多模态基准，不代表中文写作、问答、翻译或综合中文能力' },
+  { id: 'chart', label: '图表理解', note: '视觉数学与图表理解官方复现结果；当前覆盖不足时不拿旧模型补位' },
+  { id: 'retrieval', label: '信息检索', note: 'MTEB 官方结果；这是 Embedding 检索能力，不是聊天模型综合能力' },
+  { id: 'value', label: '编程性价比', note: '编程相对百分位 ÷ 输入价格（客户端计算，公开公式）' },
 ];
 
 export function HomePage() {
@@ -47,7 +65,7 @@ export function HomePage() {
   const { data: home } = useJson<Homepage>('/data/homepage.json');
   const { data: index } = useJson<ModelsIndex>('/data/models/index.json');
   const { data: heatmap } = useJson<HeatmapData>('/data/heatmap.json');
-  const { capabilities } = useCapabilities();
+  const { capabilities, groups } = useCapabilities();
   const [tab, setTab] = useState<TabId>('reasoning');
   const [releaseWindow, setReleaseWindow] = useState<'7d' | '30d' | '90d'>('30d');
 
@@ -90,57 +108,23 @@ export function HomePage() {
       {/* Current Picks：由当天数据动态计算，不硬编码 */}
       <CurrentPicks home={home} index={index} />
 
-      {/* Latest Releases */}
-      <section className="panel px-5 py-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <h2 className="flex items-center gap-2 text-lg font-bold text-slate-100">
-            <Sparkles size={17} className="text-amber-300" aria-hidden /> 最新发布
-          </h2>
-          <span className="badge">来源：models.dev 模型目录</span>
-          <div className="ml-auto flex rounded-lg border border-slate-500/25 p-0.5" role="tablist" aria-label="发布时间窗口">
-            {(['7d', '30d', '90d'] as const).map((w) => (
-              <button
-                key={w}
-                role="tab"
-                aria-selected={releaseWindow === w}
-                onClick={() => setReleaseWindow(w)}
-                className={`rounded-md px-2.5 py-1 text-xs ${releaseWindow === w ? 'bg-amber-400/15 text-amber-300' : 'text-slate-400'}`}
-              >
-                {{ '7d': '7 天', '30d': '30 天', '90d': '90 天' }[w]}
-              </button>
-            ))}
-          </div>
-        </div>
-        {releases.length === 0 ? (
-          <p className="mt-3 text-sm text-slate-500">该窗口内暂无目录收录的新发布。</p>
-        ) : (
-          <ul className="mt-4 grid gap-2.5 md:grid-cols-2">
-            {releases.slice(0, 10).map((r: Homepage['latest_releases']['30d'][number]) => (
-              <li key={`${r.provider_id}-${r.model_id}`} className="panel-2 px-4 py-3">
-                <div className="flex flex-wrap items-center gap-2 text-sm">
-                  <span className="num text-xs text-slate-500">{fmtDate(r.release_date || r.last_updated)}</span>
-                  <span className="font-semibold text-slate-100">{r.name}</span>
-                  <span className="text-xs text-slate-500">{r.provider_id}</span>
-                  {r.reasoning && <span className="badge border-violet-400/30 text-violet-300">推理</span>}
-                  {r.tool_call && <span className="badge border-cyan-400/30 text-cyan-300">工具调用</span>}
-                  {r.open_weights && <span className="badge border-emerald-400/30 text-emerald-300">开放权重</span>}
-                  <span className="ml-auto flex items-center gap-2 text-xs text-slate-400">
-                    {r.context_window ? <span className="num">{fmtContextK(r.context_window)}</span> : null}
-                    {r.input_price !== null && r.input_price !== undefined && (
-                      <span className="num">${r.input_price >= 1 ? r.input_price.toFixed(2) : r.input_price.toFixed(3)}/1M</span>
-                    )}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
+      <OfficialReleasePanel
+        releases={home?.official_releases ?? []}
+        verifiedAt={home?.official_releases_verified_at ?? null}
+        directoryReleases={releases}
+        releaseWindow={releaseWindow}
+        setReleaseWindow={setReleaseWindow}
+      />
 
       {/* 第一屏：核心榜（官方原始分为主，默认仅当前模型） */}
       <section>
         <nav className="flex flex-wrap gap-1.5" aria-label="核心榜切换">
-          {TABS.map((t) => (
+          {TABS.map((t) => {
+            const capId = t.id === 'agent' ? 'swe' : t.id;
+            const currentCount = t.id === 'value'
+              ? index?.models.filter((m) => m.is_current === true && m.price_input_usd_per_mtok !== null).length
+              : capabilities.find((c) => c.capability_id === capId)?.current_model_count;
+            return (
             <button
               key={t.id}
               onClick={() => setTab(t.id)}
@@ -150,18 +134,30 @@ export function HomePage() {
               }`}
             >
               {t.label}
+              {currentCount !== undefined && (
+                <span aria-hidden className="num ml-1.5 text-[10px] opacity-65">{currentCount}</span>
+              )}
             </button>
-          ))}
+            );
+          })}
         </nav>
         <p className="mt-2 text-xs text-slate-500">{activeTab.note}</p>
         <div className="mt-3">
           {tab === 'value' ? (
             <ValueBoard index={index} />
           ) : (
-            <OfficialBoard capId={officialCap} highlightAgent={tab === 'agent'} index={index} />
+            <OfficialBoard
+              key={officialCap}
+              capId={officialCap}
+              preferredBenchmarkId={home?.top3?.[officialCap]?.benchmark_id}
+              highlightAgent={tab === 'agent'}
+              index={index}
+            />
           )}
         </div>
       </section>
+
+      <CapabilityAtlas capabilities={capabilities} groups={groups} />
 
       {/* 第二屏：能力 × 模型热力图（当前模型） */}
       {heatmap && heatmap.capabilities.length > 0 && (
@@ -214,22 +210,191 @@ export function HomePage() {
   );
 }
 
+function OfficialReleasePanel({
+  releases,
+  verifiedAt,
+  directoryReleases,
+  releaseWindow,
+  setReleaseWindow,
+}: {
+  releases: NonNullable<Homepage['official_releases']>;
+  verifiedAt: string | null;
+  directoryReleases: Homepage['latest_releases']['30d'];
+  releaseWindow: '7d' | '30d' | '90d';
+  setReleaseWindow: (value: '7d' | '30d' | '90d') => void;
+}) {
+  if (!releases.length && !directoryReleases.length) return null;
+  return (
+    <section className="panel px-5 py-6">
+      <div className="flex flex-wrap items-center gap-3">
+        <h2 className="flex items-center gap-2 text-lg font-bold text-slate-100">
+          <Sparkles size={17} className="text-amber-300" aria-hidden /> 官方模型动态
+        </h2>
+        <span className="badge border-emerald-400/25 text-emerald-300">厂商官方一手来源</span>
+        <span className="text-xs text-slate-500">只说明发布事实，不参与独立排名 · 核验 {fmtDate(verifiedAt)}</span>
+      </div>
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        {releases.slice(0, 9).map((release) => (
+          <a
+            key={release.model_id}
+            href={release.source_url}
+            target="_blank"
+            rel="noreferrer"
+            className="panel-2 block px-4 py-3.5 transition-colors hover:border-amber-300/35"
+          >
+            <div className="flex items-center gap-2 text-xs text-slate-500">
+              <span className="num">{fmtDate(release.release_date)}</span>
+              <span>{release.provider}</span>
+              <span className={`badge ml-auto ${release.status === 'preview' ? 'border-amber-400/30 text-amber-300' : 'border-emerald-400/30 text-emerald-300'}`}>
+                {release.status === 'preview' ? '预览' : '已发布'}
+              </span>
+            </div>
+            <h3 className="mt-2 flex items-center gap-1.5 font-bold text-slate-100">
+              {release.model_name}<ExternalLink size={12} className="text-slate-500" aria-hidden />
+            </h3>
+            <p className="mt-1.5 text-xs leading-5 text-slate-400">{release.summary}</p>
+            <div className="mt-2.5 flex flex-wrap gap-1.5">
+              {release.capabilities.slice(0, 4).map((capability) => (
+                <span key={capability} className="badge">{capability}</span>
+              ))}
+              {release.open_weights && <span className="badge border-emerald-400/25 text-emerald-300">开放权重</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <details className="mt-4 border-t border-slate-500/15 pt-3">
+        <summary className="cursor-pointer text-xs font-medium text-cyan-400">
+          查看 models.dev 模型目录新上架（已按模型合并重复 API 渠道）
+        </summary>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className="text-[11px] text-slate-500">目录上架不等于厂商发布新闻，也不等于能力排名。</span>
+          <div className="ml-auto flex rounded-lg border border-slate-500/25 p-0.5" role="tablist" aria-label="目录上架时间窗口">
+            {(['7d', '30d', '90d'] as const).map((window) => (
+              <button
+                key={window}
+                role="tab"
+                aria-selected={releaseWindow === window}
+                onClick={() => setReleaseWindow(window)}
+                className={`rounded-md px-2.5 py-1 text-xs ${releaseWindow === window ? 'bg-cyan-400/15 text-cyan-300' : 'text-slate-400'}`}
+              >
+                {{ '7d': '7 天', '30d': '30 天', '90d': '90 天' }[window]}
+              </button>
+            ))}
+          </div>
+        </div>
+        {directoryReleases.length === 0 ? (
+          <p className="mt-3 text-sm text-slate-500">该窗口内暂无目录新增模型。</p>
+        ) : (
+          <ul className="mt-3 grid gap-2 md:grid-cols-2">
+            {directoryReleases.slice(0, 8).map((release) => (
+              <li key={release.model_id} className="panel-2 flex flex-wrap items-center gap-2 px-4 py-2.5 text-sm">
+                <span className="num text-xs text-slate-500">{fmtDate(release.release_date || release.last_updated)}</span>
+                <span className="font-semibold text-slate-100">{release.name}</span>
+                {release.reasoning && <span className="badge border-violet-400/30 text-violet-300">推理</span>}
+                {release.tool_call && <span className="badge border-cyan-400/30 text-cyan-300">工具</span>}
+                {release.open_weights && <span className="badge border-emerald-400/30 text-emerald-300">开放权重</span>}
+                <span className="ml-auto text-xs text-slate-500" title={release.channels?.join('、')}>
+                  {release.channel_count && release.channel_count > 1 ? `${release.channel_count} 个接入渠道` : release.provider_id}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </details>
+    </section>
+  );
+}
+
+function CapabilityAtlas({
+  capabilities,
+  groups,
+}: {
+  capabilities: ReturnType<typeof useCapabilities>['capabilities'];
+  groups: ReturnType<typeof useCapabilities>['groups'];
+}) {
+  const currentCount = capabilities.filter((capability) => (capability.current_model_count ?? 0) > 0).length;
+  const historyOnlyCount = capabilities.filter((capability) => capability.coverage_status === 'history_only').length;
+  return (
+    <section className="panel px-5 py-5">
+      <div className="flex flex-wrap items-baseline gap-3">
+        <h2 className="text-lg font-bold text-slate-100">更多比较维度</h2>
+        <span className="badge">{currentCount} 项有当前模型证据</span>
+        {historyOnlyCount > 0 && <span className="badge border-amber-400/25 text-amber-300">{historyOnlyCount} 项仅有历史证据</span>}
+      </div>
+      <p className="mt-1 text-xs leading-5 text-slate-500">
+        能力维度与数据状态分开列出：有当前独立评测才显示 CURRENT；只有旧榜就明确标历史；没有可信结构化来源则标接入中。
+      </p>
+      <div className="mt-4 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+        {groups.map((group) => {
+          const items = capabilities.filter((capability) => capability.group === group.group_id);
+          if (!items.length) return null;
+          return (
+            <div key={group.group_id}>
+              <h3 className="mb-2 text-xs font-semibold text-slate-300">{group.name}</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {items.map((capability) => {
+                  const current = capability.current_model_count ?? 0;
+                  const state = current > 0
+                    ? `${current} 当前`
+                    : capability.coverage_status === 'history_only'
+                      ? `历史至 ${fmtDate(capability.latest_evaluation_date)}`
+                      : capability.status === 'pending'
+                        ? '接入中'
+                        : '本轮无数据';
+                  return (
+                    <Link
+                      key={capability.capability_id}
+                      to={`/leaderboard?cap=${capability.capability_id}`}
+                      className={`rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                        current > 0
+                          ? 'border-cyan-400/25 bg-cyan-400/5 text-slate-200 hover:border-cyan-300/50'
+                          : capability.coverage_status === 'history_only'
+                            ? 'border-amber-400/20 text-slate-400 hover:text-amber-200'
+                            : 'border-slate-500/20 text-slate-500 hover:text-slate-300'
+                      }`}
+                    >
+                      {capability.short}<span className="num ml-1.5 text-[10px] opacity-70">{state}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 /** Current Picks：由当天数据动态计算的快速入口（不硬编码获胜者）。 */
 function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsIndex | null }) {
   const picks = useMemo(() => {
     if (!home) return [];
     const out: { label: string; pick: { display_name: string; model_id: string; provider: string | null }; note: string }[] = [];
-    for (const [cap, blockRaw] of Object.entries(home.top3)) {
+    const priority = ['reasoning', 'math', 'coding', 'data_analysis', 'instruction_following', 'language', 'swe'] as const;
+    for (const cap of priority) {
+      const blockRaw = home.top3[cap];
+      if (!blockRaw) continue;
       const block = blockRaw as { rows?: { display_name: string; model_id: string; provider: string | null; score?: number; index?: number; kind: string; agent_scaffold?: string | null }[] };
       const first = block.rows?.[0];
       if (!first) continue;
-      const label = { reasoning: '推理最强', coding: '编程最强', math: '数学最强', chinese_mm: '中文多模态最强', multimodal: '多模态最强', swe: 'Agent 软件工程（Verified）' }[cap];
-      if (!label) continue;
+      const label = {
+        reasoning: '逻辑推理主榜第一',
+        math: '数学主榜第一',
+        coding: '编程主榜第一',
+        data_analysis: '数据分析主榜第一',
+        instruction_following: '指令遵循主榜第一',
+        language: '英文语言主榜第一',
+        swe: 'Agent 软件工程主榜第一',
+      }[cap];
       const agent = first.agent_scaffold ? `（${first.agent_scaffold}）` : '';
       out.push({
         label,
         pick: { display_name: first.display_name, model_id: first.model_id, provider: first.provider },
-        note: first.kind === 'official' ? `官方原始分 ${fmtScore(first.score)}` : `相对百分位 ${fmtScore(first.index)}${agent}`,
+        note: first.kind === 'official'
+          ? `官方原始分 ${fmtScore(first.score)}${agent}`
+          : `相对百分位 ${fmtScore(first.index)}${agent}`,
       });
     }
     // 最低价（当前 + 有价格数据）
@@ -294,17 +459,60 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
   );
 }
 
+export function selectHomeBenchmark(
+  data: CapabilityFile,
+  index: ModelsIndex | null,
+  preferredBenchmarkId?: string | null,
+): { benchmarkId: string; selectedBy: 'pipeline' | 'current_coverage' } | null {
+  const candidates = data.benchmarks.map((benchmark) => {
+    const rows = joinRows(
+      data.official.filter((row) => row.benchmark_id === benchmark.benchmark_id),
+      index?.models ?? [],
+    );
+    const { current } = filterCurrent(rows);
+    const currentModels = new Set(current.map((row) => row.model_id)).size;
+    const latestEvaluation = rows.reduce(
+      (latest, row) => row.evaluation_date && row.evaluation_date > latest ? row.evaluation_date : latest,
+      '',
+    );
+    return { benchmarkId: benchmark.benchmark_id, currentModels, latestEvaluation, total: rows.length };
+  });
+  if (!candidates.length) return null;
+  candidates.sort((a, b) =>
+    b.currentModels - a.currentModels
+    || b.latestEvaluation.localeCompare(a.latestEvaluation)
+    || b.total - a.total
+    || a.benchmarkId.localeCompare(b.benchmarkId),
+  );
+  const best = candidates[0];
+  const preferred = candidates.find((candidate) => candidate.benchmarkId === preferredBenchmarkId);
+  if (preferred && preferred.currentModels === best.currentModels) {
+    return { benchmarkId: preferred.benchmarkId, selectedBy: 'pipeline' };
+  }
+  return { benchmarkId: best.benchmarkId, selectedBy: 'current_coverage' };
+}
+
 /** 官方原始榜 Top 10（默认仅当前模型；不足时明确说明而不是拿旧模型凑数）。 */
-function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highlightAgent?: boolean; index: ModelsIndex | null }) {
+function OfficialBoard({
+  capId,
+  preferredBenchmarkId,
+  highlightAgent,
+  index,
+}: {
+  capId: string;
+  preferredBenchmarkId?: string | null;
+  highlightAgent?: boolean;
+  index: ModelsIndex | null;
+}) {
   const { data, loading } = useJson<CapabilityFile>(`/data/capabilities/${capId}.json`);
   const [showHistory, setShowHistory] = useState(false);
   if (loading) return <div className="skeleton h-72 w-full" />;
   if (!data || data.official.length === 0) {
     return <EmptyState title="该能力暂无数据" hint="数据接入中，不生成模拟排名。" />;
   }
-  const counts = new Map<string, number>();
-  data.official.forEach((r) => counts.set(r.benchmark_id, (counts.get(r.benchmark_id) ?? 0) + 1));
-  const topBench = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0][0];
+  const selection = selectHomeBenchmark(data, index, preferredBenchmarkId);
+  if (!selection) return <EmptyState title="该能力暂无可用基准" hint="数据接入中，不生成模拟排名。" />;
+  const topBench = selection.benchmarkId;
   const all = joinRows(
     data.official.filter((r) => r.benchmark_id === topBench),
     index?.models ?? [],
@@ -322,6 +530,11 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
         </p>
       )}
       <div className="panel overflow-x-auto">
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-500/15 px-4 py-2.5 text-[11px] text-slate-500">
+          <span className="badge border-emerald-400/25 text-emerald-300">CURRENT 优先</span>
+          <span>{selection.selectedBy === 'pipeline' ? '数据管线主榜' : '客户端按当前覆盖自动纠偏'}</span>
+          <span>· {fresh.length} 个当前模型 / {all.length} 条记录</span>
+        </div>
         <table className="data-table w-full min-w-[760px] text-sm">
           <thead>
             <tr className="border-b border-slate-500/15 text-slate-400">
@@ -335,9 +548,15 @@ function OfficialBoard({ capId, highlightAgent, index }: { capId: string; highli
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
+            {rows.length > 0 ? rows.map((r) => (
               <BoardRow key={`${r.benchmark_id}-${r.model_id}-${r.agent_scaffold ?? ''}-${r.rank}`} r={r} highlightAgent={highlightAgent} />
-            ))}
+            )) : (
+              <tr>
+                <td colSpan={highlightAgent ? 7 : 6} className="px-4 py-10 text-center text-sm text-slate-500">
+                  该独立基准尚未覆盖当前活跃模型；这里不会用历史模型填满榜单。
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
         <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[11px] text-slate-500">
