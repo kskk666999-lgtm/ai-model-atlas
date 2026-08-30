@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { resolveStaticUrl } from '@/lib/api';
+import { fmtDate, fmtDateTime } from '@/lib/format';
 
 describe('resolveStaticUrl', () => {
   it('keeps root deployment data URLs unchanged', () => {
@@ -22,5 +23,12 @@ describe('resolveStaticUrl', () => {
     expect(resolveStaticUrl('https://example.test/data.json', '/ai-model-atlas/')).toBe(
       'https://example.test/data.json',
     );
+  });
+});
+
+describe('date formatting', () => {
+  it('formats compact upstream timestamps without truncating the day', () => {
+    expect(fmtDate('20250917132916')).toBe('2025-09-17');
+    expect(fmtDateTime('20250917132916')).toBe('2025-09-17 13:29');
   });
 });

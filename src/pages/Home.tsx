@@ -9,6 +9,7 @@ import type { CapabilityFile, Homepage, Meta, ModelsIndex } from '@/types/data';
 import { EmptyState, NoDataState } from '@/components/StateViews';
 import { PricePerformanceMatrix } from '@/components/PricePerformanceMatrix';
 import { filterCurrent, joinRows, type JoinedRow } from '@/components/OfficialTable';
+import { SourceDrawer } from '@/components/Badges';
 
 interface HeatmapData {
   generated_at: string;
@@ -26,6 +27,7 @@ interface HeatmapData {
       tie: boolean;
       agent_scaffold: string | null;
       evaluation_date: string | null;
+      upstream_updated_at?: string | null;
     }[];
   }[];
   models: string[];
@@ -39,6 +41,10 @@ type TabId =
   | 'instruction_following'
   | 'language'
   | 'agent'
+  | 'agent_terminal'
+  | 'tool_calling'
+  | 'search_research'
+  | 'agent_memory'
   | 'multimodal'
   | 'chinese_mm'
   | 'chart'
@@ -53,12 +59,22 @@ const TABS: { id: TabId; label: string; note: string }[] = [
   { id: 'instruction_following', label: '指令遵循', note: 'LiveBench 官方指令遵循类别平均（原始分）' },
   { id: 'language', label: '语言理解（英文）', note: 'LiveBench 官方英文语言类别平均；不冒充中文能力' },
   { id: 'agent', label: 'Agent 软件工程', note: 'SWE-bench 当前覆盖优先 · 模型 + Agent 框架系统成绩' },
+  { id: 'agent_terminal', label: '终端 Agent', note: 'Terminal-Bench 4.0 官方完整系统成功率 · 模型 + Agent + 推理档位' },
+  { id: 'tool_calling', label: '工具调用', note: 'BFCL V4 官方综合准确率 · FC / Prompt / Thinking 模式分列' },
+  { id: 'search_research', label: '搜索执行', note: 'BFCL V4 Web Search 子榜；不冒充完整深度研究报告质量' },
+  { id: 'agent_memory', label: 'Agent 记忆', note: 'BFCL V4 Memory 子榜 · KV / 向量 / 递归摘要场景' },
   { id: 'multimodal', label: '多模态', note: 'OpenCompass / VLMEvalKit 官方复现结果；若无当前覆盖则明确留空' },
   { id: 'chinese_mm', label: '中文能力证据', note: '当前仅有中文多模态基准，不代表中文写作、问答、翻译或综合中文能力' },
   { id: 'chart', label: '图表理解', note: '视觉数学与图表理解官方复现结果；当前覆盖不足时不拿旧模型补位' },
   { id: 'retrieval', label: '信息检索', note: 'MTEB 官方结果；这是 Embedding 检索能力，不是聊天模型综合能力' },
   { id: 'value', label: '编程性价比', note: '编程相对百分位 ÷ 输入价格（客户端计算，公开公式）' },
 ];
+
+function tabCapability(tab: TabId): string {
+  if (tab === 'agent') return 'swe';
+  if (tab === 'agent_terminal') return 'agentic_general';
+  return tab;
+}
 
 export function HomePage() {
   const { meta: rawMeta, error } = useMeta();
@@ -75,7 +91,7 @@ export function HomePage() {
   const meta = rawMeta;
 
   const activeTab = TABS.find((t) => t.id === tab)!;
-  const officialCap = tab === 'agent' ? 'swe' : tab;
+  const officialCap = tabCapability(tab);
   const releases = home?.latest_releases?.[releaseWindow] ?? [];
 
   return (
@@ -120,7 +136,7 @@ export function HomePage() {
       <section>
         <nav className="flex flex-wrap gap-1.5" aria-label="核心榜切换">
           {TABS.map((t) => {
-            const capId = t.id === 'agent' ? 'swe' : t.id;
+            const capId = tabCapability(t.id);
             const currentCount = t.id === 'value'
               ? index?.models.filter((m) => m.is_current === true && m.price_input_usd_per_mtok !== null).length
               : capabilities.find((c) => c.capability_id === capId)?.current_model_count;
@@ -150,7 +166,7 @@ export function HomePage() {
               key={officialCap}
               capId={officialCap}
               preferredBenchmarkId={home?.top3?.[officialCap]?.benchmark_id}
-              highlightAgent={tab === 'agent'}
+              highlightAgent={tab === 'agent' || tab === 'agent_terminal'}
               index={index}
             />
           )}
@@ -338,7 +354,7 @@ function CapabilityAtlas({
                   const state = current > 0
                     ? `${current} 当前`
                     : capability.coverage_status === 'history_only'
-                      ? `历史至 ${fmtDate(capability.latest_evaluation_date)}`
+                      ? `历史至 ${fmtDate(capability.latest_evidence_date ?? capability.latest_evaluation_date)}`
                       : capability.status === 'pending'
                         ? '接入中'
                         : '本轮无数据';
@@ -372,7 +388,10 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
   const picks = useMemo(() => {
     if (!home) return [];
     const out: { label: string; pick: { display_name: string; model_id: string; provider: string | null }; note: string }[] = [];
-    const priority = ['reasoning', 'math', 'coding', 'data_analysis', 'instruction_following', 'language', 'swe'] as const;
+    const priority = [
+      'reasoning', 'math', 'coding', 'data_analysis', 'instruction_following', 'language',
+      'swe', 'agentic_general', 'tool_calling',
+    ] as const;
     for (const cap of priority) {
       const blockRaw = home.top3[cap];
       if (!blockRaw) continue;
@@ -387,6 +406,8 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
         instruction_following: '指令遵循主榜第一',
         language: '英文语言主榜第一',
         swe: 'Agent 软件工程主榜第一',
+        agentic_general: '终端 Agent 主榜第一',
+        tool_calling: '工具调用主榜第一',
       }[cap];
       const agent = first.agent_scaffold ? `（${first.agent_scaffold}）` : '';
       out.push({
@@ -471,16 +492,19 @@ export function selectHomeBenchmark(
     );
     const { current } = filterCurrent(rows);
     const currentModels = new Set(current.map((row) => row.model_id)).size;
-    const latestEvaluation = rows.reduce(
-      (latest, row) => row.evaluation_date && row.evaluation_date > latest ? row.evaluation_date : latest,
+    const latestEvidence = rows.reduce(
+      (latest, row) => {
+        const evidence = row.evaluation_date || row.upstream_updated_at || '';
+        return evidence > latest ? evidence : latest;
+      },
       '',
     );
-    return { benchmarkId: benchmark.benchmark_id, currentModels, latestEvaluation, total: rows.length };
+    return { benchmarkId: benchmark.benchmark_id, currentModels, latestEvidence, total: rows.length };
   });
   if (!candidates.length) return null;
   candidates.sort((a, b) =>
     b.currentModels - a.currentModels
-    || b.latestEvaluation.localeCompare(a.latestEvaluation)
+    || b.latestEvidence.localeCompare(a.latestEvidence)
     || b.total - a.total
     || a.benchmarkId.localeCompare(b.benchmarkId),
   );
@@ -506,6 +530,7 @@ function OfficialBoard({
 }) {
   const { data, loading } = useJson<CapabilityFile>(`/data/capabilities/${capId}.json`);
   const [showHistory, setShowHistory] = useState(false);
+  const [picked, setPicked] = useState<JoinedRow | null>(null);
   if (loading) return <div className="skeleton h-72 w-full" />;
   if (!data || data.official.length === 0) {
     return <EmptyState title="该能力暂无数据" hint="数据接入中，不生成模拟排名。" />;
@@ -534,8 +559,9 @@ function OfficialBoard({
           <span className="badge border-emerald-400/25 text-emerald-300">CURRENT 优先</span>
           <span>{selection.selectedBy === 'pipeline' ? '数据管线主榜' : '客户端按当前覆盖自动纠偏'}</span>
           <span>· {fresh.length} 个当前模型 / {all.length} 条记录</span>
+          <span>· 运行日与榜单快照分列；来源未公开则显示 —</span>
         </div>
-        <table className="data-table w-full min-w-[760px] text-sm">
+        <table className="data-table w-full min-w-[900px] text-sm">
           <thead>
             <tr className="border-b border-slate-500/15 text-slate-400">
               <th className="px-3 py-2.5 text-left">#</th>
@@ -544,15 +570,21 @@ function OfficialBoard({
               {highlightAgent && <th className="px-3 py-2.5 text-left">Agent 框架</th>}
               <th className="px-3 py-2.5 text-left">官方原始分</th>
               <th className="px-3 py-2.5 text-left">发布日期</th>
-              <th className="px-3 py-2.5 text-left">评测日期</th>
+              <th className="px-3 py-2.5 text-left">评测运行日</th>
+              <th className="px-3 py-2.5 text-left">榜单快照</th>
             </tr>
           </thead>
           <tbody>
             {rows.length > 0 ? rows.map((r) => (
-              <BoardRow key={`${r.benchmark_id}-${r.model_id}-${r.agent_scaffold ?? ''}-${r.rank}`} r={r} highlightAgent={highlightAgent} />
+              <BoardRow
+                key={`${r.benchmark_id}-${r.model_id}-${r.prompt_mode ?? ''}-${r.agent_scaffold ?? ''}-${r.rank}`}
+                r={r}
+                highlightAgent={highlightAgent}
+                onPick={setPicked}
+              />
             )) : (
               <tr>
-                <td colSpan={highlightAgent ? 7 : 6} className="px-4 py-10 text-center text-sm text-slate-500">
+                <td colSpan={highlightAgent ? 8 : 7} className="px-4 py-10 text-center text-sm text-slate-500">
                   该独立基准尚未覆盖当前活跃模型；这里不会用历史模型填满榜单。
                 </td>
               </tr>
@@ -568,11 +600,20 @@ function OfficialBoard({
           )}
         </div>
       </div>
+      <SourceDrawer row={picked} onClose={() => setPicked(null)} />
     </div>
   );
 }
 
-function BoardRow({ r, highlightAgent }: { r: JoinedRow; highlightAgent?: boolean }) {
+function BoardRow({
+  r,
+  highlightAgent,
+  onPick,
+}: {
+  r: JoinedRow;
+  highlightAgent?: boolean;
+  onPick: (row: JoinedRow) => void;
+}) {
   const isAgent = r.evaluation_target_type === 'model_plus_agent' || r.evaluation_target_type === 'complete_agent_system';
   return (
     <tr className={`border-b border-slate-500/10 ${r.is_current === false ? 'opacity-50' : ''} hover:bg-slate-500/5`}>
@@ -596,10 +637,18 @@ function BoardRow({ r, highlightAgent }: { r: JoinedRow; highlightAgent?: boolea
       <td className="px-3 py-2.5 text-slate-400">{r.provider ?? '—'}</td>
       {highlightAgent && <td className="px-3 py-2.5 text-xs text-slate-400">{r.agent_scaffold ?? '—'}</td>}
       <td className="px-3 py-2.5">
-        <span className="num font-semibold text-cyan-300">{fmtScore(r.score, r.score_unit)}</span>
+        <button
+          type="button"
+          className="num rounded px-1.5 py-0.5 font-semibold text-cyan-300 hover:bg-cyan-400/10"
+          onClick={() => onPick(r)}
+          title="点击查看数据来源与日期口径"
+        >
+          {fmtScore(r.score, r.score_unit)}
+        </button>
       </td>
       <td className="px-3 py-2.5"><span className="num text-slate-400">{fmtDate(r.release_date)}</span></td>
       <td className="px-3 py-2.5"><span className="num text-slate-400">{fmtDate(r.evaluation_date)}</span></td>
+      <td className="px-3 py-2.5"><span className="num text-slate-400">{fmtDate(r.upstream_updated_at)}</span></td>
     </tr>
   );
 }

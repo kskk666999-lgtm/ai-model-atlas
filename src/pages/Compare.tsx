@@ -189,13 +189,21 @@ function MatrixView({
   capabilities: ReturnType<typeof useCapabilities>['capabilities'];
   groups: Group[];
 }) {
-  // 每个模型的成绩按 (capability, benchmark) 索引，取该能力下"最新评测"的一条官方分
+  // 每个模型按真实运行日优先、榜单快照兜底选择最新证据。
   const cellOf = (d: ModelDetail, capId: string) => {
     const rows = d.records.filter((r) => r.capability === capId);
     if (!rows.length) return null;
-    rows.sort((a, b) => (b.evaluation_date || '').localeCompare(a.evaluation_date || ''));
+    rows.sort((a, b) => (
+      b.evaluation_date || b.upstream_updated_at || ''
+    ).localeCompare(a.evaluation_date || a.upstream_updated_at || ''));
     const r = rows[0];
-    return { score: r.score, unit: r.score_unit, date: r.evaluation_date, bench: r.benchmark_name, type: r.evaluation_target_type };
+    return {
+      score: r.score,
+      unit: r.score_unit,
+      date: r.evaluation_date || r.upstream_updated_at,
+      bench: r.benchmark_name,
+      type: r.evaluation_target_type,
+    };
   };
   const activeCaps = capabilities.filter((c) => c.status === 'active');
   const cellColor = (v: number, min: number, max: number) => {
@@ -208,7 +216,7 @@ function MatrixView({
     <section className="space-y-4">
       <p className="text-xs text-slate-500">
         单元格为<b>官方原始分</b>（非本站百分位），同行内颜色深浅表示相对高低；— 表示该模型无此能力数据（不按 0 分处理）。
-        悬停可查看基准与评测日期。软件工程行为「模型 + Agent 系统」成绩。
+        悬停可查看基准与最新证据日期。软件工程与终端 Agent 行为「模型 + Agent 系统」成绩。
       </p>
       {groups.map((g) => {
         const caps = activeCaps.filter((c) => c.group === g.group_id);

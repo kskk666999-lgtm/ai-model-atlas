@@ -11,6 +11,8 @@ import hashlib
 import json
 import threading
 import time
+from datetime import UTC
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 import httpx
@@ -129,5 +131,35 @@ class HttpClient:
     def get_json(self, url: str, use_cache: bool = True):
         return json.loads(self.get(url, use_cache=use_cache).decode("utf-8"))
 
+    def metadata(self, url: str) -> dict:
+        """Return cached response metadata for an already fetched URL.
+
+        Adapters use this to distinguish an upstream file snapshot date from a
+        benchmark version or a per-model evaluation date. Missing/corrupt
+        metadata is intentionally non-fatal because provenance fields are
+        nullable by contract.
+        """
+        path = self._meta_path(url)
+        if not path.exists():
+            return {}
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return {}
+        return value if isinstance(value, dict) else {}
+
     def close(self) -> None:
         self._client.close()
+
+
+def http_date_to_iso(value: str | None) -> str | None:
+    """Convert an HTTP-date header to a stable UTC ISO timestamp."""
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=UTC)
+    return parsed.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")

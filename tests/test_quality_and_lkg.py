@@ -27,6 +27,24 @@ def test_unknown_benchmark_is_error(sample_source, normalizer, benchmarks):
     assert errors
 
 
+def test_livebench_version_cannot_masquerade_as_evaluation_date(
+    sample_source, normalizer, benchmarks,
+):
+    from tests.adapters.test_base import build
+
+    adapter = build(None, None, sample_source, normalizer, benchmarks, None,
+                    parse_fn=lambda b, a: [])
+    rec = adapter.make_record(
+        "bench-x", "test-model-a", 50.0,
+        benchmark_version="2026-06-25",
+        evaluation_date="2026-06-25",
+        upstream_updated_at="2026-08-29T01:34:09Z",
+    )
+    rec.source_id = "livebench"
+    errors, _ = validate_records([rec], benchmarks)
+    assert any("不得把基准版本" in error for error in errors)
+
+
 def test_duplicate_same_score_deduped(sample_source, normalizer, benchmarks):
     from tests.adapters.test_base import build
 

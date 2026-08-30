@@ -39,6 +39,15 @@ def validate_records(records: list[BenchmarkRecord], benchmarks: dict[str, dict]
             errors.append(f"[{rec.source_id}] {rec.benchmark_id} higher_is_better 与注册表不一致")
         if rec.score_unit != bench.get("score_unit"):
             warnings.append(f"[{rec.source_id}] {rec.benchmark_id} score_unit={rec.score_unit} 与注册表不同")
+        if rec.source_id == "livebench":
+            if rec.evaluation_date is not None:
+                errors.append(
+                    f"[livebench] {rec.benchmark_id} 不得把基准版本写入 evaluation_date"
+                )
+            if not rec.benchmark_version:
+                errors.append(f"[livebench] {rec.benchmark_id} 缺少 benchmark_version")
+            if not rec.upstream_updated_at:
+                warnings.append(f"[livebench] {rec.benchmark_id} 缺少上游快照时间")
         rng = RANGE_HINTS.get(rec.score_unit or bench.get("score_unit"))
         if rng and not (rng[0] - 1e-9 <= rec.score <= rng[1] + 1e-9):
             warnings.append(

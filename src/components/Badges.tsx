@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { OfficialRow } from '@/types/data';
 import { ExternalLink, X } from 'lucide-react';
-import { evalTargetLabel, fmtDate, fmtScore, sourceLevelBadge } from '@/lib/format';
+import { evalTargetLabel, fmtDate, fmtDateTime, fmtScore, sourceLevelBadge } from '@/lib/format';
 
 
 export function TypeBadge({ type }: { type: string }) {
@@ -44,10 +44,11 @@ export function RankCell({ rank, tie }: { rank: number | null | undefined; tie?:
 export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClose: () => void }) {
   const r = row;
   if (!r) return null;
-  // 数据年龄：评测日期 → 抓取日期的天数差（"今天抓取"不等于"今天评测"）
+  // 证据年龄优先用真实评测运行日；来源未提供时才用榜单快照日。
   const dataAgeDays = (() => {
-    if (!r.evaluation_date || !r.fetched_at) return null;
-    const a = new Date(r.evaluation_date).getTime();
+    const evidenceDate = r.evaluation_date || r.upstream_updated_at;
+    if (!evidenceDate || !r.fetched_at) return null;
+    const a = new Date(evidenceDate).getTime();
     const b = new Date(r.fetched_at).getTime();
     if (Number.isNaN(a) || Number.isNaN(b)) return null;
     return Math.max(0, Math.round((b - a) / 86_400_000));
@@ -85,17 +86,34 @@ export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClos
           {r.agent_scaffold && <Field label="Agent 框架">{r.agent_scaffold}</Field>}
           {r.prompt_mode && <Field label="推理/提交模式">{r.prompt_mode}</Field>}
           {r.benchmark_version && <Field label="基准版本">{r.benchmark_version}</Field>}
-          <Field label="评测日期">
-            {fmtDate(r.evaluation_date)}
-            {dataAgeDays !== null && (
-              <span className="ml-1.5 text-[10px] text-slate-500">（数据年龄约 {dataAgeDays} 天）</span>
+          <Field label="评测运行日">
+            {r.evaluation_date ? fmtDate(r.evaluation_date) : '—（上游未公开）'}
+            {r.evaluation_date && dataAgeDays !== null && (
+              <span className="ml-1.5 text-[10px] text-slate-500">（证据年龄约 {dataAgeDays} 天）</span>
             )}
           </Field>
+          <Field label="榜单 / 数据文件快照">
+            {fmtDateTime(r.upstream_updated_at)}
+            {!r.evaluation_date && dataAgeDays !== null && (
+              <span className="ml-1.5 text-[10px] text-slate-500">（证据年龄约 {dataAgeDays} 天）</span>
+            )}
+          </Field>
+          {!r.evaluation_date && (
+            <Field label="日期说明">
+              <span className="text-amber-200">来源未公开逐模型评测运行日；本站未用基准版本、发布日期或抓取日代替。</span>
+            </Field>
+          )}
+          {r.published_at && <Field label="榜单记录创建">{fmtDateTime(r.published_at)}</Field>}
           {r.sample_size !== null && r.sample_size !== undefined && (
             <Field label="样本量">{r.sample_size}</Field>
           )}
+          {r.confidence_interval_low !== null && r.confidence_interval_low !== undefined
+            && r.confidence_interval_high !== null && r.confidence_interval_high !== undefined && (
+              <Field label="95% 置信区间">
+                {fmtScore(r.confidence_interval_low, r.score_unit)} – {fmtScore(r.confidence_interval_high, r.score_unit)}
+              </Field>
+          )}
           <Field label="本站抓取时间">{fmtDate(r.fetched_at)}</Field>
-          {r.upstream_updated_at && <Field label="上游数据更新时间">{r.upstream_updated_at}</Field>}
           <Field label="模型原始名称（来源侧）">{r.raw_model_name || r.model_id}</Field>
           {r.model_is_unmapped && (
             <Field label="映射状态">

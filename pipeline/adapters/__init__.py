@@ -5,15 +5,19 @@ disabled 的来源（livecodebench / opencompass_text / arena）没有适配器�
 """
 from .artificialanalysis import ArtificialAnalysisAdapter
 from .base import AdapterError, BaseAdapter, build_adapter_runtime
+from .bfcl import BFCLAdapter
 from .bigcodebench import BigCodeBenchAdapter
 from .livebench import LiveBenchAdapter
 from .mteb import MTEBAdapter
 from .swebench import SWEBenchAdapter
+from .terminalbench import TerminalBenchAdapter
 from .vlmevalkit import VLMEvalKitAdapter
 
 ADAPTERS: dict[str, type[BaseAdapter]] = {
     "livebench": LiveBenchAdapter,
     "swebench": SWEBenchAdapter,
+    "terminalbench": TerminalBenchAdapter,
+    "bfcl": BFCLAdapter,
     "bigcodebench": BigCodeBenchAdapter,
     "vlmevalkit": VLMEvalKitAdapter,
     "mteb": MTEBAdapter,
@@ -25,10 +29,12 @@ __all__ = [
     "AdapterError",
     "ArtificialAnalysisAdapter",
     "BaseAdapter",
+    "BFCLAdapter",
     "BigCodeBenchAdapter",
     "LiveBenchAdapter",
     "MTEBAdapter",
     "SWEBenchAdapter",
+    "TerminalBenchAdapter",
     "VLMEvalKitAdapter",
     "build_adapter_runtime",
 ]

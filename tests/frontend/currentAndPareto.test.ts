@@ -73,7 +73,7 @@ function point(modelId: string, price: number, score: number): PricePerformanceP
     score,
     benchmarkCount: 2,
     sourceCount: 2,
-    evaluationDate: null,
+    evidenceDate: null,
     releaseDate: null,
     isCurrent: true,
   };

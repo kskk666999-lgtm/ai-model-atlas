@@ -15,7 +15,7 @@ groups:
   - group_id: cost_efficiency
     name: 成本与效率
   - group_id: safety
-    name: 安全与可靠性
+    name: Agent、检索与可靠性
 
 capabilities:
   # ===== 文本与推理 =====
@@ -135,20 +135,34 @@ capabilities:
     name: 工具调用
     short: 工具调用
     group: safety
-    status: pending
-    planned_source: BFCL（待官方结构化结果确认）
+    status: active
+    description: >
+      BFCL V4 官方综合准确率；FC、Prompt、Thinking 等模式分开列出，
+      不把不同提交协议合并成一个模型成绩。
   - capability_id: agentic_general
     name: Agent 自主执行（电脑/终端）
     short: Agent 通用
     group: safety
-    status: pending
-    planned_source: OSWorld Verified / Terminal-Bench（待官方结构化结果确认）
+    status: active
+    description: >
+      Terminal-Bench 4.0 的完整系统成绩，反映「模型 + Agent + 推理档位」在终端任务中的表现；
+      不折算为基础模型综合能力。
   - capability_id: search_research
     name: 搜索与深度研究
     short: 深度研究
     group: safety
-    status: pending
-    planned_source: 官方可复现评测
+    status: active
+    description: >
+      当前证据为 BFCL V4 Web Search 子榜，衡量工具调用场景中的搜索执行，
+      不等同于完整长报告质量或人类偏好。
+  - capability_id: agent_memory
+    name: Agent 记忆
+    short: Agent 记忆
+    group: safety
+    status: active
+    description: >
+      BFCL V4 Memory 子榜，覆盖 KV、向量与递归摘要等记忆调用场景；
+      它是工具使用评测，不代表模型参数内的长期记忆。
   - capability_id: image_gen
     name: 图像生成
     short: 图像生成

@@ -119,6 +119,9 @@ def _record_row(rec, include_notes: bool = True) -> dict:
         "prompt_mode": rec.prompt_mode,
         "benchmark_version": rec.benchmark_version,
         "sample_size": rec.sample_size,
+        "confidence_interval_low": rec.confidence_interval_low,
+        "confidence_interval_high": rec.confidence_interval_high,
+        "published_at": rec.published_at,
         "reasoning_effort": rec.reasoning_effort,
         "fetched_at": rec.fetched_at,
         "record_verification_status": rec.record_verification_status,
@@ -190,7 +193,10 @@ def generate_site_data(
         ]
         if not cands:
             return None
-        cands.sort(key=lambda r: r.evaluation_date or "", reverse=True)
+        cands.sort(
+            key=lambda r: r.evaluation_date or r.upstream_updated_at or r.fetched_at or "",
+            reverse=True,
+        )
         return cands[0].score
 
     overall_rows = {m["model_id"]: m for m in overall["models"]}
@@ -220,7 +226,7 @@ def generate_site_data(
             "models": len(used_models),
             "unmapped_models": len(unmapped_ids),
             "benchmarks": len({r.benchmark_id for r in records}),
-            "capabilities_active": len(capability_composites),
+            "capabilities_active": len({r.capability for r in records}),
             "records": len(records),
             "sources_active": len(active_sources),
             "history_snapshots": history_dates_count,
@@ -243,7 +249,9 @@ def generate_site_data(
         result = next((r for r in results if r.source_id == s.source_id), None)
         run_status = result.status if result else ("disabled" if s.status == "disabled" else "skipped")
         recs = result.records if result else []
-        last_eval = max((r.evaluation_date or "" for r in recs), default=None)
+        last_eval = max((r.evaluation_date or "" for r in recs), default="") or None
+        last_snapshot = max((r.upstream_updated_at or "" for r in recs), default="") or None
+        evidence_dates = [date for date in (last_eval, last_snapshot) if date]
         # 数据驱动的 last_success：该来源记录的最大 fetched_at（内容不变则稳定）
         src_last_success = max((r.fetched_at for r in recs if r.fetched_at), default=None) \
             if run_status in ("ok", "degraded") else None
@@ -263,7 +271,7 @@ def generate_site_data(
             "record_count": len(recs),
             "last_success": src_last_success,
             "error_message": result.error_message if result else None,
-            "data_freshness": last_eval,
+            "data_freshness": max(evidence_dates) if evidence_dates else None,
         })
     health = {
         "generated_at": now,
@@ -339,6 +347,11 @@ def generate_site_data(
             if not r.model_is_unmapped and freshness_map.get(r.model_id, {}).get("is_current") is True
         }
         eval_dates = sorted((r.evaluation_date for r in primary_records if r.evaluation_date), reverse=True)
+        snapshot_dates = sorted(
+            (r.upstream_updated_at for r in primary_records if r.upstream_updated_at),
+            reverse=True,
+        )
+        evidence_dates = sorted([*eval_dates, *snapshot_dates], reverse=True)
         if current_ids:
             coverage_status = "current"
         elif cap_records:
@@ -362,6 +375,8 @@ def generate_site_data(
             "primary_benchmark_id": primary_bid,
             "primary_benchmark_name": primary.get("benchmark_name"),
             "latest_evaluation_date": eval_dates[0] if eval_dates else None,
+            "latest_snapshot_date": snapshot_dates[0] if snapshot_dates else None,
+            "latest_evidence_date": evidence_dates[0] if evidence_dates else None,
             "coverage_status": coverage_status,
             "has_composite": cap_id in capability_composites,
         }
@@ -379,7 +394,8 @@ def generate_site_data(
     heatmap_caps = [
         ("reasoning", None), ("math", None), ("coding", None),
         ("data_analysis", None), ("instruction_following", None), ("language", None),
-        ("swe", None), ("multimodal", None), ("chinese_mm", None), ("chart", None),
+        ("swe", None), ("agentic_general", None), ("tool_calling", None),
+        ("multimodal", None), ("chinese_mm", None), ("chart", None),
     ]
     heatmap = {"generated_at": now, "capabilities": [], "models": [], "cells": {}}
     model_order: list[str] = []
@@ -420,6 +436,7 @@ def generate_site_data(
                 "tie": row["tie"],
                 "agent_scaffold": rec.agent_scaffold,
                 "evaluation_date": rec.evaluation_date,
+                "upstream_updated_at": rec.upstream_updated_at,
             })
             if rec.model_id not in model_order:
                 model_order.append(rec.model_id)

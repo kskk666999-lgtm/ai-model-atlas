@@ -82,7 +82,7 @@ const capabilityReasoning = {
       source_id: 'livebench', source_name: 'LiveBench（官方）', source_level: 'B', source_url: 'https://livebench.ai/',
       model_id: 'gpt-5.2-high', raw_model_name: 'gpt-5.2-2025-12-11-high', model_is_unmapped: false,
       score: 96.2, score_unit: 'percent', higher_is_better: true, rank: 1, tie: false,
-      evaluation_date: '2026-06-25', evaluation_target_type: 'base_model', agent_scaffold: null,
+      evaluation_date: null, upstream_updated_at: '2026-08-29T01:34:09Z', evaluation_target_type: 'base_model', agent_scaffold: null,
       prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: 'test',
       fetched_at: '2026-08-30T00:00:00Z', provider: 'OpenAI', region: 'us', open_weights: false,
       record_verification_status: 'maintainer_verified',
@@ -93,7 +93,7 @@ const capabilityReasoning = {
       source_id: 'livebench', source_name: 'LiveBench（官方）', source_level: 'B', source_url: 'https://livebench.ai/',
       model_id: 'glm-5.3', raw_model_name: 'glm-5.3', model_is_unmapped: false,
       score: 90.1, score_unit: 'percent', higher_is_better: true, rank: 2, tie: false,
-      evaluation_date: '2026-06-25', evaluation_target_type: 'base_model', agent_scaffold: null,
+      evaluation_date: null, upstream_updated_at: '2026-08-29T01:34:09Z', evaluation_target_type: 'base_model', agent_scaffold: null,
       prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: 'test',
       fetched_at: '2026-08-30T00:00:00Z', provider: 'Zhipu AI', region: 'cn', open_weights: true,
       record_verification_status: 'maintainer_verified',
@@ -105,7 +105,7 @@ const capabilityReasoning = {
       source_id: 'livebench', source_name: 'LiveBench（官方）', source_level: 'B', source_url: 'https://livebench.ai/',
       model_id: 'unmapped--livebench--old-model', raw_model_name: 'Old-2024-Model', model_is_unmapped: true,
       score: 99.9, score_unit: 'percent', higher_is_better: true, rank: 1, tie: false,
-      evaluation_date: '2024-01-01', evaluation_target_type: 'base_model', agent_scaffold: null,
+      evaluation_date: null, upstream_updated_at: '2026-08-29T01:34:09Z', evaluation_target_type: 'base_model', agent_scaffold: null,
       prompt_mode: null, benchmark_version: '2026-06-25', sample_size: 24, notes: '',
       fetched_at: '2026-08-30T00:00:00Z', provider: null, region: null, open_weights: null,
       record_verification_status: 'unknown',
@@ -180,13 +180,13 @@ const capabilityCoding = {
     {
       ...capabilityReasoning.official[0],
       benchmark_id: 'livebench-coding', benchmark_name: 'LiveBench 编程', capability: 'coding',
-      raw_model_name: 'livebench-current-a', score: 91, rank: 1, evaluation_date: '2026-06-25',
+      raw_model_name: 'livebench-current-a', score: 91, rank: 1, evaluation_date: null,
     },
     {
       ...capabilityReasoning.official[0],
       benchmark_id: 'livebench-coding', benchmark_name: 'LiveBench 编程', capability: 'coding',
       model_id: 'qwen-current', raw_model_name: 'livebench-current-b', score: 89, rank: 2,
-      evaluation_date: '2026-06-25', is_current: true,
+      evaluation_date: null, is_current: true,
     },
   ],
   composite: null,
@@ -199,8 +199,8 @@ const heatmap = {
     {
       capability_id: 'reasoning', benchmark_id: 'livebench-reasoning', higher_is_better: true, score_unit: 'percent',
       cells: [
-        { model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, tie: false, agent_scaffold: null, evaluation_date: '2026-06-25' },
-        { model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', score: 90.1, rank: 2, tie: false, agent_scaffold: null, evaluation_date: '2026-06-25' },
+        { model_id: 'gpt-5.2-high', display_name: 'GPT-5.2 High', provider: 'OpenAI', score: 96.2, rank: 1, tie: false, agent_scaffold: null, evaluation_date: null, upstream_updated_at: '2026-08-29T01:34:09Z' },
+        { model_id: 'glm-5.3', display_name: 'GLM-5.3', provider: 'Zhipu AI', score: 90.1, rank: 2, tie: false, agent_scaffold: null, evaluation_date: null, upstream_updated_at: '2026-08-29T01:34:09Z' },
       ],
     },
   ],
@@ -278,7 +278,7 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.getAllByText('glm-5.3').length).toBeGreaterThan(0);
   });
 
-  it('Agent 榜默认 fail-closed 为 CURRENT，并分列发布与评测日期', async () => {
+  it('Agent 榜默认 fail-closed 为 CURRENT，并分列发布、运行与快照日期', async () => {
     window.location.hash = '#/leaderboard?cap=swe';
     render(<HashRouter><App /></HashRouter>);
     await waitFor(() => expect(screen.getAllByText(/SWE-bench Verified/).length).toBeGreaterThan(0));
@@ -287,7 +287,8 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.queryByText('Doubao-Seed-Code')).not.toBeInTheDocument();
     expect(screen.getByRole('columnheader', { name: /Agent 框架/ })).toBeInTheDocument();
     expect(screen.getByRole('columnheader', { name: /发布日期/ })).toBeInTheDocument();
-    expect(screen.getByRole('columnheader', { name: /评测日期/ })).toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: /评测运行日/ })).toBeInTheDocument();
+    expect(screen.getByRole('columnheader', { name: /榜单快照/ })).toBeInTheDocument();
     expect(screen.getAllByText('2025-12-11').length).toBeGreaterThan(0);
     expect(screen.getAllByText('2026-02-17').length).toBeGreaterThan(0);
 
@@ -304,7 +305,7 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.getAllByText(/仅提供官方原始榜/).length).toBeGreaterThan(0);
   });
 
-  it('点击分数打开溯源抽屉并显示验证状态与数据年龄', async () => {
+  it('点击分数打开溯源抽屉并显示验证状态与证据年龄', async () => {
     window.location.hash = '#/leaderboard?cap=reasoning';
     render(<HashRouter><App /></HashRouter>);
     await waitFor(() => expect(screen.getAllByText('96.2').length).toBeGreaterThan(0));
@@ -312,7 +313,9 @@ describe('前端核心路径（V2 口径）', () => {
     fireEvent.click(btn);
     await waitFor(() => expect(screen.getByText('数据溯源 · Data Provenance')).toBeInTheDocument());
     expect(screen.getByText('官方核验')).toBeInTheDocument();
-    expect(screen.getAllByText(/数据年龄/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/证据年龄/).length).toBeGreaterThan(0);
+    expect(screen.getByText(/来源未公开逐模型评测运行日/)).toBeInTheDocument();
+    expect(screen.getAllByText(/2026-08-29/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/精确数据文件/).length).toBeGreaterThan(0);
   });
 

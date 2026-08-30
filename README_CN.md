@@ -1,6 +1,6 @@
 # AI 模型天梯 · AI Model Atlas
 
-中文优先的「全球 AI 模型能力可视化排行榜」。汇总 LiveBench、SWE-bench、BigCodeBench、VLMEvalKit/OpenVLM、MTEB 等官方结构化评测结果，按能力独立成榜：推理、编程、数学、软件工程、中文、多模态、OCR、检索、价格、速度等。
+中文优先的「全球 AI 模型能力可视化排行榜」。汇总 LiveBench、SWE-bench、Terminal-Bench、BFCL、BigCodeBench、VLMEvalKit/OpenVLM、MTEB 等官方结构化评测结果，按能力独立成榜：推理、编程、数学、Agent 软件工程、终端 Agent、工具调用、Web Search、Agent Memory、中文、多模态、OCR、检索、价格、速度等。
 
 **纯静态 + 确定性流水线：网站运行和数据更新全程不调用任何大模型 API，不消耗大模型 Token。**
 
@@ -43,6 +43,8 @@ npm run dev                 # http://localhost:5173
 |---|---|---|
 | LiveBench 官方排行榜导出 | B | 推理 / 编程 / Agentic 编程 / 数学 / 数据分析 / 语言 / 指令遵循 + 官方统计价格 |
 | SWE-bench 官方实验仓库 | A | Verified / Lite / Bash-Only / Multilingual / Multimodal（模型+Agent 系统） |
+| Terminal-Bench 4.0 官方榜 | B | 真实终端任务中的完整模型+Agent 系统，含样本量与 95% 置信区间 |
+| Berkeley Function Calling Leaderboard V4 | B | 工具调用 / Web Search / Agent Memory，区分 FC、Prompt、Thinking 模式 |
 | BigCodeBench 官方结果 | A | 代码生成（complete / instruct） |
 | VLMEvalKit / OpenVLM 官方汇总 | A | 多模态、OCR、图表、中文多模态等 20+ 基准 |
 | MTEB 官方结果仓库 | A | Embedding 检索 / 重排 / 语义相似度 |
@@ -63,7 +65,7 @@ npm run dev                 # http://localhost:5173
 
 - **40+ 能力维度**：有可信数据的榜单正式展示，没有的显示"数据接入中"，不用模拟分数
 - **官方原始榜 / 综合指数双模式**：综合指数为本站计算并明确标注，公式公开
-- **每条分数可溯源**：点击任意分数打开"数据溯源抽屉"，看到来源、等级、版本、评测日期、Agent 框架和原始出处链接
+- **每条分数可溯源**：点击任意分数打开"数据溯源抽屉"，看到来源、等级、基准版本、评测运行日、榜单快照、Agent 框架和原始出处链接；缺失日期诚实显示 `—`
 - **能力雷达图、模型对比（2~6 个，URL 可分享）、场景推荐（纯规则）**
 - **首页右侧自动更新状态栏**：上次/下次更新时间、健康数据源数、最新数据 Commit、过期提示（移动端折叠为抽屉）
 - **模型名称规范化制度**：显式别名表 + 未知模型不丢弃不合并，写入 unmapped-models.json 等人工确认

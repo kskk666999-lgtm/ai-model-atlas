@@ -60,7 +60,7 @@ export function SourcesPage() {
             <dl className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 text-xs sm:grid-cols-4">
               <Item label="数据条数" value={s.record_count > 0 ? String(s.record_count) : '—'} />
               <Item label="最近成功更新" value={fmtDateTime(s.last_success)} />
-              <Item label="数据新鲜度" value={s.data_freshness || '—'} />
+              <Item label="最新评测 / 上游快照" value={fmtDateTime(s.data_freshness)} />
             </dl>
 
             {s.error_message && (

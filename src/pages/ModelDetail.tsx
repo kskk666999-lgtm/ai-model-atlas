@@ -161,7 +161,8 @@ export function ModelDetailPage() {
                 <th className="px-3 py-2 text-left">官方原始分</th>
                 <th className="px-3 py-2 text-left">类型</th>
                 <th className="px-3 py-2 text-left">来源</th>
-                <th className="px-3 py-2 text-left">评测日期</th>
+                <th className="px-3 py-2 text-left">评测运行日</th>
+                <th className="px-3 py-2 text-left">榜单快照</th>
               </tr>
             </thead>
             <tbody>
@@ -178,6 +179,7 @@ export function ModelDetailPage() {
                   <td className="px-3 py-2"><TypeBadge type={r.evaluation_target_type} /></td>
                   <td className="px-3 py-2"><LevelBadge level={r.source_level} /></td>
                   <td className="px-3 py-2"><span className="num text-slate-400">{fmtDate(r.evaluation_date)}</span></td>
+                  <td className="px-3 py-2"><span className="num text-slate-400">{fmtDate(r.upstream_updated_at)}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -216,7 +218,7 @@ export function ModelDetailPage() {
           <li>雷达图中的百分位是"相对位置"：参与计算的模型集合变化时数值会变化，不代表能力绝对值。</li>
           {!data.radar.length && <li>当前该模型没有通过质量门槛的能力百分位；请以下方官方原始分为准。</li>}
           <li>软件工程成绩（如有）属于「模型 + Agent 框架」系统表现，不能当作基础模型纯能力。</li>
-          <li>评测分数反映评测时点表现；"本站抓取时间"晚于"评测日期"不代表重新测评。</li>
+          <li>评测运行日、榜单快照与本站抓取时间含义不同；来源未公开运行日时显示 —，不会拿版本日期代替。</li>
         </ul>
       </section>
 

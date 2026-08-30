@@ -17,6 +17,8 @@ export interface CapabilityDef {
   primary_benchmark_id?: string | null;
   primary_benchmark_name?: string | null;
   latest_evaluation_date?: string | null;
+  latest_snapshot_date?: string | null;
+  latest_evidence_date?: string | null;
   coverage_status?: 'current' | 'history_only' | 'pending' | 'unavailable';
   has_composite: boolean;
 }
@@ -39,6 +41,8 @@ export const FALLBACK_CAPABILITIES: CapabilityDef[] = [
   { capability_id: 'math', name: '数学能力', short: '数学', group: 'text_reasoning', status: 'active', benchmark_count: 0, has_composite: false },
   { capability_id: 'coding', name: '编程能力', short: '编程', group: 'coding_agent', status: 'active', benchmark_count: 0, has_composite: false },
   { capability_id: 'swe', name: '软件工程（模型 + Agent 系统）', short: '软件工程', group: 'coding_agent', status: 'active', benchmark_count: 0, has_composite: false },
+  { capability_id: 'agentic_general', name: 'Agent 自主执行（电脑/终端）', short: 'Agent 通用', group: 'safety', status: 'active', benchmark_count: 0, has_composite: false },
+  { capability_id: 'tool_calling', name: '工具调用', short: '工具调用', group: 'safety', status: 'active', benchmark_count: 0, has_composite: false },
   { capability_id: 'multimodal', name: '多模态视觉理解', short: '多模态', group: 'multimodal', status: 'active', benchmark_count: 0, has_composite: false },
   { capability_id: 'chinese_mm', name: '中文多模态理解', short: '中文多模态', group: 'multimodal', status: 'active', benchmark_count: 0, has_composite: false },
 ];

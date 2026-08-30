@@ -95,6 +95,34 @@ benchmarks:
     higher_is_better: true
     score_unit: percent
 
+  # ===== Terminal-Bench（完整 Agent 系统）=====
+  - benchmark_id: terminalbench-4
+    benchmark_name: Terminal-Bench 4.0
+    source_id: terminalbench
+    capability: agentic_general
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== Berkeley Function Calling Leaderboard V4 =====
+  - benchmark_id: bfcl-v4-overall
+    benchmark_name: BFCL V4 工具调用综合
+    source_id: bfcl
+    capability: tool_calling
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: bfcl-v4-web-search
+    benchmark_name: BFCL V4 Web Search
+    source_id: bfcl
+    capability: search_research
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: bfcl-v4-memory
+    benchmark_name: BFCL V4 Memory
+    source_id: bfcl
+    capability: agent_memory
+    higher_is_better: true
+    score_unit: percent
+
   # ===== BigCodeBench =====
   - benchmark_id: bigcodebench-complete
     benchmark_name: BigCodeBench Complete

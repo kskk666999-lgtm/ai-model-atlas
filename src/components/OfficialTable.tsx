@@ -192,7 +192,11 @@ export function OfficialTable({
           cell: (info) => <span className="num text-xs text-slate-400">{fmtDate(info.getValue())}</span>,
         }),
         columnHelper.accessor('evaluation_date', {
-          header: '评测日期',
+          header: '评测运行日',
+          cell: (info) => <span className="num text-xs text-slate-400">{fmtDate(info.getValue())}</span>,
+        }),
+        columnHelper.accessor('upstream_updated_at', {
+          header: '榜单快照',
           cell: (info) => <span className="num text-xs text-slate-400">{fmtDate(info.getValue())}</span>,
         }),
         columnHelper.accessor('source_level', {

@@ -153,13 +153,18 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
         today = today_utc()
         out: dict[str, dict] = {}
         # 活跃来源"最新官方榜"兜底信号
-        lb_versions = [r.benchmark_version for r in all_records
-                       if r.source_id == "livebench" and r.benchmark_version]
-        lb_latest = max(lb_versions) if lb_versions else None
-        latest_board_models = {
-            r.model_id for r in all_records
-            if r.source_id == "livebench" and lb_latest and r.benchmark_version == lb_latest
-        }
+        latest_board_models: set[str] = set()
+        for board_source in ("livebench", "terminalbench"):
+            versions = [
+                r.benchmark_version for r in all_records
+                if r.source_id == board_source and r.benchmark_version
+            ]
+            latest = max(versions) if versions else None
+            latest_board_models.update({
+                r.model_id for r in all_records
+                if r.source_id == board_source and latest and r.benchmark_version == latest
+                and not r.model_is_unmapped
+            })
         swe_recent_models = {
             r.model_id for r in all_records
             if r.source_id == "swebench" and r.evaluation_date
@@ -241,7 +246,13 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
             coverage = current_count / len(distinct) if distinct else 0.0
             from .registry.freshness import parse_date as _pd
 
-            parsed = [d0 for d0 in (_pd(r.evaluation_date) for r in recs) if d0]
+            # Prefer a real per-model run date; otherwise use the upstream
+            # leaderboard/file snapshot. Benchmark versions are never dates.
+            parsed = [
+                d0 for d0 in (
+                    _pd(r.evaluation_date) or _pd(r.upstream_updated_at) for r in recs
+                ) if d0
+            ]
             recency_days = min((today - d0).days for d0 in parsed) if parsed else 9999
             recency = max(0.0, 1 - recency_days / 365)
             score = (0.45 * min(1.0, current_count / 20)
@@ -299,11 +310,11 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     composite_gates: dict[str, list[dict]] = {}
     for cap in caps_registry:
         cap_id = cap["capability_id"]
-        # SWE 为「模型 + Agent 系统」能力：只提供官方原始榜，不设综合指数
-        if cap_id == "swe":
+        # 完整 Agent 系统能力只提供官方原始榜，不折算基础模型指数。
+        if cap_id in {"swe", "agentic_general"}:
             composite_gates[cap_id] = [
-                {"reason": "软件工程成绩来自「模型 + Agent 框架」的完整系统，"
-                           "不能折算为基础模型能力百分位；请使用按分区/Scaffold 的官方原始榜"}
+                {"reason": "成绩来自「模型 + Agent 框架 + 推理档位」的完整系统，"
+                           "不能折算为基础模型能力百分位；请使用官方原始榜"}
             ]
             continue
         cap_records = [

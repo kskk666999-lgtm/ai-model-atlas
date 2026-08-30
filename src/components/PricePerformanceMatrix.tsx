@@ -13,7 +13,7 @@ export interface PricePerformancePoint {
   score: number;
   benchmarkCount: number;
   sourceCount: number;
-  evaluationDate: string | null;
+  evidenceDate: string | null;
   releaseDate: string | null;
   isCurrent: boolean;
 }
@@ -26,12 +26,13 @@ export function buildPricePerformancePoints(
   if (!coding.composite) return [];
 
   const modelById = new Map(index.models.map((model) => [model.model_id, model]));
-  const latestEvaluationById = new Map<string, string>();
+  const latestEvidenceById = new Map<string, string>();
   for (const row of coding.official) {
-    if (!row.evaluation_date) continue;
-    const previous = latestEvaluationById.get(row.model_id);
-    if (!previous || row.evaluation_date > previous) {
-      latestEvaluationById.set(row.model_id, row.evaluation_date);
+    const evidence = row.evaluation_date || row.upstream_updated_at;
+    if (!evidence) continue;
+    const previous = latestEvidenceById.get(row.model_id);
+    if (!previous || evidence > previous) {
+      latestEvidenceById.set(row.model_id, evidence);
     }
   }
 
@@ -49,7 +50,7 @@ export function buildPricePerformancePoints(
       score: composite.index,
       benchmarkCount: composite.benchmark_count,
       sourceCount: composite.source_count,
-      evaluationDate: latestEvaluationById.get(composite.model_id) ?? null,
+      evidenceDate: latestEvidenceById.get(composite.model_id) ?? null,
       releaseDate: model.release_date,
       isCurrent: model.is_current === true,
     });
@@ -175,7 +176,7 @@ interface ChartMeta {
   price: number;
   outputPrice: number | null;
   score: number;
-  evaluationDate: string | null;
+  evidenceDate: string | null;
   releaseDate: string | null;
   benchmarkCount: number;
   sourceCount: number;
@@ -230,7 +231,7 @@ function PriceMatrixChart({
             price: point.price,
             outputPrice: point.outputPrice,
             score: point.score,
-            evaluationDate: point.evaluationDate,
+            evidenceDate: point.evidenceDate,
             releaseDate: point.releaseDate,
             benchmarkCount: point.benchmarkCount,
             sourceCount: point.sourceCount,
@@ -300,7 +301,7 @@ function PriceMatrixChart({
               `编程相对百分位：${data.score.toFixed(1)}`,
               `证据：${data.benchmarkCount} 个基准 / ${data.sourceCount} 个来源`,
               `发布日期：${escapeChartHtml(data.releaseDate)}`,
-              `最近评测日期：${escapeChartHtml(data.evaluationDate)}`,
+              `最近证据日期：${escapeChartHtml(data.evidenceDate)}`,
             ].join('<br/>');
           },
         },
@@ -351,7 +352,7 @@ function PriceMatrixChart({
                 price: point.price,
                 outputPrice: point.outputPrice,
                 score: point.score,
-                evaluationDate: point.evaluationDate,
+                evidenceDate: point.evidenceDate,
                 releaseDate: point.releaseDate,
                 benchmarkCount: point.benchmarkCount,
                 sourceCount: point.sourceCount,
@@ -393,7 +394,7 @@ function PriceMatrixChart({
         aria-label={`编程性价比矩阵，${current.length} 个当前模型：${modelNames}`}
       />
       <p className="mt-2 text-xs leading-5 text-slate-500">
-        每个彩色点都标注模型名；青色大点位于 Pareto 前沿。悬停可核对输入/输出价格、发布日期、最近评测日期和证据数。
+        每个彩色点都标注模型名；青色大点位于 Pareto 前沿。悬停可核对输入/输出价格、发布日期、最近证据日期和证据数。
         {legacy.length > 0 && ' 灰色小点为手动展开的历史模型，不参与当前 Pareto 计算。'}
         {noPriceCount > 0 && ` 另有 ${noPriceCount} 条编程综合记录因缺少公开输入价未加入图表。`}
       </p>

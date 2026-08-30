@@ -11,8 +11,10 @@
 
 | source_id | 来源 | 等级 | 获取方式 | 说明 |
 |---|---|---|---|---|
-| `livebench` | [LiveBench](https://livebench.ai)（官方） | B | 官网 `table_<release>.csv` / `categories_<release>.json` / `cost_<release>.csv` | release 版本号取自官网前端构建产物；类别分数按官方类别对任务取平均；价格列为 LiveBench 官方统计的 API 标价 |
+| `livebench` | [LiveBench](https://livebench.ai)（官方） | B | 官网 `table_<release>.csv` / `categories_<release>.json` / `cost_<release>.csv` | release（如 `2026-06-25`）是基准/题集版本，不是逐模型评测日期；类别分数按官方类别对任务取平均；榜单快照取官方文件 `Last-Modified`；价格列为 LiveBench 官方统计的 API 标价 |
 | `swebench` | [SWE-bench Official Experiments](https://github.com/SWE-bench/experiments)（官方） | A | GitHub 仓库 `evaluation/<split>/<run>/` | verified 分区读 `results/results.json`（resolved/500），其余分区读 `metadata.yaml` 的 `info.resolved`；只收录官方核验（checked/verified）通过的运行；所有成绩为「模型 + Agent 框架」系统级结果 |
+| `terminalbench` | [Terminal-Bench 4.0](https://www.tbench.ai/?version=4.0)（官方） | B | 官网服务端结构化榜单数据 | 覆盖完整「模型 + Agent」终端任务系统；保留 Agent、推理档位、330 题样本量、95% 置信区间和榜单更新时间；官方未提供逐提交运行日 |
+| `bfcl` | [Berkeley Function Calling Leaderboard V4](https://gorilla.cs.berkeley.edu/leaderboard.html)（官方） | B | 官方 `data_overall.csv` | 覆盖工具调用综合准确率、Web Search 和 Memory；FC / Prompt / Thinking 模式分别保留；官方未提供逐模型运行日，榜单快照取文件 `Last-Modified` |
 | `bigcodebench` | [BigCodeBench 官方结果数据集](https://huggingface.co/datasets/bigcode/bigcodebench-results) | A | HF parquet | complete / instruct 两种模式的官方通过率 |
 | `vlmevalkit` | [OpenVLM 官方汇总](http://opencompass.openxlab.space/assets/OpenVLM.json)（VLMEvalKit / OpenCompass 官方） | A | 官方 JSON 资产 | 200+ 模型 × 20+ 多模态基准的官方复现 Overall 分；detail-high/low 作为变体区分 |
 | `mteb` | [embeddings-benchmark/results](https://github.com/embeddings-benchmark/results)（官方） | A | GitHub 仓库按模型按任务 JSON | 代表性任务（检索 / 重排 / 语义相似度），记录版本 commit sha |
@@ -28,6 +30,7 @@
 
 ## 数据完整性机制
 
+- 日期分四类保存并分列展示：**模型发布日期**、**评测运行日**、**基准/题集版本**、**上游榜单快照时间**。来源没有发布逐模型运行日时显示 `—`，不会拿版本号、发布日期、抓取时间冒充
 - 每个来源独立运行、独立失败：一个来源挂掉不影响其他榜单，该来源自动回退到**上次成功数据**（Last Known Good，随仓库保存在 `data/cache/records/`）
 - 前台 `数据来源` 页展示每个来源的实时健康状态（`public/data/source-health.json`）
 - 核心校验失败（结构 / 方向 / 能力映射不一致）时流水线以退出码 2 终止，**绝不覆盖线上数据**

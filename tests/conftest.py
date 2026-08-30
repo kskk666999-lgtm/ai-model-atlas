@@ -19,10 +19,14 @@ class MockHttpClient:
 
     def __init__(self) -> None:
         self.routes: dict = {}
+        self.metadata_routes: dict[str, dict] = {}
         self.calls: list[str] = []
 
     def set(self, url: str, value) -> None:
         self.routes[url] = value
+
+    def set_metadata(self, url: str, value: dict) -> None:
+        self.metadata_routes[url] = value
 
     def get(self, url: str, use_cache: bool = True) -> bytes:
         self.calls.append(url)
@@ -39,6 +43,9 @@ class MockHttpClient:
         import json
 
         return json.loads(self.get(url).decode("utf-8"))
+
+    def metadata(self, url: str) -> dict:
+        return self.metadata_routes.get(url, {})
 
     def close(self) -> None:
         pass

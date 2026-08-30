@@ -48,6 +48,16 @@ aliases:
   "Devstral (2512)": devstral-2512
   "Devstral Small (2512)": devstral-small-2512
 
+  # ===== Terminal-Bench 4.0 官方展示名 =====
+  "Opus 5": claude-opus-5-max-effort
+  "Fable 5": claude-fable-5-max-effort
+  "GPT-5.6 Sol": gpt-5.6-sol-max
+  "Opus 4.8": claude-opus-4-8-max-effort
+  "GPT-5.6 Terra": gpt-5.6-terra-max
+  "Grok 4.6": grok-4.6
+  "GPT-5.6 Luna": gpt-5.6-luna-max
+  "Grok 4.5": grok-4.5
+
   # ===== LiveBench 常见写法 =====
   "DeepSeek-V3-0324": deepseek-v3-0324
   "DeepSeek-R1-0528": deepseek-r1-0528

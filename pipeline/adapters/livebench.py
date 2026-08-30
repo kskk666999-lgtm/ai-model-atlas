@@ -15,6 +15,7 @@ import io
 import json
 import re
 
+from ..utils.http import http_date_to_iso
 from .base import AdapterError, BaseAdapter
 
 SITE_BASE = "https://livebench.ai"
@@ -76,6 +77,8 @@ class LiveBenchAdapter(BaseAdapter):
         table_url = f"{SITE_BASE}/table_{token}.csv"
         cost_url = f"{SITE_BASE}/cost_{token}.csv"
         table_body = self.http.get(table_url)
+        table_meta = self.http.metadata(table_url)
+        snapshot_at = http_date_to_iso(table_meta.get("last_modified")) or table_meta.get("fetched_at")
         table_sha = hashlib.sha256(table_body).hexdigest()
         table = csv.DictReader(io.StringIO(table_body.decode("utf-8")))
         rows = list(table)
@@ -111,23 +114,31 @@ class LiveBenchAdapter(BaseAdapter):
                     benchmark_id=benchmark_id,
                     raw_model_name=model,
                     score=mean_score,
-                    evaluation_date=release,
+                    # `release` is the benchmark/question-set version. The
+                    # export has no per-model evaluation run date.
+                    evaluation_date=None,
                     benchmark_version=release,
                     source_url=f"{SITE_BASE}/",
                     record_verification_status="maintainer_verified",
                     data_file_url=table_url,
                     data_json_path=f"csv: model={model}, 类别={category} 的 {len(scores)} 个任务列",
                     data_sha256=table_sha,
-                    upstream_updated_at=release,
-                    notes=f"官方排行榜导出；release={release}；任务数={len(scores)}（官方类别平均）",
+                    upstream_updated_at=snapshot_at,
+                    notes=(f"官方排行榜导出；基准版本={release}；任务数={len(scores)}"
+                           "（官方类别平均）；上游未提供逐模型评测运行日"),
                 ))
 
         # 官方价格（每百万 Token，美元）
         try:
-            cost_rows = list(csv.DictReader(io.StringIO(
-                self.http.get(f"{SITE_BASE}/cost_{token}.csv").decode("utf-8"))))
+            cost_body = self.http.get(cost_url)
+            cost_rows = list(csv.DictReader(io.StringIO(cost_body.decode("utf-8"))))
+            cost_meta = self.http.metadata(cost_url)
+            cost_snapshot_at = (
+                http_date_to_iso(cost_meta.get("last_modified")) or cost_meta.get("fetched_at")
+            )
         except Exception:
             cost_rows = []
+            cost_snapshot_at = None
         for row in cost_rows:
             model = (row.get("model") or "").strip()
             if not model:
@@ -147,13 +158,15 @@ class LiveBenchAdapter(BaseAdapter):
                     benchmark_id=benchmark_id,
                     raw_model_name=model,
                     score=price,
-                    evaluation_date=release,
+                    evaluation_date=None,
                     benchmark_version=release,
                     source_url=f"{SITE_BASE}/",
                     record_verification_status="maintainer_verified",
                     data_file_url=cost_url,
                     data_json_path=f"csv: model={model}, 列={col}",
-                    notes="LiveBench 官方统计的 API 价格（USD / 1M tokens）",
+                    upstream_updated_at=cost_snapshot_at,
+                    notes=("LiveBench 官方统计的 API 价格（USD / 1M tokens）；"
+                           "基准版本不是逐模型评测日期"),
                 ))
 
         if not records:

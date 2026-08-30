@@ -93,6 +93,9 @@ export interface OfficialRow {
   prompt_mode: string | null;
   benchmark_version: string | null;
   sample_size: number | null;
+  confidence_interval_low?: number | null;
+  confidence_interval_high?: number | null;
+  published_at?: string | null;
   notes?: string | null;
   fetched_at: string;
   record_verification_status?: 'maintainer_verified' | 'third_party_submitted' | 'unknown';

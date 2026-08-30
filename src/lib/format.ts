@@ -2,6 +2,8 @@ import type { OfficialRow } from '@/types/data';
 
 export function fmtDate(iso: string | null | undefined): string {
   if (!iso) return '—';
+  const compact = iso.match(/^(\d{4})(\d{2})(\d{2})(?:\d{6})?$/);
+  if (compact) return `${compact[1]}-${compact[2]}-${compact[3]}`;
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso.slice(0, 10);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -9,6 +11,10 @@ export function fmtDate(iso: string | null | undefined): string {
 
 export function fmtDateTime(iso: string | null | undefined): string {
   if (!iso) return '—';
+  const compact = iso.match(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/);
+  if (compact) {
+    return `${compact[1]}-${compact[2]}-${compact[3]} ${compact[4]}:${compact[5]}`;
+  }
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
   return `${fmtDate(iso)} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;

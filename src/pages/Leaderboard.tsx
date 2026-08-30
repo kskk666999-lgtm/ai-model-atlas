@@ -65,15 +65,15 @@ export function LeaderboardPage() {
   if (!capMeta) return <EmptyState title="未知能力" />;
 
   const activeCaps = capabilities.filter((c) => c.status === 'active');
-  const isSwe = capId === 'swe';
+  const isAgentSystem = capId === 'swe' || capId === 'agentic_general';
 
   return (
     <div className="space-y-5">
       <header>
         <h1 className="text-2xl font-bold text-slate-100">能力榜单 · {capMeta.name}</h1>
         <p className="mt-1 text-sm text-slate-400">
-          {isSwe
-            ? 'SWE-bench 系列成绩来自「模型 + Agent 框架」的完整系统，不设综合指数；请按分区与 Scaffold 阅读。'
+          {isAgentSystem
+            ? '该成绩来自「模型 + Agent 框架 + 推理档位」的完整系统，不设基础模型综合指数；请按基准与 Scaffold 阅读。'
             : '默认展示官方原始成绩；"本站相对百分位"为次级参考，仅在数据质量门槛全部通过时提供。'}
         </p>
         {capMeta.description && (
@@ -201,13 +201,13 @@ export function LeaderboardPage() {
                       </option>
                     ))}
                   </select>
-                  <FilterBar filters={filters} setFilters={setFilters} providers={providers} showAgentToggle={!isSwe} />
+                  <FilterBar filters={filters} setFilters={setFilters} providers={providers} showAgentToggle={!isAgentSystem} />
                 </div>
               </div>
-              <OfficialTable rows={rows} onPick={setPicked} showAgentColumn={isSwe} showFreshness />
-              {isSwe && (
+              <OfficialTable rows={rows} onPick={setPicked} showAgentColumn={isAgentSystem} showFreshness />
+              {isAgentSystem && (
                 <div className="rounded-xl border border-violet-400/25 bg-violet-400/5 px-4 py-3 text-xs leading-6 text-violet-200/90">
-                  说明：SWE-bench 分数反映的是「模型 + Agent 框架 + 推理预算」的完整系统表现，不是基础模型的纯能力。
+                  说明：该分数反映「模型 + Agent 框架 + 推理预算」的完整系统表现，不是基础模型的纯能力。
                   同一模型在不同 Agent 框架下的运行分别成行；跨 Scaffold 比较请先在"切换基准"中选定同一分区，
                   并核对 Agent 框架列是否一致。
                 </div>

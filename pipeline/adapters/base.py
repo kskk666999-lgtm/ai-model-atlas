@@ -160,8 +160,9 @@ class BaseAdapter(ABC):
 
     def make_record(self, benchmark_id: str, raw_model_name: str, score: float, **kwargs) -> BenchmarkRecord:
         b = self.bench(benchmark_id)
+        normalization_name = kwargs.pop("normalization_name", raw_model_name)
         model_id, is_unmapped = self.normalizer.normalize(
-            raw_model_name, self.source.source_id, example_url=kwargs.get("source_url")
+            normalization_name, self.source.source_id, example_url=kwargs.get("source_url")
         )
         rec = BenchmarkRecord(
             source_id=self.source.source_id,

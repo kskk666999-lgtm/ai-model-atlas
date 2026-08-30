@@ -33,6 +33,38 @@ sources:
     status: active
     docs_url: https://github.com/SWE-bench/experiments
 
+  - source_id: terminalbench
+    source_name: Terminal-Bench 4.0（官方）
+    source_level: B
+    homepage_url: https://www.tbench.ai/?version=4.0
+    method: official_server_rendered_leaderboard
+    description: >
+      Terminal-Bench 4.0 官方榜单的服务端结构化数据，评测模型与 Agent 在真实终端任务中的
+      完整系统成功率，并保留 Agent、推理档位、样本量、置信区间和榜单更新时间。
+      官方未公开逐条评测运行日，本站不会用模型发布日期或榜单版本冒充。
+    license: 数据遵循 Terminal-Bench 官方发布条款
+    attribution: "数据来源：Terminal-Bench 4.0 Official Leaderboard (tbench.ai)"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://github.com/laude-institute/terminal-bench
+
+  - source_id: bfcl
+    source_name: Berkeley Function Calling Leaderboard V4（官方）
+    source_level: B
+    homepage_url: https://gorilla.cs.berkeley.edu/leaderboard.html
+    method: official_csv_export
+    description: >
+      UC Berkeley BFCL V4 官方 CSV，覆盖函数/工具调用综合准确率、Web Search 与 Memory，
+      并将 FC、Prompt、Thinking 等提交模式作为独立变体保留。官方未公开逐模型评测运行日，
+      数据新鲜度取官方文件 Last-Modified。
+    license: 数据遵循 BFCL / Gorilla 官方发布条款
+    attribution: "数据来源：Berkeley Function Calling Leaderboard (gorilla.cs.berkeley.edu)"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard
+
   - source_id: bigcodebench
     source_name: BigCodeBench（官方）
     source_level: A
