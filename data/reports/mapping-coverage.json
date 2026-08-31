@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T20:53:28Z",
+ "generated_at": "2026-08-31T03:46:57Z",
  "benchmarks": [
   {
    "benchmark_id": "bfcl-v4-memory",
@@ -58,6 +58,18 @@
    "distinct_models": 126,
    "mapped_distinct_models": 9,
    "mapped_rate": 0.0714,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "kernelbench-v-hard",
+   "sources": [
+    "kernelbench"
+   ],
+   "total_records": 19,
+   "distinct_models": 16,
+   "mapped_distinct_models": 13,
+   "mapped_rate": 0.8125,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -454,6 +466,162 @@
    "distinct_models": 223,
    "mapped_distinct_models": 18,
    "mapped_rate": 0.0807,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-agent-planning",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-agentic-coding",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-general",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-hallucination-control",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-longcontext-1m",
+   "sources": [
+    "superclue_longcontext"
+   ],
+   "total_records": 8,
+   "distinct_models": 8,
+   "mapped_distinct_models": 8,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-longcontext-256k",
+   "sources": [
+    "superclue_longcontext"
+   ],
+   "total_records": 11,
+   "distinct_models": 11,
+   "mapped_distinct_models": 11,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-math",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-precise-instruction",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-science-reasoning",
+   "sources": [
+    "superclue"
+   ],
+   "total_records": 13,
+   "distinct_models": 12,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 1.0,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-vlm-application",
+   "sources": [
+    "superclue_vlm"
+   ],
+   "total_records": 13,
+   "distinct_models": 13,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 0.9231,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-vlm-cognition",
+   "sources": [
+    "superclue_vlm"
+   ],
+   "total_records": 13,
+   "distinct_models": 13,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 0.9231,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-vlm-overall",
+   "sources": [
+    "superclue_vlm"
+   ],
+   "total_records": 13,
+   "distinct_models": 13,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 0.9231,
+   "eligible_for_composite": false,
+   "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
+  },
+  {
+   "benchmark_id": "superclue-vlm-reasoning",
+   "sources": [
+    "superclue_vlm"
+   ],
+   "total_records": 13,
+   "distinct_models": 13,
+   "mapped_distinct_models": 12,
+   "mapped_rate": 0.9231,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },

@@ -7,6 +7,7 @@
 | bfcl-v4-web-search | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| kernelbench-v-hard | kernelbench | 19 | 16 | 13 | 81% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-agentic-coding | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
 | livebench-coding | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
 | livebench-data-analysis | livebench | 49 | 49 | 49 | 100% | ✅ | 通过门槛 |
@@ -40,6 +41,19 @@
 | ovl-realworldqa | vlmevalkit | 235 | 232 | 20 | 9% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | ovl-scienceqa-test | vlmevalkit | 218 | 217 | 16 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | ovl-seedbench-img | vlmevalkit | 226 | 223 | 18 | 8% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-agent-planning | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-agentic-coding | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-general | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-hallucination-control | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-longcontext-1m | superclue_longcontext | 8 | 8 | 8 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-longcontext-256k | superclue_longcontext | 11 | 11 | 11 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-math | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-precise-instruction | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-science-reasoning | superclue | 13 | 12 | 12 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-vlm-application | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-vlm-cognition | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-vlm-overall | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| superclue-vlm-reasoning | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-bash-only | swebench | 45 | 45 | 37 | 82% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-multilingual | swebench | 13 | 13 | 11 | 85% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-verified | swebench | 112 | 54 | 14 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |

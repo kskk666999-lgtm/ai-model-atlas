@@ -1,5 +1,5 @@
 {
-  "count": 517,
+  "count": 521,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1900,6 +1900,13 @@
       "temp_id": "unmapped--bfcl--qwen3-8b"
     },
     {
+      "example_url": "https://www.superclueai.com/",
+      "occurrences": 4,
+      "raw_name": "DeepSeek 识图模式",
+      "source_id": "superclue_vlm",
+      "temp_id": "unmapped--superclue_vlm--deepseek"
+    },
+    {
       "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
       "occurrences": 3,
       "raw_name": "Amazon-Nova-2-Lite-v1:0",
@@ -3361,6 +3368,27 @@
       "raw_name": "Yi-1.5-9B",
       "source_id": "bigcodebench",
       "temp_id": "unmapped--bigcodebench--yi-1.5-9b"
+    },
+    {
+      "example_url": "https://kernelbench.com/",
+      "occurrences": 1,
+      "raw_name": "kinetic-0715",
+      "source_id": "kernelbench",
+      "temp_id": "unmapped--kernelbench--kinetic-0715"
+    },
+    {
+      "example_url": "https://kernelbench.com/",
+      "occurrences": 1,
+      "raw_name": "kinetic-0715[1m]",
+      "source_id": "kernelbench",
+      "temp_id": "unmapped--kernelbench--kinetic-0715-1m"
+    },
+    {
+      "example_url": "https://kernelbench.com/",
+      "occurrences": 1,
+      "raw_name": "stealth/ox-alpha",
+      "source_id": "kernelbench",
+      "temp_id": "unmapped--kernelbench--stealth-ox-alpha"
     },
     {
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250203_openhands_4x_scaled",
