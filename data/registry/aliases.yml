@@ -58,6 +58,17 @@ aliases:
   "GPT-5.6 Luna": gpt-5.6-luna-max
   "Grok 4.5": grok-4.5
 
+  # ===== SuperCLUE / KernelBench.com 当前榜写法 =====
+  "claude-opus-4-8": claude-opus-4-8-max-effort
+  "Claude-Opus-4.8": claude-opus-4-8-max-effort
+  "anthropic/claude-fable-5": claude-fable-5-max-effort
+  "claude-fable-5": claude-fable-5-max-effort
+  "anthropic/claude-opus-5": claude-opus-5-max-effort
+  "gpt-5.6-sol": gpt-5.6-sol-max
+  "deepseek/deepseek-v4-flash-0731": deepseek-v4-flash-0731
+  "qwen/qwen3.8-max": qwen3.8-max
+  "Doubao-Seed-2.1-Pro-260628": doubao-seed-2.1-pro
+
   # ===== LiveBench 常见写法 =====
   "DeepSeek-V3-0324": deepseek-v3-0324
   "DeepSeek-R1-0528": deepseek-r1-0528

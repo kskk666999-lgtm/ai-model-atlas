@@ -7,14 +7,22 @@ from .artificialanalysis import ArtificialAnalysisAdapter
 from .base import AdapterError, BaseAdapter, build_adapter_runtime
 from .bfcl import BFCLAdapter
 from .bigcodebench import BigCodeBenchAdapter
+from .kernelbench import KernelBenchAdapter
 from .livebench import LiveBenchAdapter
 from .mteb import MTEBAdapter
+from .superclue import SuperCLUEAdapter
+from .superclue_longcontext import SuperCLUELongContextAdapter
+from .superclue_vlm import SuperCLUEVLMAdapter
 from .swebench import SWEBenchAdapter
 from .terminalbench import TerminalBenchAdapter
 from .vlmevalkit import VLMEvalKitAdapter
 
 ADAPTERS: dict[str, type[BaseAdapter]] = {
     "livebench": LiveBenchAdapter,
+    "superclue": SuperCLUEAdapter,
+    "superclue_longcontext": SuperCLUELongContextAdapter,
+    "superclue_vlm": SuperCLUEVLMAdapter,
+    "kernelbench": KernelBenchAdapter,
     "swebench": SWEBenchAdapter,
     "terminalbench": TerminalBenchAdapter,
     "bfcl": BFCLAdapter,
@@ -32,6 +40,10 @@ __all__ = [
     "BFCLAdapter",
     "BigCodeBenchAdapter",
     "LiveBenchAdapter",
+    "SuperCLUEAdapter",
+    "SuperCLUELongContextAdapter",
+    "SuperCLUEVLMAdapter",
+    "KernelBenchAdapter",
     "MTEBAdapter",
     "SWEBenchAdapter",
     "TerminalBenchAdapter",

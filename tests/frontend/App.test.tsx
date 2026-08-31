@@ -259,6 +259,12 @@ describe('前端核心路径（V2 口径）', () => {
     expect(screen.getByRole('button', { name: '数学' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '数据分析' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '指令遵循' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '中文综合' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '中文 Agent 编程' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'GPU 内核' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '视觉推理' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '长上下文' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '幻觉控制' })).toBeInTheDocument();
   });
 
   it('首页热力图渲染官方原始分', async () => {
@@ -275,7 +281,7 @@ describe('前端核心路径（V2 口径）', () => {
     const input = screen.getByLabelText('搜索模型');
     fireEvent.change(input, { target: { value: 'glm' } });
     await waitFor(() => expect(screen.queryAllByText('gpt-5.2-2025-12-11-high').length).toBe(0));
-    expect(screen.getAllByText('glm-5.3').length).toBeGreaterThan(0);
+    await waitFor(() => expect(screen.getAllByText('glm-5.3').length).toBeGreaterThan(0));
   });
 
   it('Agent 榜默认 fail-closed 为 CURRENT，并分列发布、运行与快照日期', async () => {
@@ -302,7 +308,7 @@ describe('前端核心路径（V2 口径）', () => {
     await screen.findAllByRole('tab', { name: /本站相对百分位/ }).then((tabs) => {
       expect(tabs[0]).toHaveAttribute('disabled'); // mock 数据为单基准 -> 门槛禁用
     });
-    expect(screen.getAllByText(/仅提供官方原始榜/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/仅提供来源原始榜/).length).toBeGreaterThan(0);
   });
 
   it('点击分数打开溯源抽屉并显示验证状态与证据年龄', async () => {
@@ -333,7 +339,7 @@ describe('前端核心路径（V2 口径）', () => {
     expect(await screen.findByText('livebench-current-a')).toBeInTheDocument();
     expect(screen.getByText('livebench-current-b')).toBeInTheDocument();
     expect(screen.queryByText('bigcode-current-only')).not.toBeInTheDocument();
-    expect(screen.getByText(/2 个当前模型 \/ 2 条记录/)).toBeInTheDocument();
+    expect(screen.getByText(/2 个当前模型 \/ 2 条当前记录 \/ 2 条总记录/)).toBeInTheDocument();
   });
 
   it('首页默认仅当前模型：unmapped 与 legacy 不进主榜', async () => {

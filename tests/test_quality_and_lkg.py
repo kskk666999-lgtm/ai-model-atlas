@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import pytest
 
+from pipeline.update import _composite_candidate_records, _has_recent_evidence
 from pipeline.validation.quality import dedupe_conflicting, validate_records
 
 
@@ -43,6 +44,53 @@ def test_livebench_version_cannot_masquerade_as_evaluation_date(
     rec.source_id = "livebench"
     errors, _ = validate_records([rec], benchmarks)
     assert any("不得把基准版本" in error for error in errors)
+
+
+def test_source_registry_can_exclude_raw_boards_from_composite(
+    sample_source, normalizer, benchmarks,
+):
+    from types import SimpleNamespace
+
+    from tests.adapters.test_base import build
+
+    adapter = build(None, None, sample_source, normalizer, benchmarks, None,
+                    parse_fn=lambda b, a: [])
+    included = adapter.make_record("bench-x", "test-model-a", 50.0)
+    included.source_id = "included"
+    raw_only = adapter.make_record("bench-y", "test-model-b", 60.0)
+    raw_only.source_id = "raw-only"
+    sources = [
+        SimpleNamespace(source_id="included", included_in_composite=True),
+        SimpleNamespace(source_id="raw-only", included_in_composite=False),
+    ]
+
+    selected = _composite_candidate_records([included, raw_only], sources)
+
+    assert [record.benchmark_id for record in selected] == ["bench-x"]
+
+
+def test_current_board_fallback_requires_recent_real_evidence_date(
+    sample_source, normalizer, benchmarks,
+):
+    from datetime import date
+
+    from tests.adapters.test_base import build
+
+    adapter = build(None, None, sample_source, normalizer, benchmarks, None,
+                    parse_fn=lambda b, a: [])
+    recent = adapter.make_record(
+        "bench-x", "test-model-a", 50.0,
+        benchmark_version="2026-07",
+        evaluation_date=None,
+        upstream_updated_at="2026-08-18T05:06:25Z",
+    )
+    stale = recent.model_copy(update={"upstream_updated_at": "2025-04-17T00:00:00Z"})
+    version_only = recent.model_copy(update={"upstream_updated_at": None})
+
+    today = date(2026, 8, 31)
+    assert _has_recent_evidence(recent, today)
+    assert not _has_recent_evidence(stale, today)
+    assert not _has_recent_evidence(version_only, today)
 
 
 def test_duplicate_same_score_deduped(sample_source, normalizer, benchmarks):

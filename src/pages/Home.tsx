@@ -40,14 +40,24 @@ type TabId =
   | 'data_analysis'
   | 'instruction_following'
   | 'language'
+  | 'chinese_general'
+  | 'chinese_math'
+  | 'chinese_science'
+  | 'precise_instruction_cn'
   | 'agent'
   | 'agent_terminal'
+  | 'agentic_coding_cn'
+  | 'agent_planning_cn'
+  | 'gpu_kernel'
   | 'tool_calling'
   | 'search_research'
   | 'agent_memory'
   | 'multimodal'
+  | 'visual_reasoning'
   | 'chinese_mm'
   | 'chart'
+  | 'long_context'
+  | 'robustness'
   | 'retrieval'
   | 'value';
 
@@ -58,14 +68,24 @@ const TABS: { id: TabId; label: string; note: string }[] = [
   { id: 'data_analysis', label: '数据分析', note: 'LiveBench 官方数据分析类别平均（原始分）' },
   { id: 'instruction_following', label: '指令遵循', note: 'LiveBench 官方指令遵循类别平均（原始分）' },
   { id: 'language', label: '语言理解（英文）', note: 'LiveBench 官方英文语言类别平均；不冒充中文能力' },
+  { id: 'chinese_general', label: '中文综合', note: 'SuperCLUE 最新月度中文原生开放题总榜；数学、科学、可靠性、指令与 Agent 分项另列' },
+  { id: 'chinese_math', label: '中文数学', note: 'SuperCLUE 最新月度中文数学推理原始分；不与英文数学榜混算' },
+  { id: 'chinese_science', label: '中文科学', note: 'SuperCLUE 最新月度中文科学推理原始分' },
+  { id: 'precise_instruction_cn', label: '中文精确指令', note: 'SuperCLUE 中文原生精确指令遵循分项；与英文指令榜分列' },
   { id: 'agent', label: 'Agent 软件工程', note: 'SWE-bench 当前覆盖优先 · 模型 + Agent 框架系统成绩' },
   { id: 'agent_terminal', label: '终端 Agent', note: 'Terminal-Bench 4.0 官方完整系统成功率 · 模型 + Agent + 推理档位' },
+  { id: 'agentic_coding_cn', label: '中文 Agent 编程', note: 'SuperCLUE 中文原生智能体编程分项，保留模型推理档位' },
+  { id: 'agent_planning_cn', label: '中文任务规划', note: 'SuperCLUE 中文原生智能体任务规划分项' },
+  { id: 'gpu_kernel', label: 'GPU 内核', note: 'KernelBench.com v-hard 固定六题；reward-hack 不计分，未完成题仍计入分母' },
   { id: 'tool_calling', label: '工具调用', note: 'BFCL V4 官方综合准确率 · FC / Prompt / Thinking 模式分列' },
   { id: 'search_research', label: '搜索执行', note: 'BFCL V4 Web Search 子榜；不冒充完整深度研究报告质量' },
   { id: 'agent_memory', label: 'Agent 记忆', note: 'BFCL V4 Memory 子榜 · KV / 向量 / 递归摘要场景' },
-  { id: 'multimodal', label: '多模态', note: 'OpenCompass / VLMEvalKit 官方复现结果；若无当前覆盖则明确留空' },
-  { id: 'chinese_mm', label: '中文能力证据', note: '当前仅有中文多模态基准，不代表中文写作、问答、翻译或综合中文能力' },
+  { id: 'multimodal', label: '多模态', note: '当前主榜为 SuperCLUE-VLM 最新月度官方 XLSX；VLMEvalKit 旧结果仅保留为历史明细' },
+  { id: 'visual_reasoning', label: '视觉推理', note: 'SuperCLUE-VLM 视觉推理分项；与基础视觉认知、视觉应用分列' },
+  { id: 'chinese_mm', label: '中文多模态', note: 'MMBench 中文与 CCBench 历史明细；不代表中文写作、问答、翻译或综合中文能力' },
   { id: 'chart', label: '图表理解', note: '视觉数学与图表理解官方复现结果；当前覆盖不足时不拿旧模型补位' },
+  { id: 'long_context', label: '长上下文', note: 'SuperCLUE-LongContext 中文多轮检索实测，256K 与 1M 分榜展示；不拿标称窗口冒充能力' },
+  { id: 'robustness', label: '幻觉控制', note: 'SuperCLUE 中文原生幻觉控制分项；不等同于越狱抵抗或全部安全能力' },
   { id: 'retrieval', label: '信息检索', note: 'MTEB 官方结果；这是 Embedding 检索能力，不是聊天模型综合能力' },
   { id: 'value', label: '编程性价比', note: '编程相对百分位 ÷ 输入价格（客户端计算，公开公式）' },
 ];
@@ -104,7 +124,7 @@ export function HomePage() {
             <span className="bg-gradient-to-r from-cyan-300 to-violet-400 bg-clip-text text-transparent">对照榜</span>
           </h1>
           <p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-400">
-            官方原始分为主，本站计算一律标注为相对百分位。每条分数可点开溯源。
+            来源发布的原始分为主，本站计算一律标注为相对百分位。每条分数可点开溯源。
             首页默认只显示当前活跃模型。
           </p>
         </div>
@@ -166,7 +186,7 @@ export function HomePage() {
               key={officialCap}
               capId={officialCap}
               preferredBenchmarkId={home?.top3?.[officialCap]?.benchmark_id}
-              highlightAgent={tab === 'agent' || tab === 'agent_terminal'}
+              highlightAgent={tab === 'agent' || tab === 'agent_terminal' || tab === 'gpu_kernel'}
               index={index}
             />
           )}
@@ -180,7 +200,7 @@ export function HomePage() {
         <section className="panel px-5 py-6">
           <div className="flex flex-wrap items-baseline gap-3">
             <h2 className="text-lg font-bold text-slate-100">能力 × 模型热力图</h2>
-            <span className="badge">官方原始分 · 仅当前模型 · 每行取主基准 Top 12</span>
+            <span className="badge">来源原始分 · 仅当前模型 · 每行取主基准 Top 12</span>
           </div>
           <p className="mt-1 text-xs text-slate-500">
             颜色深浅为同一能力内的相对高低；— 表示无数据（不计为 0）。
@@ -389,8 +409,9 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
     if (!home) return [];
     const out: { label: string; pick: { display_name: string; model_id: string; provider: string | null }; note: string }[] = [];
     const priority = [
-      'reasoning', 'math', 'coding', 'data_analysis', 'instruction_following', 'language',
-      'swe', 'agentic_general', 'tool_calling',
+      'reasoning', 'chinese_general', 'coding', 'swe',
+      'gpu_kernel', 'multimodal', 'long_context', 'tool_calling',
+      'math', 'data_analysis', 'instruction_following', 'language',
     ] as const;
     for (const cap of priority) {
       const blockRaw = home.top3[cap];
@@ -405,8 +426,12 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
         data_analysis: '数据分析主榜第一',
         instruction_following: '指令遵循主榜第一',
         language: '英文语言主榜第一',
+        chinese_general: '中文综合主榜第一',
         swe: 'Agent 软件工程主榜第一',
         agentic_general: '终端 Agent 主榜第一',
+        gpu_kernel: 'GPU 内核工程主榜第一',
+        multimodal: '多模态主榜第一',
+        long_context: '长上下文主榜第一',
         tool_calling: '工具调用主榜第一',
       }[cap];
       const agent = first.agent_scaffold ? `（${first.agent_scaffold}）` : '';
@@ -414,7 +439,7 @@ function CurrentPicks({ home, index }: { home: Homepage | null; index: ModelsInd
         label,
         pick: { display_name: first.display_name, model_id: first.model_id, provider: first.provider },
         note: first.kind === 'official'
-          ? `官方原始分 ${fmtScore(first.score)}${agent}`
+          ? `来源原始分 ${fmtScore(first.score)}${agent}`
           : `相对百分位 ${fmtScore(first.index)}${agent}`,
       });
     }
@@ -543,14 +568,15 @@ function OfficialBoard({
     index?.models ?? [],
   );
   const { current: fresh, legacy } = filterCurrent(all);
+  const freshModelCount = new Set(fresh.map((row) => row.model_id)).size;
   const rows = (showHistory ? all : fresh).slice(0, 10);
   const benchName = data.benchmarks.find((b) => b.benchmark_id === topBench)?.benchmark_name ?? topBench;
 
   return (
     <div>
-      {fresh.length < 5 && (
+      {freshModelCount < 5 && (
         <p className="mb-2 rounded-xl border border-amber-400/25 bg-amber-400/5 px-4 py-2.5 text-xs text-amber-200/90">
-          该基准当前仅覆盖 {fresh.length} 个活跃模型（共 {all.length} 条官方记录）。为诚实起见，不再拿历史模型补位；
+          该基准当前仅覆盖 {freshModelCount} 个活跃模型（{fresh.length} 条当前记录，共 {all.length} 条官方记录）。为诚实起见，不再拿历史模型补位；
           可打开下方"包含历史模型"查看完整记录。
         </p>
       )}
@@ -558,7 +584,7 @@ function OfficialBoard({
         <div className="flex flex-wrap items-center gap-2 border-b border-slate-500/15 px-4 py-2.5 text-[11px] text-slate-500">
           <span className="badge border-emerald-400/25 text-emerald-300">CURRENT 优先</span>
           <span>{selection.selectedBy === 'pipeline' ? '数据管线主榜' : '客户端按当前覆盖自动纠偏'}</span>
-          <span>· {fresh.length} 个当前模型 / {all.length} 条记录</span>
+          <span>· {freshModelCount} 个当前模型 / {fresh.length} 条当前记录 / {all.length} 条总记录</span>
           <span>· 运行日与榜单快照分列；来源未公开则显示 —</span>
         </div>
         <table className="data-table w-full min-w-[900px] text-sm">
@@ -568,7 +594,7 @@ function OfficialBoard({
               <th className="px-3 py-2.5 text-left">模型</th>
               <th className="px-3 py-2.5 text-left">厂商</th>
               {highlightAgent && <th className="px-3 py-2.5 text-left">Agent 框架</th>}
-              <th className="px-3 py-2.5 text-left">官方原始分</th>
+              <th className="px-3 py-2.5 text-left">来源原始分</th>
               <th className="px-3 py-2.5 text-left">发布日期</th>
               <th className="px-3 py-2.5 text-left">评测运行日</th>
               <th className="px-3 py-2.5 text-left">榜单快照</th>
@@ -708,15 +734,25 @@ function ValueBoard({ index }: { index: ModelsIndex | null }) {
 
 /** 热力图：行 = 能力（各自主基准），列 = 出现过的模型。 */
 function HeatmapGrid({ data, capabilities }: { data: HeatmapData; capabilities: ReturnType<typeof useCapabilities>['capabilities'] }) {
-  const columns: { model_id: string; display_name: string }[] = [];
+  const coverage = new Map<string, { model_id: string; display_name: string; count: number; rankSum: number }>();
   for (const cap of data.capabilities) {
     for (const cell of cap.cells) {
-      if (!columns.some((c) => c.model_id === cell.model_id)) {
-        columns.push({ model_id: cell.model_id, display_name: cell.display_name });
-      }
+      const current = coverage.get(cell.model_id);
+      coverage.set(cell.model_id, {
+        model_id: cell.model_id,
+        display_name: cell.display_name,
+        count: (current?.count ?? 0) + 1,
+        rankSum: (current?.rankSum ?? 0) + cell.rank,
+      });
     }
   }
-  const cols = columns.slice(0, 14);
+  // 列优先选跨能力覆盖最多的模型，而不是被第一行（通常是英文推理榜）占满。
+  // 同覆盖数时以平均官方名次排序，保证中文、多模态与 Agent 新榜在矩阵里可见。
+  const cols = Array.from(coverage.values())
+    .sort((a, b) => b.count - a.count
+      || a.rankSum / a.count - b.rankSum / b.count
+      || a.display_name.localeCompare(b.display_name))
+    .slice(0, 14);
   const cellOf = (capId: string, mid: string) => {
     const cap = data.capabilities.find((c) => c.capability_id === capId);
     return cap?.cells.find((c) => c.model_id === mid) ?? null;
@@ -759,9 +795,9 @@ function HeatmapGrid({ data, capabilities }: { data: HeatmapData; capabilities: 
                       key={c.model_id}
                       className="px-1 py-1.5 text-center"
                       style={{ background: `rgba(34,211,238,${0.05 + t * 0.3})` }}
-                      title={`${cell.display_name} · ${cell.score} · 官方第 ${cell.rank} 名${cell.agent_scaffold ? ` · ${cell.agent_scaffold}` : ''}`}
+                      title={`${cell.display_name} · ${fmtScore(cell.score, cap.score_unit)} · 官方第 ${cell.rank} 名${cell.agent_scaffold ? ` · ${cell.agent_scaffold}` : ''}`}
                     >
-                      <span className="num text-slate-100">{cell.score}</span>
+                      <span className="num text-slate-100">{fmtScore(cell.score, cap.score_unit)}</span>
                     </td>
                   );
                 })}

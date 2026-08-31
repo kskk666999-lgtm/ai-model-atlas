@@ -117,7 +117,7 @@ export function SourceDrawer({ row, onClose }: { row: OfficialRow | null; onClos
           <Field label="模型原始名称（来源侧）">{r.raw_model_name || r.model_id}</Field>
           {r.model_is_unmapped && (
             <Field label="映射状态">
-              <span className="text-amber-300">未映射：尚未建立到注册表的别名，仅出现在官方原始榜</span>
+              <span className="text-amber-300">未映射：尚未建立到注册表的别名，仅出现在来源原始榜</span>
             </Field>
           )}
           {r.data_file_url && (

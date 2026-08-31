@@ -90,7 +90,7 @@ export function Footer() {
           网站运行与数据更新全程不调用任何生成式大模型 API，不消耗大模型 Token。
         </p>
         <p>
-          各基准分数版权归其官方所有，展示时均注明来源与出处链接；综合指数为本站基于官方原始分的确定性计算结果，
+          各基准分数版权归其来源维护者所有，展示时均注明来源与出处链接；综合指数为本站基于来源原始分的确定性计算结果，
           非任何官方榜单。详见 <Link className="text-cyan-400 hover:text-cyan-300" to="/methodology">方法论</Link> 与{' '}
           <Link className="text-cyan-400 hover:text-cyan-300" to="/sources">数据来源</Link>。
         </p>

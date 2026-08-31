@@ -49,6 +49,29 @@ capabilities:
     short: 创意写作
     group: text_reasoning
     status: active
+  - capability_id: chinese_general
+    name: 中文通用综合能力
+    short: 中文综合
+    group: text_reasoning
+    status: active
+    description: >
+      SuperCLUE 中文原生开放题月度总榜；总分综合数学、科学、幻觉控制、
+      精确指令、智能体编程与任务规划，不等同于单纯的中文语言理解。
+  - capability_id: chinese_math
+    name: 中文数学推理
+    short: 中文数学
+    group: text_reasoning
+    status: active
+  - capability_id: chinese_science
+    name: 中文科学推理
+    short: 科学推理
+    group: text_reasoning
+    status: active
+  - capability_id: precise_instruction_cn
+    name: 精确指令遵循（中文任务）
+    short: 中文精确指令
+    group: text_reasoning
+    status: active
   # ===== 编程与 Agent =====
   - capability_id: coding
     name: 编程能力
@@ -63,10 +86,42 @@ capabilities:
     description: >
       SWE-bench 系列成绩反映「模型 + Agent 框架 + 推理预算」的完整系统表现，
       本能力不设综合指数，只提供按分区与按 Scaffold 的官方原始榜。
+  - capability_id: agentic_coding_cn
+    name: 智能体编程（中文任务）
+    short: 中文 Agent 编程
+    group: coding_agent
+    status: active
+    description: SuperCLUE 中文原生智能体编程分项，保留模型推理档位。
+  - capability_id: gpu_kernel
+    name: GPU 内核工程（模型 + Agent）
+    short: GPU 内核
+    group: coding_agent
+    status: active
+    description: >
+      KernelBench.com v-hard 固定题集；按六项 GPU 内核任务中的有效通过数计分，
+      reward-hack 不计分，未完成任务也不会被包装成满分。
   # ===== 多模态 =====
   - capability_id: multimodal
     name: 多模态视觉理解
     short: 多模态
+    group: multimodal
+    status: active
+    description: >
+      当前主证据为 SuperCLUE-VLM 月度榜；同时保留 VLMEvalKit 的历史公开基准明细。
+      不把文生图、图像编辑或视频生成质量混入视觉语言理解分数。
+  - capability_id: visual_cognition
+    name: 视觉基础认知
+    short: 视觉认知
+    group: multimodal
+    status: active
+  - capability_id: visual_reasoning
+    name: 视觉推理
+    short: 视觉推理
+    group: multimodal
+    status: active
+  - capability_id: visual_application
+    name: 视觉应用能力
+    short: 视觉应用
     group: multimodal
     status: active
   - capability_id: chinese_mm
@@ -118,7 +173,7 @@ capabilities:
     short: 重排序
     group: cost_efficiency
     status: active
-  # ===== 安全与可靠性（暂无满足可信标准的公开结构化来源）=====
+  # ===== Agent、检索与可靠性 =====
   - capability_id: chat_preference
     name: 人类偏好与聊天体验
     short: 人类偏好
@@ -126,11 +181,13 @@ capabilities:
     status: pending
     planned_source: LMArena（待其提供稳定合法数据接口）
   - capability_id: long_context
-    name: 长上下文
+    name: 中文长上下文检索（256K / 1M）
     short: 长上下文
     group: safety
-    status: pending
-    planned_source: RULER / LongBench v2（待官方结构化结果确认）
+    status: active
+    description: >
+      SuperCLUE-LongContext 中文多轮检索月度榜，分别保留 256K 与 1M 总榜；
+      不用厂商宣称的上下文窗口代替实际任务得分。
   - capability_id: tool_calling
     name: 工具调用
     short: 工具调用
@@ -163,6 +220,12 @@ capabilities:
     description: >
       BFCL V4 Memory 子榜，覆盖 KV、向量与递归摘要等记忆调用场景；
       它是工具使用评测，不代表模型参数内的长期记忆。
+  - capability_id: agent_planning_cn
+    name: Agent 任务规划（中文任务）
+    short: 中文任务规划
+    group: safety
+    status: active
+    description: SuperCLUE 中文原生开放题中的智能体任务规划分项。
   - capability_id: image_gen
     name: 图像生成
     short: 图像生成
@@ -188,11 +251,13 @@ capabilities:
     status: pending
     planned_source: HarmBench（待官方结构化结果确认）
   - capability_id: robustness
-    name: 鲁棒性
-    short: 鲁棒性
+    name: 事实可靠性 / 幻觉控制
+    short: 幻觉控制
     group: safety
-    status: pending
-    planned_source: 官方可复现评测
+    status: active
+    description: >
+      当前证据为 SuperCLUE 中文原生开放题的幻觉控制分项；
+      不等同于越狱抵抗、安全对齐或所有类型的鲁棒性。
 
 # 综合能力（overall）计算时各能力类别的默认权重
 default_capability_weights:

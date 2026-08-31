@@ -43,6 +43,27 @@ from .validation.quality import dedupe_conflicting, validate_records
 UPDATE_INTERVAL_HOURS = 12
 
 
+def _composite_candidate_records(records, sources_registry):
+    """只保留注册表明确允许进入综合分的数据源记录。"""
+    composite_source_ids = {
+        source.source_id for source in sources_registry if source.included_in_composite
+    }
+    return [record for record in records if record.source_id in composite_source_ids]
+
+
+def _has_recent_evidence(record, today: date, max_days: int = 120) -> bool:
+    """CURRENT 榜兜底必须有近期运行日或上游快照；版本号本身不算日期证据。"""
+    from .registry.freshness import parse_date
+
+    evidence_date = parse_date(record.evaluation_date) or parse_date(
+        record.upstream_updated_at
+    )
+    if evidence_date is None:
+        return False
+    age_days = (today - evidence_date).days
+    return 0 <= age_days <= max_days
+
+
 def load_capability_config() -> tuple[list[dict], dict[str, float]]:
     data = load_yaml(REGISTRY_CAPABILITIES)
     caps = data.get("capabilities") or []
@@ -154,7 +175,10 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
         out: dict[str, dict] = {}
         # 活跃来源"最新官方榜"兜底信号
         latest_board_models: set[str] = set()
-        for board_source in ("livebench", "terminalbench"):
+        for board_source in (
+            "livebench", "terminalbench", "superclue", "superclue_vlm",
+            "superclue_longcontext", "kernelbench"
+        ):
             versions = [
                 r.benchmark_version for r in all_records
                 if r.source_id == board_source and r.benchmark_version
@@ -164,6 +188,7 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
                 r.model_id for r in all_records
                 if r.source_id == board_source and latest and r.benchmark_version == latest
                 and not r.model_is_unmapped
+                and _has_recent_evidence(r, today)
             })
         swe_recent_models = {
             r.model_id for r in all_records
@@ -301,8 +326,12 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
             encoding="utf-8", newline="\n")
         print(f"    directory.json 写入 {len(enriched_dir)} 条目录条目")
 
+    # 基准级门槛只评估注册表明确允许进入综合分的数据源。
+    # 新的中文、多模态、长上下文与 Agent 榜先作为可溯源的独立原始榜展示，
+    # 不能因为覆盖率达标就绕过 source.included_in_composite 配置。
+    composite_records = _composite_candidate_records(all_records, sources_registry)
     # 基准级门槛：映射覆盖率 >= 95% 且已映射去重模型 >= 10
-    eligibility = benchmark_eligibility(all_records)
+    eligibility = benchmark_eligibility(composite_records)
     print(f"    通过综合门槛的基准：{len(eligibility)} 个")
     _write_mapping_coverage(all_records, eligibility)
 
@@ -311,7 +340,7 @@ def run(source_filter: list[str] | None = None, offline: bool = False) -> int:
     for cap in caps_registry:
         cap_id = cap["capability_id"]
         # 完整 Agent 系统能力只提供官方原始榜，不折算基础模型指数。
-        if cap_id in {"swe", "agentic_general"}:
+        if cap_id in {"swe", "agentic_general", "gpu_kernel"}:
             composite_gates[cap_id] = [
                 {"reason": "成绩来自「模型 + Agent 框架 + 推理档位」的完整系统，"
                            "不能折算为基础模型能力百分位；请使用官方原始榜"}

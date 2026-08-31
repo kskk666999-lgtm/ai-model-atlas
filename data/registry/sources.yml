@@ -33,6 +33,69 @@ sources:
     status: active
     docs_url: https://github.com/SWE-bench/experiments
 
+  - source_id: superclue
+    source_name: SuperCLUE 中文通用榜（官方）
+    source_level: B
+    homepage_url: https://www.superclueai.com
+    method: official_xlsx_export
+    description: >
+      SuperCLUE 官网公开的最新月度 XLSX，包含中文通用总分、数学推理、科学推理、
+      幻觉控制、精确指令遵循、智能体编程与任务规划。官方只公开评测月份，
+      本站不会把工作簿发布日期或抓取日冒充逐模型评测运行日。
+    license: 数据遵循 SuperCLUE 官方发布条款
+    attribution: "数据来源：SuperCLUE 中文大模型测评基准（superclueai.com）"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://github.com/CLUEbenchmark/SuperCLUE
+
+  - source_id: kernelbench
+    source_name: KernelBench.com v-hard（公开审计榜）
+    source_level: C
+    homepage_url: https://kernelbench.com
+    method: public_audited_json
+    description: >
+      KernelBench.com 公开仓库的 v-hard 结构化结果，评测模型与 Agent harness 在
+      固定 GPU 内核题集上的工程能力。适配器复核 annotation_verdict，排除
+      reward-hack，并以完整题集作统一分母，避免部分运行显示成 100%。
+    license: 数据遵循 KernelBench.com 仓库发布条款
+    attribution: "数据来源：KernelBench.com v-hard public audited leaderboard"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://github.com/Infatoshi/kernelbench.com
+
+  - source_id: superclue_vlm
+    source_name: SuperCLUE-VLM 多模态视觉语言榜（官方）
+    source_level: B
+    homepage_url: https://www.superclueai.com
+    method: official_xlsx_export
+    description: >
+      SuperCLUE 官网按月公开的 VLM 官方 XLSX，包含多模态总分、视觉基础认知、
+      视觉推理与视觉应用。与文生图/视频生成榜分开，避免混淆理解能力和生成质量。
+      官方只公开评测月份，本站不虚构逐模型评测日。
+    license: 数据遵循 SuperCLUE 官方发布条款
+    attribution: "数据来源：SuperCLUE-VLM（superclueai.com）"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://www.superclueai.com
+
+  - source_id: superclue_longcontext
+    source_name: SuperCLUE-LongContext 中文长上下文榜（官方）
+    source_level: B
+    homepage_url: https://www.superclueai.com
+    method: official_xlsx_export
+    description: >
+      SuperCLUE 官网按月公开的中文超长上下文多轮检索 XLSX，分别提供 256K 与 1M
+      总榜及各长度区间明细。本站只展示实际评测得分，不把标称上下文窗口当能力分。
+    license: 数据遵循 SuperCLUE 官方发布条款
+    attribution: "数据来源：SuperCLUE-LongContext（superclueai.com）"
+    requires_api_key: false
+    included_in_composite: false
+    status: active
+    docs_url: https://www.superclueai.com
+
   - source_id: terminalbench
     source_name: Terminal-Bench 4.0（官方）
     source_level: B
@@ -145,11 +208,12 @@ sources:
     source_name: OpenCompass（中文学术评测）
     source_level: A
     homepage_url: https://rank.opencompass.org.cn
-    method: none
+    method: official_json_asset_stale
     description: >
-      暂未启用：OpenCompass 官方排行榜为动态渲染页面，无稳定公开的结构化数据
-      接口；其中文多模态结果已通过 vlmevalkit 来源（MMBench_TEST_CN 等）部分覆盖。
-      待官方提供数据导出后接入。
+      暂未启用：OpenCompass 已公开 CompassAcademic 的 hf-academic.json，但该资产
+      最后更新停在 2025-04，当前模型覆盖不足。为避免用旧快照占据 CURRENT 优先榜，
+      暂不接入；中文当前能力改由 SuperCLUE 2026 月度官方 XLSX 覆盖，待该资产恢复
+      持续更新后再启用。
     license: null
     attribution: null
     requires_api_key: false

@@ -42,7 +42,7 @@ export function ComparePage() {
       <header>
         <h1 className="text-2xl font-bold text-slate-100">模型对比</h1>
         <p className="mt-1 text-sm text-slate-400">
-          选择 2~{MAX_COMPARE} 个模型。主视图为能力矩阵热力图（官方原始分），雷达图为可选项。
+          选择 2~{MAX_COMPARE} 个模型。主视图为能力矩阵热力图（来源原始分），雷达图为可选项。
           对比结果可通过 URL 分享。
         </p>
       </header>
@@ -179,7 +179,7 @@ function ComparePanels({
   );
 }
 
-/** 主视图：能力 × 模型热力矩阵（官方原始分），按能力域分组，缺失显示 —。 */
+/** 主视图：能力 × 模型热力矩阵（来源原始分），按能力域分组，缺失显示 —。 */
 function MatrixView({
   details,
   capabilities,
@@ -215,7 +215,7 @@ function MatrixView({
   return (
     <section className="space-y-4">
       <p className="text-xs text-slate-500">
-        单元格为<b>官方原始分</b>（非本站百分位），同行内颜色深浅表示相对高低；— 表示该模型无此能力数据（不按 0 分处理）。
+        单元格为<b>来源原始分</b>（非本站百分位），同行内颜色深浅表示相对高低；— 表示该模型无此能力数据（不按 0 分处理）。
         悬停可查看基准与最新证据日期。软件工程与终端 Agent 行为「模型 + Agent 系统」成绩。
       </p>
       {groups.map((g) => {

@@ -1,22 +1,30 @@
 """官方数据源适配器解析测试（固定 Fixture，不发真实请求）。"""
 from __future__ import annotations
 
+import io
 import json
 
+import pandas as pd
 import pytest
 
 from pipeline.adapters.bfcl import CSV_URL as BFCL_CSV
 from pipeline.adapters.bfcl import BFCLAdapter
+from pipeline.adapters.kernelbench import COMMITS_URL as KB_COMMITS
+from pipeline.adapters.kernelbench import DATA_URL as KB_DATA
+from pipeline.adapters.kernelbench import KernelBenchAdapter
 from pipeline.adapters.livebench import LiveBenchAdapter
 from pipeline.adapters.mteb import CONTENTS_API, MODEL_DIRS, MTEBAdapter
 from pipeline.adapters.mteb import RAW_BASE as MTEB_RAW
+from pipeline.adapters.superclue import SuperCLUEAdapter
+from pipeline.adapters.superclue_longcontext import SuperCLUELongContextAdapter
+from pipeline.adapters.superclue_vlm import SuperCLUEVLMAdapter
 from pipeline.adapters.swebench import RAW_BASE as SWB_RAW
 from pipeline.adapters.swebench import TREE_API as SWB_TREE
 from pipeline.adapters.swebench import SWEBenchAdapter
 from pipeline.adapters.terminalbench import LEADERBOARD_URL as TB_URL
 from pipeline.adapters.terminalbench import TerminalBenchAdapter
 from pipeline.paths import REGISTRY_BENCHMARKS
-from pipeline.schemas.records import load_yaml
+from pipeline.schemas.records import SourceConfig, load_yaml
 
 
 @pytest.fixture
@@ -64,6 +72,207 @@ def test_livebench_table_csv_parsing(sample_source, normalizer, real_benchmarks,
     assert price.score == 1.5
     assert price.higher_is_better is False
     assert any(r.model_is_unmapped for r in reasoning)
+
+
+def test_superclue_official_xlsx_keeps_month_as_version_not_fake_day(
+    normalizer, real_benchmarks, mock_http, monkeypatch, tmp_path,
+):
+    monkeypatch.setattr("pipeline.normalization.registry.UNMAPPED_FILE", tmp_path / "unmapped.json")
+    frame = pd.DataFrame([{
+        "排名": "1",
+        "模型名称": "test-model-a(max)",
+        "机构": "TestCorp",
+        "开/闭源": "闭源",
+        "总分": 71.48,
+        "数学推理": 77.193,
+        "幻觉控制": 86.0796,
+        "科学推理": 71.93,
+        "精确指令遵循": 43.8095,
+        "智能体编程": 68.42,
+        "智能体任务规划": 90.9386,
+        "属地": "海外",
+        "使用方式": "API",
+        "是否推理": "是",
+        "发布日期": "2026.8.6",
+    }])
+    stream = io.BytesIO()
+    with pd.ExcelWriter(stream, engine="openpyxl") as writer:
+        frame.to_excel(writer, sheet_name="总排行榜", index=False)
+
+    url = "https://www.superclueai.com/data/generalboard/2026年7月.xlsx"
+    mock_http.set(url, stream.getvalue())
+    mock_http.set_metadata(url, {"last_modified": "Tue, 18 Aug 2026 05:06:25 GMT"})
+    source = SourceConfig(
+        source_id="superclue", source_name="SuperCLUE", source_level="B",
+        homepage_url="https://www.superclueai.com", attribution="test",
+    )
+    adapter = SuperCLUEAdapter(source, real_benchmarks, normalizer, mock_http)
+    monkeypatch.setattr(adapter, "_discover_release", lambda: "2026年7月")
+    records = adapter.fetch_records()
+
+    assert len(records) == 7
+    general = next(r for r in records if r.benchmark_id == "superclue-general")
+    assert general.model_id == "test-model-a"
+    assert general.model_variant == "max"
+    assert general.reasoning_effort == "max"
+    assert general.benchmark_version == "2026-07"
+    assert general.evaluation_date is None
+    assert general.upstream_updated_at == "2026-08-18T05:06:25Z"
+    assert "不替代模型发布日期或评测运行日" in (general.notes or "")
+
+
+def test_kernelbench_reaudits_reward_hack_and_uses_fixed_suite_denominator(
+    normalizer, real_benchmarks, mock_http, monkeypatch, tmp_path,
+):
+    monkeypatch.setattr("pipeline.normalization.registry.UNMAPPED_FILE", tmp_path / "unmapped.json")
+    payload = {
+        "schema_version": 1,
+        "environment": "v2_containerized",
+        "hardware": {"name": "Test GPU", "sm": "sm_test", "vram_gb": 96},
+        "problems": ["task-a", "task-b"],
+        "models": [
+            {
+                "label": "test/test-model-a [max]",
+                "harness": "test",
+                "model": "test-model-a",
+                "effort": "max",
+                "results": {
+                    "task-a": {
+                        "run_id": "20260820_000000_test_a",
+                        "correct": True,
+                        "annotation_verdict": "clean",
+                    },
+                    "task-b": {
+                        "run_id": "20260821_000000_test_b",
+                        "correct": True,
+                        "annotation_verdict": "reward_hack",
+                        "invalid_reason": "reward_hack",
+                    },
+                },
+                "pass_count": 1,
+                "total_runs": 2,
+            },
+            {
+                "label": "test/test-model-b",
+                "harness": "test",
+                "model": "test-model-b",
+                "effort": "",
+                "results": {
+                    "task-a": {
+                        "run_id": "20260822_000000_test_a",
+                        "correct": True,
+                        "annotation_verdict": "clean",
+                    },
+                },
+                "pass_count": 1,
+                "total_runs": 1,
+            },
+        ],
+        "generated_from_summary": {"tag": "v2"},
+    }
+    mock_http.set(KB_DATA, payload)
+    mock_http.set(KB_COMMITS, [{
+        "sha": "abc123",
+        "commit": {"committer": {"date": "2026-08-23T13:46:17Z"}},
+    }])
+    source = SourceConfig(
+        source_id="kernelbench", source_name="KernelBench", source_level="C",
+        homepage_url="https://kernelbench.com", attribution="test",
+    )
+    records = KernelBenchAdapter(source, real_benchmarks, normalizer, mock_http).fetch_records()
+
+    assert len(records) == 2
+    assert {r.score for r in records} == {50.0}
+    first = next(r for r in records if r.model_id == "test-model-a")
+    assert first.evaluation_date == "2026-08-21"
+    assert first.sample_size == 2
+    assert first.agent_scaffold == "test"
+    assert first.evaluation_target_type == "model_plus_agent"
+    assert first.source_commit_sha == "abc123"
+    assert "无效/reward-hack=1" in (first.notes or "")
+    partial = next(r for r in records if r.model_id == "test-model-b")
+    assert partial.sample_size == 1
+    assert "实际尝试=1" in (partial.notes or "")
+
+
+def test_superclue_vlm_xlsx_keeps_understanding_separate_from_generation(
+    normalizer, real_benchmarks, mock_http, monkeypatch, tmp_path,
+):
+    monkeypatch.setattr("pipeline.normalization.registry.UNMAPPED_FILE", tmp_path / "unmapped.json")
+    frame = pd.DataFrame([{
+        "排名": "1",
+        "模型名称": "test-model-a(high)",
+        "机构": "TestCorp",
+        "总分": 75.81,
+        "基础认知能力": 78.33,
+        "视觉推理能力": 81.02,
+        "视觉应用能力": 68.07,
+        "开/闭源": "闭源",
+    }])
+    stream = io.BytesIO()
+    with pd.ExcelWriter(stream, engine="openpyxl") as writer:
+        frame.to_excel(writer, sheet_name="总榜", index=False)
+
+    url = "https://www.superclueai.com/data/multimodal_list/VLM/2026年7月.xlsx"
+    mock_http.set(url, stream.getvalue())
+    mock_http.set_metadata(url, {"last_modified": "Mon, 13 Jul 2026 03:42:50 GMT"})
+    source = SourceConfig(
+        source_id="superclue_vlm", source_name="SuperCLUE-VLM", source_level="B",
+        homepage_url="https://www.superclueai.com", attribution="test",
+    )
+    adapter = SuperCLUEVLMAdapter(source, real_benchmarks, normalizer, mock_http)
+    monkeypatch.setattr(adapter, "_discover_release", lambda: "2026年7月")
+    records = adapter.fetch_records()
+
+    assert len(records) == 4
+    overall = next(r for r in records if r.benchmark_id == "superclue-vlm-overall")
+    assert overall.capability == "multimodal"
+    assert overall.model_id == "test-model-a"
+    assert overall.model_variant == "high"
+    assert overall.evaluation_date is None
+    assert overall.benchmark_version == "2026-07"
+    assert overall.upstream_updated_at == "2026-07-13T03:42:50Z"
+    assert {r.capability for r in records} == {
+        "multimodal", "visual_cognition", "visual_reasoning", "visual_application",
+    }
+
+
+def test_superclue_longcontext_keeps_256k_and_1m_as_separate_boards(
+    normalizer, real_benchmarks, mock_http, monkeypatch, tmp_path,
+):
+    monkeypatch.setattr("pipeline.normalization.registry.UNMAPPED_FILE", tmp_path / "unmapped.json")
+    short = pd.DataFrame([{
+        "排名": "1", "模型名称": "test-model-a(high)", "机构": "TestCorp",
+        "总分": 98.24, "4K-8K": 99.52, "128K-256K": 90.18,
+    }])
+    long = pd.DataFrame([{
+        "排名": "1", "模型名称": "test-model-a(high)", "机构": "TestCorp",
+        "总分": 91.98, "4K-8K": 99.52, "512K-1M": 53.21,
+    }])
+    stream = io.BytesIO()
+    with pd.ExcelWriter(stream, engine="openpyxl") as writer:
+        short.to_excel(writer, sheet_name="256K总榜", index=False)
+        long.to_excel(writer, sheet_name="1M总榜", index=False)
+
+    url = "https://www.superclueai.com/data/specialized_list/LongContext/2026年7月.xlsx"
+    mock_http.set(url, stream.getvalue())
+    mock_http.set_metadata(url, {"last_modified": "Mon, 20 Jul 2026 07:09:07 GMT"})
+    source = SourceConfig(
+        source_id="superclue_longcontext", source_name="SuperCLUE-LongContext",
+        source_level="B", homepage_url="https://www.superclueai.com", attribution="test",
+    )
+    adapter = SuperCLUELongContextAdapter(source, real_benchmarks, normalizer, mock_http)
+    monkeypatch.setattr(adapter, "_discover_release", lambda: "2026年7月")
+    records = adapter.fetch_records()
+
+    assert len(records) == 2
+    assert {r.benchmark_id for r in records} == {
+        "superclue-longcontext-256k", "superclue-longcontext-1m",
+    }
+    assert {r.score for r in records} == {98.24, 91.98}
+    assert all(r.capability == "long_context" for r in records)
+    assert all(r.evaluation_date is None for r in records)
+    assert all(r.upstream_updated_at == "2026-07-20T07:09:07Z" for r in records)
 
 
 def test_terminalbench_structured_hydration_keeps_date_semantics(

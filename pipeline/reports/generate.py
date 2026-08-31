@@ -394,8 +394,11 @@ def generate_site_data(
     heatmap_caps = [
         ("reasoning", None), ("math", None), ("coding", None),
         ("data_analysis", None), ("instruction_following", None), ("language", None),
+        ("chinese_general", None), ("chinese_math", None), ("chinese_science", None),
         ("swe", None), ("agentic_general", None), ("tool_calling", None),
-        ("multimodal", None), ("chinese_mm", None), ("chart", None),
+        ("agentic_coding_cn", None), ("gpu_kernel", None),
+        ("multimodal", None), ("visual_reasoning", None), ("chinese_mm", None),
+        ("chart", None), ("long_context", None), ("robustness", None),
     ]
     heatmap = {"generated_at": now, "capabilities": [], "models": [], "cells": {}}
     model_order: list[str] = []

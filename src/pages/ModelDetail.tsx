@@ -109,7 +109,7 @@ export function ModelDetailPage() {
             <ModelRadar indicators={indicators} series={series} height={360} />
           ) : (
             <p className="py-10 text-center text-sm text-slate-500">
-              该模型暂无通过质量门槛的能力百分位（多数能力当前仅提供官方原始榜）。
+              该模型暂无通过质量门槛的能力百分位（多数能力当前仅提供来源原始榜）。
             </p>
           )}
         </section>
@@ -149,7 +149,7 @@ export function ModelDetailPage() {
       )}
 
       <section className="panel px-5 py-6">
-        <h2 className="text-lg font-bold text-slate-100">全部基准成绩（官方原始分）</h2>
+        <h2 className="text-lg font-bold text-slate-100">全部基准成绩（来源原始分）</h2>
         <p className="mt-1 text-xs text-slate-500">点击任一分数查看完整溯源：来源、验证状态、文件内定位、数据年龄与原始出处。</p>
         <div className="mt-3 overflow-x-auto">
           <table className="data-table w-full min-w-[720px] text-sm">
@@ -157,8 +157,8 @@ export function ModelDetailPage() {
               <tr className="border-b border-slate-500/15 text-slate-400">
                 <th className="px-3 py-2 text-left">能力</th>
                 <th className="px-3 py-2 text-left">基准</th>
-                <th className="px-3 py-2 text-left">官方原始榜排名</th>
-                <th className="px-3 py-2 text-left">官方原始分</th>
+                <th className="px-3 py-2 text-left">来源原始榜排名</th>
+                <th className="px-3 py-2 text-left">来源原始分</th>
                 <th className="px-3 py-2 text-left">类型</th>
                 <th className="px-3 py-2 text-left">来源</th>
                 <th className="px-3 py-2 text-left">评测运行日</th>
@@ -216,7 +216,7 @@ export function ModelDetailPage() {
           {m.open_weights === false && <li>闭源 API 模型：评测结果依赖厂商端点的稳定性与版本管理。</li>}
           {m.open_weights === true && <li>开放权重模型：不同部署/量化方式可能产生与官方评测不同的结果。</li>}
           <li>雷达图中的百分位是"相对位置"：参与计算的模型集合变化时数值会变化，不代表能力绝对值。</li>
-          {!data.radar.length && <li>当前该模型没有通过质量门槛的能力百分位；请以下方官方原始分为准。</li>}
+          {!data.radar.length && <li>当前该模型没有通过质量门槛的能力百分位；请以下方来源原始分为准。</li>}
           <li>软件工程成绩（如有）属于「模型 + Agent 框架」系统表现，不能当作基础模型纯能力。</li>
           <li>评测运行日、榜单快照与本站抓取时间含义不同；来源未公开运行日时显示 —，不会拿版本日期代替。</li>
         </ul>

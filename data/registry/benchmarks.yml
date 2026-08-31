@@ -63,6 +63,98 @@ benchmarks:
     higher_is_better: false
     score_unit: usd_per_mtok
 
+  # ===== SuperCLUE 月度中文通用榜 =====
+  - benchmark_id: superclue-general
+    benchmark_name: SuperCLUE 中文通用综合
+    source_id: superclue
+    capability: chinese_general
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-math
+    benchmark_name: SuperCLUE 数学推理
+    source_id: superclue
+    capability: chinese_math
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-hallucination-control
+    benchmark_name: SuperCLUE 幻觉控制
+    source_id: superclue
+    capability: robustness
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-science-reasoning
+    benchmark_name: SuperCLUE 科学推理
+    source_id: superclue
+    capability: chinese_science
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-precise-instruction
+    benchmark_name: SuperCLUE 精确指令遵循
+    source_id: superclue
+    capability: precise_instruction_cn
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-agentic-coding
+    benchmark_name: SuperCLUE 智能体编程
+    source_id: superclue
+    capability: agentic_coding_cn
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-agent-planning
+    benchmark_name: SuperCLUE 智能体任务规划
+    source_id: superclue
+    capability: agent_planning_cn
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== KernelBench.com v-hard =====
+  - benchmark_id: kernelbench-v-hard
+    benchmark_name: KernelBench.com v-hard GPU 内核工程
+    source_id: kernelbench
+    capability: gpu_kernel
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== SuperCLUE-VLM 月度多模态榜 =====
+  - benchmark_id: superclue-vlm-overall
+    benchmark_name: SuperCLUE-VLM 多模态视觉语言综合
+    source_id: superclue_vlm
+    capability: multimodal
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-vlm-cognition
+    benchmark_name: SuperCLUE-VLM 视觉基础认知
+    source_id: superclue_vlm
+    capability: visual_cognition
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-vlm-reasoning
+    benchmark_name: SuperCLUE-VLM 视觉推理
+    source_id: superclue_vlm
+    capability: visual_reasoning
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-vlm-application
+    benchmark_name: SuperCLUE-VLM 视觉应用
+    source_id: superclue_vlm
+    capability: visual_application
+    higher_is_better: true
+    score_unit: percent
+
+  # ===== SuperCLUE-LongContext =====
+  - benchmark_id: superclue-longcontext-256k
+    benchmark_name: SuperCLUE-LongContext 256K 总榜
+    source_id: superclue_longcontext
+    capability: long_context
+    higher_is_better: true
+    score_unit: percent
+  - benchmark_id: superclue-longcontext-1m
+    benchmark_name: SuperCLUE-LongContext 1M 总榜
+    source_id: superclue_longcontext
+    capability: long_context
+    higher_is_better: true
+    score_unit: percent
+
   # ===== SWE-bench =====
   - benchmark_id: swebench-verified
     benchmark_name: SWE-bench Verified

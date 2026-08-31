@@ -83,7 +83,7 @@ export function RecommenderPage() {
         const rel = pos.poolTop > 0 ? (pos.best / pos.poolTop) * 100 : 50;
         score += rel * 0.6;
         reasons.push(
-          `官方原始分 ${fmtScore(pos.best)}（官方榜相对位置约 ${Math.round(rel)}/${100}，池 ${pos.poolSize} 个模型）`,
+          `来源原始分 ${fmtScore(pos.best)}（来源榜相对位置约 ${Math.round(rel)}/${100}，池 ${pos.poolSize} 个模型）`,
         );
       } else {
         score += 30 * 0.3;
@@ -128,7 +128,7 @@ export function RecommenderPage() {
         <h1 className="text-2xl font-bold text-slate-100">场景推荐</h1>
         <p className="mt-1 text-sm text-slate-400">
           纯规则推荐器：公开公式 + 确定性计算，不调用任何 AI 模型。主任务维度使用
-          <b>官方原始分的相对位置</b>（诚实口径），不使用本站聚合百分位。
+          <b>来源原始分的相对位置</b>（诚实口径），不使用本站聚合百分位。
         </p>
       </header>
 

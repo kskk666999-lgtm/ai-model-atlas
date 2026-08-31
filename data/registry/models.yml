@@ -2794,3 +2794,314 @@ models:
   official_model_page: null
   deprecated: false
   superseded_by: null
+- canonical_id: doubao-seed-2.1-pro
+  display_name: Doubao Seed 2.1 Pro
+  provider: ByteDance
+  family: doubao-seed-2
+  variant: pro
+  aliases:
+  - doubao-seed-2.1-pro
+  - Doubao-Seed-2.1-pro
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: hy3
+  display_name: Tencent HY3
+  provider: Tencent
+  family: hunyuan
+  variant: null
+  aliases:
+  - hy3
+  - Hy3
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: ernie-5.1
+  display_name: ERNIE 5.1
+  provider: Baidu
+  family: ernie-5
+  variant: null
+  aliases:
+  - ernie-5.1
+  - ERNIE 5.1
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: longcat-2.0
+  display_name: LongCat 2.0
+  provider: Meituan
+  family: longcat
+  variant: null
+  aliases:
+  - longcat-2.0
+  - LongCat-2.0
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: mimo-v2.5-pro
+  display_name: MiMo V2.5 Pro
+  provider: Xiaomi
+  family: mimo
+  variant: pro
+  aliases:
+  - mimo-v2.5-pro
+  - MiMo-V2.5-Pro
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: step-3.7-flash
+  display_name: Step 3.7 Flash
+  provider: StepFun
+  family: step-3
+  variant: flash
+  aliases:
+  - step-3.7-flash
+  - Step-3.7-Flash
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gemini-3.1-pro-preview
+  display_name: Gemini 3.1 Pro (Preview)
+  provider: Google
+  family: gemini-3.1
+  variant: pro-preview
+  aliases:
+  - gemini-3.1-pro-preview
+  - Gemini-3.1-Pro-Preview
+  release_date: null
+  status: preview
+  region: null
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: qwen3.7-plus
+  display_name: Qwen3.7 Plus
+  provider: Alibaba
+  family: qwen3.7
+  variant: plus
+  aliases:
+  - qwen3.7-plus
+  - Qwen3.7-Plus
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: sensenova-6.7-flash-alpha
+  display_name: SenseNova 6.7 Flash (Alpha)
+  provider: SenseTime
+  family: sensenova-6.7
+  variant: flash-alpha
+  aliases:
+  - sensenova-6.7-flash-alpha
+  - SenseNova 6.7 Flash
+  release_date: null
+  status: alpha
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: gpt-5.5-high
+  display_name: GPT-5.5 (High)
+  provider: OpenAI
+  family: gpt-5.5
+  variant: high
+  aliases:
+  - gpt-5.5-high
+  - GPT-5.5
+  release_date: null
+  status: active
+  region: null
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5v-turbo
+  display_name: GLM-5V-Turbo
+  provider: Zhipu AI
+  family: glm-5v
+  variant: turbo
+  aliases:
+  - glm-5v-turbo
+  - GLM-5V-Turbo
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: mimo-v2.5
+  display_name: MiMo V2.5
+  provider: Xiaomi
+  family: mimo
+  variant: null
+  aliases:
+  - mimo-v2.5
+  - MiMo-V2.5
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: minicpm-v4.6
+  display_name: MiniCPM-V4.6
+  provider: ModelBest
+  family: minicpm-v
+  variant: '4.6'
+  aliases:
+  - minicpm-v4.6
+  - MiniCPM-V4.6
+  release_date: null
+  status: active
+  region: cn
+  open_weights: true
+  license: null
+  modalities:
+  - text
+  - image
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: kimi-k2.6
+  display_name: Kimi K2.6
+  provider: Moonshot AI
+  family: kimi-k2
+  variant: null
+  aliases:
+  - kimi-k2.6
+  - Kimi-K2.6
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: doubao-seed-2.0-pro-260215
+  display_name: Doubao Seed 2.0 Pro (260215)
+  provider: ByteDance
+  family: doubao-seed-2
+  variant: pro-260215
+  aliases:
+  - doubao-seed-2.0-pro-260215
+  - Doubao-Seed-2.0-pro-260215
+  release_date: null
+  status: active
+  region: cn
+  open_weights: false
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null
+- canonical_id: glm-5.1
+  display_name: GLM-5.1
+  provider: Zhipu AI
+  family: glm-5
+  variant: '5.1'
+  aliases:
+  - glm-5.1
+  - GLM-5.1
+  release_date: null
+  status: active
+  region: cn
+  open_weights: null
+  license: null
+  modalities:
+  - text
+  context_window: null
+  official_model_page: null
+  deprecated: false
+  superseded_by: null

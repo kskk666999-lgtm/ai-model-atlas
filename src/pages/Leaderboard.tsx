@@ -50,6 +50,7 @@ export function LeaderboardPage() {
   const rows = showHistory
     ? [...currentRows, ...legacyRows].sort((a, b) => a.rank - b.rank)
     : currentRows;
+  const currentModelCount = new Set(currentRows.map((row) => row.model_id)).size;
 
   const providers = useMemo(() => {
     const set = new Set<string>();
@@ -65,7 +66,7 @@ export function LeaderboardPage() {
   if (!capMeta) return <EmptyState title="未知能力" />;
 
   const activeCaps = capabilities.filter((c) => c.status === 'active');
-  const isAgentSystem = capId === 'swe' || capId === 'agentic_general';
+  const isAgentSystem = capId === 'swe' || capId === 'agentic_general' || capId === 'gpu_kernel';
 
   return (
     <div className="space-y-5">
@@ -74,7 +75,7 @@ export function LeaderboardPage() {
         <p className="mt-1 text-sm text-slate-400">
           {isAgentSystem
             ? '该成绩来自「模型 + Agent 框架 + 推理档位」的完整系统，不设基础模型综合指数；请按基准与 Scaffold 阅读。'
-            : '默认展示官方原始成绩；"本站相对百分位"为次级参考，仅在数据质量门槛全部通过时提供。'}
+            : '默认展示来源发布的原始成绩；"本站相对百分位"为次级参考，仅在数据质量门槛全部通过时提供。'}
         </p>
         {capMeta.description && (
           <p className="mt-2 rounded-xl border border-amber-400/25 bg-amber-400/5 px-4 py-2.5 text-xs leading-6 text-amber-200/90">
@@ -129,7 +130,7 @@ export function LeaderboardPage() {
                 className={`rounded-lg px-3.5 py-1.5 text-sm ${mode === 'official' ? 'bg-cyan-400/15 text-cyan-300' : 'text-slate-400'}`}
                 onClick={() => setMode('official')}
               >
-                官方原始榜
+                来源原始榜
               </button>
               <button
                 role="tab"
@@ -144,7 +145,7 @@ export function LeaderboardPage() {
             <span className="badge">
               {data.composite
                 ? `相对百分位 · ${data.composite.benchmark_count} 个合格基准 · 0~100 为相对位置而非能力满分`
-                : '无相对百分位（门槛未通过，仅提供官方原始榜）'}
+                : '无相对百分位（门槛未通过，仅提供来源原始榜）'}
             </span>
           </div>
 
@@ -174,11 +175,10 @@ export function LeaderboardPage() {
                   默认仅展示当前活跃模型；历史结果请手动展开
                 </span>
                 {(() => {
-                  const freshN = currentRows.length;
-                  if (freshN > 0 && freshN < 5) {
+                  if (currentModelCount > 0 && currentModelCount < 5) {
                     return (
                       <span className="rounded-lg border border-amber-400/25 bg-amber-400/5 px-3 py-1.5 text-[11px] text-amber-200/90">
-                        该基准当前仅覆盖 {freshN} 个活跃模型，不拿历史模型补位
+                        该基准当前仅覆盖 {currentModelCount} 个活跃模型（{currentRows.length} 条当前记录），不拿历史模型补位
                       </span>
                     );
                   }
