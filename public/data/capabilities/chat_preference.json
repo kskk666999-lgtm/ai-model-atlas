@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"chat_preference","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-08-31T03:46:39Z","group":"safety","name":"人类偏好与聊天体验","official":[],"short":"人类偏好","status":"pending"}
+{"benchmarks":[],"capability_id":"chat_preference","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-01T06:09:54Z","group":"safety","name":"人类偏好与聊天体验","official":[],"short":"人类偏好","status":"pending"}
