@@ -1,5 +1,5 @@
 {
-  "count": 516,
+  "count": 518,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1478,6 +1478,13 @@
       "raw_name": "bailingMM-mini",
       "source_id": "vlmevalkit",
       "temp_id": "unmapped--vlmevalkit--bailingmm-mini"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "claude-fable-5-1-max-effort",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--claude-fable-5-1-max-effort"
     },
     {
       "example_url": "https://livebench.ai/",
@@ -3137,6 +3144,13 @@
       "raw_name": "claude-sonnet-4.5",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--claude-sonnet-4.5"
+    },
+    {
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/multilingual/20260902_mini-v2.4.6_gemini-3-5-flash",
+      "occurrences": 2,
+      "raw_name": "gemini-3-5-flash",
+      "source_id": "swebench",
+      "temp_id": "unmapped--swebench--gemini-3-5-flash"
     },
     {
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20240402_rag_gpt4",

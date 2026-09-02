@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"latency","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-01T06:09:54Z","group":"cost_efficiency","name":"首字延迟","official":[],"short":"延迟","status":"active"}
+{"benchmarks":[],"capability_id":"latency","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-02T05:34:54Z","group":"cost_efficiency","name":"首字延迟","official":[],"short":"延迟","status":"active"}
