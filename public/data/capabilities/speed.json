@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"speed","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-03T05:35:58Z","group":"cost_efficiency","name":"输出速度","official":[],"short":"速度","status":"active"}
+{"benchmarks":[],"capability_id":"speed","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-03T17:00:30Z","group":"cost_efficiency","name":"输出速度","official":[],"short":"速度","status":"active"}

@@ -1,5 +1,5 @@
 {
-  "count": 521,
+  "count": 524,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3641,6 +3641,27 @@
       "raw_name": "openai/gpt-5-2025-08-07",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--openai-gpt-5-2025-08-07"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Fable 5.1",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--fable-5.1"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Gemini 3.7 Flash",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gemini-3.7-flash"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Gemini 3.8 Flash",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gemini-3.8-flash"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",

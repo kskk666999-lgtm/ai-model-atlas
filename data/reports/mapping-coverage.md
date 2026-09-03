@@ -7,7 +7,7 @@
 | bfcl-v4-web-search | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| kernelbench-v-hard | kernelbench | 19 | 16 | 13 | 81% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| kernelbench-v-hard | kernelbench | 20 | 16 | 13 | 81% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-agentic-coding | livebench | 53 | 53 | 49 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-coding | livebench | 53 | 53 | 49 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-data-analysis | livebench | 53 | 53 | 49 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
@@ -56,4 +56,4 @@
 | superclue-vlm-reasoning | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-multilingual | swebench | 14 | 14 | 11 | 79% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-verified | swebench | 114 | 56 | 14 | 25% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| terminalbench-4 | terminalbench | 10 | 10 | 9 | 90% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| terminalbench-4 | terminalbench | 13 | 13 | 9 | 69% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
