@@ -1,5 +1,5 @@
 {
-  "count": 518,
+  "count": 521,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1485,6 +1485,20 @@
       "raw_name": "claude-fable-5-1-max-effort",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--claude-fable-5-1-max-effort"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "gemini-3.8-flash-high",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--gemini-3.8-flash-high"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "muse-spark-1.3-xhigh",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--muse-spark-1.3-xhigh"
     },
     {
       "example_url": "https://livebench.ai/",
@@ -3417,6 +3431,13 @@
       "raw_name": "Claude 3.7 Sonnet",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--claude-3.7-sonnet"
+    },
+    {
+      "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20251127_openhands_claude-opus-4-5",
+      "occurrences": 1,
+      "raw_name": "Claude Opus 4.5",
+      "source_id": "swebench",
+      "temp_id": "unmapped--swebench--claude-opus-4.5"
     },
     {
       "example_url": "https://github.com/SWE-bench/experiments/tree/main/evaluation/verified/20250528_patchpilot_Co-PatcheR",

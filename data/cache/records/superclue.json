@@ -1,6 +1,6 @@
 {
  "count": 91,
- "fetched_at": "2026-08-31T03:46:36Z",
+ "fetched_at": "2026-09-03T05:35:54Z",
  "records": [
   {
    "agent_scaffold": null,
@@ -16,7 +16,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -25,7 +25,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -38,7 +38,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -54,7 +54,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -63,7 +63,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -76,7 +76,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -92,7 +92,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -101,7 +101,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -114,7 +114,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -130,7 +130,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -139,7 +139,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -152,7 +152,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -168,7 +168,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -177,7 +177,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -190,7 +190,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -206,7 +206,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -215,7 +215,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -228,7 +228,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -244,7 +244,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -253,7 +253,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -266,7 +266,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -282,7 +282,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -291,7 +291,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -304,7 +304,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -320,7 +320,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -329,7 +329,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -342,7 +342,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -358,7 +358,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -367,7 +367,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -380,7 +380,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -396,7 +396,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -405,7 +405,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -418,7 +418,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -434,7 +434,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -443,7 +443,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -456,7 +456,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -472,7 +472,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -481,7 +481,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -494,7 +494,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -510,7 +510,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -519,7 +519,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -532,7 +532,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -548,7 +548,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -557,7 +557,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -570,7 +570,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -586,7 +586,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -595,7 +595,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -608,7 +608,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -624,7 +624,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -633,7 +633,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -646,7 +646,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -662,7 +662,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -671,7 +671,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -684,7 +684,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -700,7 +700,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -709,7 +709,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -722,7 +722,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -738,7 +738,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -747,7 +747,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -760,7 +760,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -776,7 +776,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -785,7 +785,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -798,7 +798,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -814,7 +814,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -823,7 +823,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -836,7 +836,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -852,7 +852,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -861,7 +861,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -874,7 +874,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -890,7 +890,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -899,7 +899,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -912,7 +912,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -928,7 +928,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -937,7 +937,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -950,7 +950,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -966,7 +966,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -975,7 +975,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -988,7 +988,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1004,7 +1004,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1013,7 +1013,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -1026,7 +1026,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1042,7 +1042,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1051,7 +1051,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -1064,7 +1064,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1080,7 +1080,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1089,7 +1089,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -1102,7 +1102,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1118,7 +1118,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1127,7 +1127,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -1140,7 +1140,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1156,7 +1156,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1165,7 +1165,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -1178,7 +1178,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1194,7 +1194,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1203,7 +1203,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -1216,7 +1216,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1232,7 +1232,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1241,7 +1241,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -1254,7 +1254,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1270,7 +1270,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1279,7 +1279,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -1292,7 +1292,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1308,7 +1308,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1317,7 +1317,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -1330,7 +1330,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1346,7 +1346,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1355,7 +1355,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -1368,7 +1368,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1384,7 +1384,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1393,7 +1393,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -1406,7 +1406,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1422,7 +1422,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1431,7 +1431,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -1444,7 +1444,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1460,7 +1460,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1469,7 +1469,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -1482,7 +1482,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1498,7 +1498,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1507,7 +1507,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -1520,7 +1520,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1536,7 +1536,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1545,7 +1545,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -1558,7 +1558,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1574,7 +1574,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1583,7 +1583,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -1596,7 +1596,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1612,7 +1612,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1621,7 +1621,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -1634,7 +1634,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1650,7 +1650,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1659,7 +1659,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -1672,7 +1672,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1688,7 +1688,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1697,7 +1697,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -1710,7 +1710,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1726,7 +1726,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1735,7 +1735,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -1748,7 +1748,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1764,7 +1764,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1773,7 +1773,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -1786,7 +1786,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1802,7 +1802,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1811,7 +1811,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -1824,7 +1824,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1840,7 +1840,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1849,7 +1849,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -1862,7 +1862,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1878,7 +1878,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1887,7 +1887,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -1900,7 +1900,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1916,7 +1916,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1925,7 +1925,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -1938,7 +1938,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1954,7 +1954,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1963,7 +1963,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -1976,7 +1976,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -1992,7 +1992,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2001,7 +2001,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -2014,7 +2014,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2030,7 +2030,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2039,7 +2039,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -2052,7 +2052,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2068,7 +2068,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2077,7 +2077,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -2090,7 +2090,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2106,7 +2106,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2115,7 +2115,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -2128,7 +2128,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2144,7 +2144,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2153,7 +2153,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -2166,7 +2166,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2182,7 +2182,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2191,7 +2191,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -2204,7 +2204,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2220,7 +2220,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2229,7 +2229,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -2242,7 +2242,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2258,7 +2258,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2267,7 +2267,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -2280,7 +2280,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2296,7 +2296,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2305,7 +2305,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -2318,7 +2318,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2334,7 +2334,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2343,7 +2343,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -2356,7 +2356,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2372,7 +2372,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2381,7 +2381,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -2394,7 +2394,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2410,7 +2410,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2419,7 +2419,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -2432,7 +2432,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2448,7 +2448,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2457,7 +2457,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -2470,7 +2470,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2486,7 +2486,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2495,7 +2495,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -2508,7 +2508,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2524,7 +2524,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2533,7 +2533,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -2546,7 +2546,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2562,7 +2562,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2571,7 +2571,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -2584,7 +2584,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2600,7 +2600,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2609,7 +2609,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -2622,7 +2622,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2638,7 +2638,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2647,7 +2647,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -2660,7 +2660,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2676,7 +2676,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2685,7 +2685,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -2698,7 +2698,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2714,7 +2714,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2723,7 +2723,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -2736,7 +2736,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2752,7 +2752,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2761,7 +2761,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -2774,7 +2774,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2790,7 +2790,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2799,7 +2799,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -2812,7 +2812,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2828,7 +2828,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2837,7 +2837,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -2850,7 +2850,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2866,7 +2866,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2875,7 +2875,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -2888,7 +2888,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2904,7 +2904,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2913,7 +2913,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -2926,7 +2926,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2942,7 +2942,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2951,7 +2951,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -2964,7 +2964,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -2980,7 +2980,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2989,7 +2989,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Flash(max)",
    "reasoning_effort": "max",
@@ -3002,7 +3002,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3018,7 +3018,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3027,7 +3027,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=未标注，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max)",
    "reasoning_effort": "max",
@@ -3040,7 +3040,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3056,7 +3056,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3065,7 +3065,7 @@
    "model_variant": "max-preview",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=深度求索；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "DeepSeek-V4-Pro(max) 预览版",
    "reasoning_effort": "max",
@@ -3078,7 +3078,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3094,7 +3094,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3103,7 +3103,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=字节跳动；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Doubao-Seed-2.1-pro(high)",
    "reasoning_effort": "high",
@@ -3116,7 +3116,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3132,7 +3132,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3141,7 +3141,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=百度；闭源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "ERNIE 5.1(max)",
    "reasoning_effort": "max",
@@ -3154,7 +3154,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3170,7 +3170,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3179,7 +3179,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=智谱AI；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "GLM-5.2(max)",
    "reasoning_effort": "max",
@@ -3192,7 +3192,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3208,7 +3208,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3217,7 +3217,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=腾讯；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Hy3(high)",
    "reasoning_effort": "high",
@@ -3230,7 +3230,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3246,7 +3246,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3255,7 +3255,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=月之暗面；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Kimi-K3(max)",
    "reasoning_effort": "max",
@@ -3268,7 +3268,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3284,7 +3284,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3293,7 +3293,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=美团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "LongCat-2.0",
    "reasoning_effort": null,
@@ -3306,7 +3306,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3322,7 +3322,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3331,7 +3331,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=小米集团；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiMo-V2.5-Pro",
    "reasoning_effort": null,
@@ -3344,7 +3344,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3360,7 +3360,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "api_endpoint",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3369,7 +3369,7 @@
    "model_variant": null,
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=稀宇科技；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "MiniMax-M3",
    "reasoning_effort": null,
@@ -3382,7 +3382,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3398,7 +3398,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3407,7 +3407,7 @@
    "model_variant": "max",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阿里巴巴；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Qwen3.8-Max(max)",
    "reasoning_effort": "max",
@@ -3420,7 +3420,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   },
   {
    "agent_scaffold": null,
@@ -3436,7 +3436,7 @@
    "data_sha256": "60b88c8d29fda40a756ec38dd5b88e40688861327f90190182d55909b1a47be7",
    "evaluation_date": null,
    "evaluation_target_type": "model_variant",
-   "fetched_at": "2026-08-31T03:46:36Z",
+   "fetched_at": "2026-09-03T05:35:54Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3445,7 +3445,7 @@
    "model_variant": "high",
    "notes": "SuperCLUE 2026年7月 官方月度榜；机构=阶跃星辰；开源；官方只公开评测月份，未公开逐模型运行日。工作簿“发布日期”=2026.8.6，因字段语义不足，不替代模型发布日期或评测运行日",
    "prompt_mode": "推理=是；使用方式=API",
-   "published_at": "2026-08-18T05:06:25Z",
+   "published_at": "2026-09-03T04:00:56Z",
    "rank": null,
    "raw_model_name": "Step-3.7-Flash(high)",
    "reasoning_effort": "high",
@@ -3458,7 +3458,7 @@
    "source_level": "B",
    "source_name": "SuperCLUE 中文通用榜（官方）",
    "source_url": "https://www.superclueai.com/",
-   "upstream_updated_at": "2026-08-18T05:06:25Z"
+   "upstream_updated_at": "2026-09-03T04:00:56Z"
   }
  ],
  "source_id": "superclue"

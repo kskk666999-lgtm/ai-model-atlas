@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"speech","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-02T05:34:54Z","group":"safety","name":"语音识别 / 合成","official":[],"short":"语音","status":"pending"}
+{"benchmarks":[],"capability_id":"speech","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-03T05:35:58Z","group":"safety","name":"语音识别 / 合成","official":[],"short":"语音","status":"pending"}
