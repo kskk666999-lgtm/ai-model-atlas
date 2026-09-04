@@ -56,4 +56,4 @@
 | superclue-vlm-reasoning | superclue_vlm | 13 | 13 | 12 | 92% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-multilingual | swebench | 14 | 14 | 11 | 79% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | swebench-verified | swebench | 114 | 56 | 14 | 25% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| terminalbench-4 | terminalbench | 13 | 13 | 9 | 69% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| terminalbench-4 | terminalbench | 18 | 14 | 9 | 64% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |

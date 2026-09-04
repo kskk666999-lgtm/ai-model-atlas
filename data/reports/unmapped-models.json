@@ -1,5 +1,5 @@
 {
-  "count": 524,
+  "count": 525,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1926,6 +1926,13 @@
       "raw_name": "claude-4-sonnet-20250514",
       "source_id": "swebench",
       "temp_id": "unmapped--swebench--claude-4-sonnet-20250514"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 5,
+      "raw_name": "GPT-6 Astra",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6-astra"
     },
     {
       "example_url": "https://www.superclueai.com/",

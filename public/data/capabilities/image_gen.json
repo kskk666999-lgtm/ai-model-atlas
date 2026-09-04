@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"image_gen","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-03T17:00:30Z","group":"safety","name":"图像生成","official":[],"short":"图像生成","status":"pending"}
+{"benchmarks":[],"capability_id":"image_gen","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-04T05:41:06Z","group":"safety","name":"图像生成","official":[],"short":"图像生成","status":"pending"}
