@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"safety_eval","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-04T05:41:06Z","group":"safety","name":"安全性 / 越狱抵抗","official":[],"short":"安全评测","status":"pending"}
+{"benchmarks":[],"capability_id":"safety_eval","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-04T16:49:30Z","group":"safety","name":"安全性 / 越狱抵抗","official":[],"short":"安全评测","status":"pending"}
