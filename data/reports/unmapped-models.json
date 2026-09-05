@@ -1,5 +1,5 @@
 {
-  "count": 525,
+  "count": 526,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1492,6 +1492,13 @@
       "raw_name": "gemini-3.8-flash-high",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--gemini-3.8-flash-high"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "gpt-6-astra-max",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--gpt-6-astra-max"
     },
     {
       "example_url": "https://livebench.ai/",
