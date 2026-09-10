@@ -1,5 +1,5 @@
 {
-  "count": 528,
+  "count": 531,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1489,6 +1489,13 @@
     {
       "example_url": "https://livebench.ai/",
       "occurrences": 9,
+      "raw_name": "deepseek-v4.1-flash-max",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--deepseek-v4.1-flash-max"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
       "raw_name": "gemini-3.8-flash-high",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--gemini-3.8-flash-high"
@@ -1870,6 +1877,20 @@
       "raw_name": "valley2_dpo",
       "source_id": "vlmevalkit",
       "temp_id": "unmapped--vlmevalkit--valley2_dpo"
+    },
+    {
+      "example_url": "https://www.superclueai.com/",
+      "occurrences": 7,
+      "raw_name": "Qwen3.8-Flash",
+      "source_id": "superclue",
+      "temp_id": "unmapped--superclue--qwen3.8-flash"
+    },
+    {
+      "example_url": "https://www.superclueai.com/",
+      "occurrences": 7,
+      "raw_name": "Qwen3.8-Max-0902",
+      "source_id": "superclue",
+      "temp_id": "unmapped--superclue--qwen3.8-max-0902"
     },
     {
       "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
