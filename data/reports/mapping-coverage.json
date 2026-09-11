@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-11T05:44:42Z",
+ "generated_at": "2026-09-11T16:59:43Z",
  "benchmarks": [
   {
    "benchmark_id": "bfcl-v4-memory",
@@ -474,10 +474,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -486,10 +486,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -498,10 +498,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -510,10 +510,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -546,10 +546,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -558,10 +558,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -570,10 +570,10 @@
    "sources": [
     "superclue"
    ],
-   "total_records": 17,
-   "distinct_models": 17,
+   "total_records": 18,
+   "distinct_models": 18,
    "mapped_distinct_models": 15,
-   "mapped_rate": 0.8824,
+   "mapped_rate": 0.8333,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
