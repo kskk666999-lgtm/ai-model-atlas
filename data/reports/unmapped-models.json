@@ -1,5 +1,5 @@
 {
-  "count": 531,
+  "count": 532,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3445,6 +3445,13 @@
       "raw_name": "Yi-1.5-9B",
       "source_id": "bigcodebench",
       "temp_id": "unmapped--bigcodebench--yi-1.5-9b"
+    },
+    {
+      "example_url": "https://kernelbench.com/",
+      "occurrences": 1,
+      "raw_name": "deepseek-flash",
+      "source_id": "kernelbench",
+      "temp_id": "unmapped--kernelbench--deepseek-flash"
     },
     {
       "example_url": "https://kernelbench.com/",

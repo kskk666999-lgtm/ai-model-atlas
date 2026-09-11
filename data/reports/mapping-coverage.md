@@ -7,7 +7,7 @@
 | bfcl-v4-web-search | bfcl | 109 | 93 | 20 | 22% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| kernelbench-v-hard | kernelbench | 20 | 16 | 13 | 81% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| kernelbench-v-hard | kernelbench | 21 | 17 | 13 | 76% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-agentic-coding | livebench | 57 | 57 | 49 | 86% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-coding | livebench | 57 | 57 | 49 | 86% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | livebench-data-analysis | livebench | 57 | 57 | 49 | 86% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
