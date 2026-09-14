@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"ocr","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-13T16:55:46Z","group":"multimodal","name":"OCR 与文档识别","official":[],"short":"OCR","status":"active"}
+{"benchmarks":[],"capability_id":"ocr","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-09-14T05:58:11Z","group":"multimodal","name":"OCR 与文档识别","official":[],"short":"OCR","status":"active"}
