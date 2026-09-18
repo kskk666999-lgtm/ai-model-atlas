@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:35:36Z",
+ "generated_at": "2026-09-18T05:41:27Z",
  "benchmarks": [
   {
    "benchmark_id": "bfcl-v4-memory",
@@ -654,7 +654,7 @@
    "sources": [
     "terminalbench"
    ],
-   "total_records": 18,
+   "total_records": 26,
    "distinct_models": 14,
    "mapped_distinct_models": 9,
    "mapped_rate": 0.6429,
