@@ -1,5 +1,5 @@
 {
-  "count": 534,
+  "count": 533,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1996,13 +1996,6 @@
       "raw_name": "GPT-6 Astra",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--gpt-6-astra"
-    },
-    {
-      "example_url": "https://www.superclueai.com/",
-      "occurrences": 4,
-      "raw_name": "DeepSeek 识图模式",
-      "source_id": "superclue_vlm",
-      "temp_id": "unmapped--superclue_vlm--deepseek"
     },
     {
       "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
