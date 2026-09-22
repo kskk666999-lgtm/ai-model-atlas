@@ -1,5 +1,5 @@
 {
-  "count": 535,
+  "count": 537,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1485,6 +1485,20 @@
       "raw_name": "claude-fable-5-1-max-effort",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--claude-fable-5-1-max-effort"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "claude-opus-5-5-max-effort",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--claude-opus-5-5-max-effort"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "claude-opus-5-5-xhigh-effort",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--claude-opus-5-5-xhigh-effort"
     },
     {
       "example_url": "https://livebench.ai/",
