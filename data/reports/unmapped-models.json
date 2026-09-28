@@ -1,5 +1,5 @@
 {
-  "count": 539,
+  "count": 540,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1503,6 +1503,20 @@
     {
       "example_url": "https://livebench.ai/",
       "occurrences": 9,
+      "raw_name": "claude-sonnet-5-5-max-effort",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--claude-sonnet-5-5-max-effort"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "claude-sonnet-5-5-xhigh-effort",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--claude-sonnet-5-5-xhigh-effort"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
       "raw_name": "deepseek-v4.1-flash-max",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--deepseek-v4.1-flash-max"
@@ -1569,13 +1583,6 @@
       "raw_name": "smaug-mini",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--smaug-mini"
-    },
-    {
-      "example_url": "https://livebench.ai/",
-      "occurrences": 9,
-      "raw_name": "union-alpha",
-      "source_id": "livebench",
-      "temp_id": "unmapped--livebench--union-alpha"
     },
     {
       "example_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B",
