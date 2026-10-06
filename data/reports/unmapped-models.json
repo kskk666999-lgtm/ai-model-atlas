@@ -1,5 +1,5 @@
 {
-  "count": 542,
+  "count": 547,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3771,6 +3771,27 @@
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
       "occurrences": 1,
+      "raw_name": "GPT-6 Luna",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6-luna"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "GPT-6 Sol",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6-sol"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "GPT-6.1 Sol",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6.1-sol"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
       "raw_name": "Gemini 3.7 Flash",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--gemini-3.7-flash"
@@ -3792,9 +3813,23 @@
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
       "occurrences": 1,
+      "raw_name": "Opus 5.5",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--opus-5.5"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
       "raw_name": "Sonnet 5",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--sonnet-5"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Sonnet 5.5",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--sonnet-5.5"
     }
   ]
 }
