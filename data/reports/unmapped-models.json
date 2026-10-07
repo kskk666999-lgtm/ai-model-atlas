@@ -1,5 +1,5 @@
 {
-  "count": 547,
+  "count": 550,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1569,6 +1569,13 @@
       "raw_name": "grok-4.7-xhigh",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--grok-4.7-xhigh"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 9,
+      "raw_name": "mistral-large-4-high",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--mistral-large-4-high"
     },
     {
       "example_url": "https://livebench.ai/",
@@ -3813,9 +3820,23 @@
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
       "occurrences": 1,
+      "raw_name": "Muse Spark 1.3",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--muse-spark-1.3"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
       "raw_name": "Opus 5.5",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--opus-5.5"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Qwen3.8-Max-0902",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--qwen3.8-max-0902"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",

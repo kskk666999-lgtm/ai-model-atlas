@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T18:52:33Z",
+ "generated_at": "2026-10-07T07:02:09Z",
  "benchmarks": [
   {
    "benchmark_id": "bfcl-v4-memory",
@@ -78,10 +78,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -90,10 +90,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -102,10 +102,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -114,10 +114,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -126,10 +126,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -138,10 +138,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -150,10 +150,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -162,10 +162,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -174,10 +174,10 @@
    "sources": [
     "livebench"
    ],
-   "total_records": 66,
-   "distinct_models": 66,
+   "total_records": 67,
+   "distinct_models": 67,
    "mapped_distinct_models": 49,
-   "mapped_rate": 0.7424,
+   "mapped_rate": 0.7313,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   },
@@ -654,10 +654,10 @@
    "sources": [
     "terminalbench"
    ],
-   "total_records": 32,
-   "distinct_models": 20,
-   "mapped_distinct_models": 9,
-   "mapped_rate": 0.45,
+   "total_records": 35,
+   "distinct_models": 23,
+   "mapped_distinct_models": 10,
+   "mapped_rate": 0.4348,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   }
