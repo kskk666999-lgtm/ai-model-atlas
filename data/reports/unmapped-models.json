@@ -1,5 +1,5 @@
 {
-  "count": 568,
+  "count": 569,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -2143,6 +2143,13 @@
       "raw_name": "smaug-flash",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--smaug-flash"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
+      "raw_name": "step-5-preview",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--step-5-preview"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
