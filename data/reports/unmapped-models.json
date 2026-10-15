@@ -1,5 +1,5 @@
 {
-  "count": 562,
+  "count": 568,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -2021,6 +2021,13 @@
     {
       "example_url": "https://livebench.ai/",
       "occurrences": 5,
+      "raw_name": "gemma-4-31b",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--gemma-4-31b"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
       "raw_name": "gpt-5.6-luna",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--gpt-5.6-luna"
@@ -2070,6 +2077,27 @@
     {
       "example_url": "https://livebench.ai/",
       "occurrences": 5,
+      "raw_name": "inkling",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--inkling"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
+      "raw_name": "mimo-v2.6-pro",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--mimo-v2.6-pro"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
+      "raw_name": "mistral-large-4",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--mistral-large-4"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
       "raw_name": "muse-spark-1.2",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--muse-spark-1.2"
@@ -2087,6 +2115,20 @@
       "raw_name": "muse-wonder-1.0",
       "source_id": "livebench",
       "temp_id": "unmapped--livebench--muse-wonder-1.0"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
+      "raw_name": "nemotron-lightning-3.5",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--nemotron-lightning-3.5"
+    },
+    {
+      "example_url": "https://livebench.ai/",
+      "occurrences": 5,
+      "raw_name": "nemotron-ultra-3",
+      "source_id": "livebench",
+      "temp_id": "unmapped--livebench--nemotron-ultra-3"
     },
     {
       "example_url": "https://livebench.ai/",
