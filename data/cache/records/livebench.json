@@ -1,6 +1,6 @@
 {
- "count": 225,
- "fetched_at": "2026-10-15T17:40:43Z",
+ "count": 233,
+ "fetched_at": "2026-10-16T05:36:27Z",
  "records": [
   {
    "agent_scaffold": null,
@@ -13,10 +13,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -38,7 +38,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -51,10 +51,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-4.8, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -76,7 +76,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -89,10 +89,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -114,7 +114,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -127,10 +127,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -152,7 +152,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -165,10 +165,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -190,7 +190,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -203,10 +203,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-sol, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -228,7 +228,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -241,10 +241,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -266,7 +266,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -279,10 +279,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.6, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -304,7 +304,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -317,10 +317,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=kimi-k3, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -342,7 +342,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -355,10 +355,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=minimax-m3, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -380,7 +380,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -393,10 +393,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-27b, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -418,7 +418,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -431,10 +431,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-max, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -456,7 +456,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -469,10 +469,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5.1, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -494,7 +494,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -507,10 +507,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-4.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -532,7 +532,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -545,10 +545,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-5.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -570,7 +570,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -583,10 +583,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -608,7 +608,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -621,10 +621,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -646,7 +646,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -659,10 +659,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-4.6, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -684,7 +684,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -697,10 +697,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -722,7 +722,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -735,10 +735,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -760,7 +760,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -773,10 +773,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4-flash-vision, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -798,7 +798,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -811,10 +811,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4.1-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -836,7 +836,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -849,10 +849,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.1-pro, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -874,7 +874,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -887,10 +887,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.7-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -912,7 +912,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -925,10 +925,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.8-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -950,7 +950,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -963,10 +963,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-4-argon, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -988,7 +988,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1001,10 +1001,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemma-4-31b, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1026,7 +1026,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1039,10 +1039,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-luna, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1064,7 +1064,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1077,10 +1077,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-terra, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1102,7 +1102,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1115,10 +1115,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-astra, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1140,7 +1140,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1153,10 +1153,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-luna, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1178,7 +1178,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1191,10 +1191,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-sol, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1216,7 +1216,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1229,10 +1229,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6.1-sol, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1254,7 +1254,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1267,10 +1267,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.7, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1292,7 +1292,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1305,10 +1305,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=inkling, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1330,7 +1330,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1343,10 +1343,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mimo-v2.6-pro, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1368,7 +1368,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1381,10 +1381,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mistral-large-4, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1406,7 +1406,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1419,10 +1419,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.2, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1444,7 +1444,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1457,10 +1457,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.3, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1482,7 +1482,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-coding",
+   "benchmark_name": "LiveBench 编程",
+   "benchmark_version": "2026-09-02",
+   "capability": "coding",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=muse-spark-open, 类别=Coding 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--muse-spark-open",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "muse-spark-open",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 73.6,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1495,10 +1533,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-wonder-1.0, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1520,7 +1558,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1533,10 +1571,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-lightning-3.5, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1558,7 +1596,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-coding",
+   "benchmark_name": "LiveBench 编程",
+   "benchmark_version": "2026-09-02",
+   "capability": "coding",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=nemotron-super-vl-3.5, 类别=Coding 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--nemotron-super-vl-3.5",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "nemotron-super-vl-3.5",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 65.5,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1571,10 +1647,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-ultra-3, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1596,7 +1672,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1609,10 +1685,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1634,7 +1710,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1647,10 +1723,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=smaug-flash, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1672,7 +1748,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1685,10 +1761,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=step-5-preview, 类别=Coding 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1710,7 +1786,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1723,10 +1799,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1748,7 +1824,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1761,10 +1837,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-4.8, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1786,7 +1862,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1799,10 +1875,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1824,7 +1900,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1837,10 +1913,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1862,7 +1938,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1875,10 +1951,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1900,7 +1976,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1913,10 +1989,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-sol, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1938,7 +2014,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1951,10 +2027,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -1976,7 +2052,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -1989,10 +2065,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.6, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2014,7 +2090,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2027,10 +2103,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=kimi-k3, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2052,7 +2128,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2065,10 +2141,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=minimax-m3, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2090,7 +2166,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2103,10 +2179,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-27b, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2128,7 +2204,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2141,10 +2217,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-max, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2166,7 +2242,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2179,10 +2255,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5.1, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2204,7 +2280,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2217,10 +2293,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-4.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2242,7 +2318,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2255,10 +2331,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-5.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2280,7 +2356,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2293,10 +2369,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2318,7 +2394,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2331,10 +2407,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2356,7 +2432,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2369,10 +2445,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-4.6, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2394,7 +2470,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2407,10 +2483,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2432,7 +2508,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2445,10 +2521,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2470,7 +2546,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2483,10 +2559,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4-flash-vision, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2508,7 +2584,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2521,10 +2597,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4.1-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2546,7 +2622,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2559,10 +2635,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.1-pro, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2584,7 +2660,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2597,10 +2673,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.7-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2622,7 +2698,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2635,10 +2711,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.8-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2660,7 +2736,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2673,10 +2749,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-4-argon, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2698,7 +2774,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2711,10 +2787,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemma-4-31b, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2736,7 +2812,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2749,10 +2825,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-luna, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2774,7 +2850,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2787,10 +2863,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-terra, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2812,7 +2888,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2825,10 +2901,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-astra, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2850,7 +2926,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2863,10 +2939,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-luna, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2888,7 +2964,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2901,10 +2977,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-sol, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2926,7 +3002,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2939,10 +3015,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6.1-sol, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -2964,7 +3040,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -2977,10 +3053,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.7, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3002,7 +3078,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3015,10 +3091,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=inkling, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3040,7 +3116,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3053,10 +3129,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mimo-v2.6-pro, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3078,7 +3154,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3091,10 +3167,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mistral-large-4, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3116,7 +3192,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3129,10 +3205,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.2, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3154,7 +3230,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3167,10 +3243,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.3, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3192,7 +3268,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-data-analysis",
+   "benchmark_name": "LiveBench 数据分析",
+   "benchmark_version": "2026-09-02",
+   "capability": "data_analysis",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=muse-spark-open, 类别=Data Analysis 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--muse-spark-open",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "muse-spark-open",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 60.2,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3205,10 +3319,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-wonder-1.0, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3230,7 +3344,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3243,10 +3357,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-lightning-3.5, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3268,7 +3382,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-data-analysis",
+   "benchmark_name": "LiveBench 数据分析",
+   "benchmark_version": "2026-09-02",
+   "capability": "data_analysis",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=nemotron-super-vl-3.5, 类别=Data Analysis 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--nemotron-super-vl-3.5",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "nemotron-super-vl-3.5",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 64.6,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3281,10 +3433,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-ultra-3, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3306,7 +3458,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3319,10 +3471,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3344,7 +3496,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3357,10 +3509,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=smaug-flash, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3382,7 +3534,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3395,10 +3547,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=step-5-preview, 类别=Data Analysis 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -3420,7 +3572,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3436,7 +3588,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3458,7 +3610,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3474,7 +3626,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3496,7 +3648,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3512,7 +3664,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3534,7 +3686,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3550,7 +3702,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3572,7 +3724,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3588,7 +3740,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3610,7 +3762,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3626,7 +3778,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3648,7 +3800,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3664,7 +3816,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3686,7 +3838,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3702,7 +3854,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3724,7 +3876,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3740,7 +3892,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3762,7 +3914,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3778,7 +3930,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3800,7 +3952,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3816,7 +3968,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3838,7 +3990,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3854,7 +4006,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3876,7 +4028,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3892,7 +4044,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3914,7 +4066,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3930,7 +4082,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3952,7 +4104,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -3968,7 +4120,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -3990,7 +4142,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4006,7 +4158,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4028,7 +4180,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4044,7 +4196,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4066,7 +4218,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4082,7 +4234,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4104,7 +4256,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4120,7 +4272,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4142,7 +4294,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4158,7 +4310,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4180,7 +4332,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4196,7 +4348,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4218,7 +4370,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4234,7 +4386,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4256,7 +4408,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4272,7 +4424,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4294,7 +4446,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4310,7 +4462,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4332,7 +4484,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4348,7 +4500,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4370,7 +4522,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4386,7 +4538,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4408,7 +4560,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4424,7 +4576,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4446,7 +4598,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4462,7 +4614,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4484,7 +4636,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4500,7 +4652,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4522,7 +4674,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4538,7 +4690,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4560,7 +4712,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4576,7 +4728,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4598,7 +4750,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4614,7 +4766,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4636,7 +4788,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4652,7 +4804,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4674,7 +4826,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4690,7 +4842,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4712,7 +4864,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4728,7 +4880,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4750,7 +4902,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4766,7 +4918,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4788,7 +4940,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4804,7 +4956,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4826,7 +4978,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4842,7 +4994,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4864,7 +5016,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4880,7 +5032,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4902,7 +5054,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4918,7 +5070,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4940,7 +5092,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4956,7 +5108,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -4978,7 +5130,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-price-input",
+   "benchmark_name": "输入价格（LiveBench 官方统计）",
+   "benchmark_version": "2026-09-02",
+   "capability": "price",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/cost_2026_09_02.csv",
+   "data_json_path": "csv: model=nemotron-super-vl-3.5, 列=input_price_per_million",
+   "data_sha256": null,
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:27Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": false,
+   "license": null,
+   "model_id": "unmapped--livebench--nemotron-super-vl-3.5",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "LiveBench 官方统计的 API 价格（USD / 1M tokens）；基准版本不是逐模型评测日期",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "nemotron-super-vl-3.5",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 0.15,
+   "score_unit": "usd_per_mtok",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -4994,7 +5184,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5016,7 +5206,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5032,7 +5222,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5054,7 +5244,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5070,7 +5260,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5092,7 +5282,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5108,7 +5298,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5130,7 +5320,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5146,7 +5336,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5168,7 +5358,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5184,7 +5374,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5206,7 +5396,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5222,7 +5412,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5244,7 +5434,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5260,7 +5450,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5282,7 +5472,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5298,7 +5488,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5320,7 +5510,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5336,7 +5526,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5358,7 +5548,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5374,7 +5564,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5396,7 +5586,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5412,7 +5602,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5434,7 +5624,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5450,7 +5640,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5472,7 +5662,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5488,7 +5678,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5510,7 +5700,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5526,7 +5716,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5548,7 +5738,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5564,7 +5754,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5586,7 +5776,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5602,7 +5792,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5624,7 +5814,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5640,7 +5830,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5662,7 +5852,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5678,7 +5868,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5700,7 +5890,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5716,7 +5906,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5738,7 +5928,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5754,7 +5944,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5776,7 +5966,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5792,7 +5982,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5814,7 +6004,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5830,7 +6020,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5852,7 +6042,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5868,7 +6058,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5890,7 +6080,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5906,7 +6096,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5928,7 +6118,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5944,7 +6134,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -5966,7 +6156,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -5982,7 +6172,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6004,7 +6194,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6020,7 +6210,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6042,7 +6232,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6058,7 +6248,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6080,7 +6270,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6096,7 +6286,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6118,7 +6308,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6134,7 +6324,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6156,7 +6346,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6172,7 +6362,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6194,7 +6384,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6210,7 +6400,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6232,7 +6422,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6248,7 +6438,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6270,7 +6460,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6286,7 +6476,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6308,7 +6498,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6324,7 +6514,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6346,7 +6536,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6362,7 +6552,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6384,7 +6574,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6400,7 +6590,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6422,7 +6612,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6438,7 +6628,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6460,7 +6650,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6476,7 +6666,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6498,7 +6688,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6514,7 +6704,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6536,7 +6726,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6552,7 +6742,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6574,7 +6764,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6590,7 +6780,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6612,7 +6802,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6628,7 +6818,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6650,7 +6840,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6666,7 +6856,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6688,7 +6878,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-price-output",
+   "benchmark_name": "输出价格（LiveBench 官方统计）",
+   "benchmark_version": "2026-09-02",
+   "capability": "price",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/cost_2026_09_02.csv",
+   "data_json_path": "csv: model=nemotron-super-vl-3.5, 列=output_price_per_million",
+   "data_sha256": null,
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:27Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": false,
+   "license": null,
+   "model_id": "unmapped--livebench--nemotron-super-vl-3.5",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "LiveBench 官方统计的 API 价格（USD / 1M tokens）；基准版本不是逐模型评测日期",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "nemotron-super-vl-3.5",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 0.5,
+   "score_unit": "usd_per_mtok",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6704,7 +6932,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6726,7 +6954,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6742,7 +6970,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6764,7 +6992,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6780,7 +7008,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6802,7 +7030,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6818,7 +7046,7 @@
    "data_sha256": null,
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:43Z",
+   "fetched_at": "2026-10-16T05:36:27Z",
    "hardware_or_endpoint": null,
    "higher_is_better": false,
    "license": null,
@@ -6840,7 +7068,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6853,10 +7081,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -6878,7 +7106,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6891,10 +7119,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-4.8, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -6916,7 +7144,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6929,10 +7157,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -6954,7 +7182,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -6967,10 +7195,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=glm-5.3-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -6992,7 +7220,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7005,10 +7233,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7030,7 +7258,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7043,10 +7271,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-sol, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7068,7 +7296,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7081,10 +7309,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7106,7 +7334,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7119,10 +7347,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.6, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7144,7 +7372,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7157,10 +7385,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=kimi-k3, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7182,7 +7410,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7195,10 +7423,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=minimax-m3, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7220,7 +7448,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7233,10 +7461,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-27b, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7258,7 +7486,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7271,10 +7499,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-max, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7296,7 +7524,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7309,10 +7537,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-fable-5.1, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7334,7 +7562,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7347,10 +7575,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-4.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7372,7 +7600,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7385,10 +7613,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-haiku-5.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7410,7 +7638,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7423,10 +7651,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7448,7 +7676,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7461,10 +7689,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-opus-5.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7486,7 +7714,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7499,10 +7727,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-4.6, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7524,7 +7752,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7537,10 +7765,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7562,7 +7790,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7575,10 +7803,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=claude-sonnet-5.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7600,7 +7828,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7613,10 +7841,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4-flash-vision, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7638,7 +7866,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7651,10 +7879,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=deepseek-v4.1-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7676,7 +7904,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7689,10 +7917,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.1-pro, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7714,7 +7942,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7727,10 +7955,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.7-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7752,7 +7980,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7765,10 +7993,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-3.8-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7790,7 +8018,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7803,10 +8031,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemini-4-argon, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7828,7 +8056,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7841,10 +8069,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gemma-4-31b, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7866,7 +8094,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7879,10 +8107,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-luna, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7904,7 +8132,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7917,10 +8145,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-5.6-terra, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7942,7 +8170,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7955,10 +8183,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-astra, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -7980,7 +8208,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -7993,10 +8221,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-luna, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8018,7 +8246,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8031,10 +8259,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6-sol, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8056,7 +8284,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8069,10 +8297,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=gpt-6.1-sol, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8094,7 +8322,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8107,10 +8335,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=grok-4.7, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8132,7 +8360,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8145,10 +8373,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=inkling, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8170,7 +8398,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8183,10 +8411,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mimo-v2.6-pro, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8208,7 +8436,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8221,10 +8449,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=mistral-large-4, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8246,7 +8474,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8259,10 +8487,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.2, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8284,7 +8512,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8297,10 +8525,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-spark-1.3, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8322,7 +8550,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-reasoning",
+   "benchmark_name": "LiveBench 逻辑推理",
+   "benchmark_version": "2026-09-02",
+   "capability": "reasoning",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=muse-spark-open, 类别=Reasoning 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--muse-spark-open",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "muse-spark-open",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 73.7,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8335,10 +8601,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=muse-wonder-1.0, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8360,7 +8626,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8373,10 +8639,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-lightning-3.5, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8398,7 +8664,45 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
+  },
+  {
+   "agent_scaffold": null,
+   "attribution": "数据来源：LiveBench (livebench.ai)，AGI evaluation by Abacus.AI 等",
+   "benchmark_id": "livebench-reasoning",
+   "benchmark_name": "LiveBench 逻辑推理",
+   "benchmark_version": "2026-09-02",
+   "capability": "reasoning",
+   "confidence_interval_high": null,
+   "confidence_interval_low": null,
+   "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
+   "data_json_path": "csv: model=nemotron-super-vl-3.5, 类别=Reasoning 的 1 个任务列",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
+   "evaluation_date": null,
+   "evaluation_target_type": "base_model",
+   "fetched_at": "2026-10-16T05:36:26Z",
+   "hardware_or_endpoint": null,
+   "higher_is_better": true,
+   "license": null,
+   "model_id": "unmapped--livebench--nemotron-super-vl-3.5",
+   "model_is_unmapped": true,
+   "model_variant": null,
+   "notes": "官方排行榜导出；基准版本=2026-09-02；任务数=1（官方类别平均）；上游未提供逐模型评测运行日",
+   "prompt_mode": null,
+   "published_at": null,
+   "rank": null,
+   "raw_model_name": "nemotron-super-vl-3.5",
+   "reasoning_effort": null,
+   "record_verification_status": "maintainer_verified",
+   "sample_size": null,
+   "score": 78.8,
+   "score_unit": "percent",
+   "source_commit_sha": null,
+   "source_id": "livebench",
+   "source_level": "B",
+   "source_name": "LiveBench（官方）",
+   "source_url": "https://livebench.ai/",
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8411,10 +8715,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=nemotron-ultra-3, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8436,7 +8740,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8449,10 +8753,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=qwen3.8-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8474,7 +8778,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8487,10 +8791,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=smaug-flash, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8512,7 +8816,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   },
   {
    "agent_scaffold": null,
@@ -8525,10 +8829,10 @@
    "confidence_interval_low": null,
    "data_file_url": "https://livebench.ai/table_2026_09_02.csv",
    "data_json_path": "csv: model=step-5-preview, 类别=Reasoning 的 1 个任务列",
-   "data_sha256": "60482291884cfaded0963fb5028acd97d3f56de1560357439d9063553460d419",
+   "data_sha256": "f3d8fce216af5bc06c53439264ed43b90b832794c023011bbdb214c8dc497498",
    "evaluation_date": null,
    "evaluation_target_type": "base_model",
-   "fetched_at": "2026-10-15T17:40:42Z",
+   "fetched_at": "2026-10-16T05:36:26Z",
    "hardware_or_endpoint": null,
    "higher_is_better": true,
    "license": null,
@@ -8550,7 +8854,7 @@
    "source_level": "B",
    "source_name": "LiveBench（官方）",
    "source_url": "https://livebench.ai/",
-   "upstream_updated_at": "2026-10-15T17:33:57Z"
+   "upstream_updated_at": "2026-10-16T01:23:41Z"
   }
  ],
  "source_id": "livebench"
