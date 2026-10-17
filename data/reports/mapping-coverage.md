@@ -8,11 +8,11 @@
 | bigcodebench-complete | bigcodebench | 154 | 154 | 10 | 6% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | bigcodebench-instruct | bigcodebench | 126 | 126 | 9 | 7% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | kernelbench-v-hard | kernelbench | 21 | 17 | 13 | 76% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| livebench-coding | livebench | 47 | 47 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| livebench-data-analysis | livebench | 47 | 47 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| livebench-price-input | livebench | 46 | 46 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| livebench-price-output | livebench | 46 | 46 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
-| livebench-reasoning | livebench | 47 | 47 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-coding | livebench | 48 | 48 | 12 | 25% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-data-analysis | livebench | 48 | 48 | 12 | 25% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-price-input | livebench | 47 | 47 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-price-output | livebench | 47 | 47 | 12 | 26% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
+| livebench-reasoning | livebench | 48 | 48 | 12 | 25% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | mteb-arguana | mteb | 5 | 5 | 5 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | mteb-askubuntudupquestions | mteb | 1 | 1 | 1 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
 | mteb-nfcorpus | mteb | 3 | 3 | 3 | 100% | ❌ | 未通过门槛（映射覆盖率/参评模型数不足） |
