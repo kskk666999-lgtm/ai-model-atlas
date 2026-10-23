@@ -1,1 +1,1 @@
-{"benchmarks":[],"capability_id":"math","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-10-22T17:55:51Z","group":"text_reasoning","name":"数学能力","official":[],"short":"数学","status":"active"}
+{"benchmarks":[],"capability_id":"math","composite":null,"composite_gate":[{"reason":"无合格基准可用（全部被门槛排除）"}],"description":null,"generated_at":"2026-10-23T05:52:34Z","group":"text_reasoning","name":"数学能力","official":[],"short":"数学","status":"active"}
