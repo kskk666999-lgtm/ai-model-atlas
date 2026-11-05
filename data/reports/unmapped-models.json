@@ -1,5 +1,5 @@
 {
-  "count": 533,
+  "count": 530,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -1821,27 +1821,6 @@
       "raw_name": "valley2_dpo",
       "source_id": "vlmevalkit",
       "temp_id": "unmapped--vlmevalkit--valley2_dpo"
-    },
-    {
-      "example_url": "https://www.superclueai.com/",
-      "occurrences": 7,
-      "raw_name": "DeepSeek-V4.1-Flash",
-      "source_id": "superclue",
-      "temp_id": "unmapped--superclue--deepseek-v4.1-flash"
-    },
-    {
-      "example_url": "https://www.superclueai.com/",
-      "occurrences": 7,
-      "raw_name": "Qwen3.8-Flash",
-      "source_id": "superclue",
-      "temp_id": "unmapped--superclue--qwen3.8-flash"
-    },
-    {
-      "example_url": "https://www.superclueai.com/",
-      "occurrences": 7,
-      "raw_name": "Qwen3.8-Max-0902",
-      "source_id": "superclue",
-      "temp_id": "unmapped--superclue--qwen3.8-max-0902"
     },
     {
       "example_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
