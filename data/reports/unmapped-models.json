@@ -1,5 +1,5 @@
 {
-  "count": 549,
+  "count": 553,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3715,6 +3715,27 @@
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
       "occurrences": 1,
+      "raw_name": "Gemini 4 Argon",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gemini-4-argon"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Gemini 4 Carbon",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gemini-4-carbon"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Gemini 4 Hydrogen",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gemini-4-hydrogen"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
       "raw_name": "Grok 4.7",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--grok-4.7"
@@ -3809,6 +3830,13 @@
       "raw_name": "Muse Spark 1.3",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--muse-spark-1.3"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Muse Wonder",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--muse-wonder"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
