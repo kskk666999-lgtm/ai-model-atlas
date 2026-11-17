@@ -1,5 +1,5 @@
 {
-  "count": 556,
+  "count": 557,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3641,6 +3641,13 @@
       "raw_name": "Beam 1.0",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--beam-1.0"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "Copilot Fusion",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--copilot-fusion"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
