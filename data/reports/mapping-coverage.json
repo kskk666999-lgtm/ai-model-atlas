@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T21:37:52Z",
+ "generated_at": "2026-11-18T08:21:23Z",
  "benchmarks": [
   {
    "benchmark_id": "bfcl-v4-memory",
@@ -606,10 +606,10 @@
    "sources": [
     "terminalbench"
    ],
-   "total_records": 63,
-   "distinct_models": 50,
+   "total_records": 65,
+   "distinct_models": 52,
    "mapped_distinct_models": 10,
-   "mapped_rate": 0.2,
+   "mapped_rate": 0.1923,
    "eligible_for_composite": false,
    "reason": "未通过门槛（映射覆盖率/参评模型数不足）"
   }

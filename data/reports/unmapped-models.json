@@ -1,5 +1,5 @@
 {
-  "count": 557,
+  "count": 559,
   "note": "以下模型名称来自数据源原文，尚未建立到注册表的映射。请人工在 models.yml/aliases.yml 中补充别名；同名不同版本禁止自动合并。",
   "unmapped": [
     {
@@ -3711,6 +3711,20 @@
       "raw_name": "GPT-6.1 Terra",
       "source_id": "terminalbench",
       "temp_id": "unmapped--terminalbench--gpt-6.1-terra"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "GPT-6.2 Astra",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6.2-astra"
+    },
+    {
+      "example_url": "https://www.tbench.ai/?version=4.0",
+      "occurrences": 1,
+      "raw_name": "GPT-6.2 Sol",
+      "source_id": "terminalbench",
+      "temp_id": "unmapped--terminalbench--gpt-6.2-sol"
     },
     {
       "example_url": "https://www.tbench.ai/?version=4.0",
